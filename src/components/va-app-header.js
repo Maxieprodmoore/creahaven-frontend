@@ -80,6 +80,9 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         display: flex;
         align-items: center;
         margin-left: 13em;
+        a {
+          font-size: 1.4em;
+        }
       }
 
       .app-header-main::slotted(h1){

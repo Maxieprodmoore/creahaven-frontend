@@ -8,8 +8,8 @@
   --brand-color: #D98B2B;
   --link-color: #4B83A8;
   --app-header-height: 60px;
-  --app-header-txt-color: #fff;
-  --app-header-title-font-size: 1.6em;
+  --app-header-txt-color: rgb(0, 0, 0);
+  --app-header-title-font-size: 1em;
   --app-header-font-family: "Oswald", sans-serif;
   --sl-color-primary-50: #f4f4f4;
   --sl-color-primary-100: #f8ead8;
@@ -150,6 +150,11 @@ a {
 .guide-step img {
   width: 100%;
   height: auto;
+}
+.guide-step p {
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 1.75em;
 }
 
 @media all and (max-width: 768px) {

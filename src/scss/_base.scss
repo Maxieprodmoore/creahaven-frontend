@@ -137,7 +137,13 @@ a {
     width: 100%;
     height: auto;
   }
+  p {
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 1.75em;
+  }
 }
+
 
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 768px){ 

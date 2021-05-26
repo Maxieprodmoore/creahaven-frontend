@@ -30,13 +30,13 @@ class GuideView {
       <va-app-header title="Guide" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content calign">        
-          <h3 class="brand-color">Welcome ${Auth.currentUser.firstName}!</h3>
-          <p>Thank you for signing up with Creahaven! 
+          <h2 class="brand-color">Welcome ${Auth.currentUser.firstName}!</h2>
+          <p >Thank you for signing up with Creahaven! 
           <br>
           Let's get you started on how to make the most of your Creahaven account!</p>
 
           <div class="guide-step">
-            <h4>Updating your profile page</h4>
+            <h3>Updating your profile page</h3>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
             <p>1. Select your avatar icon on the header, then select the profile button.
               <br>
@@ -44,26 +44,27 @@ class GuideView {
               <br>
               3. Once you are satisfied, press the save changes button to log in the changes.
               <br>
+              <br>
               Well done! With that, you have updated your profile accordingly and 
-              are now able to be found by potential clients and collaborators should they require assistance in bringing their visions to life!. 
+              can be found by potential clients and collaborators should they require assistance in bringing their visions to life!. 
             </p>
           </div>
 
           
           <div class="guide-step">
-            <h4>Adding a new portfolio piece</h4>
+            <h3>Adding a new portfolio piece</h3>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
             <p></p>
           </div>
 
           <div class="guide-step">
-            <h4>Adding a new Collaboration invitation</h4>
+            <h3>Adding a new Collaboration invitation</h3>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
             <p></p>
           </div>
           
           <div class="guide-step">
-            <h4>Adding a new Job vacancy</h4>
+            <h3>Adding a new Job vacancy</h3>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
             <p></p>
           </div>
