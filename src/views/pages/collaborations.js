@@ -14,11 +14,14 @@ class CollaborationsView {
   render(){
     const template = html`
       <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
-      <div class="page-content">        
-        <h1>Collaborations</h1>
-        <p>This is the collaborations page!</p>
-        
-      </div>      
+      <div class="page-body">
+        <div class="page-content">        
+            <h1>Collaborations</h1>
+            <p>This is the collaborations page!</p>
+            
+        </div>
+      </div>
+            
     `
     render(template, App.rootEl)
   }

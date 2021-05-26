@@ -14,11 +14,14 @@ class favouriteUsersView {
   render(){
     const template = html`
       <va-app-header title="Favourite Users" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
-      <div class="page-content">        
-        <h1>Favourite users</h1>
-        <p>This is the favourite users page!</p>
-        
-      </div>      
+      <div class="page-body">
+        <div class="page-content">        
+          <h1>Favourite users</h1>
+          <p>This is the favourite users page!</p>
+          
+        </div>
+      </div>
+            
     `
     render(template, App.rootEl)
   }

@@ -91,7 +91,7 @@ a {
 // page --------------------
 .page-body {
   position: absolute;
-  top: var(--app-header-height);
+  top: calc(var(--app-header-height)*2);
   left: 0;
   right: 0;
   bottom: 0;
@@ -101,7 +101,7 @@ a {
   }
 }
 .page-content{
-  margin: 0 10em;
+  margin: 0 13em;
   padding: 1em;
 }
 

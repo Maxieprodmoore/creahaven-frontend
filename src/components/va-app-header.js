@@ -186,7 +186,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
 
       <nav class="app-top-nav">
         ${this.title ? html`
-            <h1 class="page-title">${this.title}</h1>
+            <h6 class="page-title">${this.title}</h6>
           `:``}      
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">

@@ -7768,7 +7768,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-content calign\">        \n      <h3 class=\"brand-color\">Welcome ", "!</h3>\n      <p>Thank you for signing up an account with us! \n      <br>\n      This is a quick tour to teach you the basics of using Creahaven ...</p>\n\n      <div class=\"guide-step\">\n        <h4>Updating your profile page</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <div class=\"guide-step\">\n        <h4>Adding a new portfolio piece</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <div class=\"guide-step\">\n        <h4>Adding a new Collaboration invitation</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <div class=\"guide-step\">\n        <h4>Adding a new Job vacancy</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <div class=\"guide-step\">\n        <h4>Adding a new Project for bidding</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <div class=\"guide-step\">\n        <h4>Adding a user to favourites</h4>\n        <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n      </div>\n\n      <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n            </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h3 class=\"brand-color\">Welcome ", "!</h3>\n          <p>Thank you for signing up an account with us! \n          <br>\n          This is a quick tour to teach you the basics of using Creahaven ...</p>\n\n          <div class=\"guide-step\">\n            <h4>Updating your profile page</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new portfolio piece</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Collaboration invitation</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Job vacancy</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Project for bidding</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7880,7 +7880,7 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["      \n      <div class=\"page-content page-centered\">      \n        <div class=\"signinup-box\">\n        <img class=\"signinup-logo\" src=\"/images/logo.svg\">\n          <h1>Sign Up</h1>\n          <sl-form class=\"form-signup\" @sl-submit=", ">\n            <div class=\"input-group\">\n              <sl-input name=\"firstName\" type=\"text\" placeholder=\"First Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"lastName\" type=\"text\" placeholder=\"Last Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n            </div> \n            <div class=\"input-group\">\n              <sl-select name=\"accessLevel\" placeholder=\"I am a...\">\n                <sl-menu-item value=\"1\">Creative</sl-menu-item>\n                <sl-menu-item value=\"2\">Client/ Customer</sl-menu-item>\n              </sl-select>\n            </div>       \n            <sl-button type=\"primary\" class=\"submit-btn\" submit style=\"width: 100%;\">Sign Up</sl-button>\n          </sl-form>\n          <p>Have an account? <a href=\"/signin\" @click=", ">Sign In</a></p>\n        </div>\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["   \n    <div class=\"page-body\">\n      <div class=\"page-content page-centered\">      \n          <div class=\"signinup-box\">\n          <img class=\"signinup-logo\" src=\"/images/creahaven-logo.svg\">\n            <h1>Sign Up</h1>\n            <sl-form class=\"form-signup\" @sl-submit=", ">\n              <div class=\"input-group\">\n                <sl-input name=\"firstName\" type=\"text\" placeholder=\"First Name\" required></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input name=\"lastName\" type=\"text\" placeholder=\"Last Name\" required></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n              </div> \n              <div class=\"input-group\">\n                <sl-select name=\"accessLevel\" placeholder=\"I am a...\">\n                  <sl-menu-item value=\"1\">Creative</sl-menu-item>\n                  <sl-menu-item value=\"2\">Client/ Customer</sl-menu-item>\n                </sl-select>\n              </div>       \n              <sl-button type=\"primary\" class=\"submit-btn\" submit style=\"width: 100%;\">Sign Up</sl-button>\n            </sl-form>\n            <p>Have an account? <a href=\"/signin\" @click=", ">Sign In</a></p>\n          </div>\n        </div>\n    </div>   \n      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -13628,7 +13628,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n          <h3>Bio</h3>\n          <p>", "</p>\n        "]);
+  const data = _taggedTemplateLiteral(["\n            <h3>Bio</h3>\n            <p>", "</p>\n          "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -13638,7 +13638,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral(["\n        <h2>", " ", "</h2>\n        "]);
+  const data = _taggedTemplateLiteral(["\n          <h2>", " ", "</h2>\n          "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -13648,7 +13648,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n        <h2>", "</h2>\n        "]);
+  const data = _taggedTemplateLiteral(["\n          <h2>", "</h2>\n          "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -13658,7 +13658,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = _taggedTemplateLiteral(["\n        <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\"></sl-avatar>\n        "]);
+  const data = _taggedTemplateLiteral(["\n          <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\"></sl-avatar>\n          "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -13668,7 +13668,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n          <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\" image=", "></sl-avatar>\n        "]);
+  const data = _taggedTemplateLiteral(["\n            <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\" image=", "></sl-avatar>\n          "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -13678,7 +13678,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-content calign\">        \n        ", "\n        ", "\n        \n        <p>", "</p>\n        \n        <p>Updated: ", "</p>\n\n        ", "\n        \n\n        <sl-button @click=", ">Edit Profile</sl-button>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          ", "\n          ", "\n          \n          <p>", "</p>\n          \n          <p>Updated: ", "</p>\n\n          ", "\n          \n\n          <sl-button @click=", ">Edit Profile</sl-button>\n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -13931,7 +13931,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Favourite Users\" user=\"", "\"></va-app-header>\n      <div class=\"page-content\">        \n        <h1>Favourite users</h1>\n        <p>This is the favourite users page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Favourite Users\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Favourite users</h1>\n          <p>This is the favourite users page!</p>\n          \n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14131,7 +14131,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-content\">        \n        <h1>Collaborations</h1>\n        <p>This is the collaborations page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n            <h1>Collaborations</h1>\n            <p>This is the collaborations page!</p>\n            \n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16070,7 +16070,7 @@ var _App = _interopRequireDefault(require("./../App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n            <h1 class=\"page-title\">", "</h1>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <h6 class=\"page-title\">", "</h6>\n          "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -16263,7 +16263,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65472" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53443" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
