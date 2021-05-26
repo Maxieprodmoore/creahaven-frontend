@@ -57,12 +57,19 @@ class Auth {
     localStorage.setItem('accessToken', data.accessToken)
     // set current user
     this.currentUser = data.user      
-    // console.log(this.currentUser)           
-    // redirect to home
-    Router.init()
+    // console.log(this.currentUser) 
 
+    // redirection
+    Router.init()
+    if(data.user.newUser == true){
+      //redirect new user to guide page
+      gotoRoute('/guide')
+    }else {
+      // existing user - redirect to home page (/)
+      gotoRoute('/')
+    }
     
-    gotoRoute('/')
+    
   }
 
 

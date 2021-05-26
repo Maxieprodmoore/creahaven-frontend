@@ -7542,12 +7542,18 @@ class Auth {
 
     localStorage.setItem('accessToken', data.accessToken); // set current user
 
-    this.currentUser = data.user; // console.log(this.currentUser)           
-    // redirect to home
+    this.currentUser = data.user; // console.log(this.currentUser) 
+    // redirection
 
     _Router.default.init();
 
-    (0, _Router.gotoRoute)('/');
+    if (data.user.newUser == true) {
+      //redirect new user to guide page
+      (0, _Router.gotoRoute)('/guide');
+    } else {
+      // existing user - redirect to home page (/)
+      (0, _Router.gotoRoute)('/');
+    }
   }
 
   async check(success) {
@@ -7747,7 +7753,96 @@ class FourOFourView {
 var _default = new FourOFourView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js"}],"views/pages/guide.js":[function(require,module,exports) {
+},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js"}],"UserAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class UserAPI {
+  async updateUser(userId, userData) {
+    let dataType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'form';
+    // validate
+    if (!userId || !userData) return;
+    let responseHeader; // form data
+
+    if (dataType == 'form') {
+      // fetch response header normal (form data)
+      responseHeader = {
+        method: "PUT",
+        headers: {
+          "Authorization": "Bearer ".concat(localStorage.accessToken)
+        },
+        body: userData
+      }; // json data
+    } else if (dataType == 'json') {
+      responseHeader = {
+        method: "PUT",
+        headers: {
+          "Authorization": "Bearer ".concat(localStorage.accessToken),
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+      };
+    } // make fetch request to backend
+
+
+    const response = await fetch("".concat(_App.default.apiBase, "/user/").concat(userId), responseHeader); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem updating user');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+  async getUser(userId) {
+    // validate
+    if (!userId) return; // fetch the json data
+
+    const response = await fetch("".concat(_App.default.apiBase, "/user/").concat(userId), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting user');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new UserAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/guide.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7765,10 +7860,14 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _UserAPI = _interopRequireDefault(require("./../../UserAPI"));
+
+var _Toast = _interopRequireDefault(require("../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h3 class=\"brand-color\">Welcome ", "!</h3>\n          <p>Thank you for signing up an account with us! \n          <br>\n          This is a quick tour to teach you the basics of using Creahaven ...</p>\n\n          <div class=\"guide-step\">\n            <h4>Updating your profile page</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new portfolio piece</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Collaboration invitation</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Job vacancy</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Project for bidding</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h3 class=\"brand-color\">Welcome ", "!</h3>\n          <p>Thank you for signing up with Creahaven! \n          <br>\n          Let's get you started on how to make the most of your Creahaven account!</p>\n\n          <div class=\"guide-step\">\n            <h4>Updating your profile page</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p>1. Select your avatar icon on the header, then select the profile button.\n              <br>\n              2. Select the update profile button. Then, fill up your particulars in the resultant form.\n              <br>\n              3. Once you are satisfied, press the save changes button to log in the changes.\n              <br>\n              Well done! With that, you have updated your profile accordingly and \n              are now able to be found by potential clients and collaborators should they require assistance in bringing their visions to life!. \n            </p>\n          </div>\n\n          \n          <div class=\"guide-step\">\n            <h4>Adding a new portfolio piece</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Collaboration invitation</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n          \n          <div class=\"guide-step\">\n            <h4>Adding a new Job vacancy</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Project for bidding</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7785,6 +7884,20 @@ class GuideView {
     this.render();
 
     _Utils.default.pageIntroAnim();
+
+    this.updateCurrentUser();
+  }
+
+  async updateCurrentUser() {
+    try {
+      const updatedUser = await _UserAPI.default.updateUser(_Auth.default.currentUser._id, {
+        newUser: false
+      }, 'json');
+      console.log('user updated!');
+      console.log(updatedUser);
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+    }
   }
 
   render() {
@@ -7797,7 +7910,7 @@ class GuideView {
 var _default = new GuideView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/signin.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","../../Toast":"Toast.js"}],"views/pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13708,79 +13821,7 @@ class ProfileView {
 var _default = new ProfileView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js"}],"UserAPI.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _App = _interopRequireDefault(require("./App"));
-
-var _Auth = _interopRequireDefault(require("./Auth"));
-
-var _Toast = _interopRequireDefault(require("./Toast"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-class UserAPI {
-  async updateUser(userId, userData) {
-    // validate
-    if (!userId || !userData) return; // make fetch request to backend
-
-    const response = await fetch("".concat(_App.default.apiBase, "/user/").concat(userId), {
-      method: "PUT",
-      headers: {
-        "Authorization": "Bearer ".concat(localStorage.accessToken)
-      },
-      body: userData
-    }); // if response not ok
-
-    if (!response.ok) {
-      // console log error
-      const err = await response.json();
-      if (err) console.log(err); // throw error (exit this function)      
-
-      throw new Error('Problem updating user');
-    } // convert response payload into json - store as data
-
-
-    const data = await response.json(); // return data
-
-    return data;
-  }
-
-  async getUser(userId) {
-    // validate
-    if (!userId) return; // fetch the json data
-
-    const response = await fetch("".concat(_App.default.apiBase, "/user/").concat(userId), {
-      headers: {
-        "Authorization": "Bearer ".concat(localStorage.accessToken)
-      }
-    }); // if response not ok
-
-    if (!response.ok) {
-      // console log error
-      const err = await response.json();
-      if (err) console.log(err); // throw error (exit this function)      
-
-      throw new Error('Problem getting user');
-    } // convert response payload into json - store as data
-
-
-    const data = await response.json(); // return data
-
-    return data;
-  }
-
-}
-
-var _default = new UserAPI();
-
-exports.default = _default;
-},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
+},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13807,7 +13848,7 @@ var _moment = _interopRequireDefault(require("moment"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral(["\n                <input type=\"file\" name=\"avatar\" />\n              "]);
+  const data = _taggedTemplateLiteral(["\n                  <input type=\"file\" name=\"avatar\" />\n                "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -13817,7 +13858,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <sl-avatar image=\"", "/images/", "\"></sl-avatar>\n                <input type=\"file\" name=\"avatar\" />\n              "]);
+  const data = _taggedTemplateLiteral(["\n                  <sl-avatar image=\"", "/images/", "\"></sl-avatar>\n                  <input type=\"file\" name=\"avatar\" />\n                "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -13827,7 +13868,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = _taggedTemplateLiteral(["\n          <p>Updated: ", "</p>\n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <div class=\"input-group\">\n              <sl-input type=\"text\" name=\"firstName\" value=\"", "\" placeholder=\"First Name\"></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input type=\"text\" name=\"lastName\" value=\"", "\" placeholder=\"Last Name\"></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input type=\"text\" name=\"displayName\" value=\"", "\" placeholder=\"Display Name\"></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-input type=\"text\" name=\"email\" value=\"", "\" placeholder=\"Email Address\"></sl-input>\n            </div> \n            <div class=\"input-group\">\n              <sl-textarea name=\"bio\" rows=\"4\" value=\"", "\" placeholder=\"Bio\"></sl-textarea>\n            </div>           \n            <div class=\"input-group\">\n              <label>Avatar</label><br>          \n              ", "\n            </div>\n            <sl-button type=\"primary\" class=\"submit-btn\" submit>Update Profile</sl-button>\n          </sl-form>\n        "]);
+  const data = _taggedTemplateLiteral(["\n            <p>Updated: ", "</p>\n            <sl-form class=\"page-form\" @sl-submit=", ">\n              <div class=\"input-group\">\n                <sl-input type=\"text\" name=\"firstName\" value=\"", "\" placeholder=\"First Name\"></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input type=\"text\" name=\"lastName\" value=\"", "\" placeholder=\"Last Name\"></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input type=\"text\" name=\"displayName\" value=\"", "\" placeholder=\"Display Name\"></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input type=\"text\" name=\"email\" value=\"", "\" placeholder=\"Email Address\"></sl-input>\n              </div> \n              <div class=\"input-group\">\n                <sl-textarea name=\"bio\" rows=\"4\" value=\"", "\" placeholder=\"Bio\"></sl-textarea>\n              </div>           \n              <div class=\"input-group\">\n                <label>Avatar</label><br>          \n                ", "\n              </div>\n              <sl-button type=\"primary\" class=\"submit-btn\" submit>Update Profile</sl-button>\n            </sl-form>\n          "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -13837,7 +13878,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n          <sl-spinner></sl-spinner>\n        "]);
+  const data = _taggedTemplateLiteral(["\n            <sl-spinner></sl-spinner>\n          "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -13847,7 +13888,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Edit Profile\" user=", "></va-app-header>\n      <div class=\"page-content\">        \n        ", "\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Edit Profile\" user=", "></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          ", "\n        </div>\n      </div>\n      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -13981,7 +14022,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-content\">        \n        <h1>Projects for bidding</h1>\n        <p>This is the projects for bidding page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\"></div>\n      <div class=\"page-content\">        \n        <h1>Projects for bidding</h1>\n        <p>This is the projects for bidding page!</p>\n        \n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14081,7 +14122,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Creatives\" user=\"", "\"></va-app-header>\n      <div class=\"page-content\">        \n        <h1>Creatives</h1>\n        <p>This is the Creatives page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Creatives\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Creatives</h1>\n          <p>This is the Creatives page!</p>\n          \n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16263,7 +16304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53443" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55823" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

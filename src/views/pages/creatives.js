@@ -14,11 +14,14 @@ class CreativesView {
   render(){
     const template = html`
       <va-app-header title="Creatives" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
-      <div class="page-content">        
-        <h1>Creatives</h1>
-        <p>This is the Creatives page!</p>
-        
-      </div>      
+      <div class="page-body">
+        <div class="page-content">        
+          <h1>Creatives</h1>
+          <p>This is the Creatives page!</p>
+          
+        </div>
+      </div>
+            
     `
     render(template, App.rootEl)
   }
