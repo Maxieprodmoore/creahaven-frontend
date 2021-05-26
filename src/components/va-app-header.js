@@ -181,7 +181,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
     <header class="app-header">
       <div class="app-header-main">
         <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>
-        <img class="app-header-logo" src="/images/creahaven-logo-white.svg">
+        <img class="app-header-logo" src="/images/creahaven-logo-black.svg">
         <slot></slot>
         <a href="/" @click="${anchorRoute}">Home</a>  
       </div>
