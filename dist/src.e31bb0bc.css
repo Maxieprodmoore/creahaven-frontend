@@ -2,10 +2,11 @@
 :root {
   --base-txt-color: #222;
   --heading-color: #333;
-  --base-font-family: "Roboto", sans-serif;
+  --body-font-family: "Roboto", sans-serif;
+  --header-font-family: "Oswald", sans-serif;
   --body-bg: #fff;
   --brand-color: #D98B2B;
-  --link-color: --brand-color;
+  --link-color: #4B83A8;
   --app-header-height: 60px;
   --app-header-txt-color: #fff;
   --app-header-title-font-size: 1.6em;
@@ -32,16 +33,22 @@ body {
   padding: 0;
   margin: 0;
   color: var(--base-txt-color);
-  font-family: var(--base-font-family);
+  font-family: var(--body-font-family);
   font-weight: 300;
   background: var(--body-bg);
   height: 100vh;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 h1, h2, h3, h5, h6 {
   margin: 0 0 0.5em;
   color: var(--heading-color);
-  font-family: var(--app-header-font-family);
+  font-family: var(--header-font-family);
+  font-weight: 700;
 }
 
 a {
@@ -96,16 +103,21 @@ a {
   overflow: hidden;
 }
 
-.page-content {
+.page-body {
   position: absolute;
   top: var(--app-header-height);
-  left: 16%;
-  right: 16%;
+  left: 0;
+  right: 0;
   bottom: 0;
-  padding: 1em;
+  overflow-y: scroll;
 }
-.page-content.no-pad {
+.page-body.no-pad {
   padding: 0;
+}
+
+.page-content {
+  margin: 0 10em;
+  padding: 1em;
 }
 
 .page-centered {
@@ -121,8 +133,13 @@ a {
 }
 
 .signinup-logo {
-  width: 200px;
+  width: 300px;
   margin-bottom: 1em;
+  right: 1em;
+}
+
+#guide-img {
+  width: 80%;
 }
 
 .guide-step {
@@ -139,6 +156,10 @@ a {
   .signinup-box {
     width: 90%;
     max-width: none;
+  }
+
+  .page-content {
+    margin: 0;
   }
 }
 .input-group {

@@ -79,12 +79,18 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         flex-grow: 1;
         display: flex;
         align-items: center;
-        margin-left: 15%;
-        margin-right:0;
+        margin-left: 13em;
       }
 
       .app-header-main::slotted(h1){
         color: #fff;
+      }
+
+      .app-header-logo{
+        height: 50px;
+        margin-bottom: 0.10em;
+        margin-top: 0.40em;
+        margin-right: 1.25em;
       }
 
       .app-logo a {
@@ -109,7 +115,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         height: 100%;
         align-items: center;
         margin-left: 0;
-        margin-right:15%;
+        margin-right:13em;
       }
 
       .app-top-nav a {
@@ -128,7 +134,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
 
       .app-side-menu-logo {
-        width: 120px;
+        width: 200px;
         margin-bottom: 1em;
         position: absolute;
         top: 2em;
@@ -155,6 +161,14 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         .app-top-nav {
           display: none;
         }
+
+        .app-header-main{
+          margin-left: 0;
+        }
+
+        .app-top-nav{
+          margin-right: 0;
+        }
       }
 
     </style>
@@ -164,16 +178,16 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
     <header class="app-header">
       <div class="app-header-main">
         <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>
-        ${this.title ? html`
-          <h1 class="page-title">${this.title}</h1>
-        `:``}
+        <img class="app-header-logo" src="/images/creahaven-logo-white.svg">
         <slot></slot>
         <a href="/" @click="${anchorRoute}">Home</a>  
       </div>
 
 
       <nav class="app-top-nav">
-              
+        ${this.title ? html`
+            <h1 class="page-title">${this.title}</h1>
+          `:``}      
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
             <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> ${this.user && this.user.firstName}
@@ -190,7 +204,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
     </header>
 
     <sl-drawer class="app-side-menu" placement="left">
-      <img class="app-side-menu-logo" src="/images/logo.svg">
+      <img class="app-side-menu-logo" src="/images/creahaven-logo.svg">
       <nav class="app-side-menu-items">
         <a href="/" @click="${this.menuClick}">Home</a>
         <a href="/profile" @click="${this.menuClick}">Profile</a>

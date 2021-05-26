@@ -26,19 +26,21 @@ class SignInView {
 
   render(){    
     const template = html`      
-      <div class="page-content page-centered">
-        <div class="signinup-box">
-          <img class="signinup-logo" src="/images/logo.svg">          
-          <sl-form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
-            <div class="input-group">
-              <sl-input name="email" type="email" placeholder="Email" required></sl-input>
-            </div>
-            <div class="input-group">
-              <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
-            </div>
-            <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
-          </sl-form>
-          <p>No Account? <a href="/signup" @click=${anchorRoute}>Sign Up</a></p>
+      <div class="page-body">
+        <div class="page-content page-centered">
+          <div class="signinup-box">
+            <img class="signinup-logo" src="/images/creahaven-logo.svg">          
+            <sl-form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
+              <div class="input-group">
+                <sl-input name="email" type="email" placeholder="Email" required></sl-input>
+              </div>
+              <div class="input-group">
+                <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
+              </div>
+              <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
+            </sl-form>
+            <p>No Account? <a href="/signup" @click=${anchorRoute}>Sign Up</a></p>
+          </div>
         </div>
       </div>
     `
