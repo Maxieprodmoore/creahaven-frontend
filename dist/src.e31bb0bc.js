@@ -14022,7 +14022,7 @@ var _Utils = _interopRequireDefault(require("../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\"></div>\n      <div class=\"page-content\">        \n        <h1>Projects for bidding</h1>\n        <p>This is the projects for bidding page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Projects for bidding</h1>\n          <p>This is the projects for bidding page!</p>\n          \n        </div>   \n      </div>\n         \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14051,7 +14051,51 @@ class ProjectsView {
 var _default = new ProjectsView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/jobs.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"JobAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class JobAPI {
+  async getJobs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/job"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting job postings');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new JobAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/jobs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14069,10 +14113,14 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _JobAPI = _interopRequireDefault(require("./../../JobAPI"));
+
+var _Toast = _interopRequireDefault(require("../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-content\">        \n        <h1>Job Vacancies</h1>\n        <p>This is the job vacancies page!</p>\n        \n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Job Vacancies</h1>\n          <p>This is the job vacancies page!</p>\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14086,9 +14134,21 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 class jobVacanciesView {
   init() {
     document.title = 'Job Vacancies';
+    this.jobs = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
+
+    this.getJobs();
+  }
+
+  async getJobs() {
+    try {
+      this.jobs = await _JobAPI.default.getJobs();
+      console.log(this.jobs);
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+    }
   }
 
   render() {
@@ -14101,7 +14161,7 @@ class jobVacanciesView {
 var _default = new jobVacanciesView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/creatives.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../JobAPI":"JobAPI.js","../../Toast":"Toast.js"}],"views/pages/creatives.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16121,7 +16181,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-white.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Guide page</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/profile\" @click=\"", "\">Profile</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n        <a href=\"#\" @click=\"", "\">Sign Out</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Guide page</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/profile\" @click=\"", "\">Profile</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n        <a href=\"#\" @click=\"", "\">Sign Out</a>\n      </nav>  \n    </sl-drawer>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16304,7 +16364,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60875" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64381" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
