@@ -11,6 +11,7 @@ import projectsView from './views/pages/projects'
 import jobsView from './views/pages/jobs'
 import creativesView from './views/pages/creatives'
 import collaborationsView from './views/pages/collaborations'
+import newJobView from './views/pages/newJob'
 
 // define routes
 const routes = {
@@ -23,6 +24,7 @@ const routes = {
 	'/profile': profileView,
 	'/projects' : projectsView,
 	'/jobs': jobsView,
+	'/newJob': newJobView,
 	'/creatives': creativesView,
 	'/collaborations': collaborationsView,
 	'/editProfile': editProfileView	

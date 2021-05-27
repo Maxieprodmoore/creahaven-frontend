@@ -144,6 +144,16 @@ a {
   }
 }
 
+//jobs page
+.jobs-grid{
+  display: flexbox;
+  flex-wrap: wrap;
+  .job-card{
+    width: calc(33.33% - 1em);
+    margin: 0.5em;
+  }
+
+}
 
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 768px){ 

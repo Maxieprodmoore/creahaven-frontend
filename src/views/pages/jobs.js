@@ -19,7 +19,7 @@ class jobVacanciesView {
      try{
        this.jobs = await JobAPI.getJobs()
        console.log(this.jobs)
-
+       this.render()
      }catch(err){
        Toast.show(err, 'error')
      }
@@ -30,9 +30,22 @@ class jobVacanciesView {
       <va-app-header title="Job Vacancies" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content">        
-          <h1>Job Vacancies</h1>
-          <p>This is the job vacancies page!</p>
-          
+          <div class= "jobs-grid">
+            ${this.jobs == null ? html `
+              <sl-spinner></sl-spinner>
+            ` : html `
+              ${this.jobs.map(job => html`
+                <sl-card class="job-card">
+                  <div slot="header"> <h3>${job.name}</h3></div>
+                  <img src="${App.apiBase}/images/${job.image}" alt="${job.name}" />
+                  <p>${job.description}</p>
+                  <p>Posted by ${job.displayName == null ? html `${job.firstName} ${job.lastName}` : html `${job.displayName}`}</p>
+                  <div slot="footer"> <p>${job.tag.map()}</p></div>
+                </sl-card>
+                
+              `)}
+            `}
+          </div>
         </div> 
       </div>
            

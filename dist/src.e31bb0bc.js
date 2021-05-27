@@ -14119,8 +14119,58 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["", ""]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral(["", " ", ""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n                <sl-card class=\"job-card\">\n                  <div slot=\"header\"> <h3>", "</h3></div>\n                  <img src=\"", "/images/", "\" alt=\"", "\" />\n                  <p>", "</p>\n                  <p>Posted by ", "</p>\n                  <div slot=\"footer\"> <p>", "</p></div>\n                </sl-card>\n                \n              "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral(["\n              ", "\n            "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n              <sl-spinner></sl-spinner>\n            "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Job Vacancies</h1>\n          <p>This is the job vacancies page!</p>\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <div class= \"jobs-grid\">\n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14146,13 +14196,14 @@ class jobVacanciesView {
     try {
       this.jobs = await _JobAPI.default.getJobs();
       console.log(this.jobs);
+      this.render();
     } catch (err) {
       _Toast.default.show(err, 'error');
     }
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.jobs == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.jobs.map(job => (0, _litHtml.html)(_templateObject4(), job.name, _App.default.apiBase, job.image, job.name, job.description, job.displayName == null ? (0, _litHtml.html)(_templateObject5(), job.firstName, job.lastName) : (0, _litHtml.html)(_templateObject6(), job.displayName), job.tag.map()))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14261,6 +14312,56 @@ class CollaborationsView {
 var _default = new CollaborationsView();
 
 exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newJob.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>New Job Form</h1>\n          <p>Page content ...</p>\n          \n        </div> \n      </div>\n           \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class newJobView {
+  init() {
+    document.title = 'New Job Form';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new newJobView();
+
+exports.default = _default;
 },{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"Router.js":[function(require,module,exports) {
 "use strict";
 
@@ -14295,6 +14396,8 @@ var _creatives = _interopRequireDefault(require("./views/pages/creatives"));
 
 var _collaborations = _interopRequireDefault(require("./views/pages/collaborations"));
 
+var _newJob = _interopRequireDefault(require("./views/pages/newJob"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import views
@@ -14309,6 +14412,7 @@ const routes = {
   '/profile': _profile.default,
   '/projects': _projects.default,
   '/jobs': _jobs.default,
+  '/newJob': _newJob.default,
   '/creatives': _creatives.default,
   '/collaborations': _collaborations.default,
   '/editProfile': _editProfile.default
@@ -14365,7 +14469,7 @@ function anchorRoute(e) {
   const pathname = e.target.closest('a').pathname;
   AppRouter.gotoRoute(pathname);
 }
-},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteUsers":"views/pages/favouriteUsers.js","./views/pages/projects":"views/pages/projects.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js"}],"App.js":[function(require,module,exports) {
+},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteUsers":"views/pages/favouriteUsers.js","./views/pages/projects":"views/pages/projects.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js","./views/pages/newJob":"views/pages/newJob.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16364,7 +16468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64381" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51448" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

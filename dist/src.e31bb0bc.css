@@ -157,6 +157,15 @@ a {
   margin-bottom: 1.75em;
 }
 
+.jobs-grid {
+  display: flexbox;
+  flex-wrap: wrap;
+}
+.jobs-grid .job-card {
+  width: calc(33.33% - 1em);
+  margin: 0.5em;
+}
+
 @media all and (max-width: 768px) {
   .signinup-box {
     width: 90%;
