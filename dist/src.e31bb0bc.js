@@ -7680,7 +7680,7 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Home\" user=", "></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <h1 class=\"anim-in\">Hey ", "!</h1>\n          <img id=\"guide-img\" src=\"/images/introScreen-hero-img.png\">\n          <div class=\"page-content calign\">\n            <sl-button class=\"anim-in\" size=\"large\" @click=", ">Creatives</sl-button>\n            <sl-button class=\"anim-in\" size=\"large\" @click=", ">Collaborations</sl-button>\n            <sl-button class=\"anim-in\" size=\"large\" @click=", ">Job Vacancies</sl-button>\n            <sl-button class=\"anim-in\" size=\"large\" @click=", ">Projects for bidding</sl-button>\n          </div>\n        </div>\n      </div>\n      \n      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        /*------home navigation buttons ---------*/ \n        .home-navBtn {\n          display: flexbox;\n          flex-wrap: wrap;\n          width: 100%;\n          \n        }\n        .navBtnImg {\n            width: calc(20% - 1em);\n            margin: 0.5em;\n          }\n        /*-------------Responsive design-----------------*/\n        @media all and (max-width: 768px){\n          .navBtnImg{\n            width: calc(100% - 1em);\n          }\n        }\n\n      </style>\n      <va-app-header title=\"Home\" user=", "></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <h1 class=\"anim-in\">Hey ", "!</h1>\n          <img id=\"guide-img\" src=\"/images/introScreen-hero-img.png\" />\n          <div class=\"home-navBtn\">\n            <a href=\"/creatives\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/creatives-button.png\"/></a>\n            <a href=\"/collaborations\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/collaboration-button.png\"/></a>\n            <a href=\"/jobs\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/jobs-button.png\"/></a>\n            <a href=\"/projects\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/projects-button.png\"/></a>\n          </div>\n        </div>\n      </div>\n      \n      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7701,7 +7701,7 @@ class HomeView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, () => (0, _Router.gotoRoute)('/creatives'), () => (0, _Router.gotoRoute)('/collaborations'), () => (0, _Router.gotoRoute)('/jobs'), () => (0, _Router.gotoRoute)('/projects'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -16468,7 +16468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51448" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56523" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
