@@ -4,7 +4,7 @@ import {gotoRoute, anchorRoute} from '../../Router'
 import Auth from '../../Auth'
 import Utils from '../../Utils'
 
-class newPortfolioView {
+class newProjectView {
   init(){
     document.title = 'Template'    
     this.render()    
@@ -13,18 +13,19 @@ class newPortfolioView {
 
   render(){
     const template = html`
-      <va-app-header title="Submit portfolio piece" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
+      <va-app-header title="Post a new project" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content">        
-          <h1>Submit new Portfolio piece</h1>
-          <p>Here is where the user submits a new portfolio piece.</p>
+          <h1>Post new project for bidding!</h1>
+          <p>This is the page for new submitting a new project for bidding ...</p>
           
-        </div>
-      </div>      
+        </div> 
+      </div>
+           
     `
     render(template, App.rootEl)
   }
 }
 
 
-export default new newPortfolioView()
+export default new newProjectView()

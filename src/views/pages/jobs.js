@@ -40,7 +40,7 @@ class jobVacanciesView {
                   <img src="${App.apiBase}/images/${job.image}" alt="${job.name}" />
                   <p>${job.description}</p>
                   <p>Posted by ${job.displayName == null ? html `${job.firstName} ${job.lastName}` : html `${job.displayName}`}</p>
-                  <div slot="footer"> <p>${job.tag.map()}</p></div>
+                  <div slot="footer"> <sl-tag type="info">${job.jobType.map()}</sl-tag></div>
                 </sl-card>
                 
               `)}

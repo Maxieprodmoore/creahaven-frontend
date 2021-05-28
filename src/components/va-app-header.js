@@ -197,7 +197,20 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
           </a>
           <sl-menu>            
             <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
-            <sl-menu-item @click="${() => gotoRoute('/guide')}">Guide page</sl-menu-item>
+            <sl-menu-divider></sl-menu-divider>
+            ${this.user.accessLevel == 1 ? html`
+              <sl-menu-item @click="${() => gotoRoute('/newPortfolio')}">Post a new Portfolio Piece!</sl-menu-item>
+            ` :html``}
+            ${this.user.accessLevel == 1 ? html`
+              <sl-menu-item @click="${() => gotoRoute('/newCollaboration')}">Post a new Collaboration Request!</sl-menu-item>
+            ` :html``}
+            ${this.user.accessLevel == 2 ? html`
+              <sl-menu-item @click="${() => gotoRoute('/newjob')}">Post a new Job Vacancy post!</sl-menu-item>
+            ` :html``}
+            ${this.user.accessLevel == 2 ? html`
+              <sl-menu-item @click="${() => gotoRoute('/newProject')}">Post a new Project listing!</sl-menu-item>
+            ` :html``}
+            <sl-menu-divider></sl-menu-divider>
             <sl-menu-item @click="${() => gotoRoute('/favouriteUsers')}">Favourite users</sl-menu-item>
             <sl-menu-item @click="${() => gotoRoute('/editProfile')}">Edit Profile</sl-menu-item>
             <sl-menu-item @click="${() => Auth.signOut()}">Sign Out</sl-menu-item>
@@ -210,12 +223,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       <img class="app-side-menu-logo" src="/images/creahaven-logo.svg">
       <nav class="app-side-menu-items">
         <a href="/" @click="${this.menuClick}">Home</a>
-        <a href="/profile" @click="${this.menuClick}">Profile</a>
         <a href="/creatives" @click="${this.menuClick}">Find a Creative!</a>
         <a href="/collaborations" @click="${this.menuClick}">Find a Collaboration!</a>
         <a href="/jobs" @click="${this.menuClick}">Find a Job vacancy!</a>
         <a href="/projects" @click="${this.menuClick}">Find a project for bidding!</a>
-        <a href="#" @click="${() => Auth.signOut()}">Sign Out</a>
       </nav>  
     </sl-drawer>
     `

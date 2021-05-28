@@ -7866,8 +7866,88 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject9() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h4>Adding a new Project for bidding</h4>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <P></P>\n            </div>\n          "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Job vacancy</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Collaboration invitation</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new portfolio piece</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h2 class=\"brand-color\">Welcome ", "!</h2>\n          <p >Thank you for signing up with Creahaven! \n          <br>\n          Let's get you started on how to make the most of your Creahaven account!</p>\n\n          <div class=\"guide-step\">\n            <h3>Updating your profile page</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p>1. Select your avatar icon on the header, then select the profile button.\n              <br>\n              2. Select the update profile button. Then, fill up your particulars in the resultant form.\n              <br>\n              3. Once you are satisfied, press the save changes button to log in the changes.\n              <br>\n              <br>\n              Well done! With that, you have updated your profile accordingly and \n              can be found by potential clients and collaborators should they require assistance in bringing their visions to life!. \n            </p>\n          </div>\n\n          \n          <div class=\"guide-step\">\n            <h3>Adding a new portfolio piece</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n\n          <div class=\"guide-step\">\n            <h3>Adding a new Collaboration invitation</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n          \n          <div class=\"guide-step\">\n            <h3>Adding a new Job vacancy</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p></p>\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a new Project for bidding</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h2 class=\"brand-color\">Welcome ", "!</h2>\n          <p >Thank you for signing up with Creahaven! \n          <br>\n          Let's get you started on how to make the most of your Creahaven account!</p>\n\n          <div class=\"guide-step\">\n            <h3>Updating your profile page</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p>1. Select your avatar icon on the header, then select the profile button.\n              <br>\n              2. Select the update profile button. Then, fill up your particulars in the resultant form.\n              <br>\n              3. Once you are satisfied, press the save changes button to log in the changes.\n              <br>\n              <br>\n              Well done! With that, you have updated your profile accordingly and \n              can be found by potential clients and collaborators should they require assistance in bringing their visions to life!. \n            </p>\n          </div>\n\n          ", "\n\n          ", "\n          \n          ", "\n          \n          ", "\n          \n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7901,7 +7981,7 @@ class GuideView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, () => (0, _Router.gotoRoute)('/'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, this.user.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3()), this.user.accessLevel == 1 ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5()), this.user.accessLevel == 2 ? (0, _litHtml.html)(_templateObject6()) : (0, _litHtml.html)(_templateObject7()), this.user.accessLevel == 2 ? (0, _litHtml.html)(_templateObject8()) : (0, _litHtml.html)(_templateObject9()), () => (0, _Router.gotoRoute)('/'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14068,6 +14148,34 @@ var _Toast = _interopRequireDefault(require("./Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class JobAPI {
+  async newJob(formData) {
+    // send fetch request
+    const response = await fetch("".concat(_App.default.apiBase, "/job"), {
+      method: 'POST',
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      },
+      body: formData
+    }); // if response not ok
+
+    if (!response.ok) {
+      let message = 'Problem adding job post';
+
+      if (response.status == 400) {
+        const err = await response.json();
+        message = err.message;
+      } // throw error (exit this function)      
+
+
+      throw new Error('Problem creating job post');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
   async getJobs() {
     // fetch the json data
     const response = await fetch("".concat(_App.default.apiBase, "/job"), {
@@ -14140,7 +14248,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <sl-card class=\"job-card\">\n                  <div slot=\"header\"> <h3>", "</h3></div>\n                  <img src=\"", "/images/", "\" alt=\"", "\" />\n                  <p>", "</p>\n                  <p>Posted by ", "</p>\n                  <div slot=\"footer\"> <p>", "</p></div>\n                </sl-card>\n                \n              "]);
+  const data = _taggedTemplateLiteral(["\n                <sl-card class=\"job-card\">\n                  <div slot=\"header\"> <h3>", "</h3></div>\n                  <img src=\"", "/images/", "\" alt=\"", "\" />\n                  <p>", "</p>\n                  <p>Posted by ", "</p>\n                  <div slot=\"footer\"> <sl-tag type=\"info\">", "</sl-tag></div>\n                </sl-card>\n                \n              "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -14203,7 +14311,7 @@ class jobVacanciesView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.jobs == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.jobs.map(job => (0, _litHtml.html)(_templateObject4(), job.name, _App.default.apiBase, job.image, job.name, job.description, job.displayName == null ? (0, _litHtml.html)(_templateObject5(), job.firstName, job.lastName) : (0, _litHtml.html)(_templateObject6(), job.displayName), job.tag.map()))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.jobs == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.jobs.map(job => (0, _litHtml.html)(_templateObject4(), job.name, _App.default.apiBase, job.image, job.name, job.description, job.displayName == null ? (0, _litHtml.html)(_templateObject5(), job.firstName, job.lastName) : (0, _litHtml.html)(_templateObject6(), job.displayName), job.jobType.map()))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14330,10 +14438,14 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _JobAPI = _interopRequireDefault(require("./../../JobAPI"));
+
+var _Toast = _interopRequireDefault(require("../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>New Job Form</h1>\n          <p>Page content ...</p>\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Job Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Job Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"jobType\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of job</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of job</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of job</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of job</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of job</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of job</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of job</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Post a Job</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14352,6 +14464,79 @@ class newJobView {
     _Utils.default.pageIntroAnim();
   }
 
+  async newJobSubmitHandler(e) {
+    e.preventDefault();
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.setAttribute('loading', '');
+    const formData = e.detail.formData;
+
+    try {
+      await _JobAPI.default.newJob(formData);
+
+      _Toast.default.show('Job added!');
+
+      submitBtn.removeAttribute('loading'); //reset form
+      //reset text + text area inputs
+
+      const textInputs = document.querySelectorAll('sl-input, sl-textarea, sl-select');
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null);
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+
+      submitBtn.removeAttribute('loading');
+    }
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.newJobSubmitHandler, _Auth.default.currentUser._id);
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new newJobView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../JobAPI":"JobAPI.js","../../Toast":"Toast.js"}],"views/pages/newCollaboration.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Post a new collaboration request</h1>\n          <p>This is the page for submitting a new request for collaboration!</p>\n          \n        </div> \n      </div>\n           \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class newCollaborationView {
+  init() {
+    document.title = 'Post Collaboration request';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
   render() {
     const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
     (0, _litHtml.render)(template, _App.default.rootEl);
@@ -14359,7 +14544,107 @@ class newJobView {
 
 }
 
-var _default = new newJobView();
+var _default = new newCollaborationView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newProject.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Post a new project\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Post new project for bidding!</h1>\n          <p>This is the page for new submitting a new project for bidding ...</p>\n          \n        </div> \n      </div>\n           \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class newProjectView {
+  init() {
+    document.title = 'Template';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new newProjectView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newPortfolio.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Submit portfolio piece\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Submit new Portfolio piece</h1>\n          <p>Here is where the user submits a new portfolio piece.</p>\n          \n        </div>\n      </div>      \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class newPortfolioView {
+  init() {
+    document.title = 'Template';
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new newPortfolioView();
 
 exports.default = _default;
 },{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"Router.js":[function(require,module,exports) {
@@ -14398,6 +14683,12 @@ var _collaborations = _interopRequireDefault(require("./views/pages/collaboratio
 
 var _newJob = _interopRequireDefault(require("./views/pages/newJob"));
 
+var _newCollaboration = _interopRequireDefault(require("./views/pages/newCollaboration"));
+
+var _newProject = _interopRequireDefault(require("./views/pages/newProject"));
+
+var _newPortfolio = _interopRequireDefault(require("./views/pages/newPortfolio"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import views
@@ -14410,10 +14701,13 @@ const routes = {
   '/signin': _signin.default,
   '/signup': _signup.default,
   '/profile': _profile.default,
+  '/newPortfolio': _newPortfolio.default,
   '/projects': _projects.default,
+  '/newProject': _newProject.default,
   '/jobs': _jobs.default,
   '/newJob': _newJob.default,
   '/creatives': _creatives.default,
+  '/newCollaboration': _newCollaboration.default,
   '/collaborations': _collaborations.default,
   '/editProfile': _editProfile.default
 };
@@ -14469,7 +14763,7 @@ function anchorRoute(e) {
   const pathname = e.target.closest('a').pathname;
   AppRouter.gotoRoute(pathname);
 }
-},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteUsers":"views/pages/favouriteUsers.js","./views/pages/projects":"views/pages/projects.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js","./views/pages/newJob":"views/pages/newJob.js"}],"App.js":[function(require,module,exports) {
+},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteUsers":"views/pages/favouriteUsers.js","./views/pages/projects":"views/pages/projects.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js","./views/pages/newJob":"views/pages/newJob.js","./views/pages/newCollaboration":"views/pages/newCollaboration.js","./views/pages/newProject":"views/pages/newProject.js","./views/pages/newPortfolio":"views/pages/newPortfolio.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16274,6 +16568,86 @@ var _App = _interopRequireDefault(require("./../App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject10() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Project listing!</sl-menu-item>\n            "]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Job Vacancy post!</sl-menu-item>\n            "]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Collaboration Request!</sl-menu-item>\n            "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Portfolio Piece!</sl-menu-item>\n            "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
   const data = _taggedTemplateLiteral(["\n            <h6 class=\"page-title\">", "</h6>\n          "]);
 
@@ -16285,7 +16659,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Guide page</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/profile\" @click=\"", "\">Profile</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n        <a href=\"#\" @click=\"", "\">Sign Out</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -16347,7 +16721,7 @@ customElements.define('va-app-header', class AppHeader extends _litElement.LitEl
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/guide'), () => (0, _Router.gotoRoute)('/favouriteUsers'), () => (0, _Router.gotoRoute)('/editProfile'), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick, () => _Auth.default.signOut());
+    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newjob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => (0, _Router.gotoRoute)('/favouriteUsers'), () => (0, _Router.gotoRoute)('/editProfile'), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
   }
 
 });
@@ -16468,7 +16842,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56523" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52042" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

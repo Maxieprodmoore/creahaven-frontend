@@ -50,31 +50,38 @@ class GuideView {
             </p>
           </div>
 
+          ${this.user.accessLevel == 1 ? html`
+            <div class="guide-step">
+              <h3>Adding a new portfolio piece</h3>
+              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <p></p>
+            </div>
+          ` : html``}
+
+          ${this.user.accessLevel == 1 ? html`
+            <div class="guide-step">
+              <h3>Adding a new Collaboration invitation</h3>
+              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <p></p>
+            </div>
+          ` : html``}
           
-          <div class="guide-step">
-            <h3>Adding a new portfolio piece</h3>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-            <p></p>
-          </div>
-
-          <div class="guide-step">
-            <h3>Adding a new Collaboration invitation</h3>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-            <p></p>
-          </div>
+          ${this.user.accessLevel == 2 ? html`
+            <div class="guide-step">
+              <h3>Adding a new Job vacancy</h3>
+              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <p></p>
+            </div>
+          ` : html``}
           
-          <div class="guide-step">
-            <h3>Adding a new Job vacancy</h3>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-            <p></p>
-          </div>
-
-          <div class="guide-step">
-            <h4>Adding a new Project for bidding</h4>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-            <P></P>
-          </div>
-
+          ${this.user.accessLevel == 2 ? html`
+            <div class="guide-step">
+              <h4>Adding a new Project for bidding</h4>
+              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <P></P>
+            </div>
+          ` : html``}
+          
           <div class="guide-step">
             <h4>Adding a user to favourites</h4>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">

@@ -4,27 +4,28 @@ import {gotoRoute, anchorRoute} from '../../Router'
 import Auth from '../../Auth'
 import Utils from '../../Utils'
 
-class newPortfolioView {
+class newCollaborationView {
   init(){
-    document.title = 'Template'    
+    document.title = 'Post Collaboration request'    
     this.render()    
     Utils.pageIntroAnim()
   }
 
   render(){
     const template = html`
-      <va-app-header title="Submit portfolio piece" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
+      <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content">        
-          <h1>Submit new Portfolio piece</h1>
-          <p>Here is where the user submits a new portfolio piece.</p>
+          <h1>Post a new collaboration request</h1>
+          <p>This is the page for submitting a new request for collaboration!</p>
           
-        </div>
-      </div>      
+        </div> 
+      </div>
+           
     `
     render(template, App.rootEl)
   }
 }
 
 
-export default new newPortfolioView()
+export default new newCollaborationView()
