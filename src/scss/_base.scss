@@ -155,6 +155,19 @@ a {
 
 }
 
+//profile page
+.profile-grid{
+  display: flexbox;
+  flex-wrap: wrap;
+  width: 100%;
+  .profile-section{
+    width: calc(40% - 1em);
+    margin: 0.5em;
+    padding: 0.25em;
+  }
+
+}
+
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 768px){ 
 
@@ -165,6 +178,14 @@ a {
 
   .page-content{
     margin: 0;
+  }
+
+  .profile-section{
+    width: 100%;
+  }
+
+  .job-card, .portfolio-card{
+    width: 100%;
   }
   
 }

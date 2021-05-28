@@ -35,4 +35,16 @@
   --sl-color-primary-800: #{darken($brand-color, 30%)};
   --sl-color-primary-900: #{darken($brand-color, 40%)};
   --sl-focus-ring-color-primary: #{rgba($brand-color, 0.1)};
+
+  --sl-color-info-50: #f1f1f1;
+  --sl-color-info-100: #{lighten($highlight-color, 40%)};
+  --sl-color-info-200: #{lighten($highlight-color, 30%)};
+  --sl-color-info-300: #{lighten($highlight-color, 20%)};
+  --sl-color-info-400: #{lighten($highlight-color, 10%)};
+  --sl-color-info-500: #{$highlight-color};
+  --sl-color-info-600: #{darken($highlight-color, 10%)};
+  --sl-color-info-700: #{darken($highlight-color, 20%)};
+  --sl-color-info-800: #{darken($highlight-color, 30%)};
+  --sl-color-info-900: #{darken($highlight-color, 40%)};
+  --sl-focus-ring-color-info: #{rgba($highlight-color, 0.1)};
 }

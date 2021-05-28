@@ -22,6 +22,17 @@
   --sl-color-primary-800: #5b3910;
   --sl-color-primary-900: #2f1e09;
   --sl-focus-ring-color-primary: rgba(217, 139, 43, 0.1);
+  --sl-color-info-50: #f1f1f1;
+  --sl-color-info-100: #d3e2ec;
+  --sl-color-info-200: #b0cadc;
+  --sl-color-info-300: #8db3cc;
+  --sl-color-info-400: #6a9bbc;
+  --sl-color-info-500: #4B83A8;
+  --sl-color-info-600: #3b6885;
+  --sl-color-info-700: #2c4c61;
+  --sl-color-info-800: #1c313e;
+  --sl-color-info-900: #0c151b;
+  --sl-focus-ring-color-info: rgba(75, 131, 168, 0.1);
 }
 
 * {
@@ -166,6 +177,17 @@ a {
   margin: 0.5em;
 }
 
+.profile-grid {
+  display: flexbox;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.profile-grid .profile-section {
+  width: calc(40% - 1em);
+  margin: 0.5em;
+  padding: 0.25em;
+}
+
 @media all and (max-width: 768px) {
   .signinup-box {
     width: 90%;
@@ -174,6 +196,14 @@ a {
 
   .page-content {
     margin: 0;
+  }
+
+  .profile-section {
+    width: 100%;
+  }
+
+  .job-card, .portfolio-card {
+    width: 100%;
   }
 }
 .input-group {

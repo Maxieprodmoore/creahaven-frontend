@@ -13821,7 +13821,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n            <h3>Bio</h3>\n            <p>", "</p>\n          "]);
+  const data = _taggedTemplateLiteral(["\n                <h3>Bio</h3>\n                <p>", "</p>\n              "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -13831,7 +13831,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral(["\n          <h2>", " ", "</h2>\n          "]);
+  const data = _taggedTemplateLiteral(["\n              <h2>", " ", "</h2>\n              "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -13841,7 +13841,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n          <h2>", "</h2>\n          "]);
+  const data = _taggedTemplateLiteral(["\n              <h2>", "</h2>\n              "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -13851,7 +13851,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = _taggedTemplateLiteral(["\n          <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\"></sl-avatar>\n          "]);
+  const data = _taggedTemplateLiteral(["\n              <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\"></sl-avatar>\n              "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -13861,7 +13861,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n            <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\" image=", "></sl-avatar>\n          "]);
+  const data = _taggedTemplateLiteral(["\n                <sl-avatar style=\"--size: 200px; margin-bottom: 1em;\" image=", "></sl-avatar>\n              "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -13871,7 +13871,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          ", "\n          ", "\n          \n          <p>", "</p>\n          \n          <p>Updated: ", "</p>\n\n          ", "\n          \n\n          <sl-button @click=", ">Edit Profile</sl-button>\n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-card\">\n              ", "\n              ", "\n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\" @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n           \n            <div class=\"profile-card\">\n              <h4>Portfolio</h4>\n              <p class=\"portfolio-placeholderTxt\">Hi! Your portfolio pieces will go here wen you post them!</p>\n              <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n            </div>\n               \n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -13892,7 +13892,7 @@ class ProfileView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.displayName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), () => (0, _Router.gotoRoute)('/editProfile'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.displayName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/newPortfolio'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -16842,7 +16842,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52042" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57865" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
