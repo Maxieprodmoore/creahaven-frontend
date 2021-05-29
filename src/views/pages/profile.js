@@ -19,7 +19,7 @@ class ProfileView {
       <div class="page-body">
         <div class="page-content calign">
           <div class="profile-grid">
-            <sl-card class="profile-card">
+            <sl-card class="profile-section">
               ${Auth.currentUser && Auth.currentUser.avatar ? html`
                 <sl-avatar style="--size: 200px; margin-bottom: 1em;" image=${(Auth.currentUser && Auth.currentUser.avatar) ? `${App.apiBase}/images/${Auth.currentUser.avatar}` : ''}></sl-avatar>
               `:html`
@@ -39,19 +39,34 @@ class ProfileView {
                 <h3>Bio</h3>
                 <p>${Auth.currentUser.bio}</p>
               `: html``}
+              ${Auth.currentUser.website ? html`
+                <h3>Website:</h3>
+                <p>${Auth.currentUser.website}</p>
+              `: html``}
+
+              <div id="profileSocialsGrid">
+                <sl-button type="default" size="small" circle><sl-icon name="facebook"></sl-icon></sl-button>
+                <sl-button type="default" size="small" circle><sl-icon name="twitter"></sl-icon></sl-button>
+                <sl-button type="default" size="small" circle><sl-icon name="instagram"></sl-icon></sl-button>
+                <sl-button type="default" size="small" circle><sl-icon name="youtube"></sl-icon></sl-button>
+              </div>
               
               <div slot="footer">
-                <sl-button type="info" @click=${()=> gotoRoute('/editProfile')}>Edit Profile</sl-button>
+                <sl-button type="info"  @click=${()=> gotoRoute('/editProfile')}>Edit Profile</sl-button>
               </div>
               
             </sl-card> 
-           
-            <div class="profile-card">
-              <h4>Portfolio</h4>
-              <p class="portfolio-placeholderTxt">Hi! Your portfolio pieces will go here wen you post them!</p>
-              <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
-            </div>
+
+            ${Auth.currentUser.accessLevel == 1 ? html`
+              <sl-card class="profile-section">
+                <div slot="header"><h4>Portfolio</h4>
+                  <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
+                </div>
+                
+                <p class="portfolio-placeholderTxt">Hi! Your portfolio pieces will go here when you post them!</p>
                
+              </sl-card>
+            ` : html``}
             
           </div>  
           

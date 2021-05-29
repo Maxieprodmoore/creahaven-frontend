@@ -7981,7 +7981,7 @@ class GuideView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, this.user.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3()), this.user.accessLevel == 1 ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5()), this.user.accessLevel == 2 ? (0, _litHtml.html)(_templateObject6()) : (0, _litHtml.html)(_templateObject7()), this.user.accessLevel == 2 ? (0, _litHtml.html)(_templateObject8()) : (0, _litHtml.html)(_templateObject9()), () => (0, _Router.gotoRoute)('/'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.firstName, _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5()), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject6()) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject8()) : (0, _litHtml.html)(_templateObject9()), () => (0, _Router.gotoRoute)('/'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -8011,7 +8011,7 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["      \n      <div class=\"page-body\">\n        <div class=\"page-content page-centered\">\n          <div class=\"signinup-box\">\n            <img class=\"signinup-logo\" src=\"/images/creahaven-logo.svg\">          \n            <sl-form class=\"form-signup dark-theme\" @sl-submit=", ">          \n              <div class=\"input-group\">\n                <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n              </div>\n              <sl-button class=\"submit-btn\" type=\"primary\" submit style=\"width: 100%;\">Sign In</sl-button>\n            </sl-form>\n            <p>No Account? <a href=\"/signup\" @click=", ">Sign Up</a></p>\n          </div>\n        </div>\n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["      \n      <div class=\"page-body\">\n        <div class=\"page-content page-centered\">\n          <div class=\"signinup-box\">\n            <img class=\"signinup-logo\" src=\"/images/creahaven-logo.svg\">          \n            <sl-form class=\"form-signup dark-theme\" @sl-submit=", ">          \n              <div class=\"input-group\">\n                <sl-input name=\"email\" type=\"email\" placeholder=\"Email\" required></sl-input>\n              </div>\n              <div class=\"input-group\">\n                <sl-input name=\"password\" type=\"password\" placeholder=\"Password\" required toggle-password></sl-input>\n              </div>\n              <sl-button class=\"submit-btn\" type=\"primary\" submit style=\"width: 100%;\">Sign In</sl-button>\n            </sl-form>\n            <p>No Account? <sl-button class=\"submit-btn\" type=\"info\" style=\"width: 100%;\" @click=", ">Sign Up</sl-button></p>\n          </div>\n        </div>\n      </div>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -8043,7 +8043,7 @@ class SignInView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), this.signInSubmitHandler, _Router.anchorRoute);
+    const template = (0, _litHtml.html)(_templateObject(), this.signInSubmitHandler, () => (0, _Router.gotoRoute)('/signup'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -13810,6 +13810,46 @@ var _moment = _interopRequireDefault(require("moment"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject11() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  const data = _taggedTemplateLiteral(["\n              <sl-card class=\"profile-section\">\n                <div slot=\"header\"><h4>Portfolio</h4>\n                  <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n                </div>\n                \n                <p class=\"portfolio-placeholderTxt\">Hi! Your portfolio pieces will go here when you post them!</p>\n               \n              </sl-card>\n            "]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = _taggedTemplateLiteral(["\n                <h3>Website:</h3>\n                <p>", "</p>\n              "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject7() {
   const data = _taggedTemplateLiteral([""]);
 
@@ -13871,7 +13911,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-card\">\n              ", "\n              ", "\n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\" @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n           \n            <div class=\"profile-card\">\n              <h4>Portfolio</h4>\n              <p class=\"portfolio-placeholderTxt\">Hi! Your portfolio pieces will go here wen you post them!</p>\n              <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n            </div>\n               \n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-section\">\n              ", "\n              ", "\n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              ", "\n\n              <div id=\"profileSocialsGrid\">\n                <sl-button type=\"default\" size=\"small\" circle><sl-icon name=\"facebook\"></sl-icon></sl-button>\n                <sl-button type=\"default\" size=\"small\" circle><sl-icon name=\"twitter\"></sl-icon></sl-button>\n                <sl-button type=\"default\" size=\"small\" circle><sl-icon name=\"instagram\"></sl-icon></sl-button>\n                <sl-button type=\"default\" size=\"small\" circle><sl-icon name=\"youtube\"></sl-icon></sl-button>\n              </div>\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\"  @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            ", "\n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -13892,7 +13932,7 @@ class ProfileView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.displayName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/newPortfolio'));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.displayName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.website ? (0, _litHtml.html)(_templateObject8(), _Auth.default.currentUser.website) : (0, _litHtml.html)(_templateObject9()), () => (0, _Router.gotoRoute)('/editProfile'), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject10(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject11()));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -16842,7 +16882,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57865" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64911" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -183,9 +183,13 @@ a {
   width: 100%;
 }
 .profile-grid .profile-section {
-  width: calc(40% - 1em);
+  width: calc(48% - 1em);
   margin: 0.5em;
-  padding: 0.25em;
+}
+.profile-grid #profileSocialsGrid {
+  display: flexbox;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 @media all and (max-width: 768px) {

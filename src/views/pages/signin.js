@@ -39,7 +39,7 @@ class SignInView {
               </div>
               <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
             </sl-form>
-            <p>No Account? <a href="/signup" @click=${anchorRoute}>Sign Up</a></p>
+            <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${()=> gotoRoute('/signup')}>Sign Up</sl-button></p>
           </div>
         </div>
       </div>
