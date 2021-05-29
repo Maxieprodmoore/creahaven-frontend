@@ -61,14 +61,39 @@ class EditProfileView {
                 <sl-input type="text" name="lastName" value="${this.user.lastName}" placeholder="Last Name"></sl-input>
               </div>
               <div class="input-group">
+                <label>Display Name/ Nickname</label><br>
+                ${(this.user.displayName == null) ? html`
+                <sl-input type="text" name="displayName" value="${this.user.firstName} ${this.user.lastName}" placeholder="Display Name"></sl-input>
+                ` : html `
                 <sl-input type="text" name="displayName" value="${this.user.displayName}" placeholder="Display Name"></sl-input>
+                `} 
               </div>
               <div class="input-group">
                 <sl-input type="text" name="email" value="${this.user.email}" placeholder="Email Address"></sl-input>
               </div> 
               <div class="input-group">
                 <sl-textarea name="bio" rows="4" value="${this.user.bio}" placeholder="Bio"></sl-textarea>
-              </div>           
+              </div>  
+              <div class="input-group">
+                <label>Website URL</label><br>
+                <sl-input type="text" name="website" value="${this.user.website}" placeholder="www.example.com"></sl-input>
+              </div>
+              <div class="input-group">
+                <label>Facebook page</label><br>
+                <sl-input type="text" name="facebook" value="${this.user.facebook}" placeholder="www.facebook.com/example"></sl-input>
+              </div>
+              <div class="input-group">
+                <label>Twitter page</label><br>
+                <sl-input type="text" name="twitter" value="${this.user.twitter}" placeholder="www.twitter.com/example"></sl-input>
+              </div>
+              <div class="input-group">
+                <label>Instagram page</label><br>
+                <sl-input type="text" name="instagram" value="${this.user.instagram}" placeholder="www.instagram.com/example"></sl-input>
+              </div>
+              <div class="input-group">
+                <label>Youtube channel</label><br>
+                <sl-input type="text" name="youtube" value="${this.user.youtube}" placeholder="www.youtube.com/channel/exampleURLCode"></sl-input>
+              </div>         
               <div class="input-group">
                 <label>Avatar</label><br>          
                 ${(this.user.avatar) ? html`

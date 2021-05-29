@@ -6,7 +6,7 @@ import Utils from '../../Utils'
 
 class favouriteUsersView {
   init(){
-    document.title = 'Template'    
+    document.title = 'Favourite Users'    
     this.render()    
     Utils.pageIntroAnim()
   }

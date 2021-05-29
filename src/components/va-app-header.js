@@ -205,7 +205,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
               <sl-menu-item @click="${() => gotoRoute('/newCollaboration')}">Post a new Collaboration Request!</sl-menu-item>
             ` :html``}
             ${this.user.accessLevel == 2 ? html`
-              <sl-menu-item @click="${() => gotoRoute('/newjob')}">Post a new Job Vacancy post!</sl-menu-item>
+              <sl-menu-item @click="${() => gotoRoute('/newJob')}">Post a new Job Vacancy post!</sl-menu-item>
             ` :html``}
             ${this.user.accessLevel == 2 ? html`
               <sl-menu-item @click="${() => gotoRoute('/newProject')}">Post a new Project listing!</sl-menu-item>

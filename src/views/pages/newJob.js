@@ -66,7 +66,7 @@ class newJobView {
               </sl-select>
             </div>
           
-            <sl-button type="primary" size="medium" class="submit-btn" submit>Post a Job</sl-button>
+            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Job Posting!</sl-button>
           </sl-form>        
 
           

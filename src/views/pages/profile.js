@@ -25,11 +25,7 @@ class ProfileView {
               `:html`
               <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>
               `}
-              ${Auth.currentUser.displayName ? html`
               <h2>${Auth.currentUser.displayName}</h2>
-              `: html`
-              <h2>${Auth.currentUser.firstName} ${Auth.currentUser.lastName}</h2>
-              `}
               
               <p>${Auth.currentUser.email}</p>
               
@@ -40,15 +36,22 @@ class ProfileView {
                 <p>${Auth.currentUser.bio}</p>
               `: html``}
               ${Auth.currentUser.website ? html`
-                <h3>Website:</h3>
-                <p>${Auth.currentUser.website}</p>
+                <p><sl-icon name = "link-45deg"></sl-icon> <a href="${Auth.currentUser.website}" target="_blank">${Auth.currentUser.website}</a> </p>
               `: html``}
 
               <div id="profileSocialsGrid">
-                <sl-button type="default" size="small" circle><sl-icon name="facebook"></sl-icon></sl-button>
-                <sl-button type="default" size="small" circle><sl-icon name="twitter"></sl-icon></sl-button>
-                <sl-button type="default" size="small" circle><sl-icon name="instagram"></sl-icon></sl-button>
-                <sl-button type="default" size="small" circle><sl-icon name="youtube"></sl-icon></sl-button>
+                ${Auth.currentUser.facebook ? html`
+                  <sl-button type="default" size="small" circle href="${Auth.currentUser.facebook}" target="_blank"><sl-icon name="facebook"></sl-icon></sl-button>
+                ` : html``}
+                ${Auth.currentUser.twitter ? html`
+                  <sl-button type="default" size="small" circle href="${Auth.currentUser.twitter}" target="_blank"><sl-icon name="twitter"></sl-icon></sl-button>
+                ` : html``}
+                ${Auth.currentUser.instagram ? html`
+                  <sl-button type="default" size="small" circle href=" ${Auth.currentUser.instagram}" target="_blank"><sl-icon name="instagram"></sl-icon></sl-button>
+                ` : html``}
+                ${Auth.currentUser.youtube ? html`
+                  <sl-button type="default" size="small" circle href="${Auth.currentUser.youtube}" target="_blank"><sl-icon name="youtube"></sl-icon></sl-button>
+                ` : html``}
               </div>
               
               <div slot="footer">

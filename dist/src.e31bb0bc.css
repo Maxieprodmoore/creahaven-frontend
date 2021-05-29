@@ -177,6 +177,15 @@ a {
   margin: 0.5em;
 }
 
+.creative-grid {
+  display: flexbox;
+  flex-wrap: wrap;
+}
+.creative-grid .creative-card {
+  width: calc(33.33% - 1em);
+  margin: 0.5em;
+}
+
 .profile-grid {
   display: flexbox;
   flex-wrap: wrap;
