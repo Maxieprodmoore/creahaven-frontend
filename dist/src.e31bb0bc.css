@@ -186,6 +186,14 @@ a {
   margin: 0.5em;
 }
 
+.haircut-dialog {
+  --width: 70%;
+}
+
+.haircut-dialog::part(body) {
+  margin-top: -3em;
+}
+
 .profile-grid {
   display: flexbox;
   flex-wrap: wrap;
@@ -215,8 +223,8 @@ a {
     width: 100%;
   }
 
-  .job-card, .portfolio-card {
-    width: 100%;
+  .job-card, .portfolio-card, .creative-card {
+    width: calc(95% - 1em);
   }
 }
 .input-group {

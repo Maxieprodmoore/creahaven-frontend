@@ -54,7 +54,18 @@ class GuideView {
             <div class="guide-step">
               <h3>Adding a new portfolio piece</h3>
               <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-              <p></p>
+              <p>
+                  1. Select your avatar icon on the header, then select the "User Profile" button.
+                  <br>
+                  2. Scroll down and select the "Post a new Portfolio piece!" button.
+                  <br> 
+                  3. At the add portfolio screen, Fill up the details  accordingly and press the "Submit" button to proceed.
+                  <br> 
+                  4. Repeat the steps as needed. Then press any of the other buttons to leave the page. 
+                  <br>
+                  <br>
+                  With that, You've posted your first portfolio piece to the Creahaven website. Now, clients and collaborators will be able to see if you match what they seek for their projects!
+              </p>
             </div>
           ` : html``}
 
@@ -62,7 +73,20 @@ class GuideView {
             <div class="guide-step">
               <h3>Adding a new Collaboration invitation</h3>
               <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-              <p></p>
+              <p>
+                  1. Select your avatar icon on the header, then select the "User Profile" button.
+                  <br>
+                  2. Scroll down and select the "Edit Portfolio" button.
+                  <br> 
+                  3. At the add portfolio screen, Fill up the details  accordingly and press the "Confirm" button to proceed.
+                  <br> 
+                  4. Click the "Add Portfolio" button to bring up the portfolio submission form again. Repeat the steps as needed.
+                  <br>
+                  <br>
+                  Well done! With that, you've entered in your first portfolio piece. 
+                  <br>
+                  Repeat the steps indicated here to finish adding all your portfolio pieces to your account.
+              </p>
             </div>
           ` : html``}
           
@@ -70,7 +94,20 @@ class GuideView {
             <div class="guide-step">
               <h3>Adding a new Job vacancy</h3>
               <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-              <p></p>
+              <p>
+                  1. Select your avatar icon on the header, then select the "User Profile" button.
+                  <br>
+                  2. Scroll down and select the "Post a new Job vacancy posting!" button.
+                  <br> 
+                  3. At the New Job vacancy screen, Fill up the details  accordingly and press the "Post job" button to proceed.
+                  <br> 
+                  4. Repeat the steps as needed, then return to the job vacancy page via the "Find a job vacancy" button to verify that the post was submitted if necessary.
+                  <br>
+                  <br>
+                  Well done! With that, you've posted your first job vacancy posting. 
+                  <br>
+                  Remember to confirm that you've posted the right contact details so the appropriate talents can contact you!
+              </p>
             </div>
           ` : html``}
           
@@ -78,7 +115,20 @@ class GuideView {
             <div class="guide-step">
               <h4>Adding a new Project for bidding</h4>
               <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-              <P></P>
+              <P>
+                1. Select your avatar icon on the header, then select the "User Profile" button.
+                  <br>
+                  2. Scroll down and select the "Post a new Project posting!" button.
+                  <br> 
+                  3. At the project posting screen, Fill up the details  accordingly and press the "Submit project" button to proceed.
+                  <br> 
+                  4. Repeat the steps as needed, then return to the projects for bidding page via the "Find a Project for bidding!" to verify that the project post was submitted if necessary.
+                  <br>
+                  <br>
+                  Well done! With that, you've entered in your first project posting. 
+                  <br>
+                  Remember to confirm that you've posted the right contact details so the appropriate talents can find you to submit their proposals!
+              </P>
             </div>
           ` : html``}
           

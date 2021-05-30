@@ -36,38 +36,19 @@ class CreativesView {
               <sl-spinner></sl-spinner>
             ` : html`
               ${this.creatives.map(creative => html `
-                <sl-card class="creative-card">
-                  <img
-                    slot = "image"
-                    src="${App.apiBase}/images/${creative.avatar}"
-                    alt="${creative.displayName}'s profile picture"
-                    >
-                    <h2>${creative.displayName}</h2>
-                    <p>${creative.email}</p>
-                    ${creative.bio ? html`
-                      <h3>Bio</h3>
-                      <p>${creative.bio}</p>
-                    `: html``}
-                    ${creative.website ? html`
-                      <p><sl-icon name = "link-45deg"></sl-icon> <a href="${creative.website}" target="_blank">${creative.website}</a> </p>
-                    `: html``}
-
-                    <div id="profileSocialsGrid">
-                      ${creative.facebook ? html`
-                        <sl-button type="default" size="small" circle href="${creative.facebook}" target="_blank"><sl-icon name="facebook"></sl-icon></sl-button>
-                      ` : html``}
-                      ${creative.twitter ? html`
-                        <sl-button type="default" size="small" circle href="${creative.twitter}" target="_blank"><sl-icon name="twitter"></sl-icon></sl-button>
-                      ` : html``}
-                      ${creative.instagram ? html`
-                        <sl-button type="default" size="small" circle href=" ${creative.instagram}" target="_blank"><sl-icon name="instagram"></sl-icon></sl-button>
-                      ` : html``}
-                      ${creative.youtube ? html`
-                        <sl-button type="default" size="small" circle href="${creative.youtube}" target="_blank"><sl-icon name="youtube"></sl-icon></sl-button>
-                      ` : html``}
-                    </div>
-
-                </sl-card>
+              <va-creative class="creative-card"
+                name="${creative.displayName}"
+                email="${creative.email}"
+                image="${creative.avatar}"
+                bio="${creative.bio}"
+                website="${creative.website}"
+                facebook="${creative.facebook}"
+                instagram="${creative.instagram}"
+                twitter="${creative.twitter}"
+                youtube="${creative.youtube}"
+                
+              >
+              </va-creative>
                 
               `)}
             `}

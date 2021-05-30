@@ -25,7 +25,12 @@ class ProfileView {
               `:html`
               <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>
               `}
-              <h2>${Auth.currentUser.displayName}</h2>
+              ${Auth.currentUser.displayName ? html`
+                <h2>${Auth.currentUser.firstName} ${Auth.currentUser.lastName}</h2>
+              ` : html`
+                <h2>${Auth.currentUser.displayName}</h2>
+              `}
+              
               
               <p>${Auth.currentUser.email}</p>
               

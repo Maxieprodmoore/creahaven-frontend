@@ -45,6 +45,8 @@ class HomeView {
             <a href="/jobs" @click="${this.menuClick}"><img class="navBtnImg" src="/images/jobs-button.png"/></a>
             <a href="/projects" @click="${this.menuClick}"><img class="navBtnImg" src="/images/projects-button.png"/></a>
           </div>
+
+          
         </div>
       </div>
       

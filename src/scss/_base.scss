@@ -166,6 +166,15 @@ a {
 
 }
 
+//creatives dialog
+.haircut-dialog{
+  --width: 70%;
+}
+
+.haircut-dialog::part(body){
+  margin-top: -3em;
+}
+
 //profile page
 .profile-grid{
   display: flexbox;
@@ -199,8 +208,8 @@ a {
     width: 100%;
   }
 
-  .job-card, .portfolio-card{
-    width: 100%;
+  .job-card, .portfolio-card, .creative-card{
+    width: calc(95% - 1em);
   }
   
 }

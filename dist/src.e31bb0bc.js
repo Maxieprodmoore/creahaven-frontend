@@ -7680,7 +7680,7 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <style>\n        /*------home navigation buttons ---------*/ \n        .home-navBtn {\n          display: flexbox;\n          flex-wrap: wrap;\n          width: 100%;\n          \n        }\n        .navBtnImg {\n            width: calc(20% - 1em);\n            margin: 0.5em;\n          }\n        /*-------------Responsive design-----------------*/\n        @media all and (max-width: 768px){\n          .navBtnImg{\n            width: calc(100% - 1em);\n          }\n        }\n\n      </style>\n      <va-app-header title=\"Home\" user=", "></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <h1 class=\"anim-in\">Hey ", "!</h1>\n          <img id=\"guide-img\" src=\"/images/introScreen-hero-img.png\" />\n          <div class=\"home-navBtn\">\n            <a href=\"/creatives\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/creatives-button.png\"/></a>\n            <a href=\"/collaborations\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/collaboration-button.png\"/></a>\n            <a href=\"/jobs\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/jobs-button.png\"/></a>\n            <a href=\"/projects\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/projects-button.png\"/></a>\n          </div>\n        </div>\n      </div>\n      \n      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        /*------home navigation buttons ---------*/ \n        .home-navBtn {\n          display: flexbox;\n          flex-wrap: wrap;\n          width: 100%;\n          \n        }\n        .navBtnImg {\n            width: calc(20% - 1em);\n            margin: 0.5em;\n          }\n        /*-------------Responsive design-----------------*/\n        @media all and (max-width: 768px){\n          .navBtnImg{\n            width: calc(100% - 1em);\n          }\n        }\n\n      </style>\n      <va-app-header title=\"Home\" user=", "></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <h1 class=\"anim-in\">Hey ", "!</h1>\n          <img id=\"guide-img\" src=\"/images/introScreen-hero-img.png\" />\n          <div class=\"home-navBtn\">\n            <a href=\"/creatives\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/creatives-button.png\"/></a>\n            <a href=\"/collaborations\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/collaboration-button.png\"/></a>\n            <a href=\"/jobs\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/jobs-button.png\"/></a>\n            <a href=\"/projects\" @click=\"", "\"><img class=\"navBtnImg\" src=\"/images/projects-button.png\"/></a>\n          </div>\n\n          \n        </div>\n      </div>\n      \n      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -7899,7 +7899,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h4>Adding a new Project for bidding</h4>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <P></P>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h4>Adding a new Project for bidding</h4>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <P>\n                1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Project posting!\" button.\n                  <br> \n                  3. At the project posting screen, Fill up the details  accordingly and press the \"Submit project\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the projects for bidding page via the \"Find a Project for bidding!\" to verify that the project post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first project posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can find you to submit their proposals!\n              </P>\n            </div>\n          "]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -7919,7 +7919,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Job vacancy</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Job vacancy</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Job vacancy posting!\" button.\n                  <br> \n                  3. At the New Job vacancy screen, Fill up the details  accordingly and press the \"Post job\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the job vacancy page via the \"Find a job vacancy\" button to verify that the post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've posted your first job vacancy posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can contact you!\n              </p>\n            </div>\n          "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -7939,7 +7939,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Collaboration invitation</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Collaboration invitation</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Edit Portfolio\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Confirm\" button to proceed.\n                  <br> \n                  4. Click the \"Add Portfolio\" button to bring up the portfolio submission form again. Repeat the steps as needed.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first portfolio piece. \n                  <br>\n                  Repeat the steps indicated here to finish adding all your portfolio pieces to your account.\n              </p>\n            </div>\n          "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -7959,7 +7959,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new portfolio piece</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p></p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new portfolio piece</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Portfolio piece!\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Submit\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed. Then press any of the other buttons to leave the page. \n                  <br>\n                  <br>\n                  With that, You've posted your first portfolio piece to the Creahaven website. Now, clients and collaborators will be able to see if you match what they seek for their projects!\n              </p>\n            </div>\n          "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -13832,6 +13832,26 @@ var _moment = _interopRequireDefault(require("moment"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject19() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  const data = _taggedTemplateLiteral(["\n              <sl-card class=\"profile-section\">\n                <div slot=\"header\"><h4>Portfolio</h4>\n                  <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n                </div>\n                \n                <p class=\"portfolio-placeholderTxt\">Hi! Your portfolio pieces will go here when you post them!</p>\n               \n              </sl-card>\n            "]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject17() {
   const data = _taggedTemplateLiteral([""]);
 
@@ -13843,7 +13863,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  const data = _taggedTemplateLiteral(["\n              <sl-card class=\"profile-section\">\n                <div slot=\"header\"><h4>Portfolio</h4>\n                  <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n                </div>\n                \n                <p class=\"portfolio-placeholderTxt\">Hi! Your portfolio pieces will go here when you post them!</p>\n               \n              </sl-card>\n            "]);
+  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"youtube\"></sl-icon></sl-button>\n                "]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -13863,7 +13883,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"youtube\"></sl-icon></sl-button>\n                "]);
+  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\" ", "\" target=\"_blank\"><sl-icon name=\"instagram\"></sl-icon></sl-button>\n                "]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -13883,7 +13903,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\" ", "\" target=\"_blank\"><sl-icon name=\"instagram\"></sl-icon></sl-button>\n                "]);
+  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"twitter\"></sl-icon></sl-button>\n                "]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -13903,7 +13923,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"twitter\"></sl-icon></sl-button>\n                "]);
+  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"facebook\"></sl-icon></sl-button>\n                "]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -13923,7 +13943,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"facebook\"></sl-icon></sl-button>\n                "]);
+  const data = _taggedTemplateLiteral(["\n                <p><sl-icon name = \"link-45deg\"></sl-icon> <a href=\"", "\" target=\"_blank\">", "</a> </p>\n              "]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -13943,7 +13963,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n                <p><sl-icon name = \"link-45deg\"></sl-icon> <a href=\"", "\" target=\"_blank\">", "</a> </p>\n              "]);
+  const data = _taggedTemplateLiteral(["\n                <h3>Bio</h3>\n                <p>", "</p>\n              "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -13953,7 +13973,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral([""]);
+  const data = _taggedTemplateLiteral(["\n                <h2>", "</h2>\n              "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -13963,7 +13983,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <h3>Bio</h3>\n                <p>", "</p>\n              "]);
+  const data = _taggedTemplateLiteral(["\n                <h2>", " ", "</h2>\n              "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -13993,7 +14013,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-section\">\n              ", "\n              <h2>", "</h2>\n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              ", "\n\n              <div id=\"profileSocialsGrid\">\n                ", "\n                ", "\n                ", "\n                ", "\n              </div>\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\"  @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            ", "\n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-section\">\n              ", "\n              ", "\n              \n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              ", "\n\n              <div id=\"profileSocialsGrid\">\n                ", "\n                ", "\n                ", "\n                ", "\n              </div>\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\"  @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            ", "\n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14014,7 +14034,7 @@ class ProfileView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName, _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject5()), _Auth.default.currentUser.website ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.website, _Auth.default.currentUser.website) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.facebook ? (0, _litHtml.html)(_templateObject8(), _Auth.default.currentUser.facebook) : (0, _litHtml.html)(_templateObject9()), _Auth.default.currentUser.twitter ? (0, _litHtml.html)(_templateObject10(), _Auth.default.currentUser.twitter) : (0, _litHtml.html)(_templateObject11()), _Auth.default.currentUser.instagram ? (0, _litHtml.html)(_templateObject12(), _Auth.default.currentUser.instagram) : (0, _litHtml.html)(_templateObject13()), _Auth.default.currentUser.youtube ? (0, _litHtml.html)(_templateObject14(), _Auth.default.currentUser.youtube) : (0, _litHtml.html)(_templateObject15()), () => (0, _Router.gotoRoute)('/editProfile'), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject16(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject17()));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.displayName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.website ? (0, _litHtml.html)(_templateObject8(), _Auth.default.currentUser.website, _Auth.default.currentUser.website) : (0, _litHtml.html)(_templateObject9()), _Auth.default.currentUser.facebook ? (0, _litHtml.html)(_templateObject10(), _Auth.default.currentUser.facebook) : (0, _litHtml.html)(_templateObject11()), _Auth.default.currentUser.twitter ? (0, _litHtml.html)(_templateObject12(), _Auth.default.currentUser.twitter) : (0, _litHtml.html)(_templateObject13()), _Auth.default.currentUser.instagram ? (0, _litHtml.html)(_templateObject14(), _Auth.default.currentUser.instagram) : (0, _litHtml.html)(_templateObject15()), _Auth.default.currentUser.youtube ? (0, _litHtml.html)(_templateObject16(), _Auth.default.currentUser.youtube) : (0, _litHtml.html)(_templateObject17()), () => (0, _Router.gotoRoute)('/editProfile'), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject18(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject19()));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -22387,128 +22407,8 @@ var _bootstrap = require("bootstrap");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject16() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject16 = function _templateObject16() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject15() {
-  const data = _taggedTemplateLiteral(["\n                        <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"youtube\"></sl-icon></sl-button>\n                      "]);
-
-  _templateObject15 = function _templateObject15() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject14() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject14 = function _templateObject14() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject13() {
-  const data = _taggedTemplateLiteral(["\n                        <sl-button type=\"default\" size=\"small\" circle href=\" ", "\" target=\"_blank\"><sl-icon name=\"instagram\"></sl-icon></sl-button>\n                      "]);
-
-  _templateObject13 = function _templateObject13() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject12() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject11() {
-  const data = _taggedTemplateLiteral(["\n                        <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"twitter\"></sl-icon></sl-button>\n                      "]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  const data = _taggedTemplateLiteral(["\n                        <sl-button type=\"default\" size=\"small\" circle href=\"", "\" target=\"_blank\"><sl-icon name=\"facebook\"></sl-icon></sl-button>\n                      "]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  const data = _taggedTemplateLiteral(["\n                      <p><sl-icon name = \"link-45deg\"></sl-icon> <a href=\"", "\" target=\"_blank\">", "</a> </p>\n                    "]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  const data = _taggedTemplateLiteral(["\n                      <h3>Bio</h3>\n                      <p>", "</p>\n                    "]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <sl-card class=\"creative-card\">\n                  <img\n                    slot = \"image\"\n                    src=\"", "/images/", "\"\n                    alt=\"", "'s profile picture\"\n                    >\n                    <h2>", "</h2>\n                    <p>", "</p>\n                    ", "\n                    ", "\n\n                    <div id=\"profileSocialsGrid\">\n                      ", "\n                      ", "\n                      ", "\n                      ", "\n                    </div>\n\n                </sl-card>\n                \n              "]);
+  const data = _taggedTemplateLiteral(["\n              <va-creative class=\"creative-card\"\n                name=\"", "\"\n                email=\"", "\"\n                image=\"", "\"\n                bio=\"", "\"\n                website=\"", "\"\n                facebook=\"", "\"\n                instagram=\"", "\"\n                twitter=\"", "\"\n                youtube=\"", "\"\n                \n              >\n              </va-creative>\n                \n              "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -22571,7 +22471,7 @@ class CreativesView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.creatives == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.creatives.map(creative => (0, _litHtml.html)(_templateObject4(), _App.default.apiBase, creative.avatar, creative.displayName, creative.displayName, creative.email, creative.bio ? (0, _litHtml.html)(_templateObject5(), creative.bio) : (0, _litHtml.html)(_templateObject6()), creative.website ? (0, _litHtml.html)(_templateObject7(), creative.website, creative.website) : (0, _litHtml.html)(_templateObject8()), creative.facebook ? (0, _litHtml.html)(_templateObject9(), creative.facebook) : (0, _litHtml.html)(_templateObject10()), creative.twitter ? (0, _litHtml.html)(_templateObject11(), creative.twitter) : (0, _litHtml.html)(_templateObject12()), creative.instagram ? (0, _litHtml.html)(_templateObject13(), creative.instagram) : (0, _litHtml.html)(_templateObject14()), creative.youtube ? (0, _litHtml.html)(_templateObject15(), creative.youtube) : (0, _litHtml.html)(_templateObject16())))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.creatives == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.creatives.map(creative => (0, _litHtml.html)(_templateObject4(), creative.displayName, creative.email, creative.avatar, creative.bio, creative.website, creative.facebook, creative.instagram, creative.twitter, creative.youtube))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -24809,7 +24709,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Job Vacancy post!</sl-menu-item>\n            "]);
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Job Vacancy posting!</sl-menu-item>\n            "]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -24869,7 +24769,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite users</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -24931,11 +24831,116 @@ customElements.define('va-app-header', class AppHeader extends _litElement.LitEl
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => (0, _Router.gotoRoute)('/favouriteUsers'), () => (0, _Router.gotoRoute)('/editProfile'), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
+    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/favouriteUsers'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
   }
 
 });
-},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","./../Router":"Router.js","./../Auth":"Auth.js","./../App":"App.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","./../Router":"Router.js","./../Auth":"Auth.js","./../App":"App.js"}],"components/va-creative.js":[function(require,module,exports) {
+"use strict";
+
+var _litElement = require("@polymer/lit-element");
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../Router");
+
+var _Auth = _interopRequireDefault(require("../Auth"));
+
+var _App = _interopRequireDefault(require("../App"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n    <style>\n\n      .email{\n        font-style: italic;\n        opacity: 0.8;\n      }\n\n      span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n      .creative-socials{\n        display: flexbox;\n        flex-wrap: wrap;  \n        width: 100%;\n        margin-bottom: 0.25em;\n      }\n\n    </style>\n    <sl-card>\n      <img slot=\"image\" src=\"", "/images/", "\"/>\n      <h2>", "</h2>\n      <h4 class=\"email\">", "</h4>\n      <p>Bio: <span>", "</span></p>\n      <p><sl-icon name = \"link-45deg\"></sl-icon>", "</p>\n      <div class=\"creative-socials\">\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n        <sl-button  href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n      </div>\n      <div slot=\"footer\">\n        <sl-button @click=", ">More Info</sl-button>\n        <sl-icon-button name=\"suit-heart-fill\" label=\"Add to favourites\" @click=", "></sl-icon-button>\n      </div>\n      \n    </sl-card>\n    "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .wrap {\n          display: flex;\n        }\n        .image {\n          width: 40%;\n          padding-left: 1em;\n        }\n        .image img {\n          width: 100%;\n        }\n        .content {\n          padding-right: 1em;\n          width: 60%;\n        }\n\n        .email{\n          font-style: italic;\n          opacity: 0.8;\n        }\n\n        span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n        .creative-socials{\n          display: flexbox;\n          flex-wrap: wrap;  \n          width: 100%;\n          margin-bottom: 0.25em;\n        }\n      </style>\n      <div class=\"wrap\">\n        <div class=\"image\">\n          <img src=\"", "/images/", "\" alt=\"", "\" />\n          <h2>", "</h2>\n          <h4 class=\"email\">", "</h4>\n          <p>Bio: <span>", "</span></p>\n          <p><sl-icon name = \"link-45deg\"></sl-icon>", "</p>\n          <div class=\"creative-socials\">\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n            <sl-button  href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n          </div>\n          <br>\n          <div slot=\"footer\">\n            <sl-button @click=", ">\n              <sl-icon slot=\"prefix\" name=\"heart-fill\"></sl-icon>\n              Add to Favourites\n            </sl-button>\n          </div>\n        </div>\n        <div class=\"content\">\n        </div>\n        \n      </div>\n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+customElements.define('va-creative', class Creative extends _litElement.LitElement {
+  constructor() {
+    super();
+  }
+
+  static get properties() {
+    return {
+      name: {
+        type: String
+      },
+      email: {
+        type: String
+      },
+      image: {
+        type: String
+      },
+      bio: {
+        type: String
+      },
+      website: {
+        type: String
+      },
+      facebook: {
+        type: String
+      },
+      twitter: {
+        type: String
+      },
+      instagram: {
+        type: String
+      },
+      youtube: {
+        type: String
+      }
+    };
+  }
+
+  firstUpdated() {
+    super.firstUpdated();
+  }
+
+  moreInfoHandler() {
+    //create sl-dialog
+    const dialogEl = document.createElement('sl-dialog'); //add class name
+
+    dialogEl.className = 'haircut-dialog'; // sl-dialog content
+
+    const dialogContent = (0, _litElement.html)(_templateObject(), _App.default.apiBase, this.image, this.name, this.name, this.email, this.bio, this.website, this.facebook, this.instagram, this.twitter, this.youtube, this.addFavHandler.bind(this));
+    (0, _litHtml.render)(dialogContent, dialogEl); // append to body 
+
+    document.body.append(dialogEl); // show sl-dialog
+
+    dialogEl.show(); // hide dialogEl on closing
+
+    dialogEl.addEventListener('sl-after-hide', () => {
+      dialogEl.remove();
+    });
+  }
+
+  addFavHandler() {
+    alert("Add to favourites");
+  }
+
+  render() {
+    return (0, _litElement.html)(_templateObject2(), _App.default.apiBase, this.image, this.name, this.email, this.bio, this.website, this.facebook, this.instagram, this.twitter, this.youtube, this.moreInfoHandler.bind(this), this.addFavHandler.bind(this));
+  }
+
+});
+},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","lit-html":"../node_modules/lit-html/lit-html.js","../Router":"Router.js","../Auth":"Auth.js","../App":"App.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -25014,6 +25019,8 @@ var _App = _interopRequireDefault(require("./App.js"));
 
 require("./components/va-app-header");
 
+require("./components/va-creative");
+
 require("./scss/master.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25024,7 +25031,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 document.addEventListener('DOMContentLoaded', () => {
   _App.default.init();
 });
-},{"./App.js":"App.js","./components/va-app-header":"components/va-app-header.js","./scss/master.scss":"scss/master.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./App.js":"App.js","./components/va-app-header":"components/va-app-header.js","./components/va-creative":"components/va-creative.js","./scss/master.scss":"scss/master.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -25052,7 +25059,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55938" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65524" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

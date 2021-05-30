@@ -197,6 +197,8 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
           </a>
           <sl-menu>            
             <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
+            <sl-menu-item @click="${() => gotoRoute('/editProfile')}">Edit Profile</sl-menu-item>
+            <sl-menu-item @click="${() => gotoRoute('/favouriteUsers')}">Favourite users</sl-menu-item>
             <sl-menu-divider></sl-menu-divider>
             ${this.user.accessLevel == 1 ? html`
               <sl-menu-item @click="${() => gotoRoute('/newPortfolio')}">Post a new Portfolio Piece!</sl-menu-item>
@@ -205,14 +207,12 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
               <sl-menu-item @click="${() => gotoRoute('/newCollaboration')}">Post a new Collaboration Request!</sl-menu-item>
             ` :html``}
             ${this.user.accessLevel == 2 ? html`
-              <sl-menu-item @click="${() => gotoRoute('/newJob')}">Post a new Job Vacancy post!</sl-menu-item>
+              <sl-menu-item @click="${() => gotoRoute('/newJob')}">Post a new Job Vacancy posting!</sl-menu-item>
             ` :html``}
             ${this.user.accessLevel == 2 ? html`
               <sl-menu-item @click="${() => gotoRoute('/newProject')}">Post a new Project listing!</sl-menu-item>
             ` :html``}
             <sl-menu-divider></sl-menu-divider>
-            <sl-menu-item @click="${() => gotoRoute('/favouriteUsers')}">Favourite users</sl-menu-item>
-            <sl-menu-item @click="${() => gotoRoute('/editProfile')}">Edit Profile</sl-menu-item>
             <sl-menu-item @click="${() => Auth.signOut()}">Sign Out</sl-menu-item>
           </sl-menu>
         </sl-dropdown>
