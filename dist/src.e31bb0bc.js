@@ -13810,7 +13810,51 @@ var global = arguments[3];
 
 })));
 
-},{}],"views/pages/profile.js":[function(require,module,exports) {
+},{}],"PortfolioAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class PortfolioAPI {
+  async getPortfolioPs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/portfolio"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting haircuts');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new PortfolioAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/profile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13829,6 +13873,10 @@ var _Auth = _interopRequireDefault(require("./../../Auth"));
 var _Utils = _interopRequireDefault(require("./../../Utils"));
 
 var _moment = _interopRequireDefault(require("moment"));
+
+var _PortfolioAPI = _interopRequireDefault(require("./../../PortfolioAPI"));
+
+var _Toast = _interopRequireDefault(require("./../../Toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14028,9 +14076,21 @@ class ProfileView {
   init() {
     console.log('ProfileView.init');
     document.title = 'Profile';
+    this.portfolioPs = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
+
+    this.getPortfolioPs();
+  }
+
+  async getPortfolioPs() {
+    try {
+      this.portfolioPs = await _PortfolioAPI.default.getPortfolioPs();
+      console.log(this.portfolioPs);
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+    }
   }
 
   render() {
@@ -14043,7 +14103,7 @@ class ProfileView {
 var _default = new ProfileView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
+},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js","./../../PortfolioAPI":"PortfolioAPI.js","./../../Toast":"Toast.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25059,7 +25119,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65524" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58134" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
