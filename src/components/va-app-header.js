@@ -198,7 +198,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
           <sl-menu>            
             <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
             <sl-menu-item @click="${() => gotoRoute('/editProfile')}">Edit Profile</sl-menu-item>
-            <sl-menu-item @click="${() => gotoRoute('/favouriteUsers')}">Favourite users</sl-menu-item>
+            <sl-menu-item @click="${() => gotoRoute('/favouriteCreatives')}">Favourite Creatives</sl-menu-item>
             <sl-menu-divider></sl-menu-divider>
             ${this.user.accessLevel == 1 ? html`
               <sl-menu-item @click="${() => gotoRoute('/newPortfolio')}">Post a new Portfolio Piece!</sl-menu-item>

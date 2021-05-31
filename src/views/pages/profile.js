@@ -21,6 +21,7 @@ class ProfileView {
     try{
       this.portfolioPs = await PortfolioAPI.getPortfolioPs()
       console.log(this.portfolioPs)
+      this.render()
     }catch(err){
       Toast.show(err, 'error')
     }
@@ -80,14 +81,36 @@ class ProfileView {
 
             ${Auth.currentUser.accessLevel == 1 ? html`
               <sl-card class="profile-section">
-                <div slot="header"><h4>Portfolio</h4>
+                <div slot="header"><h3>Portfolio</h3>
                   <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
                 </div>
+                ${this.portfolioPs == null ? html `
+                  <sl-spinner></sl-spinner>
+                ` : html`
+                  ${this.portfolioPs.map(portfolioPs => html `
+                    <sl-card class="portfolio-card">
+                        <img 
+                          slot="image" 
+                          src="${App.apiBase}/images/${portfolioPs.image}" 
+                          alt="${portfolioPs.name}"
+                        >
+                        <h3>${portfolioPs.name}</h3>
+                        <p>${portfolioPs.description}</p>
+                        <div slot="footer">
+                          <sl-tag type="info" size="small">${portfolioPs.tag}</sl-tag>
+                          <p >By ${portfolioPs.user.displayName}</p>
+                        </div>
+                        
+
+
+                    </sl-card>
+                  `)}
+                  
+                `}
                 
-                <p class="portfolio-placeholderTxt">Hi! Your portfolio pieces will go here when you post them!</p>
                
               </sl-card>
-            ` : html``}
+            `: html``}
             
           </div>  
           

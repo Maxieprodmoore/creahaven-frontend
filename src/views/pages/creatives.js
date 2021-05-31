@@ -4,7 +4,7 @@ import {gotoRoute, anchorRoute} from '../../Router'
 import Auth from '../../Auth'
 import Utils from '../../Utils'
 import UserAPI from './../../UserAPI'
-import { Toast } from 'bootstrap'
+import Toast from '../../Toast'
 
 class CreativesView {
   init(){
@@ -37,6 +37,7 @@ class CreativesView {
             ` : html`
               ${this.creatives.map(creative => html `
               <va-creative class="creative-card"
+                id="${creative._id}"
                 name="${creative.displayName}"
                 email="${creative.email}"
                 image="${creative.avatar}"
@@ -46,7 +47,7 @@ class CreativesView {
                 instagram="${creative.instagram}"
                 twitter="${creative.twitter}"
                 youtube="${creative.youtube}"
-                
+
               >
               </va-creative>
                 

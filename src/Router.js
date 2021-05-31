@@ -6,7 +6,7 @@ import signinView from './views/pages/signin'
 import signupView from './views/pages/signup'
 import profileView from './views/pages/profile'
 import editProfileView from './views/pages/editProfile'
-import favouriteUsersView from './views/pages/favouriteUsers'
+import favouriteCreativesView from './views/pages/favouriteCreatives'
 import projectsView from './views/pages/projects'
 import jobsView from './views/pages/jobs'
 import creativesView from './views/pages/creatives'
@@ -20,7 +20,7 @@ import newPortfolioView from './views/pages/newPortfolio'
 const routes = {
 	'/': homeView,	
 	'404' : fourOFourView,
-	'/favouriteUsers' : favouriteUsersView,
+	'/favouriteCreatives' : favouriteCreativesView,
 	'/guide' : guideView,
 	'/signin': signinView,
 	'/signup': signupView,

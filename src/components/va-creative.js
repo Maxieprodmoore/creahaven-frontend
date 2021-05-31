@@ -3,6 +3,8 @@ import {render} from 'lit-html'
 import {anchorRoute, gotoRoute} from '../Router'
 import Auth from '../Auth'
 import App from '../App'
+import UserAPI from './../UserAPI'
+import Toast from './../Toast'
 
 customElements.define('va-creative', class Creative extends LitElement {
   constructor(){
@@ -11,6 +13,10 @@ customElements.define('va-creative', class Creative extends LitElement {
 
   static get properties(){
     return {
+      id: {
+        type: String
+      },
+
       name: {
         type: String
       },
@@ -99,7 +105,7 @@ customElements.define('va-creative', class Creative extends LitElement {
           <h2>${this.name}</h2>
           <h4 class="email">${this.email}</h4>
           <p>Bio: <span>${this.bio}</span></p>
-          <p><sl-icon name = "link-45deg"></sl-icon>${this.website}</p>
+          <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
           <div class="creative-socials">
             <sl-button href="${this.facebook}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
             <sl-button href="${this.instagram}" target="_blank" size="medium" circle> <sl-icon name="instagram"></sl-icon></sl-button>
@@ -134,8 +140,13 @@ customElements.define('va-creative', class Creative extends LitElement {
 
   }
 
-  addFavHandler(){
-    alert("Add to favourites")
+  async addFavHandler(){    
+    try {
+      await UserAPI.addFavCreative(this.id)
+      Toast.show('Creative added to favourites')
+    }catch(err){
+      Toast.show(err, 'error')
+    }
   }
 
   
@@ -168,7 +179,7 @@ customElements.define('va-creative', class Creative extends LitElement {
       <h2>${this.name}</h2>
       <h4 class="email">${this.email}</h4>
       <p>Bio: <span>${this.bio}</span></p>
-      <p><sl-icon name = "link-45deg"></sl-icon>${this.website}</p>
+      <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
       <div class="creative-socials">
         <sl-button href="${this.facebook}" target="_blank" size="small" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
         <sl-button href="${this.instagram}" target="_blank" size="small" circle> <sl-icon name="instagram"></sl-icon></sl-button>

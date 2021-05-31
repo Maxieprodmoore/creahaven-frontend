@@ -139,7 +139,7 @@ a {
 
 .signinup-box,
 .signup-box {
-  max-width: 320px;
+  max-width: 400px;
   text-align: center;
 }
 
@@ -208,6 +208,10 @@ a {
   flex-wrap: wrap;
   width: 100%;
 }
+.profile-grid .portfolio-card {
+  width: calc(33.33% - 0.25em);
+  margin: 0.125em;
+}
 
 @media all and (max-width: 768px) {
   .signinup-box {
@@ -223,7 +227,7 @@ a {
     width: 100%;
   }
 
-  .job-card, .portfolio-card, .creative-card {
+  .job-card, .portfolio-card, .creative-card, .portfolio-card {
     width: calc(95% - 1em);
   }
 }
