@@ -19,11 +19,22 @@ class newPortfolioView {
     submitBtn.setAttribute('loading', '')    
     const formData = e.detail.formData
 
+    console.log(formData)
+
     try{
       await PortfolioAPI.newPortfolioP(formData)
       Toast.show('Portfolio piece added!')
+      submitBtn.removeAttribute('loading')
       //reset form
-
+        //reset text inputs
+        const textInputs = document.querySelectorAll('sl-input, sl-textarea')
+        if(textInputs) textInputs.forEach(textInputs => textInputs.value = null)
+        //Reset sl-select 
+        const choiceSelect = document.querySelector('sl-select')
+        if(choiceSelect) choiceSelect.value = null
+        //Reset file input
+        const fileInput = document.querySelector('input[type=file]')
+        if(fileInput) fileInput.value = null
     }catch(err){
       Toast.show(err, 'error')
       submitBtn.removeAttribute('loading')
@@ -38,10 +49,10 @@ class newPortfolioView {
       <div class="page-body">
         <div class="page-content">        
           <h1>Submit New Portfolio piece</h1>
-          <sl-form class="form-signup" @sl-submit=${this.newPortfolioSubmitHandler}>
+          <sl-form class="page-form" @sl-submit=${this.newPortfolioSubmitHandler}>
             <input type="hidden" name="user" value="${Auth.currentUser._id}" />
             <div class="input-group" style="margin-bottom: 2em;">
-              <label>Image</label><br>
+              <label>Image (For Preview)</label><br>
               <input type="file" name="image" />              
             </div>
             <div class="input-group">
@@ -51,7 +62,7 @@ class newPortfolioView {
               <sl-textarea name="description" rows="3" placeholder="Description"></sl-textarea>
             </div>
             <div class="input-group" >
-              <sl-select placeholder="Genre of portfolio piece" multiple clearable required>
+              <sl-select placeholder="Genre of portfolio piece" multiple clearable hoist required>
                 <sl-menu-item value="photography">Photography</sl-menu-item>
                 <sl-menu-item value="illustration">Illustration</sl-menu-item>
                 <sl-menu-item value="writing">Writing</sl-menu-item>

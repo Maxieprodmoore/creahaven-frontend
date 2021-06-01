@@ -43,7 +43,7 @@ class PortfolioAPI {
         message = err.message
       }      
       // throw error (exit this function)      
-      throw new Error('Problem creating portfolio piece')
+      throw new Error(message)
     }
     
     // convert response payload into json - store as data

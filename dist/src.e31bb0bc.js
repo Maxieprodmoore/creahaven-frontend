@@ -13897,7 +13897,7 @@ class PortfolioAPI {
       } // throw error (exit this function)      
 
 
-      throw new Error('Problem creating portfolio piece');
+      throw new Error(message);
     } // convert response payload into json - store as data
 
 
@@ -14506,6 +14506,28 @@ var _Toast = _interopRequireDefault(require("./Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class JobAPI {
+  async getJobs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/job"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting job postings');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
   async newJob(formData) {
     // send fetch request
     const response = await fetch("".concat(_App.default.apiBase, "/job"), {
@@ -14525,29 +14547,7 @@ class JobAPI {
       } // throw error (exit this function)      
 
 
-      throw new Error('Problem creating job post');
-    } // convert response payload into json - store as data
-
-
-    const data = await response.json(); // return data
-
-    return data;
-  }
-
-  async getJobs() {
-    // fetch the json data
-    const response = await fetch("".concat(_App.default.apiBase, "/job"), {
-      headers: {
-        "Authorization": "Bearer ".concat(localStorage.accessToken)
-      }
-    }); // if response not ok
-
-    if (!response.ok) {
-      // console log error
-      const err = await response.json();
-      if (err) console.log(err); // throw error (exit this function)      
-
-      throw new Error('Problem getting job postings');
+      throw new Error(message);
     } // convert response payload into json - store as data
 
 
@@ -14586,7 +14586,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["", ""]);
+  const data = _taggedTemplateLiteral(["\n                <va-postings class=\"job-card\"\n                 image = \"", "\"\n                 name = \"", "\"\n                 description = \"", "\"\n                 user = \"", "\"\n                 tag = \"", "\"\n                > </va-postings>\n              "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -14596,7 +14596,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral(["", " ", ""]);
+  const data = _taggedTemplateLiteral(["\n              ", "\n            "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -14606,7 +14606,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <sl-card class=\"job-card\">\n                  <div slot=\"header\"> <h3>", "</h3></div>\n                  <img src=\"", "/images/", "\" alt=\"", "\" />\n                  <p>", "</p>\n                  <p>Posted by ", "</p>\n                  <div slot=\"footer\"> <sl-tag type=\"info\">", "</sl-tag></div>\n                </sl-card>\n                \n              "]);
+  const data = _taggedTemplateLiteral(["\n              <sl-spinner></sl-spinner>\n            "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -14616,7 +14616,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = _taggedTemplateLiteral(["\n              ", "\n            "]);
+  const data = _taggedTemplateLiteral([""]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -14626,7 +14626,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n              <sl-spinner></sl-spinner>\n            "]);
+  const data = _taggedTemplateLiteral(["\n                <sl-button type=\"primary\" @click=\"", "\">Create a New Job Vacancy Posting!</sl-button>\n            "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -14636,7 +14636,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <div class= \"jobs-grid\">\n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n          <div class= \"jobs-grid\">\n            <h1 class=\"anim-in\">Job Vacancies</h1>\n            ", "\n          </div>\n          \n          <div class= \"jobs-grid\">\n            \n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14669,7 +14669,7 @@ class jobVacanciesView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.jobs == null ? (0, _litHtml.html)(_templateObject2()) : (0, _litHtml.html)(_templateObject3(), this.jobs.map(job => (0, _litHtml.html)(_templateObject4(), job.name, _App.default.apiBase, job.image, job.name, job.description, job.displayName == null ? (0, _litHtml.html)(_templateObject5(), job.firstName, job.lastName) : (0, _litHtml.html)(_templateObject6(), job.displayName), job.jobType.map()))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litHtml.html)(_templateObject3()), this.jobs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.jobs.map(job => (0, _litHtml.html)(_templateObject6(), job.image, job.name, job.description, job.user.displayName, job.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14850,7 +14850,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Job Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Job Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"jobType\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of job</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of job</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of job</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of job</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of job</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of job</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of job</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Job Posting!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Job Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Job Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Job Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of job</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of job</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of job</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of job</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of job</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of job</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of job</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Job Posting!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14874,17 +14874,21 @@ class newJobView {
     const submitBtn = document.querySelector('.submit-btn');
     submitBtn.setAttribute('loading', '');
     const formData = e.detail.formData;
+    console.log(formData);
 
     try {
       await _JobAPI.default.newJob(formData);
 
-      _Toast.default.show('Job added!');
+      _Toast.default.show('Job Posting added!');
 
       submitBtn.removeAttribute('loading'); //reset form
       //reset text + text area inputs
 
-      const textInputs = document.querySelectorAll('sl-input, sl-textarea, sl-select');
-      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null);
+      const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset file input
+
+      const fileInput = document.querySelector('input[type=file]');
+      if (fileInput) fileInput.value = null;
     } catch (err) {
       _Toast.default.show(err, 'error');
 
@@ -15027,7 +15031,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Submit New Portfolio Piece\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Submit New Portfolio piece</h1>\n          <sl-form class=\"form-signup\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Portfolio piece Title\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-textarea name=\"description\" rows=\"3\" placeholder=\"Description\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" >\n              <sl-select placeholder=\"Genre of portfolio piece\" multiple clearable required>\n                <sl-menu-item value=\"photography\">Photography</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing</sl-menu-item>\n                <sl-menu-item value=\"fan-art\">Fan-art</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production material</sl-menu-item>\n                <sl-menu-item value=\"production\">Production material</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production material</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"voice-over\">Voice-over related</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Game production related</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website development</sl-menu-item>\n                <sl-menu-item value=\"2d-art\">2D art</sl-menu-item>\n                <sl-menu-item value=\"3d-art\">3D art</sl-menu-item>\n                <sl-menu-item value=\"others\">Others (Please elaborate in the desciption above)</sl-menu-item>\n              </sl-select>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 1em;\">\n              <label>Link to that piece outside the website.</label><br>\n              <sl-textarea name=\"link\" rows=\"1\" placeholder=\"www.example.com\"></sl-textarea>\n            </div>\n            \n            <sl-button type=\"primary\" class=\"submit-btn\" submit size=\"medium\" style=\"width: 100%;\">Add Portfolio piece</sl-button>\n          </sl-form> \n          \n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Submit New Portfolio Piece\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Submit New Portfolio piece</h1>\n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image (For Preview)</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Portfolio piece Title\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-textarea name=\"description\" rows=\"3\" placeholder=\"Description\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" >\n              <sl-select placeholder=\"Genre of portfolio piece\" multiple clearable hoist required>\n                <sl-menu-item value=\"photography\">Photography</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing</sl-menu-item>\n                <sl-menu-item value=\"fan-art\">Fan-art</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production material</sl-menu-item>\n                <sl-menu-item value=\"production\">Production material</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production material</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"voice-over\">Voice-over related</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Game production related</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website development</sl-menu-item>\n                <sl-menu-item value=\"2d-art\">2D art</sl-menu-item>\n                <sl-menu-item value=\"3d-art\">3D art</sl-menu-item>\n                <sl-menu-item value=\"others\">Others (Please elaborate in the desciption above)</sl-menu-item>\n              </sl-select>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 1em;\">\n              <label>Link to that piece outside the website.</label><br>\n              <sl-textarea name=\"link\" rows=\"1\" placeholder=\"www.example.com\"></sl-textarea>\n            </div>\n            \n            <sl-button type=\"primary\" class=\"submit-btn\" submit size=\"medium\" style=\"width: 100%;\">Add Portfolio piece</sl-button>\n          </sl-form> \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15051,12 +15055,24 @@ class newPortfolioView {
     const submitBtn = document.querySelector('.submit-btn');
     submitBtn.setAttribute('loading', '');
     const formData = e.detail.formData;
+    console.log(formData);
 
     try {
       await _PortfolioAPI.default.newPortfolioP(formData);
 
-      _Toast.default.show('Portfolio piece added!'); //reset form
+      _Toast.default.show('Portfolio piece added!');
 
+      submitBtn.removeAttribute('loading'); //reset form
+      //reset text inputs
+
+      const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset sl-select 
+
+      const choiceSelect = document.querySelector('sl-select');
+      if (choiceSelect) choiceSelect.value = null; //Reset file input
+
+      const fileInput = document.querySelector('input[type=file]');
+      if (fileInput) fileInput.value = null;
     } catch (err) {
       _Toast.default.show(err, 'error');
 
@@ -17171,8 +17187,168 @@ var _Toast = _interopRequireDefault(require("./../Toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject18() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  const data = _taggedTemplateLiteral(["\n          <sl-button  href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n        "]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  const data = _taggedTemplateLiteral(["\n          <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n        "]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  const data = _taggedTemplateLiteral(["\n          <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n        "]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  const data = _taggedTemplateLiteral(["\n          <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n        "]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  const data = _taggedTemplateLiteral(["\n    <style>\n\n      .email{\n        font-style: italic;\n        opacity: 0.8;\n      }\n\n      span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n      .creative-socials{\n        display: flexbox;\n        flex-wrap: wrap;  \n        width: 100%;\n        margin-bottom: 0.25em;\n      }\n\n    </style>\n    <sl-card>\n      <img slot=\"image\" src=\"", "/images/", "\"/>\n      <h2>", "</h2>\n      <h4 class=\"email\">", "</h4>\n      <p>Bio: <span>", "</span></p>\n      <p><sl-icon name = \"link-45deg\"></sl-icon><a href=\"", "\" target=\"_blank\">", "</a> </p>\n      <div class=\"creative-socials\">\n        ", "\n        ", "        \n        ", "        \n        ", "\n        \n      </div>\n      <div slot=\"footer\">\n        <sl-button @click=", ">More Info</sl-button>\n        <sl-icon-button name=\"suit-heart-fill\" label=\"Add to favourites\" @click=", "></sl-icon-button>\n      </div>\n      \n    </sl-card>\n    "]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  const data = _taggedTemplateLiteral(["\n              <sl-button  href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n            "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n              <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n            "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n              <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n            "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n    <style>\n\n      .email{\n        font-style: italic;\n        opacity: 0.8;\n      }\n\n      span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n      .creative-socials{\n        display: flexbox;\n        flex-wrap: wrap;  \n        width: 100%;\n        margin-bottom: 0.25em;\n      }\n\n    </style>\n    <sl-card>\n      <img slot=\"image\" src=\"", "/images/", "\"/>\n      <h2>", "</h2>\n      <h4 class=\"email\">", "</h4>\n      <p>Bio: <span>", "</span></p>\n      <p><sl-icon name = \"link-45deg\"></sl-icon><a href=\"", "\" target=\"_blank\">", "</a> </p>\n      <div class=\"creative-socials\">\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n        <sl-button href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n        <sl-button  href=\"", "\" target=\"_blank\" size=\"small\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n      </div>\n      <div slot=\"footer\">\n        <sl-button @click=", ">More Info</sl-button>\n        <sl-icon-button name=\"suit-heart-fill\" label=\"Add to favourites\" @click=", "></sl-icon-button>\n      </div>\n      \n    </sl-card>\n    "]);
+  const data = _taggedTemplateLiteral(["\n              <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n            "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -17182,7 +17358,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <style>\n        .wrap {\n          display: flex;\n        }\n        .image {\n          width: 40%;\n          padding-left: 1em;\n        }\n        .image img {\n          width: 100%;\n        }\n        .content {\n          padding-right: 1em;\n          width: 60%;\n        }\n\n        .email{\n          font-style: italic;\n          opacity: 0.8;\n        }\n\n        span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n        .creative-socials{\n          display: flexbox;\n          flex-wrap: wrap;  \n          width: 100%;\n          margin-bottom: 0.25em;\n        }\n      </style>\n      <div class=\"wrap\">\n        <div class=\"image\">\n          <img src=\"", "/images/", "\" alt=\"", "\" />\n          <h2>", "</h2>\n          <h4 class=\"email\">", "</h4>\n          <p>Bio: <span>", "</span></p>\n          <p><sl-icon name = \"link-45deg\"></sl-icon><a href=\"", "\" target=\"_blank\">", "</a> </p>\n          <div class=\"creative-socials\">\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"facebook\"></sl-icon> </sl-button>\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"instagram\"></sl-icon></sl-button>\n            <sl-button href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"twitter\"></sl-icon> </sl-button>\n            <sl-button  href=\"", "\" target=\"_blank\" size=\"medium\" circle> <sl-icon name=\"youtube\"></sl-icon> </sl-button>\n          </div>\n          <br>\n          <div slot=\"footer\">\n            <sl-button @click=", ">\n              <sl-icon slot=\"prefix\" name=\"heart-fill\"></sl-icon>\n              Add to Favourites\n            </sl-button>\n          </div>\n        </div>\n        <div class=\"content\">\n        </div>\n        \n      </div>\n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .wrap {\n          display: flex;\n        }\n        .image {\n          width: 40%;\n          padding-left: 1em;\n        }\n        .image img {\n          width: 100%;\n        }\n        .content {\n          padding-right: 1em;\n          width: 60%;\n        }\n\n        .email{\n          font-style: italic;\n          opacity: 0.8;\n        }\n\n        span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n        .creative-socials{\n          display: flexbox;\n          flex-wrap: wrap;  \n          width: 100%;\n          margin-bottom: 0.25em;\n        }\n      </style>\n      <div class=\"wrap\">\n        <div class=\"image\">\n          <img src=\"", "/images/", "\" alt=\"", "\" />\n          <h2>", "</h2>\n          <h4 class=\"email\">", "</h4>\n          <p>Bio: <span>", "</span></p>\n          <p><sl-icon name = \"link-45deg\"></sl-icon><a href=\"", "\" target=\"_blank\">", "</a> </p>\n          <div class=\"creative-socials\">\n            ", "\n            ", "            \n            ", "            \n            ", "            \n          </div>\n          <br>\n          <div slot=\"footer\">\n            <sl-button @click=", ">\n              <sl-icon slot=\"prefix\" name=\"heart-fill\"></sl-icon>\n              Add to Favourites\n            </sl-button>\n          </div>\n        </div>\n        <div class=\"content\">\n        </div>\n        \n      </div>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -17241,9 +17417,9 @@ customElements.define('va-creative', class Creative extends _litElement.LitEleme
     //create sl-dialog
     const dialogEl = document.createElement('sl-dialog'); //add class name
 
-    dialogEl.className = 'haircut-dialog'; // sl-dialog content
+    dialogEl.className = 'creatives-dialog'; // sl-dialog content
 
-    const dialogContent = (0, _litElement.html)(_templateObject(), _App.default.apiBase, this.image, this.name, this.name, this.email, this.bio, this.website, this.website, this.facebook, this.instagram, this.twitter, this.youtube, this.addFavHandler.bind(this));
+    const dialogContent = (0, _litElement.html)(_templateObject(), _App.default.apiBase, this.image, this.name, this.name, this.email, this.bio, this.website, this.website, this.facebook ? (0, _litElement.html)(_templateObject2(), this.facebook) : (0, _litElement.html)(_templateObject3()), this.facebook ? (0, _litElement.html)(_templateObject4(), this.instagram) : (0, _litElement.html)(_templateObject5()), this.facebook ? (0, _litElement.html)(_templateObject6(), this.twitter) : (0, _litElement.html)(_templateObject7()), this.facebook ? (0, _litElement.html)(_templateObject8(), this.youtube) : (0, _litElement.html)(_templateObject9()), this.addFavHandler.bind(this));
     (0, _litHtml.render)(dialogContent, dialogEl); // append to body 
 
     document.body.append(dialogEl); // show sl-dialog
@@ -17266,11 +17442,163 @@ customElements.define('va-creative', class Creative extends _litElement.LitEleme
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject2(), _App.default.apiBase, this.image, this.name, this.email, this.bio, this.website, this.website, this.facebook, this.instagram, this.twitter, this.youtube, this.moreInfoHandler.bind(this), this.addFavHandler.bind(this));
+    return (0, _litElement.html)(_templateObject10(), _App.default.apiBase, this.image, this.name, this.email, this.bio, this.website, this.website, this.facebook ? (0, _litElement.html)(_templateObject11(), this.facebook) : (0, _litElement.html)(_templateObject12()), this.instagram ? (0, _litElement.html)(_templateObject13(), this.instagram) : (0, _litElement.html)(_templateObject14()), this.twitter ? (0, _litElement.html)(_templateObject15(), this.twitter) : (0, _litElement.html)(_templateObject16()), this.youtube ? (0, _litElement.html)(_templateObject17(), this.youtube) : (0, _litElement.html)(_templateObject18()), this.moreInfoHandler.bind(this), this.addFavHandler.bind(this));
   }
 
 });
-},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","lit-html":"../node_modules/lit-html/lit-html.js","../Router":"Router.js","../Auth":"Auth.js","../App":"App.js","./../UserAPI":"UserAPI.js","./../Toast":"Toast.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","lit-html":"../node_modules/lit-html/lit-html.js","../Router":"Router.js","../Auth":"Auth.js","../App":"App.js","./../UserAPI":"UserAPI.js","./../Toast":"Toast.js"}],"components/va-postings.js":[function(require,module,exports) {
+"use strict";
+
+var _litElement = require("@polymer/lit-element");
+
+var _Router = require("../Router");
+
+var _litHtml = require("lit-html");
+
+var _Auth = _interopRequireDefault(require("../Auth"));
+
+var _App = _interopRequireDefault(require("../App"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject8() {
+  const data = _taggedTemplateLiteral(["\n          <img slot=\"image\" src=\"", "/images/", "\" alt=\"", "\" />\n        "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n        <img slot=\"image\" src=\"", "/images/", "\" alt=\"", "\" />\n      "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n    <style>\n      .wrap {\n        background: #fff;\n        border-radius: 10px;\n        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);\n        margin-bottom: 0.5em;\n        padding: 1em;\n      }\n\n      .author{\n        font-size: 0.9em;\n        font-style: italic;\n        opacity: 0.8;\n      }\n    </style>\n\n    <sl-card>\n      ", "\n      <h2>", "</h2>\n      <h4>", "</h4>\n      <p class=\"author\">By ", "</p>\n      \n      <div slot=\"footer\">\n        <sl-tag>", "</sl-tag>\n        <sl-button @click=", "> More Info</sl-button>\n      </div>\n    </sl-card>\n\n    <sl-dialog>\n      ", "\n        <h2>", "</h2>\n        <h3>", "</h3>\n        <p class=\"author\">By ", "</p>\n        \n        <sl-tag>", "</sl-tag>\n    </sl-dialog>\n    "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral(["\n              <img src=\"", "/images/", "\" alt=\"", "\" />\n            "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n        <style>\n          .wrap {\n            display: flex;\n          }\n          .image {\n            width: 50%;\n          }\n          .image img {\n            width: 100%;\n          }\n          .content {\n            padding-left: 1em;\n          }\n          .author{\n            font-size: 0.9em;\n            font-style: italic;\n            opacity: 0.8;\n          }         \n        </style>\n        <div class=\"wrap\">\n          <div class=\"image\">\n            ", "\n          </div>\n          <div class=\"content\">\n            <h2>", "</h2>\n            <h4>", "</h4>\n            <p class=\"author\">By ", "</p>\n            \n            <sl-tag>", "</sl-tag>\n            \n          </div>\n        </div>\n\n      "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+customElements.define('va-postings', class creativePostings extends _litElement.LitElement {
+  constructor() {
+    super();
+  }
+
+  static get properties() {
+    return {
+      id: {
+        type: String
+      },
+      name: {
+        type: String
+      },
+      description: {
+        type: String
+      },
+      image: {
+        type: String
+      },
+      user: {
+        type: String
+      },
+      tag: {
+        type: String
+      }
+    };
+  }
+
+  firstUpdated() {
+    super.firstUpdated();
+  }
+
+  moreInfoHandler() {
+    // create sl-dialog
+    const dialogEl = document.createElement('sl-dialog'); //set DialogEl class name
+
+    dialogEl.className = 'posting-dialog'; // sl-dialog content
+
+    const dialogContent = (0, _litElement.html)(_templateObject(), this.image == null ? (0, _litElement.html)(_templateObject2()) : (0, _litElement.html)(_templateObject3(), _App.default.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag);
+    (0, _litHtml.render)(dialogContent, dialogEl); // append to document body
+
+    document.body.append(dialogEl); // show sl-dialog
+
+    dialogEl.show(); // on closing, hide dialogEl
+
+    dialogEl.addEventListener('sl-after-hide', () => {
+      dialogEl.remove();
+    });
+  }
+
+  render() {
+    return (0, _litElement.html)(_templateObject4(), this.image == null ? (0, _litElement.html)(_templateObject5()) : (0, _litElement.html)(_templateObject6(), _App.default.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag, this.moreInfoHandler.bind(this), this.image == null ? (0, _litElement.html)(_templateObject7()) : (0, _litElement.html)(_templateObject8(), _App.default.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag);
+  }
+
+});
+},{"@polymer/lit-element":"../node_modules/@polymer/lit-element/lit-element.js","../Router":"Router.js","lit-html":"../node_modules/lit-html/lit-html.js","../Auth":"Auth.js","../App":"App.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -17351,6 +17679,8 @@ require("./components/va-app-header");
 
 require("./components/va-creative");
 
+require("./components/va-postings");
+
 require("./scss/master.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -17361,7 +17691,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 document.addEventListener('DOMContentLoaded', () => {
   _App.default.init();
 });
-},{"./App.js":"App.js","./components/va-app-header":"components/va-app-header.js","./components/va-creative":"components/va-creative.js","./scss/master.scss":"scss/master.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./App.js":"App.js","./components/va-app-header":"components/va-app-header.js","./components/va-creative":"components/va-creative.js","./components/va-postings":"components/va-postings.js","./scss/master.scss":"scss/master.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -17389,7 +17719,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64583" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

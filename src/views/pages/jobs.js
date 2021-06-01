@@ -29,20 +29,27 @@ class jobVacanciesView {
     const template = html`
       <va-app-header title="Job Vacancies" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
-        <div class="page-content">        
+        <div class="page-content">
           <div class= "jobs-grid">
+            <h1 class="anim-in">Job Vacancies</h1>
+            ${Auth.currentUser.accessLevel == 2 ? html`
+                <sl-button type="primary" @click="${() => gotoRoute('/newJob')}">Create a New Job Vacancy Posting!</sl-button>
+            ` : html``}
+          </div>
+          
+          <div class= "jobs-grid">
+            
             ${this.jobs == null ? html `
               <sl-spinner></sl-spinner>
             ` : html `
               ${this.jobs.map(job => html`
-                <sl-card class="job-card">
-                  <div slot="header"> <h3>${job.name}</h3></div>
-                  <img src="${App.apiBase}/images/${job.image}" alt="${job.name}" />
-                  <p>${job.description}</p>
-                  <p>Posted by ${job.displayName == null ? html `${job.firstName} ${job.lastName}` : html `${job.displayName}`}</p>
-                  <div slot="footer"> <sl-tag type="info">${job.jobType.map()}</sl-tag></div>
-                </sl-card>
-                
+                <va-postings class="job-card"
+                 image = "${job.image}"
+                 name = "${job.name}"
+                 description = "${job.description}"
+                 user = "${job.user.displayName}"
+                 tag = "${job.tag}"
+                > </va-postings>
               `)}
             `}
           </div>

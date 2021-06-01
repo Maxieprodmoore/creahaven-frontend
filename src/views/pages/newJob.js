@@ -18,16 +18,21 @@ class newJobView {
     const submitBtn = document.querySelector('.submit-btn')
     submitBtn.setAttribute('loading', '')    
     const formData = e.detail.formData
+
+    console.log(formData)
     
     try {
       await JobAPI.newJob(formData)
-      Toast.show('Job added!')
+      Toast.show('Job Posting added!')
       submitBtn.removeAttribute('loading')
       //reset form
           //reset text + text area inputs
-          const textInputs = document.querySelectorAll('sl-input, sl-textarea, sl-select')
+          const textInputs = document.querySelectorAll('sl-input, sl-textarea')
           if(textInputs) textInputs.forEach(textInputs => textInputs.value = null)
-    } catch(err){
+          //Reset file input
+          const fileInput = document.querySelector('input[type=file]')
+          if(fileInput) fileInput.value = null
+    }catch(err){
       Toast.show(err, 'error')
       submitBtn.removeAttribute('loading')
     }
@@ -38,7 +43,8 @@ class newJobView {
     const template = html`
       <va-app-header title="New Job Form" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
-        <div class="page-content">        
+        <div class="page-content">
+        <h1 class="anim-in">New Job Posting</h1>        
           <sl-form class="page-form" @sl-submit=${this.newJobSubmitHandler}>
             <input type="hidden" name="user" value="${Auth.currentUser._id}" />
             <div class="input-group" style="margin-bottom: 2em;">
@@ -52,7 +58,7 @@ class newJobView {
               <input type="file" name="image" />              
             </div>
             <div class="input-group">
-              <sl-select name="jobType" placeholder="This is a/ an..." multiple clearable>
+              <sl-select name="tag" placeholder="This is a/ an..." multiple clearable>
                 <sl-menu-item value="illustration">Illustration type of job</sl-menu-item>
                 <sl-menu-item value="voiceActing">Voice acting type of job</sl-menu-item>
                 <sl-menu-item value="animation">Animation type of job</sl-menu-item>

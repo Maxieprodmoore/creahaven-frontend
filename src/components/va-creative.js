@@ -61,7 +61,7 @@ customElements.define('va-creative', class Creative extends LitElement {
     //create sl-dialog
     const dialogEl = document.createElement('sl-dialog')
     //add class name
-    dialogEl.className = 'haircut-dialog'
+    dialogEl.className = 'creatives-dialog'
 
     // sl-dialog content
     const dialogContent = html`
@@ -107,10 +107,18 @@ customElements.define('va-creative', class Creative extends LitElement {
           <p>Bio: <span>${this.bio}</span></p>
           <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
           <div class="creative-socials">
-            <sl-button href="${this.facebook}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
-            <sl-button href="${this.instagram}" target="_blank" size="medium" circle> <sl-icon name="instagram"></sl-icon></sl-button>
-            <sl-button href="${this.twitter}" target="_blank" size="medium" circle> <sl-icon name="twitter"></sl-icon> </sl-button>
-            <sl-button  href="${this.youtube}" target="_blank" size="medium" circle> <sl-icon name="youtube"></sl-icon> </sl-button>
+            ${this.facebook ? html`
+              <sl-button href="${this.facebook}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
+            `: html``}
+            ${this.facebook ? html`
+              <sl-button href="${this.instagram}" target="_blank" size="medium" circle> <sl-icon name="instagram"></sl-icon></sl-button>
+            `: html``}            
+            ${this.facebook ? html`
+              <sl-button href="${this.twitter}" target="_blank" size="medium" circle> <sl-icon name="twitter"></sl-icon> </sl-button>
+            `: html``}            
+            ${this.facebook ? html`
+              <sl-button  href="${this.youtube}" target="_blank" size="medium" circle> <sl-icon name="youtube"></sl-icon> </sl-button>
+            `: html``}            
           </div>
           <br>
           <div slot="footer">
@@ -181,10 +189,19 @@ customElements.define('va-creative', class Creative extends LitElement {
       <p>Bio: <span>${this.bio}</span></p>
       <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
       <div class="creative-socials">
-        <sl-button href="${this.facebook}" target="_blank" size="small" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
-        <sl-button href="${this.instagram}" target="_blank" size="small" circle> <sl-icon name="instagram"></sl-icon></sl-button>
-        <sl-button href="${this.twitter}" target="_blank" size="small" circle> <sl-icon name="twitter"></sl-icon> </sl-button>
-        <sl-button  href="${this.youtube}" target="_blank" size="small" circle> <sl-icon name="youtube"></sl-icon> </sl-button>
+        ${this.facebook ? html`
+          <sl-button href="${this.facebook}" target="_blank" size="small" circle> <sl-icon name="facebook"></sl-icon> </sl-button>
+        `: html``}
+        ${this.instagram ? html`
+          <sl-button href="${this.instagram}" target="_blank" size="small" circle> <sl-icon name="instagram"></sl-icon></sl-button>
+        `: html``}        
+        ${this.twitter ? html`
+          <sl-button href="${this.twitter}" target="_blank" size="small" circle> <sl-icon name="twitter"></sl-icon> </sl-button>
+        `: html``}        
+        ${this.youtube ? html`
+          <sl-button  href="${this.youtube}" target="_blank" size="small" circle> <sl-icon name="youtube"></sl-icon> </sl-button>
+        `: html``}
+        
       </div>
       <div slot="footer">
         <sl-button @click=${this.moreInfoHandler.bind(this)}>More Info</sl-button>

@@ -169,12 +169,22 @@ a {
 }
 
 //creatives dialog
-.haircut-dialog{
+.creatives-dialog{
   --width: 70%;
 }
 
-.haircut-dialog::part(body){
+.creatives-dialog::part(body){
   margin-top: -3em;
+}
+ 
+
+//postings dialog
+.posting-dialog {
+  --width:80%
+}
+
+.posting-dialog::part(body){
+  margin-top: -4em
 }
 
 //profile page
