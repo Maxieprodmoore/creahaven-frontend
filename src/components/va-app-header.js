@@ -223,6 +223,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       <img class="app-side-menu-logo" src="/images/creahaven-logo.svg">
       <nav class="app-side-menu-items">
         <a href="/" @click="${this.menuClick}">Home</a>
+        <a href="/portfolios" @click="${this.menuClick}">View Portfolio pieces!</a>
         <a href="/creatives" @click="${this.menuClick}">Find a Creative!</a>
         <a href="/collaborations" @click="${this.menuClick}">Find a Collaboration!</a>
         <a href="/jobs" @click="${this.menuClick}">Find a Job vacancy!</a>

@@ -147,10 +147,10 @@ a {
 }
 
 //jobs page
-.jobs-grid{
+.postings-grid{
   display: flexbox;
   flex-wrap: wrap;
-  .job-card{
+  .posting-card{
     width: calc(33.33% - 1em);
     margin: 0.5em;
   }
@@ -193,8 +193,9 @@ a {
   flex-wrap: wrap;
   width: 100%;
   .profile-section{
-    width: calc(48% - 1em);
+    width: calc(100% - 1em);
     margin: 0.5em;
+    padding: 0.125em;
   }
   #profileSocialsGrid{
     display: flexbox;
@@ -202,7 +203,7 @@ a {
     width: 100%;
   }
   .portfolio-card{
-    width: calc(33.33% - 0.25em);
+    width: calc(25% - 0.25em);
     margin: 0.125em;
   }
 

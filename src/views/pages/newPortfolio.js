@@ -30,8 +30,8 @@ class newPortfolioView {
         const textInputs = document.querySelectorAll('sl-input, sl-textarea')
         if(textInputs) textInputs.forEach(textInputs => textInputs.value = null)
         //Reset sl-select 
-        const choiceSelect = document.querySelector('sl-select')
-        if(choiceSelect) choiceSelect.value = null
+        //const choiceSelect = document.querySelector('sl-select')
+        //if(choiceSelect) choiceSelect.value = null
         //Reset file input
         const fileInput = document.querySelector('input[type=file]')
         if(fileInput) fileInput.value = null
@@ -62,11 +62,10 @@ class newPortfolioView {
               <sl-textarea name="description" rows="3" placeholder="Description"></sl-textarea>
             </div>
             <div class="input-group" >
-              <sl-select placeholder="Genre of portfolio piece" multiple clearable hoist required>
+              <sl-select name="tag" placeholder="Genre of portfolio piece" multiple clearable hoist required>
                 <sl-menu-item value="photography">Photography</sl-menu-item>
                 <sl-menu-item value="illustration">Illustration</sl-menu-item>
                 <sl-menu-item value="writing">Writing</sl-menu-item>
-                <sl-menu-item value="fan-art">Fan-art</sl-menu-item>
                 <sl-menu-item value="pre-production">Pre-production material</sl-menu-item>
                 <sl-menu-item value="production">Production material</sl-menu-item>
                 <sl-menu-item value="post-production">Post-production material</sl-menu-item>

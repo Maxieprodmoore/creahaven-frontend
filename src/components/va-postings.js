@@ -28,7 +28,7 @@ customElements.define('va-postings', class creativePostings extends LitElement {
         type: String
       }, 
       tag: {
-        type: String,
+        type: String
       }
     }
   }
@@ -49,13 +49,13 @@ customElements.define('va-postings', class creativePostings extends LitElement {
             display: flex;
           }
           .image {
-            width: 50%;
+            width: 40%;
           }
           .image img {
             width: 100%;
           }
           .content {
-            padding-left: 1em;
+            padding-left: 2em;
           }
           .author{
             font-size: 0.9em;
@@ -74,7 +74,7 @@ customElements.define('va-postings', class creativePostings extends LitElement {
             <h4>${this.description}</h4>
             <p class="author">By ${this.user}</p>
             
-            <sl-tag>${this.tag}</sl-tag>
+            <sl-tag >${this.tag}</sl-tag>
             
           </div>
         </div>
@@ -120,7 +120,7 @@ customElements.define('va-postings', class creativePostings extends LitElement {
       <p class="author">By ${this.user}</p>
       
       <div slot="footer">
-        <sl-tag>${this.tag}</sl-tag>
+        <sl-tag type="info">${this.tag}</sl-tag>
         <sl-button @click=${this.moreInfoHandler.bind(this)}> More Info</sl-button>
       </div>
     </sl-card>
@@ -133,7 +133,7 @@ customElements.define('va-postings', class creativePostings extends LitElement {
         <h3>${this.description}</h3>
         <p class="author">By ${this.user}</p>
         
-        <sl-tag>${this.tag}</sl-tag>
+        <sl-tag type="info">${this.tag}</sl-tag>
     </sl-dialog>
     `
   }

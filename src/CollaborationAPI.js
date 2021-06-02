@@ -3,11 +3,11 @@ import Auth from './Auth'
 import Toast from './Toast'
 
 
-class JobAPI {
-  async getJobs(){
+class CollaborationAPI {
+  async getCollaborationIs(){
     
     // fetch the json data
-    const response = await fetch(`${App.apiBase}/job`, {
+    const response = await fetch(`${App.apiBase}/collaboration`, {
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`}
     })
 
@@ -17,7 +17,7 @@ class JobAPI {
       const err = await response.json()
       if(err) console.log(err)
       // throw error (exit this function)      
-      throw new Error('Problem getting job postings')
+      throw new Error('Problem getting collaboration invitations')
     }
     
     // convert response payload into json - store as data
@@ -27,9 +27,9 @@ class JobAPI {
     return data
   }
 
-  async newJob(formData){
+  async newCollaboration(formData){
     // send fetch request
-    const response = await fetch(`${App.apiBase}/job`, {
+    const response = await fetch(`${App.apiBase}/collaboration`, {
       method: 'POST',
       headers: { "Authorization": `Bearer ${localStorage.accessToken}`},
       body: formData
@@ -37,7 +37,7 @@ class JobAPI {
 
     // if response not ok
     if(!response.ok){ 
-      let message = 'Problem adding job post'
+      let message = 'Problem adding collaboration invitation'
       if(response.status == 400){
         const err = await response.json()
         message = err.message
@@ -56,4 +56,4 @@ class JobAPI {
   
 }
 
-export default new JobAPI()
+export default new CollaborationAPI()

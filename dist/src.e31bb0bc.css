@@ -168,11 +168,11 @@ a {
   margin-bottom: 1.75em;
 }
 
-.jobs-grid {
+.postings-grid {
   display: flexbox;
   flex-wrap: wrap;
 }
-.jobs-grid .job-card {
+.postings-grid .posting-card {
   width: calc(33.33% - 1em);
   margin: 0.5em;
 }
@@ -208,8 +208,9 @@ a {
   width: 100%;
 }
 .profile-grid .profile-section {
-  width: calc(48% - 1em);
+  width: calc(100% - 1em);
   margin: 0.5em;
+  padding: 0.125em;
 }
 .profile-grid #profileSocialsGrid {
   display: flexbox;
@@ -217,7 +218,7 @@ a {
   width: 100%;
 }
 .profile-grid .portfolio-card {
-  width: calc(33.33% - 0.25em);
+  width: calc(25% - 0.25em);
   margin: 0.125em;
 }
 

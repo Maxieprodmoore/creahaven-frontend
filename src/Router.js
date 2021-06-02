@@ -8,6 +8,7 @@ import profileView from './views/pages/profile'
 import editProfileView from './views/pages/editProfile'
 import favouriteCreativesView from './views/pages/favouriteCreatives'
 import projectsView from './views/pages/projects'
+import portfolioView from './views/pages/portfolio'
 import jobsView from './views/pages/jobs'
 import creativesView from './views/pages/creatives'
 import collaborationsView from './views/pages/collaborations'
@@ -25,6 +26,7 @@ const routes = {
 	'/signin': signinView,
 	'/signup': signupView,
 	'/profile': profileView,
+	'/portfolios': portfolioView,
 	'/newPortfolio': newPortfolioView,
 	'/projects' : projectsView,
 	'/newProject': newProjectView,

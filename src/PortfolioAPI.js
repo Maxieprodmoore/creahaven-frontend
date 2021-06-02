@@ -17,7 +17,7 @@ class PortfolioAPI {
       const err = await response.json()
       if(err) console.log(err)
       // throw error (exit this function)      
-      throw new Error('Problem getting haircuts')
+      throw new Error('Problem getting portfolio pieces!')
     }
     
     // convert response payload into json - store as data

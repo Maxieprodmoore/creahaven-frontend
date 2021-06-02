@@ -49,7 +49,6 @@ class favouriteCreativesView {
                   instagram="${creative.instagram}"
                   twitter="${creative.twitter}"
                   youtube="${creative.youtube}"
-
                 >
                 </va-creative>
                   

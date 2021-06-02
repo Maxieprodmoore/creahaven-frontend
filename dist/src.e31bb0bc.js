@@ -13839,79 +13839,7 @@ var global = arguments[3];
 
 })));
 
-},{}],"PortfolioAPI.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _App = _interopRequireDefault(require("./App"));
-
-var _Auth = _interopRequireDefault(require("./Auth"));
-
-var _Toast = _interopRequireDefault(require("./Toast"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-class PortfolioAPI {
-  async getPortfolioPs() {
-    // fetch the json data
-    const response = await fetch("".concat(_App.default.apiBase, "/portfolio"), {
-      headers: {
-        "Authorization": "Bearer ".concat(localStorage.accessToken)
-      }
-    }); // if response not ok
-
-    if (!response.ok) {
-      // console log error
-      const err = await response.json();
-      if (err) console.log(err); // throw error (exit this function)      
-
-      throw new Error('Problem getting haircuts');
-    } // convert response payload into json - store as data
-
-
-    const data = await response.json(); // return data
-
-    return data;
-  }
-
-  async newPortfolioP(formData) {
-    // send fetch request
-    const response = await fetch("".concat(_App.default.apiBase, "/portfolio"), {
-      method: 'POST',
-      headers: {
-        "Authorization": "Bearer ".concat(localStorage.accessToken)
-      },
-      body: formData
-    }); // if response not ok
-
-    if (!response.ok) {
-      let message = 'Problem adding portfolio piece';
-
-      if (response.status == 400) {
-        const err = await response.json();
-        message = err.message;
-      } // throw error (exit this function)      
-
-
-      throw new Error(message);
-    } // convert response payload into json - store as data
-
-
-    const data = await response.json(); // return data
-
-    return data;
-  }
-
-}
-
-var _default = new PortfolioAPI();
-
-exports.default = _default;
-},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/profile.js":[function(require,module,exports) {
+},{}],"views/pages/profile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13931,61 +13859,9 @@ var _Utils = _interopRequireDefault(require("./../../Utils"));
 
 var _moment = _interopRequireDefault(require("moment"));
 
-var _PortfolioAPI = _interopRequireDefault(require("./../../PortfolioAPI"));
-
 var _Toast = _interopRequireDefault(require("./../../Toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject22() {
-  const data = _taggedTemplateLiteral([""]);
-
-  _templateObject22 = function _templateObject22() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject21() {
-  const data = _taggedTemplateLiteral(["\n                    <sl-card class=\"portfolio-card\">\n                        <img \n                          slot=\"image\" \n                          src=\"", "/images/", "\" \n                          alt=\"", "\"\n                        >\n                        <h3>", "</h3>\n                        <p>", "</p>\n                        <div slot=\"footer\">\n                          <sl-tag type=\"info\" size=\"small\">", "</sl-tag>\n                          <p >By ", "</p>\n                        </div>\n                        \n\n\n                    </sl-card>\n                  "]);
-
-  _templateObject21 = function _templateObject21() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject20() {
-  const data = _taggedTemplateLiteral(["\n                  ", "\n                  \n                "]);
-
-  _templateObject20 = function _templateObject20() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject19() {
-  const data = _taggedTemplateLiteral(["\n                  <sl-spinner></sl-spinner>\n                "]);
-
-  _templateObject19 = function _templateObject19() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject18() {
-  const data = _taggedTemplateLiteral(["\n              <sl-card class=\"profile-section\">\n                <div slot=\"header\"><h3>Portfolio</h3>\n                  <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n                </div>\n                ", "\n                \n               \n              </sl-card>\n            "]);
-
-  _templateObject18 = function _templateObject18() {
-    return data;
-  };
-
-  return data;
-}
 
 function _templateObject17() {
   const data = _taggedTemplateLiteral([""]);
@@ -14148,7 +14024,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-section\">\n              ", "\n              ", "\n              \n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              ", "\n\n              <div id=\"profileSocialsGrid\">\n                ", "\n                ", "\n                ", "\n                ", "\n              </div>\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\"  @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            ", "\n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">\n            <sl-card class=\"profile-section\">\n              ", "\n              ", "\n              \n              \n              <p>", "</p>\n              \n              <p>Updated: ", "</p>\n\n              ", "\n              ", "\n\n              <div id=\"profileSocialsGrid\">\n                ", "\n                ", "\n                ", "\n                ", "\n              </div>\n              \n              <div slot=\"footer\">\n                <sl-button type=\"info\"  @click=", ">Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            \n            \n          </div>  \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14163,26 +14039,13 @@ class ProfileView {
   init() {
     console.log('ProfileView.init');
     document.title = 'Profile';
-    this.portfolioPs = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
-
-    this.getPortfolioPs();
-  }
-
-  async getPortfolioPs() {
-    try {
-      this.portfolioPs = await _PortfolioAPI.default.getPortfolioPs();
-      console.log(this.portfolioPs);
-      this.render();
-    } catch (err) {
-      _Toast.default.show(err, 'error');
-    }
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.displayName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.website ? (0, _litHtml.html)(_templateObject8(), _Auth.default.currentUser.website, _Auth.default.currentUser.website) : (0, _litHtml.html)(_templateObject9()), _Auth.default.currentUser.facebook ? (0, _litHtml.html)(_templateObject10(), _Auth.default.currentUser.facebook) : (0, _litHtml.html)(_templateObject11()), _Auth.default.currentUser.twitter ? (0, _litHtml.html)(_templateObject12(), _Auth.default.currentUser.twitter) : (0, _litHtml.html)(_templateObject13()), _Auth.default.currentUser.instagram ? (0, _litHtml.html)(_templateObject14(), _Auth.default.currentUser.instagram) : (0, _litHtml.html)(_templateObject15()), _Auth.default.currentUser.youtube ? (0, _litHtml.html)(_templateObject16(), _Auth.default.currentUser.youtube) : (0, _litHtml.html)(_templateObject17()), () => (0, _Router.gotoRoute)('/editProfile'), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject18(), () => (0, _Router.gotoRoute)('/newPortfolio'), this.portfolioPs == null ? (0, _litHtml.html)(_templateObject19()) : (0, _litHtml.html)(_templateObject20(), this.portfolioPs.map(portfolioPs => (0, _litHtml.html)(_templateObject21(), _App.default.apiBase, portfolioPs.image, portfolioPs.name, portfolioPs.name, portfolioPs.description, portfolioPs.tag, portfolioPs.user.displayName)))) : (0, _litHtml.html)(_templateObject22()));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? (0, _litHtml.html)(_templateObject2(), _Auth.default.currentUser && _Auth.default.currentUser.avatar ? "".concat(_App.default.apiBase, "/images/").concat(_Auth.default.currentUser.avatar) : '') : (0, _litHtml.html)(_templateObject3()), _Auth.default.currentUser.displayName ? (0, _litHtml.html)(_templateObject4(), _Auth.default.currentUser.firstName, _Auth.default.currentUser.lastName) : (0, _litHtml.html)(_templateObject5(), _Auth.default.currentUser.displayName), _Auth.default.currentUser.email, (0, _moment.default)(_Auth.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), _Auth.default.currentUser.bio ? (0, _litHtml.html)(_templateObject6(), _Auth.default.currentUser.bio) : (0, _litHtml.html)(_templateObject7()), _Auth.default.currentUser.website ? (0, _litHtml.html)(_templateObject8(), _Auth.default.currentUser.website, _Auth.default.currentUser.website) : (0, _litHtml.html)(_templateObject9()), _Auth.default.currentUser.facebook ? (0, _litHtml.html)(_templateObject10(), _Auth.default.currentUser.facebook) : (0, _litHtml.html)(_templateObject11()), _Auth.default.currentUser.twitter ? (0, _litHtml.html)(_templateObject12(), _Auth.default.currentUser.twitter) : (0, _litHtml.html)(_templateObject13()), _Auth.default.currentUser.instagram ? (0, _litHtml.html)(_templateObject14(), _Auth.default.currentUser.instagram) : (0, _litHtml.html)(_templateObject15()), _Auth.default.currentUser.youtube ? (0, _litHtml.html)(_templateObject16(), _Auth.default.currentUser.youtube) : (0, _litHtml.html)(_templateObject17()), () => (0, _Router.gotoRoute)('/editProfile'));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14191,7 +14054,7 @@ class ProfileView {
 var _default = new ProfileView();
 
 exports.default = _default;
-},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js","./../../PortfolioAPI":"PortfolioAPI.js","./../../Toast":"Toast.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
+},{"./../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","./../../Router":"Router.js","./../../Auth":"Auth.js","./../../Utils":"Utils.js","moment":"../node_modules/moment/moment.js","./../../Toast":"Toast.js"}],"views/pages/editProfile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14366,7 +14229,7 @@ var _Toast = _interopRequireDefault(require("./../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n                <va-creative class=\"creative-card\"\n                  id=\"", "\"\n                  name=\"", "\"\n                  email=\"", "\"\n                  image=\"", "\"\n                  bio=\"", "\"\n                  website=\"", "\"\n                  facebook=\"", "\"\n                  instagram=\"", "\"\n                  twitter=\"", "\"\n                  youtube=\"", "\"\n\n                >\n                </va-creative>\n                  \n              "]);
+  const data = _taggedTemplateLiteral(["\n                <va-creative class=\"creative-card\"\n                  id=\"", "\"\n                  name=\"", "\"\n                  email=\"", "\"\n                  image=\"", "\"\n                  bio=\"", "\"\n                  website=\"", "\"\n                  facebook=\"", "\"\n                  instagram=\"", "\"\n                  twitter=\"", "\"\n                  youtube=\"", "\"\n                >\n                </va-creative>\n                  \n              "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -14439,7 +14302,79 @@ class favouriteCreativesView {
 var _default = new favouriteCreativesView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","./../../Toast":"Toast.js"}],"views/pages/projects.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","./../../Toast":"Toast.js"}],"ProjectAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class ProjectAPI {
+  async getProjectPs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/project"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting project postings');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+  async newProject(formData) {
+    // send fetch request
+    const response = await fetch("".concat(_App.default.apiBase, "/project"), {
+      method: 'POST',
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      },
+      body: formData
+    }); // if response not ok
+
+    if (!response.ok) {
+      let message = 'Problem adding project post';
+
+      if (response.status == 400) {
+        const err = await response.json();
+        message = err.message;
+      } // throw error (exit this function)      
+
+
+      throw new Error(message);
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new ProjectAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/projects.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14457,10 +14392,64 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _ProjectAPI = _interopRequireDefault(require("./../../ProjectAPI"));
+
+var _Toast = _interopRequireDefault(require("./../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n                <va-postings class=\"posting-card\"\n                 image = \"", "\"\n                 name = \"", "\"\n                 description = \"", "\"\n                 user = \"", "\"\n                 tag = \"", "\"\n                > </va-postings>\n              "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral(["\n              ", "\n            "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n              <sl-spinner></sl-spinner>\n            "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n                <sl-button type=\"primary\" @click=\"", "\">Create a New Project for bidding!</sl-button>\n            "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Projects for bidding</h1>\n          <p>This is the projects for bidding page!</p>\n          \n        </div>   \n      </div>\n         \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\"> \n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Projects for bidding</h1>\n            ", "\n          </div>       \n          \n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n          \n        </div>   \n      </div>\n         \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14474,13 +14463,26 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 class ProjectsView {
   init() {
     document.title = 'Projects for bidding';
+    this.projects = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
+
+    this.getProjectPs();
+  }
+
+  async getProjectPs() {
+    try {
+      this.projects = await _ProjectAPI.default.getProjectPs();
+      console.log(this.projects);
+      this.render();
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+    }
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litHtml.html)(_templateObject3()), this.projects == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.projects.map(project => (0, _litHtml.html)(_templateObject6(), project.image, project.name, project.description, project.user.displayName, project.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14489,7 +14491,208 @@ class ProjectsView {
 var _default = new ProjectsView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"JobAPI.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../ProjectAPI":"ProjectAPI.js","./../../Toast":"Toast.js"}],"PortfolioAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class PortfolioAPI {
+  async getPortfolioPs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/portfolio"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting portfolio pieces!');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+  async newPortfolioP(formData) {
+    // send fetch request
+    const response = await fetch("".concat(_App.default.apiBase, "/portfolio"), {
+      method: 'POST',
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      },
+      body: formData
+    }); // if response not ok
+
+    if (!response.ok) {
+      let message = 'Problem adding portfolio piece';
+
+      if (response.status == 400) {
+        const err = await response.json();
+        message = err.message;
+      } // throw error (exit this function)      
+
+
+      throw new Error(message);
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new PortfolioAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/portfolio.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("../../App"));
+
+var _litHtml = require("lit-html");
+
+var _Router = require("../../Router");
+
+var _Auth = _interopRequireDefault(require("../../Auth"));
+
+var _Utils = _interopRequireDefault(require("../../Utils"));
+
+var _PortfolioAPI = _interopRequireDefault(require("./../../PortfolioAPI"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n                        <sl-card class=\"portfolio-card\">\n                            <img \n                              slot=\"image\" \n                              src=\"", "/images/", "\" \n                              alt=\"", "\"\n                            >\n                            <h3>", "</h3>\n                            <p>", "</p>\n                            <div slot=\"footer\">\n                              <sl-tag type=\"info\" size=\"small\">", "</sl-tag>\n                              <p >By ", "</p>\n                            </div>\n                        \n\n                        </sl-card>\n                      "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral(["\n                      ", "\n                      \n                    "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n                      <sl-spinner></sl-spinner>\n                    "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n                        <sl-button type=\"primary\" size=\"medium\" @click=", ">Add a new portfolio piece!</sl-button>\n                      "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n        }\n\n        .filter-menu > div {\n          margin-right: 1em;\n        }\n      </style>\n        \n      <script>\n        const container = document.querySelector('.filter-menu');\n        const Illustrations = container.querySelector('sl-menu-item[value=\"illustration\"]')\n\n        Illustrations.addEventListener('click', () => this.filterPortfolioPs(\"tag\", \"illustration\"))\n      </script>\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">        \n            <h1>Portfolio Pieces</h1>\n              \n                  <sl-card class=\"profile-section\">\n                    <div slot=\"header\"><h3>Portfolio</h3>\n                      ", "\n                    </div>\n                    <div class=\"filter-menu\">\n                      <div>Filter by:</div>\n                      \n                      <sl-dropdown>\n                        <sl-button slot=\"trigger\" caret><strong>Genre of piece</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item value=\"illustration\">illustration</sl-menu-item> \n                          </sl-menu>\n                      </sl-dropdown>\n                      \n                    </div>\n                    ", "                                  \n                  </sl-card>\n                \n          </div>\n        </div> \n      </div>\n           \n    "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+class portfolioView {
+  async init() {
+    document.title = 'Portfolio Pieces';
+    this.portfolioPs = null;
+    this.render();
+
+    _Utils.default.pageIntroAnim();
+
+    await this.getPortfolioPs(); //this.filteredPortfolioPs('tag', 'illustration')
+  }
+
+  filterPortfolioPs(field, match) {
+    //validate
+    if (!field || !match) return;
+    let filteredPiece; // tag
+
+    if (field == 'tag') {
+      filteredPiece = this.portfolioPs.filter(portfolio => portfolio.tag == match);
+    } //render
+
+
+    this.portfolioPs = filteredPiece;
+    this.render();
+  }
+
+  async getPortfolioPs() {
+    try {
+      this.portfolioPs = await _PortfolioAPI.default.getPortfolioPs();
+      console.log(this.portfolioPs);
+      this.render();
+    } catch (err) {
+      Toast.show(err, 'error');
+    }
+  }
+
+  render() {
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject3()), this.portfolioPs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.portfolioPs.map(portfolioPs => (0, _litHtml.html)(_templateObject6(), _App.default.apiBase, portfolioPs.image, portfolioPs.name, portfolioPs.name, portfolioPs.description, portfolioPs.tag, portfolioPs.user.displayName))));
+    (0, _litHtml.render)(template, _App.default.rootEl);
+  }
+
+}
+
+var _default = new portfolioView();
+
+exports.default = _default;
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../PortfolioAPI":"PortfolioAPI.js"}],"JobAPI.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14586,7 +14789,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n                <va-postings class=\"job-card\"\n                 image = \"", "\"\n                 name = \"", "\"\n                 description = \"", "\"\n                 user = \"", "\"\n                 tag = \"", "\"\n                > </va-postings>\n              "]);
+  const data = _taggedTemplateLiteral(["\n                <va-postings class=\"posting-card\"\n                 image = \"", "\"\n                 name = \"", "\"\n                 description = \"", "\"\n                 user = \"", "\"\n                 tag = \"", "\"\n                > </va-postings>\n              "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -14636,7 +14839,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n          <div class= \"jobs-grid\">\n            <h1 class=\"anim-in\">Job Vacancies</h1>\n            ", "\n          </div>\n          \n          <div class= \"jobs-grid\">\n            \n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Job Vacancies</h1>\n            ", "\n          </div>\n          \n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14775,7 +14978,79 @@ class CreativesView {
 var _default = new CreativesView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","../../Toast":"Toast.js"}],"views/pages/collaborations.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../UserAPI":"UserAPI.js","../../Toast":"Toast.js"}],"CollaborationAPI.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _App = _interopRequireDefault(require("./App"));
+
+var _Auth = _interopRequireDefault(require("./Auth"));
+
+var _Toast = _interopRequireDefault(require("./Toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class CollaborationAPI {
+  async getCollaborationIs() {
+    // fetch the json data
+    const response = await fetch("".concat(_App.default.apiBase, "/collaboration"), {
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      }
+    }); // if response not ok
+
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err); // throw error (exit this function)      
+
+      throw new Error('Problem getting collaboration invitations');
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+  async newCollaboration(formData) {
+    // send fetch request
+    const response = await fetch("".concat(_App.default.apiBase, "/collaboration"), {
+      method: 'POST',
+      headers: {
+        "Authorization": "Bearer ".concat(localStorage.accessToken)
+      },
+      body: formData
+    }); // if response not ok
+
+    if (!response.ok) {
+      let message = 'Problem adding collaboration invitation';
+
+      if (response.status == 400) {
+        const err = await response.json();
+        message = err.message;
+      } // throw error (exit this function)      
+
+
+      throw new Error(message);
+    } // convert response payload into json - store as data
+
+
+    const data = await response.json(); // return data
+
+    return data;
+  }
+
+}
+
+var _default = new CollaborationAPI();
+
+exports.default = _default;
+},{"./App":"App.js","./Auth":"Auth.js","./Toast":"Toast.js"}],"views/pages/collaborations.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14793,10 +15068,64 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _CollaborationAPI = _interopRequireDefault(require("./../../CollaborationAPI"));
+
+var _Toast = _interopRequireDefault(require("./../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _templateObject6() {
+  const data = _taggedTemplateLiteral(["\n                <va-postings class=\"posting-card\"\n                 image = \"", "\"\n                 name = \"", "\"\n                 description = \"", "\"\n                 user = \"", "\"\n                 tag = \"", "\"\n                > </va-postings>\n              "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  const data = _taggedTemplateLiteral(["\n              ", "\n            "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  const data = _taggedTemplateLiteral(["\n              <sl-spinner></sl-spinner>\n            "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  const data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  const data = _taggedTemplateLiteral(["\n                  <sl-button type=\"primary\" @click=\"", "\">Create a New Collaboration Invitation!</sl-button>\n              "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n            <h1>Collaborations</h1>\n            <p>This is the collaborations page!</p>\n            \n        </div>\n      </div>\n            \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <div class= \"postings-grid\">\n              <h1 class=\"anim-in\">Collaboration Invitations</h1>\n              ", "\n          </div>\n\n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14810,13 +15139,26 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 class CollaborationsView {
   init() {
     document.title = 'Collaborations';
+    this.collaborations = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
+
+    this.getCollaborationIs();
+  }
+
+  async getCollaborationIs() {
+    try {
+      this.collaborations = await _CollaborationAPI.default.getCollaborationIs();
+      console.log(this.collaborations);
+      this.render();
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+    }
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litHtml.html)(_templateObject3()), this.collaborations == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.collaborations.map(job => (0, _litHtml.html)(_templateObject6(), collaboration.image, collaboration.name, collaboration.description, collaboration.user.displayName, collaboration.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14825,7 +15167,7 @@ class CollaborationsView {
 var _default = new CollaborationsView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newJob.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../CollaborationAPI":"CollaborationAPI.js","./../../Toast":"Toast.js"}],"views/pages/newJob.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14924,10 +15266,14 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _CollaborationAPI = _interopRequireDefault(require("./../../CollaborationAPI"));
+
+var _Toast = _interopRequireDefault(require("./../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Post a new collaboration request</h1>\n          <p>This is the page for submitting a new request for collaboration!</p>\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Collaboration Invitation Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Collaboration Invitation form</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Collaboration item Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Collaboration Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This Collaboration requires...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production assistance</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production assistance</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photographs</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development assistance</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing assistance</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development assistance</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Collaboration Invite!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14946,8 +15292,35 @@ class newCollaborationView {
     _Utils.default.pageIntroAnim();
   }
 
+  async newCollaborationSubmitHandler(e) {
+    e.preventDefault();
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.setAttribute('loading', '');
+    const formData = e.detail.formData;
+    console.log(formData);
+
+    try {
+      await _CollaborationAPI.default.newCollaboration(formData);
+
+      _Toast.default.show('Collaboration Request added!');
+
+      submitBtn.removeAttribute('loading'); //reset form
+      //reset text + text area inputs
+
+      const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset file input
+
+      const fileInput = document.querySelector('input[type=file]');
+      if (fileInput) fileInput.value = null;
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+
+      submitBtn.removeAttribute('loading');
+    }
+  }
+
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.newCollaborationSubmitHandler, _Auth.default.currentUser._id);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14956,7 +15329,7 @@ class newCollaborationView {
 var _default = new newCollaborationView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newProject.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../CollaborationAPI":"CollaborationAPI.js","./../../Toast":"Toast.js"}],"views/pages/newProject.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14974,10 +15347,14 @@ var _Auth = _interopRequireDefault(require("../../Auth"));
 
 var _Utils = _interopRequireDefault(require("../../Utils"));
 
+var _ProjectAPI = _interopRequireDefault(require("./../../ProjectAPI"));
+
+var _Toast = _interopRequireDefault(require("../../Toast"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Post a new project\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Post new project for bidding!</h1>\n          <p>This is the page for new submitting a new project for bidding ...</p>\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Project Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Project for bidding Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Project Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Project Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of Project</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of Project</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of Project</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of Project</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of Project</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of Project</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development Project</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a New Project for Bidding!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14990,14 +15367,41 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 class newProjectView {
   init() {
-    document.title = 'Template';
+    document.title = 'Submit a new project for bidding';
     this.render();
 
     _Utils.default.pageIntroAnim();
   }
 
+  async newProjectSubmitHandler(e) {
+    e.preventDefault();
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.setAttribute('loading', '');
+    const formData = e.detail.formData;
+    console.log(formData);
+
+    try {
+      await _ProjectAPI.default.newProject(formData);
+
+      _Toast.default.show('Project Posting added!');
+
+      submitBtn.removeAttribute('loading'); //reset form
+      //reset text + text area inputs
+
+      const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset file input
+
+      const fileInput = document.querySelector('input[type=file]');
+      if (fileInput) fileInput.value = null;
+    } catch (err) {
+      _Toast.default.show(err, 'error');
+
+      submitBtn.removeAttribute('loading');
+    }
+  }
+
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), this.newProjectSubmitHandler, _Auth.default.currentUser._id);
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -15006,7 +15410,7 @@ class newProjectView {
 var _default = new newProjectView();
 
 exports.default = _default;
-},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js"}],"views/pages/newPortfolio.js":[function(require,module,exports) {
+},{"../../App":"App.js","lit-html":"../node_modules/lit-html/lit-html.js","../../Router":"Router.js","../../Auth":"Auth.js","../../Utils":"Utils.js","./../../ProjectAPI":"ProjectAPI.js","../../Toast":"Toast.js"}],"views/pages/newPortfolio.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15031,7 +15435,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Submit New Portfolio Piece\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Submit New Portfolio piece</h1>\n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image (For Preview)</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Portfolio piece Title\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-textarea name=\"description\" rows=\"3\" placeholder=\"Description\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" >\n              <sl-select placeholder=\"Genre of portfolio piece\" multiple clearable hoist required>\n                <sl-menu-item value=\"photography\">Photography</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing</sl-menu-item>\n                <sl-menu-item value=\"fan-art\">Fan-art</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production material</sl-menu-item>\n                <sl-menu-item value=\"production\">Production material</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production material</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"voice-over\">Voice-over related</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Game production related</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website development</sl-menu-item>\n                <sl-menu-item value=\"2d-art\">2D art</sl-menu-item>\n                <sl-menu-item value=\"3d-art\">3D art</sl-menu-item>\n                <sl-menu-item value=\"others\">Others (Please elaborate in the desciption above)</sl-menu-item>\n              </sl-select>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 1em;\">\n              <label>Link to that piece outside the website.</label><br>\n              <sl-textarea name=\"link\" rows=\"1\" placeholder=\"www.example.com\"></sl-textarea>\n            </div>\n            \n            <sl-button type=\"primary\" class=\"submit-btn\" submit size=\"medium\" style=\"width: 100%;\">Add Portfolio piece</sl-button>\n          </sl-form> \n          \n        </div>\n      </div>      \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Submit New Portfolio Piece\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <h1>Submit New Portfolio piece</h1>\n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image (For Preview)</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Portfolio piece Title\" required></sl-input>\n            </div>\n            <div class=\"input-group\">\n              <sl-textarea name=\"description\" rows=\"3\" placeholder=\"Description\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" >\n              <sl-select name=\"tag\" placeholder=\"Genre of portfolio piece\" multiple clearable hoist required>\n                <sl-menu-item value=\"photography\">Photography</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production material</sl-menu-item>\n                <sl-menu-item value=\"production\">Production material</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production material</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"voice-over\">Voice-over related</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Game production related</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website development</sl-menu-item>\n                <sl-menu-item value=\"2d-art\">2D art</sl-menu-item>\n                <sl-menu-item value=\"3d-art\">3D art</sl-menu-item>\n                <sl-menu-item value=\"others\">Others (Please elaborate in the desciption above)</sl-menu-item>\n              </sl-select>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 1em;\">\n              <label>Link to that piece outside the website.</label><br>\n              <sl-textarea name=\"link\" rows=\"1\" placeholder=\"www.example.com\"></sl-textarea>\n            </div>\n            \n            <sl-button type=\"primary\" class=\"submit-btn\" submit size=\"medium\" style=\"width: 100%;\">Add Portfolio piece</sl-button>\n          </sl-form> \n          \n        </div>\n      </div>      \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15067,9 +15471,9 @@ class newPortfolioView {
 
       const textInputs = document.querySelectorAll('sl-input, sl-textarea');
       if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset sl-select 
-
-      const choiceSelect = document.querySelector('sl-select');
-      if (choiceSelect) choiceSelect.value = null; //Reset file input
+      //const choiceSelect = document.querySelector('sl-select')
+      //if(choiceSelect) choiceSelect.value = null
+      //Reset file input
 
       const fileInput = document.querySelector('input[type=file]');
       if (fileInput) fileInput.value = null;
@@ -15118,6 +15522,8 @@ var _favouriteCreatives = _interopRequireDefault(require("./views/pages/favourit
 
 var _projects = _interopRequireDefault(require("./views/pages/projects"));
 
+var _portfolio = _interopRequireDefault(require("./views/pages/portfolio"));
+
 var _jobs = _interopRequireDefault(require("./views/pages/jobs"));
 
 var _creatives = _interopRequireDefault(require("./views/pages/creatives"));
@@ -15144,6 +15550,7 @@ const routes = {
   '/signin': _signin.default,
   '/signup': _signup.default,
   '/profile': _profile.default,
+  '/portfolios': _portfolio.default,
   '/newPortfolio': _newPortfolio.default,
   '/projects': _projects.default,
   '/newProject': _newProject.default,
@@ -15206,7 +15613,7 @@ function anchorRoute(e) {
   const pathname = e.target.closest('a').pathname;
   AppRouter.gotoRoute(pathname);
 }
-},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteCreatives":"views/pages/favouriteCreatives.js","./views/pages/projects":"views/pages/projects.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js","./views/pages/newJob":"views/pages/newJob.js","./views/pages/newCollaboration":"views/pages/newCollaboration.js","./views/pages/newProject":"views/pages/newProject.js","./views/pages/newPortfolio":"views/pages/newPortfolio.js"}],"App.js":[function(require,module,exports) {
+},{"./views/pages/home":"views/pages/home.js","./views/pages/404":"views/pages/404.js","./views/pages/guide":"views/pages/guide.js","./views/pages/signin":"views/pages/signin.js","./views/pages/signup":"views/pages/signup.js","./views/pages/profile":"views/pages/profile.js","./views/pages/editProfile":"views/pages/editProfile.js","./views/pages/favouriteCreatives":"views/pages/favouriteCreatives.js","./views/pages/projects":"views/pages/projects.js","./views/pages/portfolio":"views/pages/portfolio.js","./views/pages/jobs":"views/pages/jobs.js","./views/pages/creatives":"views/pages/creatives.js","./views/pages/collaborations":"views/pages/collaborations.js","./views/pages/newJob":"views/pages/newJob.js","./views/pages/newCollaboration":"views/pages/newCollaboration.js","./views/pages/newProject":"views/pages/newProject.js","./views/pages/newPortfolio":"views/pages/newPortfolio.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17102,7 +17509,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite Creatives</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite Creatives</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/portfolios\" @click=\"", "\">View Portfolio pieces!</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -17164,7 +17571,7 @@ customElements.define('va-app-header', class AppHeader extends _litElement.LitEl
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/favouriteCreatives'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
+    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.firstName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/favouriteCreatives'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
   }
 
 });
@@ -17502,7 +17909,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n    <style>\n      .wrap {\n        background: #fff;\n        border-radius: 10px;\n        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);\n        margin-bottom: 0.5em;\n        padding: 1em;\n      }\n\n      .author{\n        font-size: 0.9em;\n        font-style: italic;\n        opacity: 0.8;\n      }\n    </style>\n\n    <sl-card>\n      ", "\n      <h2>", "</h2>\n      <h4>", "</h4>\n      <p class=\"author\">By ", "</p>\n      \n      <div slot=\"footer\">\n        <sl-tag>", "</sl-tag>\n        <sl-button @click=", "> More Info</sl-button>\n      </div>\n    </sl-card>\n\n    <sl-dialog>\n      ", "\n        <h2>", "</h2>\n        <h3>", "</h3>\n        <p class=\"author\">By ", "</p>\n        \n        <sl-tag>", "</sl-tag>\n    </sl-dialog>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>\n      .wrap {\n        background: #fff;\n        border-radius: 10px;\n        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);\n        margin-bottom: 0.5em;\n        padding: 1em;\n      }\n\n      .author{\n        font-size: 0.9em;\n        font-style: italic;\n        opacity: 0.8;\n      }\n    </style>\n\n    <sl-card>\n      ", "\n      <h2>", "</h2>\n      <h4>", "</h4>\n      <p class=\"author\">By ", "</p>\n      \n      <div slot=\"footer\">\n        <sl-tag type=\"info\">", "</sl-tag>\n        <sl-button @click=", "> More Info</sl-button>\n      </div>\n    </sl-card>\n\n    <sl-dialog>\n      ", "\n        <h2>", "</h2>\n        <h3>", "</h3>\n        <p class=\"author\">By ", "</p>\n        \n        <sl-tag type=\"info\">", "</sl-tag>\n    </sl-dialog>\n    "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -17532,7 +17939,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n        <style>\n          .wrap {\n            display: flex;\n          }\n          .image {\n            width: 50%;\n          }\n          .image img {\n            width: 100%;\n          }\n          .content {\n            padding-left: 1em;\n          }\n          .author{\n            font-size: 0.9em;\n            font-style: italic;\n            opacity: 0.8;\n          }         \n        </style>\n        <div class=\"wrap\">\n          <div class=\"image\">\n            ", "\n          </div>\n          <div class=\"content\">\n            <h2>", "</h2>\n            <h4>", "</h4>\n            <p class=\"author\">By ", "</p>\n            \n            <sl-tag>", "</sl-tag>\n            \n          </div>\n        </div>\n\n      "]);
+  const data = _taggedTemplateLiteral(["\n        <style>\n          .wrap {\n            display: flex;\n          }\n          .image {\n            width: 40%;\n          }\n          .image img {\n            width: 100%;\n          }\n          .content {\n            padding-left: 2em;\n          }\n          .author{\n            font-size: 0.9em;\n            font-style: italic;\n            opacity: 0.8;\n          }         \n        </style>\n        <div class=\"wrap\">\n          <div class=\"image\">\n            ", "\n          </div>\n          <div class=\"content\">\n            <h2>", "</h2>\n            <h4>", "</h4>\n            <p class=\"author\">By ", "</p>\n            \n            <sl-tag >", "</sl-tag>\n            \n          </div>\n        </div>\n\n      "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -17719,7 +18126,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64583" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63387" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
