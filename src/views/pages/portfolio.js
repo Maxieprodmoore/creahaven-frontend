@@ -6,29 +6,61 @@ import Utils from '../../Utils'
 import PortfolioAPI from './../../PortfolioAPI'
 
 class portfolioView {
-  async init(){
+  init(){
     document.title = 'Portfolio Pieces' 
     this.portfolioPs = null     
     this.render()    
     Utils.pageIntroAnim()
-    await this.getPortfolioPs() 
-    //this.filteredPortfolioPs('tag', 'illustration')
+    this.getPortfolioPs() 
+    
   }
 
-  filterPortfolioPs(field, match){
+  async filterPortfolioPs(field, match){
     //validate
     if(!field || !match) return
+    //get fresh copy of portfolio page
+    this.portfolioPs = await PortfolioAPI.getPortfolioPs()
 
-    let filteredPiece
+    let filteredPieces
 
     // tag
     if(field == 'tag'){
-      filteredPiece = this.portfolioPs.filter(portfolio => portfolio.tag == match)
-    }
+      filteredPieces = this.portfolioPs.filter(portfolio => portfolio.tag == match)
+      
+    } 
 
     //render
-    this.portfolioPs = filteredPiece
+    this.portfolioPs = filteredPieces
     this.render()
+    
+  }
+
+  clearFilterBtns(){
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn')
+    filterButtons.forEach(btn => btn.removeAttribute("checked"))
+  }
+
+  handleFilterBtn(e){
+    this.clearFilterBtns()
+
+    //set item = active (item add attribute 'checked')
+    e.target.setAttribute("checked", "")
+
+    //extract the field and match from buttons
+    const field = e.target.getAttribute("data-field")
+    const match = e.target.getAttribute("data-match")
+
+    console.log("field = ", field)
+    console.log("match = ", match)
+
+    //filter portfolio pieces
+    this.filterPortfolioPs(field, match)
+  }
+
+  clearFilters(){
+    this.getPortfolioPs() 
+    this.clearFilterBtns()
   }
 
   async getPortfolioPs(){
@@ -47,19 +79,15 @@ class portfolioView {
         .filter-menu{
           display: flex;
           align-items: center;
+          margin-bottom: 0.8em;
+          width:100%;
         }
 
-        .filter-menu > div {
+        .filter-menu > div {       
           margin-right: 1em;
         }
       </style>
         
-      <script>
-        const container = document.querySelector('.filter-menu');
-        const Illustrations = container.querySelector('sl-menu-item[value="illustration"]')
-
-        Illustrations.addEventListener('click', () => this.filterPortfolioPs("tag", "illustration"))
-      </script>
       <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content calign">
@@ -75,13 +103,29 @@ class portfolioView {
                     <div class="filter-menu">
                       <div>Filter by:</div>
                       
-                      <sl-dropdown>
-                        <sl-button slot="trigger" caret><strong>Genre of piece</strong></sl-button>
+                      <div class="filter-dropdown"> 
+                        <sl-dropdown>
+                          <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
                           <sl-menu>
-                            <sl-menu-item value="illustration">illustration</sl-menu-item> 
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>
+                            <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${this.handleFilterBtn.bind(this)}>writing</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${this.handleFilterBtn.bind(this)}>pre-production</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${this.handleFilterBtn.bind(this)}>production</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${this.handleFilterBtn.bind(this)}>post-production</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${this.handleFilterBtn.bind(this)}>animation</sl-menu-item>
+                            <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${this.handleFilterBtn.bind(this)}>voice-over</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${this.handleFilterBtn.bind(this)}>game production</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${this.handleFilterBtn.bind(this)}>website development</sl-menu-item>
+                            <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${this.handleFilterBtn.bind(this)}>2D art</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${this.handleFilterBtn.bind(this)}>3D art</sl-menu-item>
+                            <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>
                           </sl-menu>
-                      </sl-dropdown>
-                      
+                        </sl-dropdown>
+                      </div>
+                      <div>
+                        <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
+                      </div>
                     </div>
                     ${this.portfolioPs == null ? html `
                       <sl-spinner></sl-spinner>

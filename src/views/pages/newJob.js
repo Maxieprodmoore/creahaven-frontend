@@ -59,15 +59,18 @@ class newJobView {
             </div>
             <div class="input-group">
               <sl-select name="tag" placeholder="This is a/ an..." multiple clearable>
-                <sl-menu-item value="illustration">Illustration type of job</sl-menu-item>
-                <sl-menu-item value="voiceActing">Voice acting type of job</sl-menu-item>
-                <sl-menu-item value="animation">Animation type of job</sl-menu-item>
-                <sl-menu-item value="preProduction">Pre-production type of job</sl-menu-item>
-                <sl-menu-item value="postProduction">Post-production type of job</sl-menu-item>
                 <sl-menu-item value="photography">Photography type of job</sl-menu-item>
-                <sl-menu-item value="websiteDevelopment">Website Development type of job</sl-menu-item>
+                <sl-menu-item value="illustration">Illustration type of job</sl-menu-item>
                 <sl-menu-item value="writing">Writing type of job</sl-menu-item>
-                <sl-menu-item value="videoGameDevelopment">Video Game Development type of job</sl-menu-item>
+                <sl-menu-item value="pre-production">Pre-production type of job</sl-menu-item>
+                <sl-menu-item value="production">Production type of job</sl-menu-item>
+                <sl-menu-item value="post-production">Post-production type of job</sl-menu-item>                
+                <sl-menu-item value="animation">Animation type of job</sl-menu-item>
+                <sl-menu-item value="audio">Audio related type of job</sl-menu-item>
+                <sl-menu-item value="game-production">Video Game Development type of job</sl-menu-item>
+                <sl-menu-item value="website-dev">Website Development type of job</sl-menu-item>
+                <sl-menu-item value="2d-related">2D Related type of job</sl-menu-item>
+                <sl-menu-item value="3d-related">3D Related type of job</sl-menu-item>                
                 <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>
               </sl-select>
             </div>

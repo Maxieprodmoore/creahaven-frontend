@@ -59,15 +59,18 @@ class newCollaborationView {
             </div>
             <div class="input-group">
               <sl-select name="tag" placeholder="This Collaboration requires..." multiple clearable>
-                <sl-menu-item value="illustration">Illustration</sl-menu-item>
-                <sl-menu-item value="voiceActing">Voice acting</sl-menu-item>
-                <sl-menu-item value="animation">Animation</sl-menu-item>
-                <sl-menu-item value="preProduction">Pre-production assistance</sl-menu-item>
-                <sl-menu-item value="postProduction">Post-production assistance</sl-menu-item>
                 <sl-menu-item value="photography">Photographs</sl-menu-item>
-                <sl-menu-item value="websiteDevelopment">Website Development assistance</sl-menu-item>
+                <sl-menu-item value="illustration">Illustration</sl-menu-item>
                 <sl-menu-item value="writing">Writing assistance</sl-menu-item>
-                <sl-menu-item value="videoGameDevelopment">Video Game Development assistance</sl-menu-item>
+                <sl-menu-item value="pre-production">Pre-production assistance</sl-menu-item>
+                <sl-menu-item value="production">Production assistance</sl-menu-item>
+                <sl-menu-item value="post-production">Post-production assistance</sl-menu-item>
+                <sl-menu-item value="animation">Animation</sl-menu-item>
+                <sl-menu-item value="audio">Audio specialisation</sl-menu-item>                
+                <sl-menu-item value="game-production">Video Game Development assistance</sl-menu-item>
+                <sl-menu-item value="website-dev">Website Development assistance</sl-menu-item>
+                <sl-menu-item value="2d-related">2D related assistance</sl-menu-item>
+                <sl-menu-item value="3d-related">3D related Development assistance</sl-menu-item>                
                 <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>
               </sl-select>
             </div>

@@ -150,6 +150,7 @@ a {
 .postings-grid{
   display: flexbox;
   flex-wrap: wrap;
+  margin-bottom: 0.8em;
   .posting-card{
     width: calc(33.33% - 1em);
     margin: 0.5em;

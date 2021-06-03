@@ -171,6 +171,7 @@ a {
 .postings-grid {
   display: flexbox;
   flex-wrap: wrap;
+  margin-bottom: 0.8em;
 }
 .postings-grid .posting-card {
   width: calc(33.33% - 1em);

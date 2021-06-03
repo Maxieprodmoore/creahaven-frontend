@@ -29,12 +29,12 @@ class newPortfolioView {
         //reset text inputs
         const textInputs = document.querySelectorAll('sl-input, sl-textarea')
         if(textInputs) textInputs.forEach(textInputs => textInputs.value = null)
-        //Reset sl-select 
-        //const choiceSelect = document.querySelector('sl-select')
-        //if(choiceSelect) choiceSelect.value = null
-        //Reset file input
+        /*Reset sl-select 
+        const choiceSelect = document.querySelector('sl-select')
+        if(choiceSelect) choiceSelect.value = null
+        Reset file input
         const fileInput = document.querySelector('input[type=file]')
-        if(fileInput) fileInput.value = null
+        if(fileInput) fileInput.value = null*/
     }catch(err){
       Toast.show(err, 'error')
       submitBtn.removeAttribute('loading')

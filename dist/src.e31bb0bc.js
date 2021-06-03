@@ -14449,7 +14449,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\"> \n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Projects for bidding</h1>\n            ", "\n          </div>       \n          \n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n          \n        </div>   \n      </div>\n         \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n          margin-bottom: 0.8em;\n          width:100%;\n        }\n\n        .filter-menu > div {       \n          margin-right: 1em;\n        }\n      </style>\n\n      <va-app-header title=\"Projects for bidding\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\"> \n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Projects for bidding</h1>\n            ", "\n          </div>       \n          <div class=\"filter-menu\">\n              <div>Filter by:</div>\n                      \n                      <div class=\"filter-dropdown\"> \n                        <sl-dropdown>\n                          <sl-button size=\"medium\" type=\"info\" slot=\"trigger\" caret><strong>Genre</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"photography\" @click=", ">photography</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"illustration\" @click=", ">illustrations</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"writing\" @click=", ">writing</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"pre-production\" @click=", ">pre-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"production\" @click=", ">production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"post-production\" @click=", ">post-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"animation\" @click=", ">animation</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"audio-production\" @click=", ">audio production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"game-production\" @click=", ">game production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"website-dev\" @click=", ">website development</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"others\" @click=", ">others</sl-menu-item>\n                          </sl-menu>\n                        </sl-dropdown>\n                      </div>\n                      <div>\n                        <sl-button size=\"small\" @click=", ">Clear Filters</sl-button>\n                      </div>\n          </div>\n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n          \n        </div>   \n      </div>\n         \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14471,6 +14471,46 @@ class ProjectsView {
     this.getProjectPs();
   }
 
+  async filterProjects(field, match) {
+    //validate
+    if (!field || !match) return; //get fresh copy of projects page
+
+    this.projects = await _ProjectAPI.default.getProjectPs();
+    let filteredProjects; // tag
+
+    if (field == 'tag') {
+      filteredProjects = this.projects.filter(project => project.tag == match);
+    } //render
+
+
+    this.projects = filteredProjects;
+    this.render();
+  }
+
+  clearFilterBtns() {
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => btn.removeAttribute("checked"));
+  }
+
+  handleFilterBtn(e) {
+    this.clearFilterBtns(); //set item = active (item add attribute 'checked')
+
+    e.target.setAttribute("checked", ""); //extract the field and match from buttons
+
+    const field = e.target.getAttribute("data-field");
+    const match = e.target.getAttribute("data-match");
+    console.log("field = ", field);
+    console.log("match = ", match); //filter portfolio pieces
+
+    this.filterProjects(field, match);
+  }
+
+  clearFilters() {
+    this.getProjectPs();
+    this.clearFilterBtns();
+  }
+
   async getProjectPs() {
     try {
       this.projects = await _ProjectAPI.default.getProjectPs();
@@ -14482,7 +14522,7 @@ class ProjectsView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litHtml.html)(_templateObject3()), this.projects == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.projects.map(project => (0, _litHtml.html)(_templateObject6(), project.image, project.name, project.description, project.user.displayName, project.tag))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litHtml.html)(_templateObject3()), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.projects == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.projects.map(project => (0, _litHtml.html)(_templateObject6(), project.image, project.name, project.description, project.user.displayName, project.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14636,7 +14676,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n        }\n\n        .filter-menu > div {\n          margin-right: 1em;\n        }\n      </style>\n        \n      <script>\n        const container = document.querySelector('.filter-menu');\n        const Illustrations = container.querySelector('sl-menu-item[value=\"illustration\"]')\n\n        Illustrations.addEventListener('click', () => this.filterPortfolioPs(\"tag\", \"illustration\"))\n      </script>\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">        \n            <h1>Portfolio Pieces</h1>\n              \n                  <sl-card class=\"profile-section\">\n                    <div slot=\"header\"><h3>Portfolio</h3>\n                      ", "\n                    </div>\n                    <div class=\"filter-menu\">\n                      <div>Filter by:</div>\n                      \n                      <sl-dropdown>\n                        <sl-button slot=\"trigger\" caret><strong>Genre of piece</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item value=\"illustration\">illustration</sl-menu-item> \n                          </sl-menu>\n                      </sl-dropdown>\n                      \n                    </div>\n                    ", "                                  \n                  </sl-card>\n                \n          </div>\n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n          margin-bottom: 0.8em;\n          width:100%;\n        }\n\n        .filter-menu > div {       \n          margin-right: 1em;\n        }\n      </style>\n        \n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">\n          <div class=\"profile-grid\">        \n            <h1>Portfolio Pieces</h1>\n              \n                  <sl-card class=\"profile-section\">\n                    <div slot=\"header\"><h3>Portfolio</h3>\n                      ", "\n                    </div>\n                    <div class=\"filter-menu\">\n                      <div>Filter by:</div>\n                      \n                      <div class=\"filter-dropdown\"> \n                        <sl-dropdown>\n                          <sl-button size=\"medium\" type=\"info\" slot=\"trigger\" caret><strong>Genre</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"photography\" @click=", ">photography</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"illustration\" @click=", ">illustrations</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"writing\" @click=", ">writing</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"pre-production\" @click=", ">pre-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"production\" @click=", ">production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"post-production\" @click=", ">post-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"animation\" @click=", ">animation</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"voice-over\" @click=", ">voice-over</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"game-production\" @click=", ">game production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"website-dev\" @click=", ">website development</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"2d-art\" @click=", ">2D art</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"3d-art\" @click=", ">3D art</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"others\" @click=", ">others</sl-menu-item>\n                          </sl-menu>\n                        </sl-dropdown>\n                      </div>\n                      <div>\n                        <sl-button size=\"small\" @click=", ">Clear Filters</sl-button>\n                      </div>\n                    </div>\n                    ", "                                  \n                  </sl-card>\n                \n          </div>\n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14648,28 +14688,54 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 class portfolioView {
-  async init() {
+  init() {
     document.title = 'Portfolio Pieces';
     this.portfolioPs = null;
     this.render();
 
     _Utils.default.pageIntroAnim();
 
-    await this.getPortfolioPs(); //this.filteredPortfolioPs('tag', 'illustration')
+    this.getPortfolioPs();
   }
 
-  filterPortfolioPs(field, match) {
+  async filterPortfolioPs(field, match) {
     //validate
-    if (!field || !match) return;
-    let filteredPiece; // tag
+    if (!field || !match) return; //get fresh copy of portfolio page
+
+    this.portfolioPs = await _PortfolioAPI.default.getPortfolioPs();
+    let filteredPieces; // tag
 
     if (field == 'tag') {
-      filteredPiece = this.portfolioPs.filter(portfolio => portfolio.tag == match);
+      filteredPieces = this.portfolioPs.filter(portfolio => portfolio.tag == match);
     } //render
 
 
-    this.portfolioPs = filteredPiece;
+    this.portfolioPs = filteredPieces;
     this.render();
+  }
+
+  clearFilterBtns() {
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => btn.removeAttribute("checked"));
+  }
+
+  handleFilterBtn(e) {
+    this.clearFilterBtns(); //set item = active (item add attribute 'checked')
+
+    e.target.setAttribute("checked", ""); //extract the field and match from buttons
+
+    const field = e.target.getAttribute("data-field");
+    const match = e.target.getAttribute("data-match");
+    console.log("field = ", field);
+    console.log("match = ", match); //filter portfolio pieces
+
+    this.filterPortfolioPs(field, match);
+  }
+
+  clearFilters() {
+    this.getPortfolioPs();
+    this.clearFilterBtns();
   }
 
   async getPortfolioPs() {
@@ -14683,7 +14749,7 @@ class portfolioView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject3()), this.portfolioPs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.portfolioPs.map(portfolioPs => (0, _litHtml.html)(_templateObject6(), _App.default.apiBase, portfolioPs.image, portfolioPs.name, portfolioPs.name, portfolioPs.description, portfolioPs.tag, portfolioPs.user.displayName))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litHtml.html)(_templateObject3()), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.portfolioPs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.portfolioPs.map(portfolioPs => (0, _litHtml.html)(_templateObject6(), _App.default.apiBase, portfolioPs.image, portfolioPs.name, portfolioPs.name, portfolioPs.description, portfolioPs.tag, portfolioPs.user.displayName))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -14839,7 +14905,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Job Vacancies</h1>\n            ", "\n          </div>\n          \n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n          margin-bottom: 0.8em;\n          width:100%;\n        }\n\n        .filter-menu > div {       \n          margin-right: 1em;\n        }\n      </style>\n\n      <va-app-header title=\"Job Vacancies\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n          <div class= \"postings-grid\">\n            <h1 class=\"anim-in\">Job Vacancies</h1>\n            ", "\n          </div>\n          <div class=\"filter-menu\">\n            <div>Filter by:</div>\n                      \n                      <div class=\"filter-dropdown\"> \n                        <sl-dropdown>\n                          <sl-button size=\"medium\" type=\"info\" slot=\"trigger\" caret><strong>Genre</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"photography\" @click=", ">photography</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"illustration\" @click=", ">illustrations</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"writing\" @click=", ">writing</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"pre-production\" @click=", ">pre-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"production\" @click=", ">production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"post-production\" @click=", ">post-production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"animation\" @click=", ">animation</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"audio\" @click=", ">audio</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"game-production\" @click=", ">game production</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"website-dev\" @click=", ">website development</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"2d-related\" @click=", ">2D Related</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"3d-related\" @click=", ">3D Related</sl-menu-item>\n                            <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"others\" @click=", ">others</sl-menu-item>\n                          </sl-menu>\n                        </sl-dropdown>\n                      </div>\n                      <div>\n                        <sl-button size=\"small\" @click=", ">Clear Filters</sl-button>\n                      </div>\n          </div>\n          \n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -14861,6 +14927,46 @@ class jobVacanciesView {
     this.getJobs();
   }
 
+  async filterJobs(field, match) {
+    //validate
+    if (!field || !match) return; //get fresh copy of projects page
+
+    this.jobs = await _JobAPI.default.getJobs();
+    let filteredJobs; // tag
+
+    if (field == 'tag') {
+      filteredJobs = this.jobs.filter(job => job.tag == match);
+    } //render
+
+
+    this.jobs = filteredJobs;
+    this.render();
+  }
+
+  clearFilterBtns() {
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => btn.removeAttribute("checked"));
+  }
+
+  handleFilterBtn(e) {
+    this.clearFilterBtns(); //set item = active (item add attribute 'checked')
+
+    e.target.setAttribute("checked", ""); //extract the field and match from buttons
+
+    const field = e.target.getAttribute("data-field");
+    const match = e.target.getAttribute("data-match");
+    console.log("field = ", field);
+    console.log("match = ", match); //filter job vacncies postings
+
+    this.filterJobs(field, match);
+  }
+
+  clearFilters() {
+    this.getJobs();
+    this.clearFilterBtns();
+  }
+
   async getJobs() {
     try {
       this.jobs = await _JobAPI.default.getJobs();
@@ -14872,7 +14978,7 @@ class jobVacanciesView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litHtml.html)(_templateObject3()), this.jobs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.jobs.map(job => (0, _litHtml.html)(_templateObject6(), job.image, job.name, job.description, job.user.displayName, job.tag))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 2 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litHtml.html)(_templateObject3()), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.jobs == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.jobs.map(job => (0, _litHtml.html)(_templateObject6(), job.image, job.name, job.description, job.user.displayName, job.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -15125,7 +15231,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <div class= \"postings-grid\">\n              <h1 class=\"anim-in\">Collaboration Invitations</h1>\n              ", "\n          </div>\n\n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div>\n      </div>\n            \n    "]);
+  const data = _taggedTemplateLiteral(["\n\n      <style>\n        .filter-menu{\n          display: flex;\n          align-items: center;\n          margin-bottom: 0.8em;\n          width:100%;\n        }\n\n        .filter-menu > div {       \n          margin-right: 1em;\n        }\n      </style>\n      <va-app-header title=\"Profile\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">        \n          <div class= \"postings-grid\">\n              <h1 class=\"anim-in\">Collaboration Invitations</h1>\n              ", "\n          </div>\n\n          <div class=\"filter-menu\">\n            <div>Filter by:</div>\n                      \n              <div class=\"filter-dropdown\"> \n                  <sl-dropdown>\n                    <sl-button size=\"medium\" type=\"info\" slot=\"trigger\" caret><strong>Genre</strong></sl-button>\n                    <sl-menu>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"photography\" @click=", ">photography</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"illustration\" @click=", ">illustrations</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"writing\" @click=", ">writing</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"pre-production\" @click=", ">pre-production</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"production\" @click=", ">production</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"post-production\" @click=", ">post-production</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"animation\" @click=", ">animation</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"audio\" @click=", ">audio</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"game-production\" @click=", ">game production</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"website-dev\" @click=", ">website development</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\"data-field=\"tag\" data-match=\"2d-related\" @click=", ">2D Related</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"3d-related\" @click=", ">3D Related</sl-menu-item>\n                      <sl-menu-item class=\"filter-btn\" data-field=\"tag\" data-match=\"others\" @click=", ">others</sl-menu-item>\n                    </sl-menu>\n                  </sl-dropdown>\n              </div>\n              <div>\n                <sl-button size=\"small\" @click=", ">Clear Filters</sl-button>\n              </div>\n          </div>\n\n          <div class= \"postings-grid\">\n            \n            ", "\n          </div>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15147,6 +15253,46 @@ class CollaborationsView {
     this.getCollaborationIs();
   }
 
+  async filterCollabIs(field, match) {
+    //validate
+    if (!field || !match) return; //get fresh copy of projects page
+
+    this.collaborationIs = await _CollaborationAPI.default.getCollaborationIs();
+    let filteredCollaborationIs; // tag
+
+    if (field == 'tag') {
+      filteredCollaborationIs = this.collaborationIs.filter(collaboration => collaboration.tag == match);
+    } //render
+
+
+    this.collaborationIs = filteredCollaborationIs;
+    this.render();
+  }
+
+  clearFilterBtns() {
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => btn.removeAttribute("checked"));
+  }
+
+  handleFilterBtn(e) {
+    this.clearFilterBtns(); //set item = active (item add attribute 'checked')
+
+    e.target.setAttribute("checked", ""); //extract the field and match from buttons
+
+    const field = e.target.getAttribute("data-field");
+    const match = e.target.getAttribute("data-match");
+    console.log("field = ", field);
+    console.log("match = ", match); //filter collaboration invites
+
+    this.filterCollabIs(field, match);
+  }
+
+  clearFilters() {
+    this.getCollaborationIs();
+    this.clearFilterBtns();
+  }
+
   async getCollaborationIs() {
     try {
       this.collaborations = await _CollaborationAPI.default.getCollaborationIs();
@@ -15158,7 +15304,7 @@ class CollaborationsView {
   }
 
   render() {
-    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litHtml.html)(_templateObject3()), this.collaborations == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.collaborations.map(job => (0, _litHtml.html)(_templateObject6(), collaboration.image, collaboration.name, collaboration.description, collaboration.user.displayName, collaboration.tag))));
+    const template = (0, _litHtml.html)(_templateObject(), JSON.stringify(_Auth.default.currentUser), _Auth.default.currentUser.accessLevel == 1 ? (0, _litHtml.html)(_templateObject2(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litHtml.html)(_templateObject3()), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.collaborations == null ? (0, _litHtml.html)(_templateObject4()) : (0, _litHtml.html)(_templateObject5(), this.collaborations.map(job => (0, _litHtml.html)(_templateObject6(), collaboration.image, collaboration.name, collaboration.description, collaboration.user.displayName, collaboration.tag))));
     (0, _litHtml.render)(template, _App.default.rootEl);
   }
 
@@ -15192,7 +15338,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Job Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Job Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Job Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of job</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of job</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of job</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of job</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of job</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of job</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of job</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Job Posting!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Job Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Job Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Job Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Job Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"photography\">Photography type of job</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration type of job</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of job</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value=\"production\">Production type of job</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production type of job</sl-menu-item>                \n                <sl-menu-item value=\"animation\">Animation type of job</sl-menu-item>\n                <sl-menu-item value=\"audio\">Audio related type of job</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website Development type of job</sl-menu-item>\n                <sl-menu-item value=\"2d-related\">2D Related type of job</sl-menu-item>\n                <sl-menu-item value=\"3d-related\">3D Related type of job</sl-menu-item>                \n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Job Posting!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15273,7 +15419,7 @@ var _Toast = _interopRequireDefault(require("./../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Collaboration Invitation Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Collaboration Invitation form</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Collaboration item Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Collaboration Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This Collaboration requires...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production assistance</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production assistance</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photographs</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development assistance</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing assistance</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development assistance</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Collaboration Invite!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Collaboration Invitation Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Collaboration Invitation form</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Collaboration item Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Collaboration Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This Collaboration requires...\" multiple clearable>\n                <sl-menu-item value=\"photography\">Photographs</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing assistance</sl-menu-item>\n                <sl-menu-item value=\"pre-production\">Pre-production assistance</sl-menu-item>\n                <sl-menu-item value=\"production\">Production assistance</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production assistance</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation</sl-menu-item>\n                <sl-menu-item value=\"audio\">Audio specialisation</sl-menu-item>                \n                <sl-menu-item value=\"game-production\">Video Game Development assistance</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website Development assistance</sl-menu-item>\n                <sl-menu-item value=\"2d-related\">2D related assistance</sl-menu-item>\n                <sl-menu-item value=\"3d-related\">3D related Development assistance</sl-menu-item>                \n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a Collaboration Invite!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15354,7 +15500,7 @@ var _Toast = _interopRequireDefault(require("../../Toast"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Project Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Project for bidding Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Project Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Project Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"illustration\">Illustration type of Project</sl-menu-item>\n                <sl-menu-item value=\"voiceActing\">Voice acting type of Project</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of Project</sl-menu-item>\n                <sl-menu-item value=\"preProduction\">Pre-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"postProduction\">Post-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"photography\">Photography type of Project</sl-menu-item>\n                <sl-menu-item value=\"websiteDevelopment\">Website Development type of Project</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of Project</sl-menu-item>\n                <sl-menu-item value=\"videoGameDevelopment\">Video Game Development Project</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a New Project for Bidding!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"New Project Form\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content\">\n        <h1 class=\"anim-in\">New Project for bidding Posting</h1>        \n          <sl-form class=\"page-form\" @sl-submit=", ">\n            <input type=\"hidden\" name=\"user\" value=\"", "\" />\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-input name=\"name\" type=\"text\" placeholder=\"Project Name\" required></sl-input>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <sl-textarea name=\"description\" rows=\"6\" placeholder=\"Project Details\"></sl-textarea>\n            </div>\n            <div class=\"input-group\" style=\"margin-bottom: 2em;\">\n              <label>Image</label><br>\n              <input type=\"file\" name=\"image\" />              \n            </div>\n            <div class=\"input-group\">\n              <sl-select name=\"tag\" placeholder=\"This is a/ an...\" multiple clearable>\n                <sl-menu-item value=\"photography\">Photography type of Project</sl-menu-item>\n                <sl-menu-item value=\"illustration\">Illustration type of Project</sl-menu-item>\n                <sl-menu-item value=\"writing\">Writing type of Project</sl-menu-item>                                \n                <sl-menu-item value=\"pre-production\">Pre-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"production\">Production type of Project</sl-menu-item>\n                <sl-menu-item value=\"post-production\">Post-production type of Project</sl-menu-item>\n                <sl-menu-item value=\"animation\">Animation type of Project</sl-menu-item>\n                <sl-menu-item value=\"website-dev\">Website Development type of Project</sl-menu-item>\n                <sl-menu-item value=\"audio-production\">Audio Production type of Project</sl-menu-item>\n                <sl-menu-item value=\"game-production\">Video Game Development Project</sl-menu-item>\n                <sl-menu-item value=\"others\">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type=\"primary\" size=\"medium\" class=\"submit-btn\" submit>Submit a New Project for Bidding!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -15470,13 +15616,13 @@ class newPortfolioView {
       //reset text inputs
 
       const textInputs = document.querySelectorAll('sl-input, sl-textarea');
-      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null); //Reset sl-select 
-      //const choiceSelect = document.querySelector('sl-select')
-      //if(choiceSelect) choiceSelect.value = null
-      //Reset file input
-
-      const fileInput = document.querySelector('input[type=file]');
-      if (fileInput) fileInput.value = null;
+      if (textInputs) textInputs.forEach(textInputs => textInputs.value = null);
+      /*Reset sl-select 
+      const choiceSelect = document.querySelector('sl-select')
+      if(choiceSelect) choiceSelect.value = null
+      Reset file input
+      const fileInput = document.querySelector('input[type=file]')
+      if(fileInput) fileInput.value = null*/
     } catch (err) {
       _Toast.default.show(err, 'error');
 
@@ -17509,7 +17655,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite Creatives</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\">Home</a>\n        <a href=\"/portfolios\" @click=\"", "\">View Portfolio pieces!</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
+  const data = _taggedTemplateLiteral(["\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: #fff;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: #fff;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: #fff;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n      \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n        \n        .app-top-nav {\n          display: none;\n        }\n\n        .app-header-main{\n          margin-left: 0;\n        }\n\n        .app-top-nav{\n          margin-right: 0;\n        }\n      }\n\n    </style>\n\n\n\n    <header class=\"app-header\">\n      <div class=\"app-header-main\">\n        <sl-icon-button class=\"hamburger-btn\" name=\"list\" @click=\"", "\" style=\"font-size: 1.5em;\"></sl-icon-button>\n        <img class=\"app-header-logo\" src=\"/images/creahaven-logo-black.svg\">\n        <slot></slot>\n        <a href=\"/\" @click=\"", "\">Home</a>  \n      </div>\n\n\n      <nav class=\"app-top-nav\">\n        ", "      \n        <sl-dropdown>\n          <a slot=\"trigger\" href=\"#\" @click=\"", "\">\n            <sl-avatar style=\"--size: 24px;\" image=", "></sl-avatar> ", "\n          </a>\n          <sl-menu>            \n            <sl-menu-item @click=\"", "\">Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Edit Profile</sl-menu-item>\n            <sl-menu-item @click=\"", "\">Favourite Creatives</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ", "\n            ", "\n            ", "\n            ", "\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click=\"", "\">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class=\"app-side-menu\" placement=\"left\">\n      <img class=\"app-side-menu-logo\" src=\"/images/creahaven-logo.svg\">\n      <nav class=\"app-side-menu-items\">\n        <a href=\"/\" @click=\"", "\"> <sl-icon name=\"house-door-fill\"></sl-icon>Home</a>\n        <a href=\"/portfolios\" @click=\"", "\">View Portfolio pieces!</a>\n        <a href=\"/creatives\" @click=\"", "\">Find a Creative!</a>\n        <a href=\"/collaborations\" @click=\"", "\">Find a Collaboration!</a>\n        <a href=\"/jobs\" @click=\"", "\">Find a Job vacancy!</a>\n        <a href=\"/projects\" @click=\"", "\">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -18126,7 +18272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63387" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59041" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

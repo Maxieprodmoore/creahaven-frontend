@@ -59,15 +59,16 @@ class newProjectView {
             </div>
             <div class="input-group">
               <sl-select name="tag" placeholder="This is a/ an..." multiple clearable>
-                <sl-menu-item value="illustration">Illustration type of Project</sl-menu-item>
-                <sl-menu-item value="voiceActing">Voice acting type of Project</sl-menu-item>
-                <sl-menu-item value="animation">Animation type of Project</sl-menu-item>
-                <sl-menu-item value="preProduction">Pre-production type of Project</sl-menu-item>
-                <sl-menu-item value="postProduction">Post-production type of Project</sl-menu-item>
                 <sl-menu-item value="photography">Photography type of Project</sl-menu-item>
-                <sl-menu-item value="websiteDevelopment">Website Development type of Project</sl-menu-item>
-                <sl-menu-item value="writing">Writing type of Project</sl-menu-item>
-                <sl-menu-item value="videoGameDevelopment">Video Game Development Project</sl-menu-item>
+                <sl-menu-item value="illustration">Illustration type of Project</sl-menu-item>
+                <sl-menu-item value="writing">Writing type of Project</sl-menu-item>                                
+                <sl-menu-item value="pre-production">Pre-production type of Project</sl-menu-item>
+                <sl-menu-item value="production">Production type of Project</sl-menu-item>
+                <sl-menu-item value="post-production">Post-production type of Project</sl-menu-item>
+                <sl-menu-item value="animation">Animation type of Project</sl-menu-item>
+                <sl-menu-item value="website-dev">Website Development type of Project</sl-menu-item>
+                <sl-menu-item value="audio-production">Audio Production type of Project</sl-menu-item>
+                <sl-menu-item value="game-production">Video Game Development Project</sl-menu-item>
                 <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>
               </sl-select>
             </div>
