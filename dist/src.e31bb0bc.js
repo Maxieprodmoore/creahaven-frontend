@@ -7928,7 +7928,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h4>Adding a new Project for bidding</h4>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <P>\n                1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Project posting!\" button.\n                  <br> \n                  3. At the project posting screen, Fill up the details  accordingly and press the \"Submit project\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the projects for bidding page via the \"Find a Project for bidding!\" to verify that the project post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first project posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can find you to submit their proposals!\n              </P>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h4>Adding a new Project for bidding</h4>\n              <img src=\"/images/Creahaven-tutorials_newProject.png\">\n              <P>\n                1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Project posting!\" button.\n                  <br> \n                  3. At the project posting screen, Fill up the details  accordingly and press the \"Submit project\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the projects for bidding page via the \"Find a Project for bidding!\" to verify that the project post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first project posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can find you to submit their proposals!\n              </P>\n            </div>\n          "]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -7948,7 +7948,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Job vacancy</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Job vacancy posting!\" button.\n                  <br> \n                  3. At the New Job vacancy screen, Fill up the details  accordingly and press the \"Post job\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the job vacancy page via the \"Find a job vacancy\" button to verify that the post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've posted your first job vacancy posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can contact you!\n              </p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Job vacancy</h3>\n              <img src=\"/images/Creahaven-tutorials_jobVacancies.png\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Job vacancy posting!\" button.\n                  <br> \n                  3. At the New Job vacancy screen, Fill up the details  accordingly and press the \"Post job\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed, then return to the job vacancy page via the \"Find a job vacancy\" button to verify that the post was submitted if necessary.\n                  <br>\n                  <br>\n                  Well done! With that, you've posted your first job vacancy posting. \n                  <br>\n                  Remember to confirm that you've posted the right contact details so the appropriate talents can contact you!\n              </p>\n            </div>\n          "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -7968,7 +7968,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Collaboration invitation</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Edit Portfolio\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Confirm\" button to proceed.\n                  <br> \n                  4. Click the \"Add Portfolio\" button to bring up the portfolio submission form again. Repeat the steps as needed.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first portfolio piece. \n                  <br>\n                  Repeat the steps indicated here to finish adding all your portfolio pieces to your account.\n              </p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new Collaboration invitation</h3>\n              <img src=\"/images/Creahaven-tutorials_newCollaboration.png\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Edit Portfolio\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Confirm\" button to proceed.\n                  <br> \n                  4. Click the \"Add Portfolio\" button to bring up the portfolio submission form again. Repeat the steps as needed.\n                  <br>\n                  <br>\n                  Well done! With that, you've entered in your first portfolio piece. \n                  <br>\n                  Repeat the steps indicated here to finish adding all your portfolio pieces to your account.\n              </p>\n            </div>\n          "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -7988,7 +7988,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new portfolio piece</h3>\n              <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Portfolio piece!\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Submit\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed. Then press any of the other buttons to leave the page. \n                  <br>\n                  <br>\n                  With that, You've posted your first portfolio piece to the Creahaven website. Now, clients and collaborators will be able to see if you match what they seek for their projects!\n              </p>\n            </div>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <div class=\"guide-step\">\n              <h3>Adding a new portfolio piece</h3>\n              <img src=\"/images/Creahaven-tutorials_newPortfolio.png\">\n              <p>\n                  1. Select your avatar icon on the header, then select the \"User Profile\" button.\n                  <br>\n                  2. Scroll down and select the \"Post a new Portfolio piece!\" button.\n                  <br> \n                  3. At the add portfolio screen, Fill up the details  accordingly and press the \"Submit\" button to proceed.\n                  <br> \n                  4. Repeat the steps as needed. Then press any of the other buttons to leave the page. \n                  <br>\n                  <br>\n                  With that, You've posted your first portfolio piece to the Creahaven website. Now, clients and collaborators will be able to see if you match what they seek for their projects!\n              </p>\n            </div>\n          "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -7998,7 +7998,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h2 class=\"brand-color\">Welcome ", "!</h2>\n          <p >Thank you for signing up with Creahaven! \n          <br>\n          Let's get you started on how to make the most of your Creahaven account!</p>\n\n          <div class=\"guide-step\">\n            <h3>Updating your profile page</h3>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <p>1. Select your avatar icon on the header, then select the profile button.\n              <br>\n              2. Select the update profile button. Then, fill up your particulars in the resultant form.\n              <br>\n              3. Once you are satisfied, press the save changes button to log in the changes.\n              <br>\n              <br>\n              Well done! With that, you have updated your profile accordingly and \n              can be found by potential clients and collaborators should they require assistance in bringing their visions to life!. \n            </p>\n          </div>\n\n          ", "\n\n          ", "\n          \n          ", "\n          \n          ", "\n          \n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P></P>\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
+  const data = _taggedTemplateLiteral(["\n      <va-app-header title=\"Guide\" user=\"", "\"></va-app-header>\n      <div class=\"page-body\">\n        <div class=\"page-content calign\">        \n          <h2 class=\"brand-color\">Welcome ", "!</h2>\n          <p >Thank you for signing up with Creahaven! \n          <br>\n          Let's get you started on how to make the most of your Creahaven account!</p>\n\n          <div class=\"guide-step\">\n            <h3>Updating your profile page</h3>\n            <img src=\"/images/Creahaven-tutorials_editProfile.png\">\n            <p>1. Select your avatar icon on the header, then select the profile button.\n              <br>\n              2. Select the update profile button, or reach it directly through the edit profile button via the avatar icon. Then, fill up your particulars in the resultant form.\n              <br>\n              3. Once you are satisfied, press the save changes button to log in the changes.\n              <br>\n              <br>\n              Well done! With that, you have updated your profile accordingly and \n              can be found by potential clients and collaborators should they require assistance in bringing their visions to life!. \n            </p>\n          </div>\n\n          ", "\n\n          ", "\n          \n          ", "\n          \n          ", "\n          \n          <div class=\"guide-step\">\n            <h4>Adding a user to favourites</h4>\n            <img src=\"https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE\">\n            <P>\n             After you have found a talent who has the greatest potential to meet your requirements, it is natural that you'll want to save a record of that user so you can contact them (again) later.\n             <br>\n             Here's how.\n             <br>\n              1.\n\n            </P>\n          </div>\n\n          <sl-button type=\"primary\" @click=", ">Okay got it!</sl-button>\n        </div>\n      </div>\n            \n    "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -17604,8 +17604,18 @@ var _App = _interopRequireDefault(require("./../App"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject10() {
+function _templateObject11() {
   const data = _taggedTemplateLiteral([""]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Project listing!</sl-menu-item>\n            "]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -17615,7 +17625,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Project listing!</sl-menu-item>\n            "]);
+  const data = _taggedTemplateLiteral([""]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -17625,7 +17635,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  const data = _taggedTemplateLiteral([""]);
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Job Vacancy posting!</sl-menu-item>\n            "]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -17635,7 +17645,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Job Vacancy posting!</sl-menu-item>\n            "]);
+  const data = _taggedTemplateLiteral([""]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -17645,7 +17655,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  const data = _taggedTemplateLiteral([""]);
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Collaboration Request!</sl-menu-item>\n            "]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -17655,7 +17665,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Collaboration Request!</sl-menu-item>\n            "]);
+  const data = _taggedTemplateLiteral([""]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -17665,7 +17675,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  const data = _taggedTemplateLiteral([""]);
+  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Portfolio Piece!</sl-menu-item>\n            "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -17675,7 +17685,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  const data = _taggedTemplateLiteral(["\n              <sl-menu-item @click=\"", "\">Post a new Portfolio Piece!</sl-menu-item>\n            "]);
+  const data = _taggedTemplateLiteral([""]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -17685,7 +17695,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  const data = _taggedTemplateLiteral(["\n            <h6 class=\"page-title\">", "</h6>\n          "]);
+  const data = _taggedTemplateLiteral(["\n            <h6 class=\"page-title\">", "</h6>\n        "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -17757,7 +17767,7 @@ customElements.define('va-app-header', class AppHeader extends _litElement.LitEl
   }
 
   render() {
-    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : "", e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.displayName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/favouriteCreatives'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject3(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject4()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject5(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject6()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject7(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject8()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject9(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject10()), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
+    return (0, _litElement.html)(_templateObject(), this.hamburgerClick, _Router.anchorRoute, this.title ? (0, _litElement.html)(_templateObject2(), this.title) : (0, _litElement.html)(_templateObject3()), e => e.preventDefault(), this.user && this.user.avatar ? "".concat(_App.default.apiBase, "/images/").concat(this.user.avatar) : '', this.user && this.user.displayName, () => (0, _Router.gotoRoute)('/profile'), () => (0, _Router.gotoRoute)('/editProfile'), () => (0, _Router.gotoRoute)('/favouriteCreatives'), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject4(), () => (0, _Router.gotoRoute)('/newPortfolio')) : (0, _litElement.html)(_templateObject5()), this.user.accessLevel == 1 ? (0, _litElement.html)(_templateObject6(), () => (0, _Router.gotoRoute)('/newCollaboration')) : (0, _litElement.html)(_templateObject7()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject8(), () => (0, _Router.gotoRoute)('/newJob')) : (0, _litElement.html)(_templateObject9()), this.user.accessLevel == 2 ? (0, _litElement.html)(_templateObject10(), () => (0, _Router.gotoRoute)('/newProject')) : (0, _litElement.html)(_templateObject11()), () => _Auth.default.signOut(), this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick, this.menuClick);
   }
 
 });
@@ -18312,7 +18322,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56375" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

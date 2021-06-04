@@ -37,10 +37,10 @@ class GuideView {
 
           <div class="guide-step">
             <h3>Updating your profile page</h3>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+            <img src="/images/Creahaven-tutorials_editProfile.png">
             <p>1. Select your avatar icon on the header, then select the profile button.
               <br>
-              2. Select the update profile button. Then, fill up your particulars in the resultant form.
+              2. Select the update profile button, or reach it directly through the edit profile button via the avatar icon. Then, fill up your particulars in the resultant form.
               <br>
               3. Once you are satisfied, press the save changes button to log in the changes.
               <br>
@@ -53,7 +53,7 @@ class GuideView {
           ${Auth.currentUser.accessLevel == 1 ? html`
             <div class="guide-step">
               <h3>Adding a new portfolio piece</h3>
-              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <img src="/images/Creahaven-tutorials_newPortfolio.png">
               <p>
                   1. Select your avatar icon on the header, then select the "User Profile" button.
                   <br>
@@ -72,7 +72,7 @@ class GuideView {
           ${Auth.currentUser.accessLevel == 1 ? html`
             <div class="guide-step">
               <h3>Adding a new Collaboration invitation</h3>
-              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <img src="/images/Creahaven-tutorials_newCollaboration.png">
               <p>
                   1. Select your avatar icon on the header, then select the "User Profile" button.
                   <br>
@@ -93,7 +93,7 @@ class GuideView {
           ${Auth.currentUser.accessLevel == 2 ? html`
             <div class="guide-step">
               <h3>Adding a new Job vacancy</h3>
-              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <img src="/images/Creahaven-tutorials_jobVacancies.png">
               <p>
                   1. Select your avatar icon on the header, then select the "User Profile" button.
                   <br>
@@ -114,7 +114,7 @@ class GuideView {
           ${Auth.currentUser.accessLevel == 2 ? html`
             <div class="guide-step">
               <h4>Adding a new Project for bidding</h4>
-              <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+              <img src="/images/Creahaven-tutorials_newProject.png">
               <P>
                 1. Select your avatar icon on the header, then select the "User Profile" button.
                   <br>
@@ -135,7 +135,14 @@ class GuideView {
           <div class="guide-step">
             <h4>Adding a user to favourites</h4>
             <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
-            <P></P>
+            <P>
+             After you have found a talent who has the greatest potential to meet your requirements, it is natural that you'll want to save a record of that user so you can contact them (again) later.
+             <br>
+             Here's how.
+             <br>
+              1.
+
+            </P>
           </div>
 
           <sl-button type="primary" @click=${() => gotoRoute('/')}>Okay got it!</sl-button>
