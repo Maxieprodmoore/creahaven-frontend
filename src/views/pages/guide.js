@@ -134,14 +134,18 @@ class GuideView {
           
           <div class="guide-step">
             <h4>Adding a user to favourites</h4>
-            <img src="https://plchldr.co/i/500x300?&bg=dddddd&fc=666666&text=IMAGE">
+            <img src="/images/Creahaven-tutorials_addCreative.png">
             <P>
              After you have found a talent who has the greatest potential to meet your requirements, it is natural that you'll want to save a record of that user so you can contact them (again) later.
              <br>
              Here's how.
              <br>
-              1.
-
+              1. Return to the creatives page.(found via the creatives button or throught 1) the hamburger menu then 2) Click the Find a creative! link.)
+              <br>
+              2, Push the heart button to add that creative to your favourite creatives page (Found via the profile pic button > Favourite Creatives button).
+              <br>
+              <br>
+              Well done! you've added that creative to your favourites. Wishing you a happy partnership together with that creative!
             </P>
           </div>
 
