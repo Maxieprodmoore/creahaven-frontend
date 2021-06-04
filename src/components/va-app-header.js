@@ -156,24 +156,37 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         font-weight: bold;
       }
 
-      
+       /* RESPONSIVE - IPAD ------------------- */
+       @media all and (max-width: 1024px){
+        .app-header-main {
+          margin-left: 3em;
+        }
+        .app-top-nav {
+          margin-right: 3em;
+        }
+      } 
 
       /* RESPONSIVE - MOBILE ------------------- */
       @media all and (max-width: 768px){       
-        
-        .app-top-nav {
-          display: none;
-        }
 
         .app-header-main{
-          margin-left: 0;
+          margin-left: 1em;
         }
 
         .app-top-nav{
-          margin-right: 0;
+          margin-right: 1em;
+        }
+
+        .page-title{
+          display: none;
         }
       }
-
+      /* RESPONSIVE - MOBILE Large ------------------- */
+      @media all and (max-width: 425px){
+        #home{
+          display:none;
+        }
+      }  
     </style>
 
 
@@ -183,7 +196,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>
         <img class="app-header-logo" src="/images/creahaven-logo-black.svg">
         <slot></slot>
-        <a href="/" @click="${anchorRoute}">Home</a>  
+        <a href="/" id="home" @click="${anchorRoute}">Home</a>  
       </div>
 
 

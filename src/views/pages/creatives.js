@@ -15,6 +15,54 @@ class CreativesView {
     this.getCreatives()
   }
 
+  async filterCollabIs(field, match){
+    //validate
+    if(!field || !match) return
+    //get fresh copy of projects page
+    this.collaborationIs = await CollaborationAPI.getCollaborationIs()
+
+    let filteredCollaborationIs
+
+    // tag
+    if(field == 'tag'){
+      filteredCollaborationIs = this.collaborationIs.filter(collaboration => collaboration.tag == match)
+      
+    } 
+
+    //render
+    this.collaborationIs = filteredCollaborationIs
+    this.render()
+    
+  }
+
+  clearFilterBtns(){
+    //clear all checked buttons (attribute = 'checked')
+    const filterButtons = document.querySelectorAll('.filter-btn')
+    filterButtons.forEach(btn => btn.removeAttribute("checked"))
+  }
+
+  handleFilterBtn(e){
+    this.clearFilterBtns()
+
+    //set item = active (item add attribute 'checked')
+    e.target.setAttribute("checked", "")
+
+    //extract the field and match from buttons
+    const field = e.target.getAttribute("data-field")
+    const match = e.target.getAttribute("data-match")
+
+    console.log("field = ", field)
+    console.log("match = ", match)
+
+    //filter collaboration invites
+    this.filterCollabIs(field, match)
+  }
+
+  clearFilters(){
+    this.getCollaborationIs() 
+    this.clearFilterBtns()
+  }
+
   async getCreatives(){
     try{
       this.creatives = await UserAPI.getCreatives()
@@ -27,10 +75,51 @@ class CreativesView {
 
   render(){
     const template = html`
+      <style>
+        .filter-menu{
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.8em;
+          width:100%;
+        }
+
+        .filter-menu > div {       
+          margin-right: 1em;
+        }
+        .filter-search{
+          display: flex;
+          width: 40%;
+          margin-right: 0.25em;
+        }
+
+        .filter-search > strong {
+          margin-right: 0.45em;
+        }
+
+        // RESPONSIVE - MOBILE -------------------
+        @media all and (max-width: 414px){
+          .filter-search{
+            width:100%;
+            margin-right: 0.1em;
+          }
+
+            .filter-search > strong {
+            margin-right: 0.25em;
+          }
+        }
+      </style>
       <va-app-header title="Creatives" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
-        <div class="page-content">        
-          <h1>Creatives</h1>
+        <div class="page-content calign">        
+          <h1 class="anim-in">Creatives</h1>
+          <div class="filter-menu">
+            <div>Filter by:</div>
+              <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1"></sl-textarea></div>
+              <div>
+                <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
+              </div>
+          </div>
+
           <div id="creative-grid">
             ${this.creatives == null ? html`
               <sl-spinner></sl-spinner>

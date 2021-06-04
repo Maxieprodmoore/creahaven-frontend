@@ -163,7 +163,7 @@ a {
   display: flexbox;
   flex-wrap: wrap;
   .creative-card{
-    width: calc(33.33% - 1em);
+    width: calc(23% - 1em);
     margin: 0.5em;
   }
 
@@ -196,7 +196,6 @@ a {
   .profile-section{
     width: calc(100% - 1em);
     margin: 0.5em;
-    padding: 0.125em;
   }
   #profileSocialsGrid{
     display: flexbox;
@@ -204,12 +203,47 @@ a {
     width: 100%;
   }
   .portfolio-card{
-    width: calc(25% - 0.25em);
+    width: calc(23% - 0.25em);
     margin: 0.125em;
   }
 
 }
 
+// RESPONSIVE - IPAD -------------------
+@media all and (max-width: 1024px){ 
+  .page-content{
+    margin: 0 2em;
+  }
+
+  .profile-grid{
+    .portfolio-card{
+      width: calc(45% - 0.25em);
+      margin: 0.125em;
+    }
+    .profile-section{
+      padding: 0em;
+      margin: 0.25em;
+      width: calc(100% - 0.5em);
+    }
+  }
+  
+  .creative-grid{
+    .creative-card{
+      width: calc(46% - 1em);
+    }
+  }
+
+  .postings-grid{
+    .posting-card{
+      width: calc(47%-1em);
+      margin: 0;
+    }
+  }
+  
+  #guide-img {
+    width: 90%;
+  }
+}
 // RESPONSIVE - MOBILE -------------------
 @media all and (max-width: 768px){ 
 
@@ -220,14 +254,59 @@ a {
 
   .page-content{
     margin: 0;
+    padding: 0em;
   }
 
-  .profile-section{
-    width: 100%;
-  }
-
-  .job-card, .portfolio-card, .creative-card, .portfolio-card{
-    width: calc(95% - 1em);
+  .profile-grid{
+    .profile-section{
+      width: 100%;
+      margin: 0;
+    }
+    
   }
   
+  .creative-grid{
+    .creative-card{
+      width: calc(46% - 0.5em);
+      margin: 0.25em;
+    }
+  }
+ 
+  
+}
+
+// RESPONSIVE - MOBILE -------------------
+@media all and (max-width: 425px){
+  .card__body{
+    padding: 0;
+  }
+
+  .profile-grid{
+    .profile-section{
+      width: 100%;
+      margin: 0;
+    }
+    .portfolio-card{
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .creative-grid{
+    .creative-card{
+      width: 100%;
+      margin: 0em;
+    }
+  }
+
+  .postings-grid{
+    .posting-card{
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  #guide-img {
+    width: 100%;
+  }
 }

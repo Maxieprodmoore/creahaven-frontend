@@ -87,10 +87,31 @@ class CollaborationsView {
         .filter-menu > div {       
           margin-right: 1em;
         }
+        .filter-search{
+          display: flex;
+          width: 40%;
+          margin-right: 0.25em;
+        }
+
+        .filter-search > strong {
+          margin-right: 0.45em;
+        }
+
+        // RESPONSIVE - MOBILE -------------------
+        @media all and (max-width: 414px){
+          .filter-search{
+            width:100%;
+            margin-right: 0.1em;
+          }
+
+          .filter-search > strong {
+            margin-right: 0.25em;
+          }
+        }
       </style>
       <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
-        <div class="page-content">        
+        <div class="page-content calign">        
           <div class= "postings-grid">
               <h1 class="anim-in">Collaboration Invitations</h1>
               ${Auth.currentUser.accessLevel == 1 ? html`
@@ -100,7 +121,7 @@ class CollaborationsView {
 
           <div class="filter-menu">
             <div>Filter by:</div>
-                      
+              <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1"></sl-textarea></div> 
               <div class="filter-dropdown"> 
                   <sl-dropdown>
                     <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>

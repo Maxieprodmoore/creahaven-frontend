@@ -29,10 +29,16 @@ class HomeView {
         /*-------------Responsive design-----------------*/
         @media all and (max-width: 768px){
           .navBtnImg{
-            width: calc(100% - 1em);
+            width: calc(47% - 1em);
           }
         }
-
+        /*-------------Responsive design-----------------*/
+        @media all and (max-width: 425px){
+          .navBtnImg{
+            width: 100%;
+            margin: 0;
+          }
+        }
       </style>
       <va-app-header title="Home" user=${JSON.stringify(Auth.currentUser)}></va-app-header>
       <div class="page-body">

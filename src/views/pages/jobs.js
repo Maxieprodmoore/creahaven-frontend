@@ -86,11 +86,32 @@ class jobVacanciesView {
         .filter-menu > div {       
           margin-right: 1em;
         }
+        .filter-search{
+          display: flex;
+          width: 40%;
+          margin-right: 0.25em;
+        }
+
+        .filter-search > strong {
+          margin-right: 0.45em;
+        }
+
+        // RESPONSIVE - MOBILE -------------------
+        @media all and (max-width: 414px){
+          .filter-search{
+            width:100%;
+            margin-right: 0.1em;
+          }
+
+            .filter-search > strong {
+            margin-right: 0.25em;
+          }
+        }
       </style>
 
       <va-app-header title="Job Vacancies" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
-        <div class="page-content">
+        <div class="page-content calign">
           <div class= "postings-grid">
             <h1 class="anim-in">Job Vacancies</h1>
             ${Auth.currentUser.accessLevel == 2 ? html`
@@ -99,10 +120,10 @@ class jobVacanciesView {
           </div>
           <div class="filter-menu">
             <div>Filter by:</div>
-                      
+            <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1"></sl-textarea></div>         
                       <div class="filter-dropdown"> 
                         <sl-dropdown>
-                          <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
+                          <sl-button size="medium" type="info" slot="trigger" caret><strong>Skill Set</strong></sl-button>
                           <sl-menu>
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>

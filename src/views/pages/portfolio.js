@@ -72,6 +72,8 @@ class portfolioView {
       Toast.show(err, 'error')
     }
   }
+
+
  
   render(){
     const template = html`
@@ -86,6 +88,27 @@ class portfolioView {
         .filter-menu > div {       
           margin-right: 1em;
         }
+        .filter-search{
+          display: flex;
+          width: 40%;
+          margin-right: 0.25em;
+        }
+
+        .filter-search > strong {
+          margin-right: 0.45em;
+        }
+
+        // RESPONSIVE - MOBILE -------------------
+        @media all and (max-width: 414px){
+          .filter-search{
+            width:100%;
+            margin-right: 0.1em;
+          }
+
+            .filter-search > strong {
+            margin-right: 0.25em;
+          }
+        }
       </style>
         
       <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
@@ -94,15 +117,15 @@ class portfolioView {
           <div class="profile-grid">        
             <h1>Portfolio Pieces</h1>
               
-                  <sl-card class="profile-section">
+              <sl-card class="profile-section">
                     <div slot="header"><h3>Portfolio</h3>
                       ${Auth.currentUser.accessLevel == 1 ? html`
                         <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
                       `: html``}
                     </div>
                     <div class="filter-menu">
-                      <div>Filter by:</div>
-                      
+                      <div >Filter by:</div>
+                      <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea></div>
                       <div class="filter-dropdown"> 
                         <sl-dropdown>
                           <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
@@ -132,24 +155,22 @@ class portfolioView {
                     ` : html`
                       ${this.portfolioPs.map(portfolioPs => html `
                         <sl-card class="portfolio-card">
-                            <img 
-                              slot="image" 
-                              src="${App.apiBase}/images/${portfolioPs.image}" 
-                              alt="${portfolioPs.name}"
-                            >
-                            <h3>${portfolioPs.name}</h3>
-                            <p>${portfolioPs.description}</p>
-                            <div slot="footer">
-                              <sl-tag type="info" size="small">${portfolioPs.tag}</sl-tag>
-                              <p >By ${portfolioPs.user.displayName}</p>
-                            </div>
-                        
-
+                          <img 
+                            slot="image" 
+                            src="${App.apiBase}/images/${portfolioPs.image}" 
+                            alt="${portfolioPs.name}"
+                          >
+                          <h3>${portfolioPs.name}</h3>
+                          <p>${portfolioPs.description}</p>
+                          <div slot="footer">
+                            <sl-tag type="info" size="small">${portfolioPs.tag}</sl-tag>
+                            <p >By ${portfolioPs.user.displayName}</p>
+                          </div>               
                         </sl-card>
                       `)}
                       
                     `}                                  
-                  </sl-card>
+                </sl-card>
                 
           </div>
         </div> 
