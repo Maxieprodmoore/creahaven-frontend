@@ -77,39 +77,6 @@ class portfolioView {
  
   render(){
     const template = html`
-      <style>
-        .filter-menu{
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.8em;
-          width:100%;
-        }
-
-        .filter-menu > div {       
-          margin-right: 1em;
-        }
-        .filter-search{
-          display: flex;
-          width: 40%;
-          margin-right: 0.25em;
-        }
-
-        .filter-search > strong {
-          margin-right: 0.45em;
-        }
-
-        // RESPONSIVE - MOBILE -------------------
-        @media all and (max-width: 414px){
-          .filter-search{
-            width:100%;
-            margin-right: 0.1em;
-          }
-
-            .filter-search > strong {
-            margin-right: 0.25em;
-          }
-        }
-      </style>
         
       <va-app-header title="Profile" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
@@ -118,17 +85,20 @@ class portfolioView {
             <h1>Portfolio Pieces</h1>
               
               <sl-card class="profile-section">
-                    <div slot="header"><h3>Portfolio</h3>
-                      ${Auth.currentUser.accessLevel == 1 ? html`
-                        <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
-                      `: html``}
-                    </div>
-                    <div class="filter-menu">
-                      <div >Filter by:</div>
-                      <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea></div>
-                      <div class="filter-dropdown"> 
-                        <sl-dropdown>
-                          <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
+                <div slot="header"><h3>Portfolio</h3>
+                  ${Auth.currentUser.accessLevel == 1 ? html`
+                    <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
+                  `: html``}
+                </div>
+                <div class="filter-menu">                  
+                  <div class="filter-search">
+                    <div>Filter by:</div>
+                    <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>
+                  </div>
+                  <div class="filter-btns">
+                    <div class="filter-dropdown"> 
+                      <sl-dropdown>
+                        <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
                           <sl-menu>
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>
@@ -144,12 +114,14 @@ class portfolioView {
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${this.handleFilterBtn.bind(this)}>3D art</sl-menu-item>
                             <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>
                           </sl-menu>
-                        </sl-dropdown>
-                      </div>
-                      <div>
-                        <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
-                      </div>
+                      </sl-dropdown>
                     </div>
+                    <div>
+                      <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
+                    </div>
+                  </div> 
+                </div>
+
                     ${this.portfolioPs == null ? html `
                       <sl-spinner></sl-spinner>
                     ` : html`
@@ -170,7 +142,7 @@ class portfolioView {
                       `)}
                       
                     `}                                  
-                </sl-card>
+              </sl-card>
                 
           </div>
         </div> 

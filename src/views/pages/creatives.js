@@ -75,39 +75,6 @@ class CreativesView {
 
   render(){
     const template = html`
-      <style>
-        .filter-menu{
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.8em;
-          width:100%;
-        }
-
-        .filter-menu > div {       
-          margin-right: 1em;
-        }
-        .filter-search{
-          display: flex;
-          width: 40%;
-          margin-right: 0.25em;
-        }
-
-        .filter-search > strong {
-          margin-right: 0.45em;
-        }
-
-        // RESPONSIVE - MOBILE -------------------
-        @media all and (max-width: 414px){
-          .filter-search{
-            width:100%;
-            margin-right: 0.1em;
-          }
-
-            .filter-search > strong {
-            margin-right: 0.25em;
-          }
-        }
-      </style>
       <va-app-header title="Creatives" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
         <div class="page-content calign">        

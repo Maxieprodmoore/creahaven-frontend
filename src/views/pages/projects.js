@@ -75,39 +75,6 @@ class ProjectsView {
 
   render(){
     const template = html`
-      <style>
-        .filter-menu{
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.8em;
-          width:100%;
-        }
-
-        .filter-menu > div {       
-          margin-right: 1em;
-        }
-        .filter-search{
-          display: flex;
-          width: 40%;
-          margin-right: 0.25em;
-        }
-
-        .filter-search > strong {
-          margin-right: 0.45em;
-        }
-
-        // RESPONSIVE - MOBILE -------------------
-        @media all and (max-width: 414px){
-          .filter-search{
-            width:100%;
-            margin-right: 0.1em;
-          }
-
-            .filter-search > strong {
-            margin-right: 0.25em;
-          }
-        }
-      </style>
 
       <va-app-header title="Projects for bidding" user="${JSON.stringify(Auth.currentUser)}"></va-app-header>
       <div class="page-body">
@@ -118,30 +85,36 @@ class ProjectsView {
                 <sl-button type="primary" @click="${() => gotoRoute('/newProject')}">Create a New Project for bidding!</sl-button>
             ` : html``}
           </div>       
-          <div class="filter-menu">
+          <div class="filter-menu">                  
+            <div class="filter-search">
               <div>Filter by:</div>
-              <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1"></sl-textarea></div>     
-                      <div class="filter-dropdown"> 
-                        <sl-dropdown>
-                          <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
-                          <sl-menu>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>
-                            <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${this.handleFilterBtn.bind(this)}>writing</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${this.handleFilterBtn.bind(this)}>pre-production</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${this.handleFilterBtn.bind(this)}>production</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${this.handleFilterBtn.bind(this)}>post-production</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${this.handleFilterBtn.bind(this)}>animation</sl-menu-item>
-                            <sl-menu-item class="filter-btn"data-field="tag" data-match="audio-production" @click=${this.handleFilterBtn.bind(this)}>audio production</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${this.handleFilterBtn.bind(this)}>game production</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${this.handleFilterBtn.bind(this)}>website development</sl-menu-item>
-                            <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>
-                          </sl-menu>
-                        </sl-dropdown>
-                      </div>
-                      <div>
-                        <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
-                      </div>
+              <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>
+            </div>
+            <div class="filter-btns">
+              <div class="filter-dropdown"> 
+                <sl-dropdown>
+                  <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>
+                  <sl-menu>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>
+                    <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${this.handleFilterBtn.bind(this)}>writing</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${this.handleFilterBtn.bind(this)}>pre-production</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${this.handleFilterBtn.bind(this)}>production</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${this.handleFilterBtn.bind(this)}>post-production</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${this.handleFilterBtn.bind(this)}>animation</sl-menu-item>
+                    <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${this.handleFilterBtn.bind(this)}>voice-over</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${this.handleFilterBtn.bind(this)}>game production</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${this.handleFilterBtn.bind(this)}>website development</sl-menu-item>
+                    <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${this.handleFilterBtn.bind(this)}>2D art</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${this.handleFilterBtn.bind(this)}>3D art</sl-menu-item>
+                    <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>
+                  </sl-menu>
+                </sl-dropdown>
+              </div>
+              <div>
+                <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>
+              </div>
+            </div> 
           </div>
           <div class= "postings-grid">
             

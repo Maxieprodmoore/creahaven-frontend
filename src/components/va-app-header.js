@@ -67,7 +67,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         right: 0;
         left: 0;
         height: var(--app-header-height);
-        color: #fff;
+        color: black;
         display: flex;
         z-index: 9;
         box-shadow: 4px 0px 10px rgba(0,0,0,0.2);
@@ -86,7 +86,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       }
 
       .app-header-main::slotted(h1){
-        color: #fff;
+        color: black;
       }
 
       .app-header-logo{
@@ -125,7 +125,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         display: inline-block;
         padding: .8em;
         text-decoration: none;
-        color: #fff;
+        color: black;
       }
       
       .app-side-menu-items a {
@@ -186,6 +186,17 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         #home{
           display:none;
         }
+        .app-header-main{
+          margin-left: 0em;
+        }
+        .app-top-nav{
+          margin-right: 0;
+        }
+
+        #avatarName{
+          display: none;
+        }
+
       }  
     </style>
 
@@ -203,10 +214,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       <nav class="app-top-nav">
         ${this.title ? html`
             <h6 class="page-title">${this.title}</h6>
-          `:``}      
+        `: html ``}      
         <sl-dropdown>
           <a slot="trigger" href="#" @click="${(e) => e.preventDefault()}">
-            <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> ${this.user && this.user.firstName}
+            <sl-avatar style="--size: 24px;" image=${(this.user && this.user.avatar) ? `${App.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> <strong id="avatarName">${this.user && this.user.displayName}</strong> 
           </a>
           <sl-menu>            
             <sl-menu-item @click="${() => gotoRoute('/profile')}">Profile</sl-menu-item>
