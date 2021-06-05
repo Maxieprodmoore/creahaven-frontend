@@ -69,7 +69,7 @@
 182C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\postcss-modules-local-by-default\node_modules\supports-color\readme.md131663821590000000 0
 135C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\xmlchars\xml\1.0\ed4.js121436361000000000 0
 182C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\uncss\node_modules\postcss-selector-parser\dist\__tests__\universal.js121436361000000000 0
-111C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\package.json132673536583100543 0
+111C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\package.json132673555026291957 0
 109C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\.gitignore132652881786179726 0
 127C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\request\LICENSE121436361000000000 0
 124C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\path-dirname132673529393703404 1
