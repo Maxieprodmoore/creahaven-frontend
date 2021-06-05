@@ -2,16 +2,16 @@
 
 :root {
   // base
-  --base-txt-color: #222;
-  --heading-color: #333;
+  --base-txt-color: rgb(0, 0, 0);
+  --heading-color: rgb(31, 31, 31);
   --body-font-family: 'Roboto', sans-serif;
   --header-font-family: 'Oswald', sans-serif;
   --body-bg: #fff;
   
 
   // colors  
-  $brand-color: #D98B2B;
-  $highlight-color: #4B83A8;
+  $brand-color: #D98116;
+  $highlight-color: #2E5873;
   --brand-color: #{$brand-color};
   --link-color: #{$highlight-color};
   
