@@ -8,7 +8,7 @@
 122C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\tar-stream132673529541913541 1
 143C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\postcss-modules-extract-imports132673621341164173 1
 140C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\lodash\fp\matchesProperty.js121436361000000000 0
-112C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images132666431335177954 1
+112C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images132674389129332240 1
 129C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\lodash\memoize.js121436361000000000 0
 103C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\dist132667604708265305 1
 139C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\core-js\es\instance\bind.js121436361000000000 0
@@ -147,7 +147,7 @@
 129C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\yaml\types\set.js121436361000000000 0
 122C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\snapdragon132673529453181168 1
 168C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\sharp\vendor\8.10.6\include\freetype2\freetype\ftglyph.h132612604640000000 0
-137C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images\creahaven-logo-black.svg132665217241959572 0
+137C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images\creahaven-logo-black.svg132674352331032333 0
 129C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\lodash\fp\find.js121436361000000000 0
 185C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\sharp\vendor\8.10.6\include\gdk-pixbuf-2.0\gdk-pixbuf\gdk-pixbuf-loader.h132612604640000000 0
 132C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\minimist\.travis.yml121436361000000000 0
@@ -163,7 +163,7 @@
 137C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images\creahaven-logo-white.svg132663971594121754 0
 141C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\es-abstract\2017\IsPromise.js121436361000000000 0
 141C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\terser\node_modules\commander132673621874343529 1
-131C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images\creahaven-logo.svg132663968966795996 0
+131C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\static\images\creahaven-logo.svg132674388666649879 0
 160C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\postcss-ordered-values\dist\lib\joinGridValue.js121436361000000000 0
 125C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\svgo\bin\svgo121436361000000000 0
 170C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\sharp\vendor\8.10.6\include\glib-2.0\gio\gsocketlistener.h132612604640000000 0
