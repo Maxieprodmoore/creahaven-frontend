@@ -1,0 +1,58 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _litElement = require("@polymer/lit-element");
+var _router = require("../Router");
+var _litHtml = require("lit-html");
+var _auth = require("../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _app = require("../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+customElements.define('va-postings', class creativePostings extends _litElement.LitElement {
+    constructor(){
+        super();
+    }
+    static get properties() {
+        return {
+            id: {
+                type: String
+            },
+            name: {
+                type: String
+            },
+            description: {
+                type: String
+            },
+            image: {
+                type: String
+            },
+            user: {
+                type: String
+            },
+            tag: {
+                type: String
+            }
+        };
+    }
+    firstUpdated() {
+        super.firstUpdated();
+    }
+    moreInfoHandler() {
+        // create sl-dialog
+        const dialogEl = document.createElement('sl-dialog');
+        //set DialogEl class name
+        dialogEl.className = 'posting-dialog';
+        // sl-dialog content
+        const dialogContent = _litElement.html`\n        <style>\n          .wrap {\n            display: flex;\n          }\n          .image {\n            width: 40%;\n          }\n          .image img {\n            width: 100%;\n          }\n          .content {\n            padding-left: 2em;\n          }\n          .author{\n            font-size: 0.9em;\n            font-style: italic;\n            opacity: 0.8;\n          }         \n        </style>\n        <div class="wrap">\n          <div class="image">\n            ${this.image == null ? _litElement.html`` : _litElement.html`\n              <img src="${_appDefault.default.apiBase}/images/${this.image}" alt="${this.name}" />\n            `}\n          </div>\n          <div class="content">\n            <h2>${this.name}</h2>\n            <h4>${this.description}</h4>\n            <p class="author">By ${this.user}</p>\n            \n            <sl-tag >${this.tag}</sl-tag>\n            \n          </div>\n        </div>\n\n      `;
+        _litHtml.render(dialogContent, dialogEl);
+        // append to document body
+        document.body.append(dialogEl);
+        // show sl-dialog
+        dialogEl.show();
+        // on closing, hide dialogEl
+        dialogEl.addEventListener('sl-after-hide', ()=>{
+            dialogEl.remove();
+        });
+    }
+    render() {
+        return _litElement.html`\n    <style>\n      .wrap {\n        background: #fff;\n        border-radius: 10px;\n        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);\n        margin-bottom: 0.5em;\n        padding: 1em;\n      }\n\n      .author{\n        font-size: 0.9em;\n        font-style: italic;\n        opacity: 0.8;\n      }\n    </style>\n\n    <sl-card>\n      ${this.image == null ? _litElement.html`` : _litElement.html`\n        <img slot="image" src="${_appDefault.default.apiBase}/images/${this.image}" alt="${this.name}" />\n      `}\n      <h2>${this.name}</h2>\n      <h4>${this.description}</h4>\n      <p class="author">By ${this.user}</p>\n      \n      <div slot="footer">\n        <sl-tag type="info">${this.tag}</sl-tag>\n        <sl-button @click=${this.moreInfoHandler.bind(this)}> More Info</sl-button>\n      </div>\n    </sl-card>\n\n    <sl-dialog>\n      ${this.image == null ? _litElement.html`` : _litElement.html`\n          <img slot="image" src="${_appDefault.default.apiBase}/images/${this.image}" alt="${this.name}" />\n        `}\n        <h2>${this.name}</h2>\n        <h3>${this.description}</h3>\n        <p class="author">By ${this.user}</p>\n        \n        <sl-tag type="info">${this.tag}</sl-tag>\n    </sl-dialog>\n    `;
+    }
+});

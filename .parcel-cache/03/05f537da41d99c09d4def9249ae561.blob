@@ -1,0 +1,105 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DefaultTemplateProcessor", ()=>_defaultTemplateProcessorJs.DefaultTemplateProcessor
+);
+parcelHelpers.export(exports, "defaultTemplateProcessor", ()=>_defaultTemplateProcessorJs.defaultTemplateProcessor
+);
+parcelHelpers.export(exports, "directive", ()=>_directiveJs.directive
+);
+parcelHelpers.export(exports, "isDirective", ()=>_directiveJs.isDirective
+);
+// TODO(justinfagnani): remove line when we get NodePart moving methods
+parcelHelpers.export(exports, "removeNodes", ()=>_domJs.removeNodes
+);
+parcelHelpers.export(exports, "reparentNodes", ()=>_domJs.reparentNodes
+);
+parcelHelpers.export(exports, "noChange", ()=>_partJs.noChange
+);
+parcelHelpers.export(exports, "nothing", ()=>_partJs.nothing
+);
+parcelHelpers.export(exports, "AttributeCommitter", ()=>_partsJs.AttributeCommitter
+);
+parcelHelpers.export(exports, "AttributePart", ()=>_partsJs.AttributePart
+);
+parcelHelpers.export(exports, "BooleanAttributePart", ()=>_partsJs.BooleanAttributePart
+);
+parcelHelpers.export(exports, "EventPart", ()=>_partsJs.EventPart
+);
+parcelHelpers.export(exports, "isIterable", ()=>_partsJs.isIterable
+);
+parcelHelpers.export(exports, "isPrimitive", ()=>_partsJs.isPrimitive
+);
+parcelHelpers.export(exports, "NodePart", ()=>_partsJs.NodePart
+);
+parcelHelpers.export(exports, "PropertyCommitter", ()=>_partsJs.PropertyCommitter
+);
+parcelHelpers.export(exports, "PropertyPart", ()=>_partsJs.PropertyPart
+);
+parcelHelpers.export(exports, "parts", ()=>_renderJs.parts
+);
+parcelHelpers.export(exports, "render", ()=>_renderJs.render
+);
+parcelHelpers.export(exports, "templateCaches", ()=>_templateFactoryJs.templateCaches
+);
+parcelHelpers.export(exports, "templateFactory", ()=>_templateFactoryJs.templateFactory
+);
+parcelHelpers.export(exports, "TemplateInstance", ()=>_templateInstanceJs.TemplateInstance
+);
+parcelHelpers.export(exports, "SVGTemplateResult", ()=>_templateResultJs.SVGTemplateResult
+);
+parcelHelpers.export(exports, "TemplateResult", ()=>_templateResultJs.TemplateResult
+);
+parcelHelpers.export(exports, "createMarker", ()=>_templateJs.createMarker
+);
+parcelHelpers.export(exports, "isTemplatePartActive", ()=>_templateJs.isTemplatePartActive
+);
+parcelHelpers.export(exports, "Template", ()=>_templateJs.Template
+);
+parcelHelpers.export(exports, "html", ()=>html
+);
+parcelHelpers.export(exports, "svg", ()=>svg
+);
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */ /**
+ *
+ * Main lit-html module.
+ *
+ * Main exports:
+ *
+ * -  [[html]]
+ * -  [[svg]]
+ * -  [[render]]
+ *
+ * @packageDocumentation
+ */ /**
+ * Do not remove this comment; it keeps typedoc from misplacing the module
+ * docs.
+ */ var _defaultTemplateProcessorJs = require("./lib/default-template-processor.js");
+var _templateResultJs = require("./lib/template-result.js");
+var _directiveJs = require("./lib/directive.js");
+var _domJs = require("./lib/dom.js");
+var _partJs = require("./lib/part.js");
+var _partsJs = require("./lib/parts.js");
+var _renderJs = require("./lib/render.js");
+var _templateFactoryJs = require("./lib/template-factory.js");
+var _templateInstanceJs = require("./lib/template-instance.js");
+var _templateJs = require("./lib/template.js");
+// IMPORTANT: do not change the property name or the assignment expression.
+// This line will be used in regexes to search for lit-html usage.
+// TODO(justinfagnani): inject version number at build time
+if (typeof window !== 'undefined') (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.3.0');
+const html = (strings, ...values)=>new _templateResultJs.TemplateResult(strings, values, 'html', _defaultTemplateProcessorJs.defaultTemplateProcessor)
+;
+const svg = (strings, ...values)=>new _templateResultJs.SVGTemplateResult(strings, values, 'svg', _defaultTemplateProcessorJs.defaultTemplateProcessor)
+;

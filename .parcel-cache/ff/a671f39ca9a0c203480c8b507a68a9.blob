@@ -1,0 +1,69 @@
+import   "484526d4d63cfc9c7ddad83a81caf2d5:../../App";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:lit-html";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:../../Router";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:../../Auth";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:../../Utils";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:./../../ProjectAPI";
+import   "484526d4d63cfc9c7ddad83a81caf2d5:./../../Toast";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5;
+class $484526d4d63cfc9c7ddad83a81caf2d5$var$ProjectsView {
+    init() {
+        document.title = 'Projects for bidding';
+        this.projects = null;
+        this.render();
+        $484526d4d63cfc9c7ddad83a81caf2d5$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+        this.getProjectPs();
+    }
+    async filterProjects(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of projects page
+        this.projects = await $484526d4d63cfc9c7ddad83a81caf2d5$import$4c80f52cad19e1a3$9099ad97b570f7c.getProjectPs();
+        let filteredProjects;
+        // tag
+        if (field == 'tag') filteredProjects = this.projects.filter((project)=>project.tag == match
+        );
+        //render
+        this.projects = filteredProjects;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter portfolio pieces
+        this.filterProjects(field, match);
+    }
+    clearFilters() {
+        this.getProjectPs();
+        this.clearFilterBtns();
+    }
+    async getProjectPs() {
+        try {
+            this.projects = await $484526d4d63cfc9c7ddad83a81caf2d5$import$4c80f52cad19e1a3$9099ad97b570f7c.getProjectPs();
+            console.log(this.projects);
+            this.render();
+        } catch (err) {
+            $484526d4d63cfc9c7ddad83a81caf2d5$import$a8b0bc06f88c075b$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    render() {
+        const template = $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t5 || (t5 = _`\n\n      <va-app-header title="Projects for bidding" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign"> \n          <div class= "postings-grid">\n            <h1 class="anim-in">Projects for bidding</h1>\n            ${0}\n          </div>       \n          <div class="filter-menu">                  \n            <div class="filter-search">\n              <div>Filter by:</div>\n              <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>\n            </div>\n            <div class="filter-btns">\n              <div class="filter-dropdown"> \n                <sl-dropdown>\n                  <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>\n                  <sl-menu>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${0}>photography</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${0}>illustrations</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${0}>writing</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${0}>pre-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${0}>production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${0}>post-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${0}>animation</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${0}>voice-over</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${0}>game production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${0}>website development</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${0}>2D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${0}>3D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${0}>others</sl-menu-item>\n                  </sl-menu>\n                </sl-dropdown>\n              </div>\n              <div>\n                <sl-button size="small" @click=${0}>Clear Filters</sl-button>\n              </div>\n            </div> \n          </div>\n          <div class= "postings-grid">\n            \n            ${0}\n          </div>\n          \n        </div>   \n      </div>\n         \n    `), JSON.stringify($484526d4d63cfc9c7ddad83a81caf2d5$import$d241520aba55052c$9099ad97b570f7c.currentUser), $484526d4d63cfc9c7ddad83a81caf2d5$import$d241520aba55052c$9099ad97b570f7c.currentUser.accessLevel == 2 ? $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n                <sl-button type="primary" @click="${0}">Create a New Project for bidding!</sl-button>\n            `), ()=>$484526d4d63cfc9c7ddad83a81caf2d5$import$b21bf7e27edd13d3$fe09313b26f77dc8('/newProject')
+        ) : $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _``)), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.projects == null ? $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n              <sl-spinner></sl-spinner>\n            `)) : $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t4 || (t4 = _`\n              ${0}\n            `), this.projects.map((project)=>$484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n                <va-postings class="posting-card"\n                 image = "${0}"\n                 name = "${0}"\n                 description = "${0}"\n                 user = "${0}"\n                 tag = "${0}"\n                > </va-postings>\n              `), project.image, project.name, project.description, project.user.displayName, project.tag)
+        )));
+        $484526d4d63cfc9c7ddad83a81caf2d5$import$add832cec91f3f79$792a797b69be0d58(template, $484526d4d63cfc9c7ddad83a81caf2d5$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $484526d4d63cfc9c7ddad83a81caf2d5$export$9099ad97b570f7c = new $484526d4d63cfc9c7ddad83a81caf2d5$var$ProjectsView();

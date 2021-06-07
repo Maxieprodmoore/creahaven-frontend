@@ -1,0 +1,39 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("../../Router");
+var _auth = require("../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _userAPI = require("./../../UserAPI");
+var _userAPIDefault = parcelHelpers.interopDefault(_userAPI);
+var _toast = require("./../../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+class favouriteCreativesView {
+    init() {
+        document.title = 'Favourite Creatives';
+        this.favouriteCreatives = null;
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+        this.getFavCreatives();
+    }
+    async getFavCreatives() {
+        try {
+            const currentUser = await _userAPIDefault.default.getUser(_authDefault.default.currentUser._id);
+            this.favCreatives = currentUser.favouriteCreatives;
+            console.log(this.favCreatives);
+            this.render();
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+        }
+    }
+    render() {
+        const template = _litHtml.html`\n      <va-app-header title="Favourite Creatives" user="${JSON.stringify(_authDefault.default.currentUser)}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">        \n          <h1>Favourite Creatives</h1>\n          <div class="haircuts-grid">\n            ${this.favCreatives == null ? _litHtml.html`\n              <sl-spinner></sl-spinner>\n            ` : _litHtml.html`\n              ${this.favCreatives.map((creative)=>_litHtml.html`\n                <va-creative class="creative-card"\n                  id="${creative._id}"\n                  name="${creative.displayName}"\n                  email="${creative.email}"\n                  image="${creative.avatar}"\n                  bio="${creative.bio}"\n                  website="${creative.website}"\n                  facebook="${creative.facebook}"\n                  instagram="${creative.instagram}"\n                  twitter="${creative.twitter}"\n                  youtube="${creative.youtube}"\n                >\n                </va-creative>\n                  \n              `
+        )}\n            `}\n          </div>\n          \n        </div>\n      </div>\n            \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new favouriteCreativesView();

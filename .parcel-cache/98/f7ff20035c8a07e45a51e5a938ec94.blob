@@ -1,0 +1,34 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("./../../Router");
+var _auth = require("./../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("./../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+class SignInView {
+    init() {
+        console.log('SignInView.init');
+        document.title = 'Sign In';
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+    }
+    signInSubmitHandler(e) {
+        e.preventDefault();
+        const formData = e.detail.formData;
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        // sign in using Auth    
+        _authDefault.default.signIn(formData, ()=>{
+            submitBtn.removeAttribute('loading');
+        });
+    }
+    render() {
+        const template = _litHtml.html`      \n      <div class="page-body">\n        <div class="page-content page-centered">\n          <div class="signinup-box">\n            <img class="signinup-logo" src="/images/creahaven-logo.svg">          \n            <sl-form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          \n              <div class="input-group">\n                <sl-input name="email" type="email" placeholder="Email" required></sl-input>\n              </div>\n              <div class="input-group">\n                <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>\n              </div>\n              <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>\n            </sl-form>\n            <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${()=>_router.gotoRoute('/signup')
+        }>Sign Up</sl-button></p>\n          </div>\n        </div>\n      </div>\n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new SignInView();

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <link rel="stylesheet" href="ed0c0477cb60a09f5e011d79244be281">
+  <script type="module" src="5c86a243cf31407a255bd840fa959eee"></script>
+</head>
+<body>
+  <div id="root"></div>  
+  <script src="4b7e7e88dc076b9a06d4d8f1cd26671c"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+import   "0a42394a3b1d730e154910af8b04f38b:./dom.js";
+import   "0a42394a3b1d730e154910af8b04f38b:./parts.js";
+import   "0a42394a3b1d730e154910af8b04f38b:./template-factory.js";
+const $0a42394a3b1d730e154910af8b04f38b$export$478822027641b13a = new WeakMap();
+const $0a42394a3b1d730e154910af8b04f38b$export$792a797b69be0d58 = (result, container, options)=>{
+    let part = $0a42394a3b1d730e154910af8b04f38b$export$478822027641b13a.get(container);
+    if (part === undefined) {
+        $0a42394a3b1d730e154910af8b04f38b$import$aaff0e6c17f2d126$87ad59dd8be5dd12(container, container.firstChild);
+        $0a42394a3b1d730e154910af8b04f38b$export$478822027641b13a.set(container, part = new $0a42394a3b1d730e154910af8b04f38b$import$5b201c37dc56b46e$edfafdd4de02b76(Object.assign({
+            templateFactory: $0a42394a3b1d730e154910af8b04f38b$import$f8303525ca1f3ae5$f47f503e54e2c1f7
+        }, options)));
+        part.appendInto(container);
+    }
+    part.setValue(result);
+    part.commit();
+};

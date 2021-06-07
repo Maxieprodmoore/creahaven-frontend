@@ -1,0 +1,101 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// programmatically load any route
+parcelHelpers.export(exports, "gotoRoute", ()=>gotoRoute
+);
+// allows anchor <a> links to load routes
+parcelHelpers.export(exports, "anchorRoute", ()=>anchorRoute
+);
+// import views
+var _home = require("./views/pages/home");
+var _homeDefault = parcelHelpers.interopDefault(_home);
+var _404 = require("./views/pages/404");
+var _404Default = parcelHelpers.interopDefault(_404);
+var _guide = require("./views/pages/guide");
+var _guideDefault = parcelHelpers.interopDefault(_guide);
+var _signin = require("./views/pages/signin");
+var _signinDefault = parcelHelpers.interopDefault(_signin);
+var _signup = require("./views/pages/signup");
+var _signupDefault = parcelHelpers.interopDefault(_signup);
+var _profile = require("./views/pages/profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+var _editProfile = require("./views/pages/editProfile");
+var _editProfileDefault = parcelHelpers.interopDefault(_editProfile);
+var _favouriteCreatives = require("./views/pages/favouriteCreatives");
+var _favouriteCreativesDefault = parcelHelpers.interopDefault(_favouriteCreatives);
+var _projects = require("./views/pages/projects");
+var _projectsDefault = parcelHelpers.interopDefault(_projects);
+var _portfolio = require("./views/pages/portfolio");
+var _portfolioDefault = parcelHelpers.interopDefault(_portfolio);
+var _jobs = require("./views/pages/jobs");
+var _jobsDefault = parcelHelpers.interopDefault(_jobs);
+var _creatives = require("./views/pages/creatives");
+var _creativesDefault = parcelHelpers.interopDefault(_creatives);
+var _collaborations = require("./views/pages/collaborations");
+var _collaborationsDefault = parcelHelpers.interopDefault(_collaborations);
+var _newJob = require("./views/pages/newJob");
+var _newJobDefault = parcelHelpers.interopDefault(_newJob);
+var _newCollaboration = require("./views/pages/newCollaboration");
+var _newCollaborationDefault = parcelHelpers.interopDefault(_newCollaboration);
+var _newProject = require("./views/pages/newProject");
+var _newProjectDefault = parcelHelpers.interopDefault(_newProject);
+var _newPortfolio = require("./views/pages/newPortfolio");
+var _newPortfolioDefault = parcelHelpers.interopDefault(_newPortfolio);
+// define routes
+const routes = {
+    '/': _homeDefault.default,
+    '404': _404Default.default,
+    '/favouriteCreatives': _favouriteCreativesDefault.default,
+    '/guide': _guideDefault.default,
+    '/signin': _signinDefault.default,
+    '/signup': _signupDefault.default,
+    '/profile': _profileDefault.default,
+    '/portfolios': _portfolioDefault.default,
+    '/newPortfolio': _newPortfolioDefault.default,
+    '/projects': _projectsDefault.default,
+    '/newProject': _newProjectDefault.default,
+    '/jobs': _jobsDefault.default,
+    '/newJob': _newJobDefault.default,
+    '/creatives': _creativesDefault.default,
+    '/newCollaboration': _newCollaborationDefault.default,
+    '/collaborations': _collaborationsDefault.default,
+    '/editProfile': _editProfileDefault.default
+};
+class Router {
+    constructor(){
+        this.routes = routes;
+    }
+    init() {
+        // initial call
+        this.route(window.location.pathname);
+        // on back/forward
+        window.addEventListener('popstate', ()=>{
+            this.route(window.location.pathname);
+        });
+    }
+    route(fullPathname) {
+        // extract path without params
+        const pathname = fullPathname.split('?')[0];
+        const route = this.routes[pathname];
+        if (route) // if route exists, run init() of the view
+        this.routes[window.location.pathname].init();
+        else // show 404 view instead
+        this.routes['404'].init();
+    }
+    gotoRoute(pathname) {
+        window.history.pushState({
+        }, pathname, window.location.origin + pathname);
+        this.route(pathname);
+    }
+}
+// create appRouter instance and export
+const AppRouter = new Router();
+exports.default = AppRouter;
+function gotoRoute(pathname) {
+    AppRouter.gotoRoute(pathname);
+}
+function anchorRoute(e) {
+    e.preventDefault();
+    const pathname = e.target.closest('a').pathname;
+    AppRouter.gotoRoute(pathname);
+}

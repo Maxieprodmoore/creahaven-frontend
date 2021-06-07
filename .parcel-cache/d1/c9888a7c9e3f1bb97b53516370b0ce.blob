@@ -1,0 +1,82 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _litElement = require("@polymer/lit-element");
+var _litHtml = require("lit-html");
+var _router = require("../Router");
+var _auth = require("../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _app = require("../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _userAPI = require("./../UserAPI");
+var _userAPIDefault = parcelHelpers.interopDefault(_userAPI);
+var _toast = require("./../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+customElements.define('va-creative', class Creative extends _litElement.LitElement {
+    constructor(){
+        super();
+    }
+    static get properties() {
+        return {
+            id: {
+                type: String
+            },
+            name: {
+                type: String
+            },
+            email: {
+                type: String
+            },
+            image: {
+                type: String
+            },
+            bio: {
+                type: String
+            },
+            website: {
+                type: String
+            },
+            facebook: {
+                type: String
+            },
+            twitter: {
+                type: String
+            },
+            instagram: {
+                type: String
+            },
+            youtube: {
+                type: String
+            }
+        };
+    }
+    firstUpdated() {
+        super.firstUpdated();
+    }
+    moreInfoHandler() {
+        //create sl-dialog
+        const dialogEl = document.createElement('sl-dialog');
+        //add class name
+        dialogEl.className = 'creatives-dialog';
+        // sl-dialog content
+        const dialogContent = _litElement.html`\n      <style>\n        .wrap {\n          display: flex;\n        }\n        .image {\n          width: 40%;\n          padding-left: 1em;\n        }\n        .image img {\n          width: 100%;\n        }\n        .content {\n          padding-right: 1em;\n          width: 60%;\n        }\n\n        .email{\n          font-style: italic;\n          opacity: 0.8;\n        }\n\n        span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n        .creative-socials{\n          display: flexbox;\n          flex-wrap: wrap;  \n          width: 100%;\n          margin-bottom: 0.25em;\n        }\n      </style>\n      <div class="wrap">\n        <div class="image">\n          <img src="${_appDefault.default.apiBase}/images/${this.image}" alt="${this.name}" />\n          <h2>${this.name}</h2>\n          <h4 class="email">${this.email}</h4>\n          <p>Bio: <span>${this.bio}</span></p>\n          <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>\n          <div class="creative-socials">\n            ${this.facebook ? _litElement.html`\n              <sl-button href="${this.facebook}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>\n            ` : _litElement.html``}\n            ${this.facebook ? _litElement.html`\n              <sl-button href="${this.instagram}" target="_blank" size="medium" circle> <sl-icon name="instagram"></sl-icon></sl-button>\n            ` : _litElement.html``}            \n            ${this.facebook ? _litElement.html`\n              <sl-button href="${this.twitter}" target="_blank" size="medium" circle> <sl-icon name="twitter"></sl-icon> </sl-button>\n            ` : _litElement.html``}            \n            ${this.facebook ? _litElement.html`\n              <sl-button  href="${this.youtube}" target="_blank" size="medium" circle> <sl-icon name="youtube"></sl-icon> </sl-button>\n            ` : _litElement.html``}            \n          </div>\n          <br>\n          <div slot="footer">\n            <sl-button @click=${this.addFavHandler.bind(this)}>\n              <sl-icon slot="prefix" name="heart-fill"></sl-icon>\n              Add to Favourites\n            </sl-button>\n          </div>\n        </div>\n        <div class="content">\n        </div>\n        \n      </div>\n    `;
+        _litHtml.render(dialogContent, dialogEl);
+        // append to body 
+        document.body.append(dialogEl);
+        // show sl-dialog
+        dialogEl.show();
+        // hide dialogEl on closing
+        dialogEl.addEventListener('sl-after-hide', ()=>{
+            dialogEl.remove();
+        });
+    }
+    async addFavHandler() {
+        try {
+            await _userAPIDefault.default.addFavCreative(this.id);
+            _toastDefault.default.show('Creative added to favourites');
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+        }
+    }
+    render() {
+        return _litElement.html`\n    <style>\n\n      .email{\n        font-style: italic;\n        opacity: 0.8;\n      }\n\n      span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n      .creative-socials{\n        display: flexbox;\n        flex-wrap: wrap;  \n        width: 100%;\n        margin-bottom: 0.25em;\n      }\n\n    </style>\n    <sl-card>\n      <img slot="image" src="${_appDefault.default.apiBase}/images/${this.image}"/>\n      <h2>${this.name}</h2>\n      <h4 class="email">${this.email}</h4>\n      <p>Bio: <span>${this.bio}</span></p>\n      <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>\n      <div class="creative-socials">\n        ${this.facebook ? _litElement.html`\n          <sl-button href="${this.facebook}" target="_blank" size="small" circle> <sl-icon name="facebook"></sl-icon> </sl-button>\n        ` : _litElement.html``}\n        ${this.instagram ? _litElement.html`\n          <sl-button href="${this.instagram}" target="_blank" size="small" circle> <sl-icon name="instagram"></sl-icon></sl-button>\n        ` : _litElement.html``}        \n        ${this.twitter ? _litElement.html`\n          <sl-button href="${this.twitter}" target="_blank" size="small" circle> <sl-icon name="twitter"></sl-icon> </sl-button>\n        ` : _litElement.html``}        \n        ${this.youtube ? _litElement.html`\n          <sl-button  href="${this.youtube}" target="_blank" size="small" circle> <sl-icon name="youtube"></sl-icon> </sl-button>\n        ` : _litElement.html``}\n        \n      </div>\n      <div slot="footer">\n        <sl-button @click=${this.moreInfoHandler.bind(this)}>More Info</sl-button>\n        <sl-icon-button name="suit-heart-fill" label="Add to favourites" @click=${this.addFavHandler.bind(this)}></sl-icon-button>\n      </div>\n      \n    </sl-card>\n    `;
+    }
+});

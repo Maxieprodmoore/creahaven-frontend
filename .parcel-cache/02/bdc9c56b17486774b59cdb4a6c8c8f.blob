@@ -1,0 +1,111 @@
+import   "64ad3aebeff31dcb077408072588b546:./App";
+import   "64ad3aebeff31dcb077408072588b546:./Auth";
+import   "64ad3aebeff31dcb077408072588b546:./Toast";
+class $64ad3aebeff31dcb077408072588b546$var$UserAPI {
+    async updateUser(userId, userData, dataType = 'form') {
+        // validate
+        if (!userId || !userData) return;
+        let responseHeader;
+        // form data
+        if (dataType == 'form') // fetch response header normal (form data)
+        responseHeader = {
+            method: "PUT",
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            },
+            body: userData
+        };
+        else if (dataType == 'json') responseHeader = {
+            method: "PUT",
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        };
+        // make fetch request to backend
+        const response = await fetch(`${$64ad3aebeff31dcb077408072588b546$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/user/${userId}`, responseHeader);
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem updating user');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async getCreatives() {
+        // fetch the json data
+        const response = await fetch(`${$64ad3aebeff31dcb077408072588b546$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/creative`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting creatives');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async getUser(userId) {
+        // validate
+        if (!userId) return;
+        // fetch the json data
+        const response = await fetch(`${$64ad3aebeff31dcb077408072588b546$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/user/${userId}`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting user');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async addFavCreative(creativeId) {
+        // validate
+        if (!creativeId) return;
+        // fetch the json data
+        const response = await fetch(`${$64ad3aebeff31dcb077408072588b546$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/user/addFavCreative`, {
+            method: "PUT",
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`,
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                creativeId: creativeId
+            })
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem adding creative to favourites');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data 
+        return data;
+    }
+}
+var $64ad3aebeff31dcb077408072588b546$export$9099ad97b570f7c = new $64ad3aebeff31dcb077408072588b546$var$UserAPI();

@@ -1,0 +1,50 @@
+import   "a7a94139c54941f6720b49e037b82288:./../../App";
+import   "a7a94139c54941f6720b49e037b82288:lit-html";
+import   "a7a94139c54941f6720b49e037b82288:./../../Router";
+import   "a7a94139c54941f6720b49e037b82288:./../../Auth";
+import   "a7a94139c54941f6720b49e037b82288:./../../Utils";
+import   "a7a94139c54941f6720b49e037b82288:./../../UserAPI";
+import   "a7a94139c54941f6720b49e037b82288:../../Toast";
+import   "a7a94139c54941f6720b49e037b82288:moment";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5, t6;
+class $a7a94139c54941f6720b49e037b82288$var$EditProfileView {
+    init() {
+        console.log('EditProfileView.init');
+        document.title = 'Edit Profile';
+        this.user = null;
+        this.render();
+        $a7a94139c54941f6720b49e037b82288$import$223cdb7e1f24b5cc$9099ad97b570f7c.pageIntroAnim();
+        this.getUser();
+    }
+    async getUser() {
+        try {
+            this.user = await $a7a94139c54941f6720b49e037b82288$import$512a7c9be00b8462$9099ad97b570f7c.getUser($a7a94139c54941f6720b49e037b82288$import$50f1bc737868fc3b$9099ad97b570f7c.currentUser._id);
+            this.render();
+        } catch (err) {
+            $a7a94139c54941f6720b49e037b82288$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    async updateProfileSubmitHandler(e) {
+        e.preventDefault();
+        const formData = e.detail.formData;
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        try {
+            const updatedUser = await $a7a94139c54941f6720b49e037b82288$import$512a7c9be00b8462$9099ad97b570f7c.updateUser($a7a94139c54941f6720b49e037b82288$import$50f1bc737868fc3b$9099ad97b570f7c.currentUser._id, formData);
+            delete updatedUser.password;
+            this.user = updatedUser;
+            $a7a94139c54941f6720b49e037b82288$import$50f1bc737868fc3b$9099ad97b570f7c.currentUser = updatedUser;
+            this.render();
+            $a7a94139c54941f6720b49e037b82288$import$bf559c32ef72b940$9099ad97b570f7c.show('profile updated');
+        } catch (err) {
+            $a7a94139c54941f6720b49e037b82288$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+        }
+        submitBtn.removeAttribute('loading');
+    }
+    render() {
+        const template = $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t6 || (t6 = _`\n      <va-app-header title="Edit Profile" user=${0}></va-app-header>\n      <div class="page-body">\n        <div class="page-content">        \n          ${0}\n        </div>\n      </div>\n      \n    `), JSON.stringify($a7a94139c54941f6720b49e037b82288$import$50f1bc737868fc3b$9099ad97b570f7c.currentUser), this.user == null ? $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n            <sl-spinner></sl-spinner>\n          `)) : $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t5 || (t5 = _`\n            <p>Updated: ${0}</p>\n            <sl-form class="page-form" @sl-submit=${0}>\n              <div class="input-group">\n                <sl-input type="text" name="firstName" value="${0}" placeholder="First Name"></sl-input>\n              </div>\n              <div class="input-group">\n                <sl-input type="text" name="lastName" value="${0}" placeholder="Last Name"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Display Name/ Nickname</label><br>\n                ${0} \n              </div>\n              <div class="input-group">\n                <sl-input type="text" name="email" value="${0}" placeholder="Email Address"></sl-input>\n              </div> \n              <div class="input-group">\n                <sl-textarea name="bio" rows="4" value="${0}" placeholder="Bio"></sl-textarea>\n              </div>  \n              <div class="input-group">\n                <label>Website URL</label><br>\n                <sl-input type="text" name="website" value="${0}" placeholder="www.example.com"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Facebook page</label><br>\n                <sl-input type="text" name="facebook" value="${0}" placeholder="www.facebook.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Twitter page</label><br>\n                <sl-input type="text" name="twitter" value="${0}" placeholder="www.twitter.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Instagram page</label><br>\n                <sl-input type="text" name="instagram" value="${0}" placeholder="www.instagram.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Youtube channel</label><br>\n                <sl-input type="text" name="youtube" value="${0}" placeholder="www.youtube.com/channel/exampleURLCode"></sl-input>\n              </div>         \n              <div class="input-group">\n                <label>Avatar</label><br>          \n                ${0}\n              </div>\n              <sl-button type="primary" class="submit-btn" submit>Update Profile</sl-button>\n            </sl-form>\n          `), $a7a94139c54941f6720b49e037b82288$import$137cea99ac96085$9099ad97b570f7c($a7a94139c54941f6720b49e037b82288$import$50f1bc737868fc3b$9099ad97b570f7c.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a'), this.updateProfileSubmitHandler.bind(this), this.user.firstName, this.user.lastName, this.user.displayName == null ? $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _`\n                <sl-input type="text" name="displayName" value="${0} ${0}" placeholder="Display Name"></sl-input>\n                `), this.user.firstName, this.user.lastName) : $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n                <sl-input type="text" name="displayName" value="${0}" placeholder="Display Name"></sl-input>\n                `), this.user.displayName), this.user.email, this.user.bio, this.user.website, this.user.facebook, this.user.twitter, this.user.instagram, this.user.youtube, this.user.avatar ? $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n                  <sl-avatar image="${0}/images/${0}"></sl-avatar>\n                  <input type="file" name="avatar" />\n                `), $a7a94139c54941f6720b49e037b82288$import$2ae2d3dff7b67b10$9099ad97b570f7c.apiBase, this.user.avatar) : $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$91100b3ec196ccd(t4 || (t4 = _`\n                  <input type="file" name="avatar" />\n                `))));
+        $a7a94139c54941f6720b49e037b82288$import$add832cec91f3f79$792a797b69be0d58(template, $a7a94139c54941f6720b49e037b82288$import$2ae2d3dff7b67b10$9099ad97b570f7c.rootEl);
+    }
+}
+var $a7a94139c54941f6720b49e037b82288$export$9099ad97b570f7c = new $a7a94139c54941f6720b49e037b82288$var$EditProfileView();

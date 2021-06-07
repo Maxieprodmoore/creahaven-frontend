@@ -1,0 +1,50 @@
+import   "86032da10212257313a6d09679ca23de:./App";
+import   "86032da10212257313a6d09679ca23de:./Auth";
+import   "86032da10212257313a6d09679ca23de:./Toast";
+class $86032da10212257313a6d09679ca23de$var$JobAPI {
+    async getJobs() {
+        // fetch the json data
+        const response = await fetch(`${$86032da10212257313a6d09679ca23de$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/job`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting job postings');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async newJob(formData) {
+        // send fetch request
+        const response = await fetch(`${$86032da10212257313a6d09679ca23de$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/job`, {
+            method: 'POST',
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            },
+            body: formData
+        });
+        // if response not ok
+        if (!response.ok) {
+            let message = 'Problem adding job post';
+            if (response.status == 400) {
+                const err = await response.json();
+                message = err.message;
+            }
+            // throw error (exit this function)      
+            throw new Error(message);
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+}
+var $86032da10212257313a6d09679ca23de$export$9099ad97b570f7c = new $86032da10212257313a6d09679ca23de$var$JobAPI();

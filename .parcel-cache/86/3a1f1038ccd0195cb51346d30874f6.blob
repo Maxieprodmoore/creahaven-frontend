@@ -1,0 +1,50 @@
+import   "80d976bfa285c51c0c70a338897f7860:./App";
+import   "80d976bfa285c51c0c70a338897f7860:./Auth";
+import   "80d976bfa285c51c0c70a338897f7860:./Toast";
+class $80d976bfa285c51c0c70a338897f7860$var$ProjectAPI {
+    async getProjectPs() {
+        // fetch the json data
+        const response = await fetch(`${$80d976bfa285c51c0c70a338897f7860$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/project`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting project postings');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async newProject(formData) {
+        // send fetch request
+        const response = await fetch(`${$80d976bfa285c51c0c70a338897f7860$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/project`, {
+            method: 'POST',
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            },
+            body: formData
+        });
+        // if response not ok
+        if (!response.ok) {
+            let message = 'Problem adding project post';
+            if (response.status == 400) {
+                const err = await response.json();
+                message = err.message;
+            }
+            // throw error (exit this function)      
+            throw new Error(message);
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+}
+var $80d976bfa285c51c0c70a338897f7860$export$9099ad97b570f7c = new $80d976bfa285c51c0c70a338897f7860$var$ProjectAPI();

@@ -1,0 +1,44 @@
+import   "6731f3a6230f2994160a54c25179eff4:../../App";
+import   "6731f3a6230f2994160a54c25179eff4:lit-html";
+import   "6731f3a6230f2994160a54c25179eff4:../../Router";
+import   "6731f3a6230f2994160a54c25179eff4:../../Auth";
+import   "6731f3a6230f2994160a54c25179eff4:../../Utils";
+import   "6731f3a6230f2994160a54c25179eff4:./../../JobAPI";
+import   "6731f3a6230f2994160a54c25179eff4:../../Toast";
+let _ = (t)=>t
+, t;
+class $6731f3a6230f2994160a54c25179eff4$var$newJobView {
+    init() {
+        document.title = 'New Job Form';
+        this.render();
+        $6731f3a6230f2994160a54c25179eff4$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+    }
+    async newJobSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        console.log(formData);
+        try {
+            await $6731f3a6230f2994160a54c25179eff4$import$651bd9c089d81a98$9099ad97b570f7c.newJob(formData);
+            $6731f3a6230f2994160a54c25179eff4$import$bf559c32ef72b940$9099ad97b570f7c.show('Job Posting added!');
+            submitBtn.removeAttribute('loading');
+            //reset form
+            //reset text + text area inputs
+            const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+            if (textInputs) textInputs.forEach((textInputs1)=>textInputs1.value = null
+            );
+            //Reset file input
+            const fileInput = document.querySelector('input[type=file]');
+            if (fileInput) fileInput.value = null;
+        } catch (err) {
+            $6731f3a6230f2994160a54c25179eff4$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+            submitBtn.removeAttribute('loading');
+        }
+    }
+    render() {
+        const template = $6731f3a6230f2994160a54c25179eff4$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n      <va-app-header title="New Job Form" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">\n        <h1 class="anim-in">New Job Posting</h1>        \n          <sl-form class="page-form" @sl-submit=${0}>\n            <input type="hidden" name="user" value="${0}" />\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-input name="name" type="text" placeholder="Job Name" required></sl-input>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-textarea name="description" rows="6" placeholder="Job Details"></sl-textarea>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <label>Image</label><br>\n              <input type="file" name="image" />              \n            </div>\n            <div class="input-group">\n              <sl-select name="tag" placeholder="This is a/ an..." multiple clearable>\n                <sl-menu-item value="photography">Photography type of job</sl-menu-item>\n                <sl-menu-item value="illustration">Illustration type of job</sl-menu-item>\n                <sl-menu-item value="writing">Writing type of job</sl-menu-item>\n                <sl-menu-item value="pre-production">Pre-production type of job</sl-menu-item>\n                <sl-menu-item value="production">Production type of job</sl-menu-item>\n                <sl-menu-item value="post-production">Post-production type of job</sl-menu-item>                \n                <sl-menu-item value="animation">Animation type of job</sl-menu-item>\n                <sl-menu-item value="audio">Audio related type of job</sl-menu-item>\n                <sl-menu-item value="game-production">Video Game Development type of job</sl-menu-item>\n                <sl-menu-item value="website-dev">Website Development type of job</sl-menu-item>\n                <sl-menu-item value="2d-related">2D Related type of job</sl-menu-item>\n                <sl-menu-item value="3d-related">3D Related type of job</sl-menu-item>                \n                <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Job Posting!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    `), JSON.stringify($6731f3a6230f2994160a54c25179eff4$import$d241520aba55052c$9099ad97b570f7c.currentUser), this.newJobSubmitHandler, $6731f3a6230f2994160a54c25179eff4$import$d241520aba55052c$9099ad97b570f7c.currentUser._id);
+        $6731f3a6230f2994160a54c25179eff4$import$add832cec91f3f79$792a797b69be0d58(template, $6731f3a6230f2994160a54c25179eff4$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $6731f3a6230f2994160a54c25179eff4$export$9099ad97b570f7c = new $6731f3a6230f2994160a54c25179eff4$var$newJobView();

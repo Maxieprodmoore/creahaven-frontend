@@ -1,0 +1,50 @@
+import   "0862780ad62d7ad568ff5c87dca1794e:./App";
+import   "0862780ad62d7ad568ff5c87dca1794e:./Auth";
+import   "0862780ad62d7ad568ff5c87dca1794e:./Toast";
+class $0862780ad62d7ad568ff5c87dca1794e$var$CollaborationAPI {
+    async getCollaborationIs() {
+        // fetch the json data
+        const response = await fetch(`${$0862780ad62d7ad568ff5c87dca1794e$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/collaboration`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting collaboration invitations');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async newCollaboration(formData) {
+        // send fetch request
+        const response = await fetch(`${$0862780ad62d7ad568ff5c87dca1794e$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/collaboration`, {
+            method: 'POST',
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            },
+            body: formData
+        });
+        // if response not ok
+        if (!response.ok) {
+            let message = 'Problem adding collaboration invitation';
+            if (response.status == 400) {
+                const err = await response.json();
+                message = err.message;
+            }
+            // throw error (exit this function)      
+            throw new Error(message);
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+}
+var $0862780ad62d7ad568ff5c87dca1794e$export$9099ad97b570f7c = new $0862780ad62d7ad568ff5c87dca1794e$var$CollaborationAPI();

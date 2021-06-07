@@ -1,0 +1,68 @@
+import   "257090688ebff557775a99851bc4dec1:../../App";
+import   "257090688ebff557775a99851bc4dec1:lit-html";
+import   "257090688ebff557775a99851bc4dec1:../../Router";
+import   "257090688ebff557775a99851bc4dec1:../../Auth";
+import   "257090688ebff557775a99851bc4dec1:../../Utils";
+import   "257090688ebff557775a99851bc4dec1:./../../UserAPI";
+import   "257090688ebff557775a99851bc4dec1:../../Toast";
+let _ = (t)=>t
+, t, t1, t2, t3;
+class $257090688ebff557775a99851bc4dec1$var$CreativesView {
+    init() {
+        document.title = 'Creatives';
+        this.creatives = null;
+        this.render();
+        $257090688ebff557775a99851bc4dec1$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+        this.getCreatives();
+    }
+    async filterCollabIs(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of projects page
+        this.collaborationIs = await CollaborationAPI.getCollaborationIs();
+        let filteredCollaborationIs;
+        // tag
+        if (field == 'tag') filteredCollaborationIs = this.collaborationIs.filter((collaboration)=>collaboration.tag == match
+        );
+        //render
+        this.collaborationIs = filteredCollaborationIs;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter collaboration invites
+        this.filterCollabIs(field, match);
+    }
+    clearFilters() {
+        this.getCollaborationIs();
+        this.clearFilterBtns();
+    }
+    async getCreatives() {
+        try {
+            this.creatives = await $257090688ebff557775a99851bc4dec1$import$512a7c9be00b8462$9099ad97b570f7c.getCreatives();
+            console.log(this.creatives);
+            this.render();
+        } catch (err) {
+            $257090688ebff557775a99851bc4dec1$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    render() {
+        const template = $257090688ebff557775a99851bc4dec1$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n      <va-app-header title="Creatives" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">        \n          <h1 class="anim-in">Creatives</h1>\n          <div class="filter-menu">\n            <div>Filter by:</div>\n              <div class="filter-search"><strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1"></sl-textarea></div>\n              <div>\n                <sl-button size="small" @click=${0}>Clear Filters</sl-button>\n              </div>\n          </div>\n\n          <div id="creative-grid">\n            ${0}\n          </div>\n          \n        </div>\n      </div>\n            \n    `), JSON.stringify($257090688ebff557775a99851bc4dec1$import$d241520aba55052c$9099ad97b570f7c.currentUser), this.clearFilters.bind(this), this.creatives == null ? $257090688ebff557775a99851bc4dec1$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n              <sl-spinner></sl-spinner>\n            `)) : $257090688ebff557775a99851bc4dec1$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n              ${0}\n            `), this.creatives.map((creative)=>$257090688ebff557775a99851bc4dec1$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _`\n              <va-creative class="creative-card"\n                id="${0}"\n                name="${0}"\n                email="${0}"\n                image="${0}"\n                bio="${0}"\n                website="${0}"\n                facebook="${0}"\n                instagram="${0}"\n                twitter="${0}"\n                youtube="${0}"\n\n              >\n              </va-creative>\n                \n              `), creative._id, creative.displayName, creative.email, creative.avatar, creative.bio, creative.website, creative.facebook, creative.instagram, creative.twitter, creative.youtube)
+        )));
+        $257090688ebff557775a99851bc4dec1$import$add832cec91f3f79$792a797b69be0d58(template, $257090688ebff557775a99851bc4dec1$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $257090688ebff557775a99851bc4dec1$export$9099ad97b570f7c = new $257090688ebff557775a99851bc4dec1$var$CreativesView();

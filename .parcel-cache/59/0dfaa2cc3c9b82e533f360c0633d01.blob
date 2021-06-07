@@ -1,0 +1,81 @@
+import   "3b6b784eebde5379398862a86f74837c:./template.js";
+const $3b6b784eebde5379398862a86f74837c$var$walkerNodeFilter = 133/* NodeFilter.SHOW_{ELEMENT|COMMENT|TEXT} */ ;
+function $3b6b784eebde5379398862a86f74837c$export$eaae5a7f23c7face(template, nodesToRemove) {
+    const { element: { content: content  } , parts: parts  } = template;
+    const walker = document.createTreeWalker(content, $3b6b784eebde5379398862a86f74837c$var$walkerNodeFilter, null, false);
+    let partIndex = $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts(parts);
+    let part = parts[partIndex];
+    let nodeIndex = -1;
+    let removeCount = 0;
+    const nodesToRemoveInTemplate = [];
+    let currentRemovingNode = null;
+    while(walker.nextNode()){
+        nodeIndex++;
+        const node = walker.currentNode;
+        // End removal if stepped past the removing node
+        if (node.previousSibling === currentRemovingNode) currentRemovingNode = null;
+        // A node to remove was found in the template
+        if (nodesToRemove.has(node)) {
+            nodesToRemoveInTemplate.push(node);
+            // Track node we're removing
+            if (currentRemovingNode === null) currentRemovingNode = node;
+        }
+        // When removing, increment count by which to adjust subsequent part indices
+        if (currentRemovingNode !== null) removeCount++;
+        while(part !== undefined && part.index === nodeIndex){
+            // If part is in a removed node deactivate it by setting index to -1 or
+            // adjust the index as needed.
+            part.index = currentRemovingNode !== null ? -1 : part.index - removeCount;
+            // go to the next active part.
+            partIndex = $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts(parts, partIndex);
+            part = parts[partIndex];
+        }
+    }
+    nodesToRemoveInTemplate.forEach((n)=>n.parentNode.removeChild(n)
+    );
+}
+const $3b6b784eebde5379398862a86f74837c$var$countNodes = (node)=>{
+    let count = node.nodeType === 11 ? 0 : 1;
+    const walker = document.createTreeWalker(node, $3b6b784eebde5379398862a86f74837c$var$walkerNodeFilter, null, false);
+    while(walker.nextNode())count++;
+    return count;
+};
+const $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts = (parts, startIndex = -1)=>{
+    for(let i = startIndex + 1; i < parts.length; i++){
+        const part = parts[i];
+        if ($3b6b784eebde5379398862a86f74837c$import$c41f5f1517cd061$6926ca917b0c720d(part)) return i;
+    }
+    return -1;
+};
+function $3b6b784eebde5379398862a86f74837c$export$8e9dc9428f64690e(template, node, refNode = null) {
+    const { element: { content: content  } , parts: parts  } = template;
+    // If there's no refNode, then put node at end of template.
+    // No part indices need to be shifted in this case.
+    if (refNode === null || refNode === undefined) {
+        content.appendChild(node);
+        return;
+    }
+    const walker = document.createTreeWalker(content, $3b6b784eebde5379398862a86f74837c$var$walkerNodeFilter, null, false);
+    let partIndex = $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts(parts);
+    let insertCount = 0;
+    let walkerIndex = -1;
+    while(walker.nextNode()){
+        walkerIndex++;
+        const walkerNode = walker.currentNode;
+        if (walkerNode === refNode) {
+            insertCount = $3b6b784eebde5379398862a86f74837c$var$countNodes(node);
+            refNode.parentNode.insertBefore(node, refNode);
+        }
+        while(partIndex !== -1 && parts[partIndex].index === walkerIndex){
+            // If we've inserted the node, simply adjust all subsequent parts
+            if (insertCount > 0) {
+                while(partIndex !== -1){
+                    parts[partIndex].index += insertCount;
+                    partIndex = $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts(parts, partIndex);
+                }
+                return;
+            }
+            partIndex = $3b6b784eebde5379398862a86f74837c$var$nextActiveIndexInTemplateParts(parts, partIndex);
+        }
+    }
+}

@@ -1,0 +1,50 @@
+import   "c1b0d2b2c7b12fa5011b54e2c849696b:./App";
+import   "c1b0d2b2c7b12fa5011b54e2c849696b:./Auth";
+import   "c1b0d2b2c7b12fa5011b54e2c849696b:./Toast";
+class $c1b0d2b2c7b12fa5011b54e2c849696b$var$PortfolioAPI {
+    async getPortfolioPs() {
+        // fetch the json data
+        const response = await fetch(`${$c1b0d2b2c7b12fa5011b54e2c849696b$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/portfolio`, {
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // throw error (exit this function)      
+            throw new Error('Problem getting portfolio pieces!');
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+    async newPortfolioP(formData) {
+        // send fetch request
+        const response = await fetch(`${$c1b0d2b2c7b12fa5011b54e2c849696b$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/portfolio`, {
+            method: 'POST',
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            },
+            body: formData
+        });
+        // if response not ok
+        if (!response.ok) {
+            let message = 'Problem adding portfolio piece';
+            if (response.status == 400) {
+                const err = await response.json();
+                message = err.message;
+            }
+            // throw error (exit this function)      
+            throw new Error(message);
+        }
+        // convert response payload into json - store as data
+        const data = await response.json();
+        // return data
+        return data;
+    }
+}
+var $c1b0d2b2c7b12fa5011b54e2c849696b$export$9099ad97b570f7c = new $c1b0d2b2c7b12fa5011b54e2c849696b$var$PortfolioAPI();

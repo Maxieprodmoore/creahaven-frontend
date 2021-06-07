@@ -1,0 +1,5 @@
+import   "49339930bfcea095d8b2f803f2be61e8:lit-html";
+let _ = (t)=>t
+, t;
+const $49339930bfcea095d8b2f803f2be61e8$var$splash = $49339930bfcea095d8b2f803f2be61e8$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n\n  <div class="app-splash">\n    <div class="inner">\n      <img class="app-logo" src="/images/creahaven-logo.svg" />\n      <sl-spinner style="font-size: 2em;"></sl-spinner>\n    </div>\n  </div>\n`));
+var $49339930bfcea095d8b2f803f2be61e8$export$9099ad97b570f7c = $49339930bfcea095d8b2f803f2be61e8$var$splash;

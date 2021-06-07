@@ -1,0 +1,22 @@
+import   "7c56adfebe68ea46d861c5de3754b2c8:gsap";
+class $7c56adfebe68ea46d861c5de3754b2c8$var$Utils {
+    isMobile() {
+        let viewportWidth = window.innerWidth;
+        if (viewportWidth <= 768) return true;
+        else return false;
+    }
+    pageIntroAnim() {
+        const pageContent = document.querySelector('.page-content');
+        if (!pageContent) return;
+        $7c56adfebe68ea46d861c5de3754b2c8$import$a68c99996323679b$9099ad97b570f7c.fromTo(pageContent, {
+            opacity: 0,
+            y: -12
+        }, {
+            opacity: 1,
+            y: 0,
+            ease: 'power2.out',
+            duration: 0.3
+        });
+    }
+}
+var $7c56adfebe68ea46d861c5de3754b2c8$export$9099ad97b570f7c = new $7c56adfebe68ea46d861c5de3754b2c8$var$Utils();

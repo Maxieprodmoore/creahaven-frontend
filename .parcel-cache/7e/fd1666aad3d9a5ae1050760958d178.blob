@@ -1,0 +1,16 @@
+import   "8131ba3b299febeacdb7b929a8e8ee0f:./../../App";
+import   "8131ba3b299febeacdb7b929a8e8ee0f:lit-html";
+let _ = (t)=>t
+, t;
+class $8131ba3b299febeacdb7b929a8e8ee0f$var$FourOFourView {
+    init() {
+        console.log('FourOFourView.init');
+        document.title = '404 File not found';
+        this.render();
+    }
+    render() {
+        const template = $8131ba3b299febeacdb7b929a8e8ee0f$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`    \n      <div class="calign">\n        <h1>Opps!</h1>\n        <p>Sorry, we couldn't find that.</p>\n      </div>\n    `));
+        $8131ba3b299febeacdb7b929a8e8ee0f$import$add832cec91f3f79$792a797b69be0d58(template, $8131ba3b299febeacdb7b929a8e8ee0f$import$2ae2d3dff7b67b10$9099ad97b570f7c.rootEl);
+    }
+}
+var $8131ba3b299febeacdb7b929a8e8ee0f$export$9099ad97b570f7c = new $8131ba3b299febeacdb7b929a8e8ee0f$var$FourOFourView();

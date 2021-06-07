@@ -1,0 +1,109 @@
+import   "cbeae7c1236295e971b43cf9389d544e:./App";
+import   "cbeae7c1236295e971b43cf9389d544e:./Router";
+import   "cbeae7c1236295e971b43cf9389d544e:./views/partials/splash";
+import   "cbeae7c1236295e971b43cf9389d544e:lit-html";
+import   "cbeae7c1236295e971b43cf9389d544e:./Toast";
+class $cbeae7c1236295e971b43cf9389d544e$var$Auth {
+    async signUp(userData, fail = false) {
+        const response = await fetch(`${$cbeae7c1236295e971b43cf9389d544e$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/user`, {
+            method: 'POST',
+            body: userData
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // show error      
+            $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show(`Problem getting user: ${response.status}`);
+            // run fail() functon if set
+            if (typeof fail == 'function') fail();
+        }
+        /// sign up success - show toast and redirect to sign in page
+        $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show('Account created, please sign in');
+        // redirect to signin
+        $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/signin');
+    }
+    async signIn(userData, fail = false) {
+        const response = await fetch(`${$cbeae7c1236295e971b43cf9389d544e$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/auth/signin`, {
+            method: 'POST',
+            body: userData
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // show error      
+            $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show(`Problem signing in: ${err.message}`, 'error');
+            // run fail() functon if set
+            if (typeof fail == 'function') fail();
+        }
+        // sign in success
+        const data = await response.json();
+        $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show(`Welcome  ${data.user.firstName}`);
+        // save access token (jwt) to local storage
+        localStorage.setItem('accessToken', data.accessToken);
+        // set current user
+        this.currentUser = data.user;
+        // console.log(this.currentUser) 
+        // redirection
+        $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$9099ad97b570f7c.init();
+        if (data.user.newUser == true) //redirect new user to guide page
+        $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/guide');
+        else // existing user - redirect to home page (/)
+        $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/');
+    }
+    async check(success) {
+        // show splash screen while loading ...   
+        $cbeae7c1236295e971b43cf9389d544e$import$add832cec91f3f79$792a797b69be0d58($cbeae7c1236295e971b43cf9389d544e$import$253008968792d487$9099ad97b570f7c, $cbeae7c1236295e971b43cf9389d544e$import$61d22e895c1525a2$9099ad97b570f7c.rootEl);
+        // check local token is there
+        if (!localStorage.accessToken) {
+            // no local token!
+            $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show("Please sign in");
+            // redirect to sign in page      
+            $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/signin');
+            return;
+        }
+        // token must exist - validate token via the backend
+        const response = await fetch(`${$cbeae7c1236295e971b43cf9389d544e$import$61d22e895c1525a2$9099ad97b570f7c.apiBase}/auth/validate`, {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${localStorage.accessToken}`
+            }
+        });
+        // if response not ok
+        if (!response.ok) {
+            // console log error
+            const err = await response.json();
+            if (err) console.log(err);
+            // delete local token
+            localStorage.removeItem('accessToken');
+            $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show("session expired, please sign in");
+            // redirect to sign in      
+            $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/signin');
+            return;
+        }
+        // token is valid!
+        const data = await response.json();
+        // console.log(data)
+        // set currentUser obj
+        this.currentUser = data.user;
+        // run success
+        success();
+    }
+    signOut() {
+        $cbeae7c1236295e971b43cf9389d544e$import$f4bb9a315502c7ca$9099ad97b570f7c.show("You are signed out");
+        // delete local token
+        localStorage.removeItem('accessToken');
+        // redirect to sign in    
+        $cbeae7c1236295e971b43cf9389d544e$import$8f796570d7c29300$fe09313b26f77dc8('/signin');
+        // unset currentUser
+        this.currentUser = null;
+    }
+    constructor(){
+        this.currentUser = {
+        };
+    }
+}
+var $cbeae7c1236295e971b43cf9389d544e$export$9099ad97b570f7c = new $cbeae7c1236295e971b43cf9389d544e$var$Auth();

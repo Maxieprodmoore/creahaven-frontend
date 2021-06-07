@@ -1,0 +1,68 @@
+import   "c134e24cb6ced032ab44c68b7774bcf4:../../App";
+import   "c134e24cb6ced032ab44c68b7774bcf4:lit-html";
+import   "c134e24cb6ced032ab44c68b7774bcf4:../../Router";
+import   "c134e24cb6ced032ab44c68b7774bcf4:../../Auth";
+import   "c134e24cb6ced032ab44c68b7774bcf4:../../Utils";
+import   "c134e24cb6ced032ab44c68b7774bcf4:./../../PortfolioAPI";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5;
+class $c134e24cb6ced032ab44c68b7774bcf4$var$portfolioView {
+    init() {
+        document.title = 'Portfolio Pieces';
+        this.portfolioPs = null;
+        this.render();
+        $c134e24cb6ced032ab44c68b7774bcf4$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+        this.getPortfolioPs();
+    }
+    async filterPortfolioPs(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of portfolio page
+        this.portfolioPs = await $c134e24cb6ced032ab44c68b7774bcf4$import$2d7273d9cb4a511c$9099ad97b570f7c.getPortfolioPs();
+        let filteredPieces;
+        // tag
+        if (field == 'tag') filteredPieces = this.portfolioPs.filter((portfolio)=>portfolio.tag == match
+        );
+        //render
+        this.portfolioPs = filteredPieces;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter portfolio pieces
+        this.filterPortfolioPs(field, match);
+    }
+    clearFilters() {
+        this.getPortfolioPs();
+        this.clearFilterBtns();
+    }
+    async getPortfolioPs() {
+        try {
+            this.portfolioPs = await $c134e24cb6ced032ab44c68b7774bcf4$import$2d7273d9cb4a511c$9099ad97b570f7c.getPortfolioPs();
+            console.log(this.portfolioPs);
+            this.render();
+        } catch (err) {
+            Toast.show(err, 'error');
+        }
+    }
+    render() {
+        const template = $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t5 || (t5 = _`\n        \n      <va-app-header title="Profile" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <div class="profile-grid">        \n            <h1>Portfolio Pieces</h1>\n              \n              <sl-card class="profile-section">\n                <div slot="header"><h3>Portfolio</h3>\n                  ${0}\n                </div>\n                <div class="filter-menu">                  \n                  <div class="filter-search">\n                    <div>Filter by:</div>\n                    <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>\n                  </div>\n                  <div class="filter-btns">\n                    <div class="filter-dropdown"> \n                      <sl-dropdown>\n                        <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${0}>photography</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${0}>illustrations</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${0}>writing</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${0}>pre-production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${0}>production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${0}>post-production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${0}>animation</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${0}>voice-over</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${0}>game production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${0}>website development</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${0}>2D art</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${0}>3D art</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${0}>others</sl-menu-item>\n                          </sl-menu>\n                      </sl-dropdown>\n                    </div>\n                    <div>\n                      <sl-button size="small" @click=${0}>Clear Filters</sl-button>\n                    </div>\n                  </div> \n                </div>\n\n                    ${0}                                  \n              </sl-card>\n                \n          </div>\n        </div> \n      </div>\n           \n    `), JSON.stringify($c134e24cb6ced032ab44c68b7774bcf4$import$d241520aba55052c$9099ad97b570f7c.currentUser), $c134e24cb6ced032ab44c68b7774bcf4$import$d241520aba55052c$9099ad97b570f7c.currentUser.accessLevel == 1 ? $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n                    <sl-button type="primary" size="medium" @click=${0}>Add a new portfolio piece!</sl-button>\n                  `), ()=>$c134e24cb6ced032ab44c68b7774bcf4$import$b21bf7e27edd13d3$fe09313b26f77dc8('/newPortfolio')
+        ) : $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _``)), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.portfolioPs == null ? $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n                      <sl-spinner></sl-spinner>\n                    `)) : $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t4 || (t4 = _`\n                      ${0}\n                      \n                    `), this.portfolioPs.map((portfolioPs)=>$c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n                        <sl-card class="portfolio-card">\n                          <img \n                            slot="image" \n                            src="${0}/images/${0}" \n                            alt="${0}"\n                          >\n                          <h3>${0}</h3>\n                          <p>${0}</p>\n                          <div slot="footer">\n                            <sl-tag type="info" size="small">${0}</sl-tag>\n                            <p >By ${0}</p>\n                          </div>               \n                        </sl-card>\n                      `), $c134e24cb6ced032ab44c68b7774bcf4$import$e4114fce0a97fb80$9099ad97b570f7c.apiBase, portfolioPs.image, portfolioPs.name, portfolioPs.name, portfolioPs.description, portfolioPs.tag, portfolioPs.user.displayName)
+        )));
+        $c134e24cb6ced032ab44c68b7774bcf4$import$add832cec91f3f79$792a797b69be0d58(template, $c134e24cb6ced032ab44c68b7774bcf4$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $c134e24cb6ced032ab44c68b7774bcf4$export$9099ad97b570f7c = new $c134e24cb6ced032ab44c68b7774bcf4$var$portfolioView();

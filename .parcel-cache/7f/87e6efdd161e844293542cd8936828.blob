@@ -1,0 +1,40 @@
+import   "b8c16c7b7f6f86e95212a9a03b272853:./App";
+import   "b8c16c7b7f6f86e95212a9a03b272853:lit-html";
+import   "b8c16c7b7f6f86e95212a9a03b272853:gsap";
+class $b8c16c7b7f6f86e95212a9a03b272853$export$9099ad97b570f7c {
+    static init() {
+        this.showDuration = 2.5;
+        // create container element
+        this.containerEl = document.createElement('div');
+        this.containerEl.id = 'toasts';
+        // append to <body>
+        document.body.appendChild(this.containerEl);
+    }
+    static show(content, type = '') {
+        if (!content) return;
+        // create element
+        const toastEl = document.createElement('div');
+        toastEl.className = 'toast-entry';
+        if (type != "") toastEl.classList.add('is-error');
+        toastEl.innerText = content;
+        // appened to container
+        this.containerEl.appendChild(toastEl);
+        // animate using gsap
+        const tl = $b8c16c7b7f6f86e95212a9a03b272853$import$a68c99996323679b$a68c99996323679b.timeline();
+        tl.from(toastEl, {
+            y: 60,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power3.out"
+        });
+        tl.to(toastEl, {
+            marginTop: -50,
+            opacity: 0,
+            delay: this.showDuration,
+            duration: 0.3,
+            onComplete: ()=>{
+                toastEl.remove();
+            }
+        });
+    }
+}

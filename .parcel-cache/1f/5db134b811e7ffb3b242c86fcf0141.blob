@@ -1,0 +1,4 @@
+import   "9560e1a2d03b5d9d7eb51211ed445b88:./gsap-core.js";
+import   "9560e1a2d03b5d9d7eb51211ed445b88:./CSSPlugin.js";
+var $9560e1a2d03b5d9d7eb51211ed445b88$export$a68c99996323679b = $9560e1a2d03b5d9d7eb51211ed445b88$import$9e5ec40bf001f9fa$a68c99996323679b.registerPlugin($9560e1a2d03b5d9d7eb51211ed445b88$import$8068e4a07143b28d$ec5afef35947d585) || $9560e1a2d03b5d9d7eb51211ed445b88$import$9e5ec40bf001f9fa$a68c99996323679b, // to protect from tree shaking
+$9560e1a2d03b5d9d7eb51211ed445b88$export$5638fbe100ff066c = $9560e1a2d03b5d9d7eb51211ed445b88$export$a68c99996323679b.core.Tween;

@@ -1,0 +1,23 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("./../../Router");
+var _auth = require("./../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("./../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+class HomeView {
+    init() {
+        console.log('HomeView.init');
+        document.title = 'Home';
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+    }
+    render() {
+        const template = _litHtml.html`\n      <style>\n        /*------home navigation buttons ---------*/ \n        .home-navBtn {\n          display: flexbox;\n          flex-wrap: wrap;\n          width: 100%;\n          \n        }\n        .navBtnImg {\n            width: calc(20% - 1em);\n            margin: 0.5em;\n          }\n        /*-------------Responsive design-----------------*/\n        @media all and (max-width: 768px){\n          .navBtnImg{\n            width: calc(47% - 1em);\n          }\n        }\n        /*-------------Responsive design-----------------*/\n        @media all and (max-width: 425px){\n          .navBtnImg{\n            width: 100%;\n            margin: 0;\n          }\n        }\n      </style>\n      <va-app-header title="Home" user=${JSON.stringify(_authDefault.default.currentUser)}></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <h1 class="anim-in">Hey ${_authDefault.default.currentUser.firstName}!</h1>\n          <img id="guide-img" src="/images/introScreen-hero-img.png" />\n          <div class="home-navBtn">\n            <a href="/creatives" @click="${this.menuClick}"><img class="navBtnImg" src="/images/creatives-button.png"/></a>\n            <a href="/collaborations" @click="${this.menuClick}"><img class="navBtnImg" src="/images/collaboration-button.png"/></a>\n            <a href="/jobs" @click="${this.menuClick}"><img class="navBtnImg" src="/images/jobs-button.png"/></a>\n            <a href="/projects" @click="${this.menuClick}"><img class="navBtnImg" src="/images/projects-button.png"/></a>\n          </div>\n\n          \n        </div>\n      </div>\n      \n      \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new HomeView();

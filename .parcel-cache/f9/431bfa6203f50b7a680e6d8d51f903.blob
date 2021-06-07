@@ -1,0 +1,33 @@
+import   "4610de1ca26343ab2edab92b43a59b2f:./parts.js";
+class $4610de1ca26343ab2edab92b43a59b2f$export$57b1cd6860687dbc {
+    /**
+     * Create parts for an attribute-position binding, given the event, attribute
+     * name, and string literals.
+     *
+     * @param element The element containing the binding
+     * @param name  The attribute name
+     * @param strings The string literals. There are always at least two strings,
+     *   event for fully-controlled bindings with a single expression.
+     */ handleAttributeExpressions(element, name, strings, options) {
+        const prefix = name[0];
+        if (prefix === '.') {
+            const committer = new $4610de1ca26343ab2edab92b43a59b2f$import$5b201c37dc56b46e$d66695aeabf5bf46(element, name.slice(1), strings);
+            return committer.parts;
+        }
+        if (prefix === '@') return [
+            new $4610de1ca26343ab2edab92b43a59b2f$import$5b201c37dc56b46e$ce9926cbad3facec(element, name.slice(1), options.eventContext)
+        ];
+        if (prefix === '?') return [
+            new $4610de1ca26343ab2edab92b43a59b2f$import$5b201c37dc56b46e$2570c24193e71ea2(element, name.slice(1), strings)
+        ];
+        const committer = new $4610de1ca26343ab2edab92b43a59b2f$import$5b201c37dc56b46e$ff5d2ab550394226(element, name, strings);
+        return committer.parts;
+    }
+    /**
+     * Create parts for a text-position binding.
+     * @param templateFactory
+     */ handleTextExpression(options) {
+        return new $4610de1ca26343ab2edab92b43a59b2f$import$5b201c37dc56b46e$edfafdd4de02b76(options);
+    }
+}
+const $4610de1ca26343ab2edab92b43a59b2f$export$91d1cfc8da213add = new $4610de1ca26343ab2edab92b43a59b2f$export$57b1cd6860687dbc();

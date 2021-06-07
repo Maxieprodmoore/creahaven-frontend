@@ -1,0 +1,31 @@
+import   "1ab3bfbbe4ca6aa0c3f47a68ab06b8d3:./../../App";
+import   "1ab3bfbbe4ca6aa0c3f47a68ab06b8d3:lit-html";
+import   "1ab3bfbbe4ca6aa0c3f47a68ab06b8d3:./../../Router";
+import   "1ab3bfbbe4ca6aa0c3f47a68ab06b8d3:./../../Auth";
+import   "1ab3bfbbe4ca6aa0c3f47a68ab06b8d3:./../../Utils";
+let _ = (t)=>t
+, t;
+class $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$var$SignInView {
+    init() {
+        console.log('SignInView.init');
+        document.title = 'Sign In';
+        this.render();
+        $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$223cdb7e1f24b5cc$9099ad97b570f7c.pageIntroAnim();
+    }
+    signInSubmitHandler(e) {
+        e.preventDefault();
+        const formData = e.detail.formData;
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        // sign in using Auth    
+        $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$50f1bc737868fc3b$9099ad97b570f7c.signIn(formData, ()=>{
+            submitBtn.removeAttribute('loading');
+        });
+    }
+    render() {
+        const template = $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`      \n      <div class="page-body">\n        <div class="page-content page-centered">\n          <div class="signinup-box">\n            <img class="signinup-logo" src="/images/creahaven-logo.svg">          \n            <sl-form class="form-signup dark-theme" @sl-submit=${0}>          \n              <div class="input-group">\n                <sl-input name="email" type="email" placeholder="Email" required></sl-input>\n              </div>\n              <div class="input-group">\n                <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>\n              </div>\n              <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>\n            </sl-form>\n            <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${0}>Sign Up</sl-button></p>\n          </div>\n        </div>\n      </div>\n    `), this.signInSubmitHandler, ()=>$1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$a23737ec8ebd3399$fe09313b26f77dc8('/signup')
+        );
+        $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$add832cec91f3f79$792a797b69be0d58(template, $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$import$2ae2d3dff7b67b10$9099ad97b570f7c.rootEl);
+    }
+}
+var $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$export$9099ad97b570f7c = new $1ab3bfbbe4ca6aa0c3f47a68ab06b8d3$var$SignInView();

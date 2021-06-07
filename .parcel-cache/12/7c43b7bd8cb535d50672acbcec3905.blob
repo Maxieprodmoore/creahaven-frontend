@@ -1,0 +1,15 @@
+const $f9c765192ec5d3ce91c590af9536fc44$export$2cff0ec3922e713f = typeof window !== 'undefined' && window.customElements != null && window.customElements.polyfillWrapFlushCallback !== undefined;
+const $f9c765192ec5d3ce91c590af9536fc44$export$f08159c338e37fca = (container, start, end = null, before = null)=>{
+    while(start !== end){
+        const n = start.nextSibling;
+        container.insertBefore(start, before);
+        start = n;
+    }
+};
+const $f9c765192ec5d3ce91c590af9536fc44$export$87ad59dd8be5dd12 = (container, start, end = null)=>{
+    while(start !== end){
+        const n = start.nextSibling;
+        container.removeChild(start);
+        start = n;
+    }
+};

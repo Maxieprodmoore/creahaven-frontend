@@ -1,0 +1,61 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _litElement = require("@polymer/lit-element");
+var _router = require("./../Router");
+var _auth = require("./../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _app = require("./../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+customElements.define('va-app-header', class AppHeader extends _litElement.LitElement {
+    constructor(){
+        super();
+    }
+    static get properties() {
+        return {
+            title: {
+                type: String
+            },
+            user: {
+                type: Object
+            }
+        };
+    }
+    firstUpdated() {
+        super.firstUpdated();
+        this.navActiveLinks();
+    }
+    navActiveLinks() {
+        const currentPath = window.location.pathname;
+        const navLinks = this.shadowRoot.querySelectorAll('.app-top-nav a, .app-side-menu-items a');
+        navLinks.forEach((navLink)=>{
+            if (navLink.href.slice(-1) == '#') return;
+            if (navLink.pathname === currentPath) navLink.classList.add('active');
+        });
+    }
+    hamburgerClick() {
+        const appMenu = this.shadowRoot.querySelector('.app-side-menu');
+        appMenu.show();
+    }
+    menuClick(e) {
+        e.preventDefault();
+        const pathname = e.target.closest('a').pathname;
+        const appSideMenu = this.shadowRoot.querySelector('.app-side-menu');
+        // hide appMenu
+        appSideMenu.hide();
+        appSideMenu.addEventListener('sl-after-hide', ()=>{
+            // goto route after menu is hidden
+            _router.gotoRoute(pathname);
+        });
+    }
+    render() {
+        return _litElement.html`\n    <style>      \n      * {\n        box-sizing: border-box;\n      }\n      .app-header {\n        background: var(--brand-color);\n        position: fixed;\n        top: 0;\n        right: 0;\n        left: 0;\n        height: var(--app-header-height);\n        color: black;\n        display: flex;\n        z-index: 9;\n        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);\n        align-items: center;\n      }\n      \n\n      .app-header-main {\n        flex-grow: 1;\n        display: flex;\n        align-items: center;\n        margin-left: 13em;\n        a {\n          font-size: 1.4em;\n        }\n      }\n\n      .app-header-main::slotted(h1){\n        color: black;\n      }\n\n      .app-header-logo{\n        height: 50px;\n        margin-bottom: 0.10em;\n        margin-top: 0.40em;\n        margin-right: 1.25em;\n      }\n\n      .app-logo a {\n        color: #fff;\n        text-decoration: none;\n        font-weight: bold;\n        font-size: 1.2em;\n        padding: .6em;\n        display: inline-block;        \n      }\n\n      .app-logo img {\n        width: 90px;\n      }\n      \n      .hamburger-btn::part(base) {\n        color: #fff;\n      }\n\n      .app-top-nav {\n        display: flex;\n        height: 100%;\n        align-items: center;\n        margin-left: 0;\n        margin-right:13em;\n      }\n\n      .app-top-nav a {\n        display: inline-block;\n        padding: .8em;\n        text-decoration: none;\n        color: black;\n      }\n      \n      .app-side-menu-items a {\n        display: block;\n        padding: .5em;\n        text-decoration: none;\n        font-size: 1.3em;\n        color: #333;\n      }\n\n      .app-side-menu-logo {\n        width: 200px;\n        margin-bottom: 1em;\n        position: absolute;\n        top: 2em;\n        left: 1.5em;\n      }\n\n      .page-title {\n        color: var(--app-header-txt-color);\n        margin-right: 0.5em;\n        font-size: var(--app-header-title-font-size);\n      }\n\n      /* active nav links */\n      .app-top-nav a.active,\n      .app-side-menu-items a.active {\n        font-weight: bold;\n      }\n\n       /* RESPONSIVE - IPAD ------------------- */\n       @media all and (max-width: 1024px){\n        .app-header-main {\n          margin-left: 3em;\n        }\n        .app-top-nav {\n          margin-right: 3em;\n        }\n      } \n\n      /* RESPONSIVE - MOBILE ------------------- */\n      @media all and (max-width: 768px){       \n\n        .app-header-main{\n          margin-left: 1em;\n        }\n\n        .app-top-nav{\n          margin-right: 1em;\n        }\n\n        .page-title{\n          display: none;\n        }\n      }\n      /* RESPONSIVE - MOBILE Large ------------------- */\n      @media all and (max-width: 425px){\n        #home{\n          display:none;\n        }\n        .app-header-main{\n          margin-left: 0em;\n        }\n        .app-top-nav{\n          margin-right: 0;\n        }\n\n        #avatarName{\n          display: none;\n        }\n\n      }  \n    </style>\n\n\n\n    <header class="app-header">\n      <div class="app-header-main">\n        <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>\n        <img class="app-header-logo" src="/images/creahaven-logo-black.svg">\n        <slot></slot>\n        <a href="/" id="home" @click="${_router.anchorRoute}">Home</a>  \n      </div>\n\n\n      <nav class="app-top-nav">\n        ${this.title ? _litElement.html`\n            <h6 class="page-title">${this.title}</h6>\n        ` : _litElement.html``}      \n        <sl-dropdown>\n          <a slot="trigger" href="#" @click="${(e)=>e.preventDefault()
+        }">\n            <sl-avatar style="--size: 24px;" image=${this.user && this.user.avatar ? `${_appDefault.default.apiBase}/images/${this.user.avatar}` : ''}></sl-avatar> <strong id="avatarName">${this.user && this.user.displayName}</strong> \n          </a>\n          <sl-menu>            \n            <sl-menu-item @click="${()=>_router.gotoRoute('/profile')
+        }">Profile</sl-menu-item>\n            <sl-menu-item @click="${()=>_router.gotoRoute('/editProfile')
+        }">Edit Profile</sl-menu-item>\n            <sl-menu-item @click="${()=>_router.gotoRoute('/favouriteCreatives')
+        }">Favourite Creatives</sl-menu-item>\n            <sl-menu-divider></sl-menu-divider>\n            ${this.user.accessLevel == 1 ? _litElement.html`\n              <sl-menu-item @click="${()=>_router.gotoRoute('/newPortfolio')
+        }">Post a new Portfolio Piece!</sl-menu-item>\n            ` : _litElement.html``}\n            ${this.user.accessLevel == 1 ? _litElement.html`\n              <sl-menu-item @click="${()=>_router.gotoRoute('/newCollaboration')
+        }">Post a new Collaboration Request!</sl-menu-item>\n            ` : _litElement.html``}\n            ${this.user.accessLevel == 2 ? _litElement.html`\n              <sl-menu-item @click="${()=>_router.gotoRoute('/newJob')
+        }">Post a new Job Vacancy posting!</sl-menu-item>\n            ` : _litElement.html``}\n            ${this.user.accessLevel == 2 ? _litElement.html`\n              <sl-menu-item @click="${()=>_router.gotoRoute('/newProject')
+        }">Post a new Project listing!</sl-menu-item>\n            ` : _litElement.html``}\n            <sl-menu-divider></sl-menu-divider>\n            <sl-menu-item @click="${()=>_authDefault.default.signOut()
+        }">Sign Out</sl-menu-item>\n          </sl-menu>\n        </sl-dropdown>\n      </nav>\n    </header>\n\n    <sl-drawer class="app-side-menu" placement="left">\n      <img class="app-side-menu-logo" src="/images/creahaven-logo.svg">\n      <nav class="app-side-menu-items">\n        <a href="/" @click="${this.menuClick}"> <sl-icon name="house-door-fill"></sl-icon>Home</a>\n        <a href="/portfolios" @click="${this.menuClick}">View Portfolio pieces!</a>\n        <a href="/creatives" @click="${this.menuClick}">Find a Creative!</a>\n        <a href="/collaborations" @click="${this.menuClick}">Find a Collaboration!</a>\n        <a href="/jobs" @click="${this.menuClick}">Find a Job vacancy!</a>\n        <a href="/projects" @click="${this.menuClick}">Find a project for bidding!</a>\n      </nav>  \n    </sl-drawer>\n    `;
+    }
+});

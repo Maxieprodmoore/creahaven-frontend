@@ -1,0 +1,75 @@
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/home";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/404";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/guide";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/signin";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/signup";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/profile";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/editProfile";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/favouriteCreatives";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/projects";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/portfolio";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/jobs";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/creatives";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/collaborations";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/newJob";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/newCollaboration";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/newProject";
+import   "2bb18abebdff4ac6676a2ca4b18e5b42:./views/pages/newPortfolio";
+// define routes
+const $2bb18abebdff4ac6676a2ca4b18e5b42$var$routes = {
+    '/': $2bb18abebdff4ac6676a2ca4b18e5b42$import$382ce0f6ea8be77b$9099ad97b570f7c,
+    '404': $2bb18abebdff4ac6676a2ca4b18e5b42$import$1a059e4ae4beb8c$9099ad97b570f7c,
+    '/favouriteCreatives': $2bb18abebdff4ac6676a2ca4b18e5b42$import$a091fa7c2466b03d$9099ad97b570f7c,
+    '/guide': $2bb18abebdff4ac6676a2ca4b18e5b42$import$daf74bf440dc59a0$9099ad97b570f7c,
+    '/signin': $2bb18abebdff4ac6676a2ca4b18e5b42$import$3aeb865c13601348$9099ad97b570f7c,
+    '/signup': $2bb18abebdff4ac6676a2ca4b18e5b42$import$85d6dd21d016eae9$9099ad97b570f7c,
+    '/profile': $2bb18abebdff4ac6676a2ca4b18e5b42$import$f9adecee3a82c959$9099ad97b570f7c,
+    '/portfolios': $2bb18abebdff4ac6676a2ca4b18e5b42$import$d12983f0a674da51$9099ad97b570f7c,
+    '/newPortfolio': $2bb18abebdff4ac6676a2ca4b18e5b42$import$fe465c295744ab63$9099ad97b570f7c,
+    '/projects': $2bb18abebdff4ac6676a2ca4b18e5b42$import$e47a8bdaa1eac4cf$9099ad97b570f7c,
+    '/newProject': $2bb18abebdff4ac6676a2ca4b18e5b42$import$991c88b136497d46$9099ad97b570f7c,
+    '/jobs': $2bb18abebdff4ac6676a2ca4b18e5b42$import$602ad71f3ce6c3e7$9099ad97b570f7c,
+    '/newJob': $2bb18abebdff4ac6676a2ca4b18e5b42$import$43c6c3115afa8305$9099ad97b570f7c,
+    '/creatives': $2bb18abebdff4ac6676a2ca4b18e5b42$import$34196be61732e452$9099ad97b570f7c,
+    '/newCollaboration': $2bb18abebdff4ac6676a2ca4b18e5b42$import$24ed731d17d42bb9$9099ad97b570f7c,
+    '/collaborations': $2bb18abebdff4ac6676a2ca4b18e5b42$import$375f169034966dc7$9099ad97b570f7c,
+    '/editProfile': $2bb18abebdff4ac6676a2ca4b18e5b42$import$c6acc34bc462cb57$9099ad97b570f7c
+};
+class $2bb18abebdff4ac6676a2ca4b18e5b42$var$Router {
+    init() {
+        // initial call
+        this.route(window.location.pathname);
+        // on back/forward
+        window.addEventListener('popstate', ()=>{
+            this.route(window.location.pathname);
+        });
+    }
+    route(fullPathname) {
+        // extract path without params
+        const pathname = fullPathname.split('?')[0];
+        const route = this.routes[pathname];
+        if (route) // if route exists, run init() of the view
+        this.routes[window.location.pathname].init();
+        else // show 404 view instead
+        this.routes['404'].init();
+    }
+    gotoRoute(pathname) {
+        window.history.pushState({
+        }, pathname, window.location.origin + pathname);
+        this.route(pathname);
+    }
+    constructor(){
+        this.routes = $2bb18abebdff4ac6676a2ca4b18e5b42$var$routes;
+    }
+}
+// create appRouter instance and export
+const $2bb18abebdff4ac6676a2ca4b18e5b42$var$AppRouter = new $2bb18abebdff4ac6676a2ca4b18e5b42$var$Router();
+var $2bb18abebdff4ac6676a2ca4b18e5b42$export$9099ad97b570f7c = $2bb18abebdff4ac6676a2ca4b18e5b42$var$AppRouter;
+function $2bb18abebdff4ac6676a2ca4b18e5b42$export$fe09313b26f77dc8(pathname) {
+    $2bb18abebdff4ac6676a2ca4b18e5b42$var$AppRouter.gotoRoute(pathname);
+}
+function $2bb18abebdff4ac6676a2ca4b18e5b42$export$dde256ab69c46729(e) {
+    e.preventDefault();
+    const pathname = e.target.closest('a').pathname;
+    $2bb18abebdff4ac6676a2ca4b18e5b42$var$AppRouter.gotoRoute(pathname);
+}

@@ -1,0 +1,20 @@
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/default-template-processor.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/template-result.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/default-template-processor.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/directive.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/dom.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/part.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/parts.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/render.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/template-factory.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/template-instance.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/template-result.js";
+import   "70cdc504e0525df813ea3bd460cdafe9:./lib/template.js";
+// IMPORTANT: do not change the property name or the assignment expression.
+// This line will be used in regexes to search for lit-html usage.
+// TODO(justinfagnani): inject version number at build time
+if (typeof window !== 'undefined') (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.3.0');
+const $70cdc504e0525df813ea3bd460cdafe9$export$91100b3ec196ccd = (strings, ...values)=>new $70cdc504e0525df813ea3bd460cdafe9$import$387c014bf0ed4ac2$568f177c2fc88632(strings, values, 'html', $70cdc504e0525df813ea3bd460cdafe9$import$b96f55272974270a$91d1cfc8da213add)
+;
+const $70cdc504e0525df813ea3bd460cdafe9$export$59fff45f5c071293 = (strings, ...values)=>new $70cdc504e0525df813ea3bd460cdafe9$import$387c014bf0ed4ac2$6b0569d4baab4818(strings, values, 'svg', $70cdc504e0525df813ea3bd460cdafe9$import$b96f55272974270a$91d1cfc8da213add)
+;

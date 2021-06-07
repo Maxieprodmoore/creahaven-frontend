@@ -1,0 +1,111 @@
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */ const $5edbf9db0987b3919b2884268a4a9601$var$legacyCustomElement = (tagName, clazz)=>{
+    window.customElements.define(tagName, clazz);
+    // Cast as any because TS doesn't recognize the return type as being a
+    // subtype of the decorated class when clazz is typed as
+    // `Constructor<HTMLElement>` for some reason.
+    // `Constructor<HTMLElement>` is helpful to make sure the decorator is
+    // applied to elements however.
+    return clazz;
+};
+const $5edbf9db0987b3919b2884268a4a9601$var$standardCustomElement = (tagName, descriptor)=>{
+    const { kind: kind , elements: elements  } = descriptor;
+    return {
+        kind: kind,
+        elements: elements,
+        // This callback is called once the class is otherwise fully defined
+        finisher (clazz) {
+            window.customElements.define(tagName, clazz);
+        }
+    };
+};
+const $5edbf9db0987b3919b2884268a4a9601$export$95125093767365f = (tagName)=>(classOrDescriptor)=>typeof classOrDescriptor === 'function' ? $5edbf9db0987b3919b2884268a4a9601$var$legacyCustomElement(tagName, classOrDescriptor) : $5edbf9db0987b3919b2884268a4a9601$var$standardCustomElement(tagName, classOrDescriptor)
+;
+const $5edbf9db0987b3919b2884268a4a9601$var$standardProperty = (options, element)=>{
+    // createProperty() takes care of defining the property, but we still must
+    // return some kind of descriptor, so return a descriptor for an unused
+    // prototype field. The finisher calls createProperty().
+    return {
+        kind: 'field',
+        key: Symbol(),
+        placement: 'own',
+        descriptor: {
+        },
+        // When @babel/plugin-proposal-decorators implements initializers,
+        // do this instead of the initializer below. See:
+        // https://github.com/babel/babel/issues/9260 extras: [
+        //   {
+        //     kind: 'initializer',
+        //     placement: 'own',
+        //     initializer: descriptor.initializer,
+        //   }
+        // ],
+        initializer () {
+            if (typeof element.initializer === 'function') this[element.key] = element.initializer.call(this);
+        },
+        finisher (clazz) {
+            clazz.createProperty(element.key, options);
+        }
+    };
+};
+const $5edbf9db0987b3919b2884268a4a9601$var$legacyProperty = (options, proto, name)=>{
+    proto.constructor.createProperty(name, options);
+};
+const $5edbf9db0987b3919b2884268a4a9601$export$f5e86181b8261eaa = (options)=>(protoOrDescriptor, name)=>name !== undefined ? $5edbf9db0987b3919b2884268a4a9601$var$legacyProperty(options, protoOrDescriptor, name) : $5edbf9db0987b3919b2884268a4a9601$var$standardProperty(options, protoOrDescriptor)
+;
+const $5edbf9db0987b3919b2884268a4a9601$export$7c233b474a5eb12b = $5edbf9db0987b3919b2884268a4a9601$var$_query((target, selector)=>target.querySelector(selector)
+);
+const $5edbf9db0987b3919b2884268a4a9601$export$abfc7d00e47d799c = $5edbf9db0987b3919b2884268a4a9601$var$_query((target, selector)=>target.querySelectorAll(selector)
+);
+const $5edbf9db0987b3919b2884268a4a9601$var$legacyQuery = (descriptor, proto, name)=>{
+    Object.defineProperty(proto, name, descriptor);
+};
+const $5edbf9db0987b3919b2884268a4a9601$var$standardQuery = (descriptor, element)=>({
+        kind: 'method',
+        placement: 'prototype',
+        key: element.key,
+        descriptor: descriptor
+    })
+;
+/**
+ * Base-implementation of `@query` and `@queryAll` decorators.
+ *
+ * @param queryFn exectute a `selector` (ie, querySelector or querySelectorAll)
+ * against `target`.
+ */ function $5edbf9db0987b3919b2884268a4a9601$var$_query(queryFn) {
+    return (selector)=>(protoOrDescriptor, name)=>{
+            const descriptor = {
+                get () {
+                    return queryFn(this.renderRoot, selector);
+                },
+                enumerable: true,
+                configurable: true
+            };
+            return name !== undefined ? $5edbf9db0987b3919b2884268a4a9601$var$legacyQuery(descriptor, protoOrDescriptor, name) : $5edbf9db0987b3919b2884268a4a9601$var$standardQuery(descriptor, protoOrDescriptor);
+        }
+    ;
+}
+const $5edbf9db0987b3919b2884268a4a9601$var$standardEventOptions = (options, element)=>{
+    return Object.assign({
+    }, element, {
+        finisher (clazz) {
+            Object.assign(clazz.prototype[element.key], options);
+        }
+    });
+};
+const $5edbf9db0987b3919b2884268a4a9601$var$legacyEventOptions = (options, proto, name)=>{
+    Object.assign(proto[name], options);
+};
+const $5edbf9db0987b3919b2884268a4a9601$export$e516089fe2930570 = (options)=>(protoOrDescriptor, name)=>name !== undefined ? $5edbf9db0987b3919b2884268a4a9601$var$legacyEventOptions(options, protoOrDescriptor, name) : $5edbf9db0987b3919b2884268a4a9601$var$standardEventOptions(options, protoOrDescriptor)
+;

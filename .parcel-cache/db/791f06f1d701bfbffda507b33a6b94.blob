@@ -1,0 +1,79 @@
+import   "8d56da14404e21667e14cd59a74bcce0:@polymer/lit-element";
+import   "8d56da14404e21667e14cd59a74bcce0:lit-html";
+import   "8d56da14404e21667e14cd59a74bcce0:../Router";
+import   "8d56da14404e21667e14cd59a74bcce0:../Auth";
+import   "8d56da14404e21667e14cd59a74bcce0:../App";
+import   "8d56da14404e21667e14cd59a74bcce0:./../UserAPI";
+import   "8d56da14404e21667e14cd59a74bcce0:./../Toast";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17;
+customElements.define('va-creative', class Creative extends $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$cf8e90db1f38da15 {
+    static get properties() {
+        return {
+            id: {
+                type: String
+            },
+            name: {
+                type: String
+            },
+            email: {
+                type: String
+            },
+            image: {
+                type: String
+            },
+            bio: {
+                type: String
+            },
+            website: {
+                type: String
+            },
+            facebook: {
+                type: String
+            },
+            twitter: {
+                type: String
+            },
+            instagram: {
+                type: String
+            },
+            youtube: {
+                type: String
+            }
+        };
+    }
+    firstUpdated() {
+        super.firstUpdated();
+    }
+    moreInfoHandler() {
+        //create sl-dialog
+        const dialogEl = document.createElement('sl-dialog');
+        //add class name
+        dialogEl.className = 'creatives-dialog';
+        // sl-dialog content
+        const dialogContent = $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t8 || (t8 = _`\n      <style>\n        .wrap {\n          display: flex;\n        }\n        .image {\n          width: 40%;\n          padding-left: 1em;\n        }\n        .image img {\n          width: 100%;\n        }\n        .content {\n          padding-right: 1em;\n          width: 60%;\n        }\n\n        .email{\n          font-style: italic;\n          opacity: 0.8;\n        }\n\n        span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n        .creative-socials{\n          display: flexbox;\n          flex-wrap: wrap;  \n          width: 100%;\n          margin-bottom: 0.25em;\n        }\n      </style>\n      <div class="wrap">\n        <div class="image">\n          <img src="${0}/images/${0}" alt="${0}" />\n          <h2>${0}</h2>\n          <h4 class="email">${0}</h4>\n          <p>Bio: <span>${0}</span></p>\n          <p><sl-icon name = "link-45deg"></sl-icon><a href="${0}" target="_blank">${0}</a> </p>\n          <div class="creative-socials">\n            ${0}\n            ${0}            \n            ${0}            \n            ${0}            \n          </div>\n          <br>\n          <div slot="footer">\n            <sl-button @click=${0}>\n              <sl-icon slot="prefix" name="heart-fill"></sl-icon>\n              Add to Favourites\n            </sl-button>\n          </div>\n        </div>\n        <div class="content">\n        </div>\n        \n      </div>\n    `), $8d56da14404e21667e14cd59a74bcce0$import$93458e255cc85212$9099ad97b570f7c.apiBase, this.image, this.name, this.name, this.email, this.bio, this.website, this.website, this.facebook ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t || (t = _`\n              <sl-button href="${0}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>\n            `), this.facebook) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t1 || (t1 = _``)), this.facebook ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t2 || (t2 = _`\n              <sl-button href="${0}" target="_blank" size="medium" circle> <sl-icon name="instagram"></sl-icon></sl-button>\n            `), this.instagram) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t3 || (t3 = _``)), this.facebook ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t4 || (t4 = _`\n              <sl-button href="${0}" target="_blank" size="medium" circle> <sl-icon name="twitter"></sl-icon> </sl-button>\n            `), this.twitter) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t5 || (t5 = _``)), this.facebook ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t6 || (t6 = _`\n              <sl-button  href="${0}" target="_blank" size="medium" circle> <sl-icon name="youtube"></sl-icon> </sl-button>\n            `), this.youtube) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t7 || (t7 = _``)), this.addFavHandler.bind(this));
+        $8d56da14404e21667e14cd59a74bcce0$import$add832cec91f3f79$792a797b69be0d58(dialogContent, dialogEl);
+        // append to body 
+        document.body.append(dialogEl);
+        // show sl-dialog
+        dialogEl.show();
+        // hide dialogEl on closing
+        dialogEl.addEventListener('sl-after-hide', ()=>{
+            dialogEl.remove();
+        });
+    }
+    async addFavHandler() {
+        try {
+            await $8d56da14404e21667e14cd59a74bcce0$import$759560d00c1713bc$9099ad97b570f7c.addFavCreative(this.id);
+            $8d56da14404e21667e14cd59a74bcce0$import$87ec26368d7c9edc$9099ad97b570f7c.show('Creative added to favourites');
+        } catch (err) {
+            $8d56da14404e21667e14cd59a74bcce0$import$87ec26368d7c9edc$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    render() {
+        return $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t17 || (t17 = _`\n    <style>\n\n      .email{\n        font-style: italic;\n        opacity: 0.8;\n      }\n\n      span{\n          font-size: 0.9em;\n          font-weight: bold;\n          font-style: italic;\n        } \n\n      .creative-socials{\n        display: flexbox;\n        flex-wrap: wrap;  \n        width: 100%;\n        margin-bottom: 0.25em;\n      }\n\n    </style>\n    <sl-card>\n      <img slot="image" src="${0}/images/${0}"/>\n      <h2>${0}</h2>\n      <h4 class="email">${0}</h4>\n      <p>Bio: <span>${0}</span></p>\n      <p><sl-icon name = "link-45deg"></sl-icon><a href="${0}" target="_blank">${0}</a> </p>\n      <div class="creative-socials">\n        ${0}\n        ${0}        \n        ${0}        \n        ${0}\n        \n      </div>\n      <div slot="footer">\n        <sl-button @click=${0}>More Info</sl-button>\n        <sl-icon-button name="suit-heart-fill" label="Add to favourites" @click=${0}></sl-icon-button>\n      </div>\n      \n    </sl-card>\n    `), $8d56da14404e21667e14cd59a74bcce0$import$93458e255cc85212$9099ad97b570f7c.apiBase, this.image, this.name, this.email, this.bio, this.website, this.website, this.facebook ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t9 || (t9 = _`\n          <sl-button href="${0}" target="_blank" size="small" circle> <sl-icon name="facebook"></sl-icon> </sl-button>\n        `), this.facebook) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t10 || (t10 = _``)), this.instagram ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t11 || (t11 = _`\n          <sl-button href="${0}" target="_blank" size="small" circle> <sl-icon name="instagram"></sl-icon></sl-button>\n        `), this.instagram) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t12 || (t12 = _``)), this.twitter ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t13 || (t13 = _`\n          <sl-button href="${0}" target="_blank" size="small" circle> <sl-icon name="twitter"></sl-icon> </sl-button>\n        `), this.twitter) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t14 || (t14 = _``)), this.youtube ? $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t15 || (t15 = _`\n          <sl-button  href="${0}" target="_blank" size="small" circle> <sl-icon name="youtube"></sl-icon> </sl-button>\n        `), this.youtube) : $8d56da14404e21667e14cd59a74bcce0$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t16 || (t16 = _``)), this.moreInfoHandler.bind(this), this.addFavHandler.bind(this));
+    }
+    constructor(){
+        super();
+    }
+});
