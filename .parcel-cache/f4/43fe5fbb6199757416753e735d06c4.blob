@@ -1,0 +1,5 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _litHtml = require("lit-html");
+const splash = _litHtml.html`\n\n  <div class="app-splash">\n    <div class="inner">\n      <img class="app-logo" src="/images/creahaven-logo.svg" />\n      <sl-spinner style="font-size: 2em;"></sl-spinner>\n    </div>\n  </div>\n`;
+exports.default = splash;

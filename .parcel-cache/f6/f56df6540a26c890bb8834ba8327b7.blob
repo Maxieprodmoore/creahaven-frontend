@@ -1,0 +1,46 @@
+import   "868cc8a817136181ca313b5093102bf4:../../App";
+import   "868cc8a817136181ca313b5093102bf4:lit-html";
+import   "868cc8a817136181ca313b5093102bf4:../../Router";
+import   "868cc8a817136181ca313b5093102bf4:../../Auth";
+import   "868cc8a817136181ca313b5093102bf4:../../Utils";
+import   "868cc8a817136181ca313b5093102bf4:../../PortfolioAPI";
+import   "868cc8a817136181ca313b5093102bf4:../../Toast";
+let _ = (t)=>t
+, t;
+class $868cc8a817136181ca313b5093102bf4$var$newPortfolioView {
+    init() {
+        document.title = 'New Portfolio piece';
+        this.render();
+        $868cc8a817136181ca313b5093102bf4$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+    }
+    async newPortfolioSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        console.log(formData);
+        try {
+            await $868cc8a817136181ca313b5093102bf4$import$a19255557ec432e3$9099ad97b570f7c.newPortfolioP(formData);
+            $868cc8a817136181ca313b5093102bf4$import$bf559c32ef72b940$9099ad97b570f7c.show('Portfolio piece added!');
+            submitBtn.removeAttribute('loading');
+            //reset form
+            //reset text inputs
+            const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+            if (textInputs) textInputs.forEach((textInputs1)=>textInputs1.value = null
+            );
+        /*Reset sl-select 
+        const choiceSelect = document.querySelector('sl-select')
+        if(choiceSelect) choiceSelect.value = null
+        Reset file input
+        const fileInput = document.querySelector('input[type=file]')
+        if(fileInput) fileInput.value = null*/ } catch (err) {
+            $868cc8a817136181ca313b5093102bf4$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+            submitBtn.removeAttribute('loading');
+        }
+    }
+    render() {
+        const template = $868cc8a817136181ca313b5093102bf4$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n      <va-app-header title="Submit New Portfolio Piece" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">        \n          <h1>Submit New Portfolio piece</h1>\n          <sl-form class="page-form" @sl-submit=${0}>\n            <input type="hidden" name="user" value="${0}" />\n            <div class="input-group" style="margin-bottom: 2em;">\n              <label>Image (For Preview)</label><br>\n              <input type="file" name="image" />              \n            </div>\n            <div class="input-group">\n              <sl-input name="name" type="text" placeholder="Portfolio piece Title" required></sl-input>\n            </div>\n            <div class="input-group">\n              <sl-textarea name="description" rows="3" placeholder="Description"></sl-textarea>\n            </div>\n            <div class="input-group" >\n              <sl-select name="tag" placeholder="Genre of portfolio piece" multiple clearable hoist required>\n                <sl-menu-item value="photography">Photography</sl-menu-item>\n                <sl-menu-item value="illustration">Illustration</sl-menu-item>\n                <sl-menu-item value="writing">Writing</sl-menu-item>\n                <sl-menu-item value="pre-production">Pre-production material</sl-menu-item>\n                <sl-menu-item value="production">Production material</sl-menu-item>\n                <sl-menu-item value="post-production">Post-production material</sl-menu-item>\n                <sl-menu-item value="animation">Animation</sl-menu-item>\n                <sl-menu-item value="voice-over">Voice-over related</sl-menu-item>\n                <sl-menu-item value="game-production">Game production related</sl-menu-item>\n                <sl-menu-item value="website-dev">Website development</sl-menu-item>\n                <sl-menu-item value="2d-art">2D art</sl-menu-item>\n                <sl-menu-item value="3d-art">3D art</sl-menu-item>\n                <sl-menu-item value="others">Others (Please elaborate in the desciption above)</sl-menu-item>\n              </sl-select>\n            </div>\n            <div class="input-group" style="margin-bottom: 1em;">\n              <label>Link to that piece outside the website.</label><br>\n              <sl-textarea name="link" rows="1" placeholder="www.example.com"></sl-textarea>\n            </div>\n            \n            <sl-button type="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>\n          </sl-form> \n          \n        </div>\n      </div>      \n    `), JSON.stringify($868cc8a817136181ca313b5093102bf4$import$d241520aba55052c$9099ad97b570f7c.currentUser), this.newPortfolioSubmitHandler, $868cc8a817136181ca313b5093102bf4$import$d241520aba55052c$9099ad97b570f7c.currentUser._id);
+        $868cc8a817136181ca313b5093102bf4$import$add832cec91f3f79$792a797b69be0d58(template, $868cc8a817136181ca313b5093102bf4$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $868cc8a817136181ca313b5093102bf4$export$9099ad97b570f7c = new $868cc8a817136181ca313b5093102bf4$var$newPortfolioView();

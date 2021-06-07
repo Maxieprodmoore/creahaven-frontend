@@ -1,0 +1,23 @@
+import   "665ac0cbe0eb5c1182a7853fe3715b33:./Router";
+import   "665ac0cbe0eb5c1182a7853fe3715b33:./Auth";
+import   "665ac0cbe0eb5c1182a7853fe3715b33:./Toast";
+class $665ac0cbe0eb5c1182a7853fe3715b33$var$App {
+    init() {
+        console.log("App.init");
+        // Toast init
+        $665ac0cbe0eb5c1182a7853fe3715b33$import$f4bb9a315502c7ca$9099ad97b570f7c.init();
+        // Authentication check    
+        $665ac0cbe0eb5c1182a7853fe3715b33$import$cabe350e925d9d06$9099ad97b570f7c.check(()=>{
+            // authenticated! init Router
+            $665ac0cbe0eb5c1182a7853fe3715b33$import$8f796570d7c29300$9099ad97b570f7c.init();
+        });
+    }
+    constructor(){
+        this.name = "Creahaven";
+        this.version = "1.0.0";
+        this.apiBase = 'https://blho-creahaven-backend.herokuapp.com/';
+        this.rootEl = document.getElementById("root");
+        this.version = "1.0.0";
+    }
+}
+var $665ac0cbe0eb5c1182a7853fe3715b33$export$9099ad97b570f7c = new $665ac0cbe0eb5c1182a7853fe3715b33$var$App();

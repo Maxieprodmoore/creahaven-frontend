@@ -1,0 +1,72 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("../../Router");
+var _auth = require("../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _portfolioAPI = require("./../../PortfolioAPI");
+var _portfolioAPIDefault = parcelHelpers.interopDefault(_portfolioAPI);
+class portfolioView {
+    init() {
+        document.title = 'Portfolio Pieces';
+        this.portfolioPs = null;
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+        this.getPortfolioPs();
+    }
+    async filterPortfolioPs(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of portfolio page
+        this.portfolioPs = await _portfolioAPIDefault.default.getPortfolioPs();
+        let filteredPieces;
+        // tag
+        if (field == 'tag') filteredPieces = this.portfolioPs.filter((portfolio)=>portfolio.tag == match
+        );
+        //render
+        this.portfolioPs = filteredPieces;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter portfolio pieces
+        this.filterPortfolioPs(field, match);
+    }
+    clearFilters() {
+        this.getPortfolioPs();
+        this.clearFilterBtns();
+    }
+    async getPortfolioPs() {
+        try {
+            this.portfolioPs = await _portfolioAPIDefault.default.getPortfolioPs();
+            console.log(this.portfolioPs);
+            this.render();
+        } catch (err) {
+            Toast.show(err, 'error');
+        }
+    }
+    render() {
+        const template = _litHtml.html`\n        \n      <va-app-header title="Profile" user="${JSON.stringify(_authDefault.default.currentUser)}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <div class="profile-grid">        \n            <h1>Portfolio Pieces</h1>\n              \n              <sl-card class="profile-section">\n                <div slot="header"><h3>Portfolio</h3>\n                  ${_authDefault.default.currentUser.accessLevel == 1 ? _litHtml.html`\n                    <sl-button type="primary" size="medium" @click=${()=>_router.gotoRoute('/newPortfolio')
+        }>Add a new portfolio piece!</sl-button>\n                  ` : _litHtml.html``}\n                </div>\n                <div class="filter-menu">                  \n                  <div class="filter-search">\n                    <div>Filter by:</div>\n                    <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>\n                  </div>\n                  <div class="filter-btns">\n                    <div class="filter-dropdown"> \n                      <sl-dropdown>\n                        <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>\n                          <sl-menu>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${this.handleFilterBtn.bind(this)}>writing</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${this.handleFilterBtn.bind(this)}>pre-production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${this.handleFilterBtn.bind(this)}>production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${this.handleFilterBtn.bind(this)}>post-production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${this.handleFilterBtn.bind(this)}>animation</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${this.handleFilterBtn.bind(this)}>voice-over</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${this.handleFilterBtn.bind(this)}>game production</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${this.handleFilterBtn.bind(this)}>website development</sl-menu-item>\n                            <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${this.handleFilterBtn.bind(this)}>2D art</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${this.handleFilterBtn.bind(this)}>3D art</sl-menu-item>\n                            <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>\n                          </sl-menu>\n                      </sl-dropdown>\n                    </div>\n                    <div>\n                      <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>\n                    </div>\n                  </div> \n                </div>\n\n                    ${this.portfolioPs == null ? _litHtml.html`\n                      <sl-spinner></sl-spinner>\n                    ` : _litHtml.html`\n                      ${this.portfolioPs.map((portfolioPs)=>_litHtml.html`\n                        <sl-card class="portfolio-card">\n                          <img \n                            slot="image" \n                            src="${_appDefault.default.apiBase}/images/${portfolioPs.image}" \n                            alt="${portfolioPs.name}"\n                          >\n                          <h3>${portfolioPs.name}</h3>\n                          <p>${portfolioPs.description}</p>\n                          <div slot="footer">\n                            <sl-tag type="info" size="small">${portfolioPs.tag}</sl-tag>\n                            <p >By ${portfolioPs.user.displayName}</p>\n                          </div>               \n                        </sl-card>\n                      `
+        )}\n                      \n                    `}                                  \n              </sl-card>\n                \n          </div>\n        </div> \n      </div>\n           \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new portfolioView();

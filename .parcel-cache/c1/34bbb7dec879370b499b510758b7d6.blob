@@ -1,0 +1,13 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _appJs = require("./App.js");
+var _appJsDefault = parcelHelpers.interopDefault(_appJs);
+// components (custom web components)
+var _vaAppHeader = require("./components/va-app-header");
+var _vaCreative = require("./components/va-creative");
+var _vaPostings = require("./components/va-postings");
+// styles
+var _masterScss = require("./scss/master.scss");
+// app.init
+document.addEventListener('DOMContentLoaded', ()=>{
+    _appJsDefault.default.init();
+});

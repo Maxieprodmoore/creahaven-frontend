@@ -1,0 +1,9 @@
+import   "d4d68403214f5d7a541ac7171357c36c:./App.js";
+import   "d4d68403214f5d7a541ac7171357c36c:./components/va-app-header";
+import   "d4d68403214f5d7a541ac7171357c36c:./components/va-creative";
+import   "d4d68403214f5d7a541ac7171357c36c:./components/va-postings";
+import   "d4d68403214f5d7a541ac7171357c36c:./scss/master.scss";
+// app.init
+document.addEventListener('DOMContentLoaded', ()=>{
+    $d4d68403214f5d7a541ac7171357c36c$import$af57ad85d52d122$9099ad97b570f7c.init();
+});

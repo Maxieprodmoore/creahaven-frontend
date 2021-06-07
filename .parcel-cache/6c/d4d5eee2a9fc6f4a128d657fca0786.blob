@@ -1,0 +1,30 @@
+import   "d23fee38da3776083bbf8ff157a05973:./../../App";
+import   "d23fee38da3776083bbf8ff157a05973:./../../Auth";
+import   "d23fee38da3776083bbf8ff157a05973:lit-html";
+import   "d23fee38da3776083bbf8ff157a05973:./../../Router";
+import   "d23fee38da3776083bbf8ff157a05973:./../../Utils";
+let _ = (t)=>t
+, t;
+class $d23fee38da3776083bbf8ff157a05973$var$SignUpView {
+    init() {
+        console.log('SignUpView.init');
+        document.title = 'Sign In';
+        this.render();
+        $d23fee38da3776083bbf8ff157a05973$import$223cdb7e1f24b5cc$9099ad97b570f7c.pageIntroAnim();
+    }
+    signUpSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        // sign up using Auth
+        $d23fee38da3776083bbf8ff157a05973$import$50f1bc737868fc3b$9099ad97b570f7c.signUp(formData, ()=>{
+            submitBtn.removeAttribute('loading');
+        });
+    }
+    render() {
+        const template = $d23fee38da3776083bbf8ff157a05973$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`   \n    <div class="page-body">\n      <div class="page-content page-centered">      \n          <div class="signinup-box">\n            <img class="signinup-logo" src="/images/creahaven-logo.svg">\n              <h1>Sign Up</h1>\n              <sl-form class="form-signup" @sl-submit=${0}>\n                <div class="input-group">\n                  <sl-input name="firstName" type="text" placeholder="First Name" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="lastName" type="text" placeholder="Last Name" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="email" type="email" placeholder="Email" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>\n                </div> \n                <div class="input-group">\n                  <sl-select name="accessLevel" placeholder="I am a...">\n                    <sl-menu-item value="1">Creative</sl-menu-item>\n                    <sl-menu-item value="2">Client/ Customer</sl-menu-item>\n                  </sl-select>\n                </div>       \n                <sl-button type="primary" class="submit-btn" submit style="width: 100%;">Sign Up</sl-button>\n              </sl-form>\n              <p>Have an account? <a href="/signin" @click=${0}>Sign In</a></p>\n          </div>\n        </div>\n    </div>   \n      \n    `), this.signUpSubmitHandler, $d23fee38da3776083bbf8ff157a05973$import$a23737ec8ebd3399$dde256ab69c46729);
+        $d23fee38da3776083bbf8ff157a05973$import$add832cec91f3f79$792a797b69be0d58(template, $d23fee38da3776083bbf8ff157a05973$import$2ae2d3dff7b67b10$9099ad97b570f7c.rootEl);
+    }
+}
+var $d23fee38da3776083bbf8ff157a05973$export$9099ad97b570f7c = new $d23fee38da3776083bbf8ff157a05973$var$SignUpView();

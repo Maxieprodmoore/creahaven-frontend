@@ -1,0 +1,69 @@
+import   "64aff624d6b393836d79caa1e440cdcc:../../App";
+import   "64aff624d6b393836d79caa1e440cdcc:lit-html";
+import   "64aff624d6b393836d79caa1e440cdcc:../../Router";
+import   "64aff624d6b393836d79caa1e440cdcc:../../Auth";
+import   "64aff624d6b393836d79caa1e440cdcc:../../Utils";
+import   "64aff624d6b393836d79caa1e440cdcc:./../../JobAPI";
+import   "64aff624d6b393836d79caa1e440cdcc:../../Toast";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5;
+class $64aff624d6b393836d79caa1e440cdcc$var$jobVacanciesView {
+    init() {
+        document.title = 'Job Vacancies';
+        this.jobs = null;
+        this.render();
+        $64aff624d6b393836d79caa1e440cdcc$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+        this.getJobs();
+    }
+    async filterJobs(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of projects page
+        this.jobs = await $64aff624d6b393836d79caa1e440cdcc$import$651bd9c089d81a98$9099ad97b570f7c.getJobs();
+        let filteredJobs;
+        // tag
+        if (field == 'tag') filteredJobs = this.jobs.filter((job)=>job.tag == match
+        );
+        //render
+        this.jobs = filteredJobs;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter job vacncies postings
+        this.filterJobs(field, match);
+    }
+    clearFilters() {
+        this.getJobs();
+        this.clearFilterBtns();
+    }
+    async getJobs() {
+        try {
+            this.jobs = await $64aff624d6b393836d79caa1e440cdcc$import$651bd9c089d81a98$9099ad97b570f7c.getJobs();
+            console.log(this.jobs);
+            this.render();
+        } catch (err) {
+            $64aff624d6b393836d79caa1e440cdcc$import$bf559c32ef72b940$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    render() {
+        const template = $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t5 || (t5 = _`\n\n      <va-app-header title="Job Vacancies" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <div class= "postings-grid">\n            <h1 class="anim-in">Job Vacancies</h1>\n            ${0}\n          </div>\n          <div class="filter-menu">                  \n            <div class="filter-search">\n              <div>Filter by:</div>\n              <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>\n            </div>\n            <div class="filter-btns">\n              <div class="filter-dropdown"> \n                <sl-dropdown>\n                  <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>\n                  <sl-menu>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${0}>photography</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${0}>illustrations</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${0}>writing</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${0}>pre-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${0}>production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${0}>post-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${0}>animation</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${0}>voice-over</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${0}>game production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${0}>website development</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${0}>2D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${0}>3D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${0}>others</sl-menu-item>\n                  </sl-menu>\n                </sl-dropdown>\n              </div>\n                <div>\n                  <sl-button size="small" @click=${0}>Clear Filters</sl-button>\n                </div>\n            </div> \n          </div>\n          \n          <div class= "postings-grid">\n            \n            ${0}\n          </div>\n        </div> \n      </div>\n           \n    `), JSON.stringify($64aff624d6b393836d79caa1e440cdcc$import$d241520aba55052c$9099ad97b570f7c.currentUser), $64aff624d6b393836d79caa1e440cdcc$import$d241520aba55052c$9099ad97b570f7c.currentUser.accessLevel == 2 ? $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n                <sl-button type="primary" @click="${0}">Create a New Job Vacancy Posting!</sl-button>\n            `), ()=>$64aff624d6b393836d79caa1e440cdcc$import$b21bf7e27edd13d3$fe09313b26f77dc8('/newJob')
+        ) : $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _``)), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.handleFilterBtn.bind(this), this.clearFilters.bind(this), this.jobs == null ? $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n              <sl-spinner></sl-spinner>\n            `)) : $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t4 || (t4 = _`\n              ${0}\n            `), this.jobs.map((job)=>$64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n                <va-postings class="posting-card"\n                 image = "${0}"\n                 name = "${0}"\n                 description = "${0}"\n                 user = "${0}"\n                 tag = "${0}"\n                > </va-postings>\n              `), job.image, job.name, job.description, job.user.displayName, job.tag)
+        )));
+        $64aff624d6b393836d79caa1e440cdcc$import$add832cec91f3f79$792a797b69be0d58(template, $64aff624d6b393836d79caa1e440cdcc$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $64aff624d6b393836d79caa1e440cdcc$export$9099ad97b570f7c = new $64aff624d6b393836d79caa1e440cdcc$var$jobVacanciesView();

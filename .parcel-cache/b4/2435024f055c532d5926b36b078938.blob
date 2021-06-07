@@ -1,0 +1,34 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "parts", ()=>parts
+);
+parcelHelpers.export(exports, "render", ()=>render
+);
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */ var _domJs = require("./dom.js");
+var _partsJs = require("./parts.js");
+var _templateFactoryJs = require("./template-factory.js");
+const parts = new WeakMap();
+const render = (result, container, options)=>{
+    let part = parts.get(container);
+    if (part === undefined) {
+        _domJs.removeNodes(container, container.firstChild);
+        parts.set(container, part = new _partsJs.NodePart(Object.assign({
+            templateFactory: _templateFactoryJs.templateFactory
+        }, options)));
+        part.appendInto(container);
+    }
+    part.setValue(result);
+    part.commit();
+};

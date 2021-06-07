@@ -1,0 +1,49 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("../../Router");
+var _auth = require("../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _collaborationAPI = require("./../../CollaborationAPI");
+var _collaborationAPIDefault = parcelHelpers.interopDefault(_collaborationAPI);
+var _toast = require("./../../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+class newCollaborationView {
+    init() {
+        document.title = 'Post Collaboration request';
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+    }
+    async newCollaborationSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        console.log(formData);
+        try {
+            await _collaborationAPIDefault.default.newCollaboration(formData);
+            _toastDefault.default.show('Collaboration Request added!');
+            submitBtn.removeAttribute('loading');
+            //reset form
+            //reset text + text area inputs
+            const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+            if (textInputs) textInputs.forEach((textInputs1)=>textInputs1.value = null
+            );
+            //Reset file input
+            const fileInput = document.querySelector('input[type=file]');
+            if (fileInput) fileInput.value = null;
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+            submitBtn.removeAttribute('loading');
+        }
+    }
+    render() {
+        const template = _litHtml.html`\n      <va-app-header title="New Collaboration Invitation Form" user="${JSON.stringify(_authDefault.default.currentUser)}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">\n        <h1 class="anim-in">New Collaboration Invitation form</h1>        \n          <sl-form class="page-form" @sl-submit=${this.newCollaborationSubmitHandler}>\n            <input type="hidden" name="user" value="${_authDefault.default.currentUser._id}" />\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-input name="name" type="text" placeholder="Collaboration item Name" required></sl-input>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-textarea name="description" rows="6" placeholder="Collaboration Details"></sl-textarea>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <label>Image</label><br>\n              <input type="file" name="image" />              \n            </div>\n            <div class="input-group">\n              <sl-select name="tag" placeholder="This Collaboration requires..." multiple clearable>\n                <sl-menu-item value="photography">Photographs</sl-menu-item>\n                <sl-menu-item value="illustration">Illustration</sl-menu-item>\n                <sl-menu-item value="writing">Writing assistance</sl-menu-item>\n                <sl-menu-item value="pre-production">Pre-production assistance</sl-menu-item>\n                <sl-menu-item value="production">Production assistance</sl-menu-item>\n                <sl-menu-item value="post-production">Post-production assistance</sl-menu-item>\n                <sl-menu-item value="animation">Animation</sl-menu-item>\n                <sl-menu-item value="audio">Audio specialisation</sl-menu-item>                \n                <sl-menu-item value="game-production">Video Game Development assistance</sl-menu-item>\n                <sl-menu-item value="website-dev">Website Development assistance</sl-menu-item>\n                <sl-menu-item value="2d-related">2D related assistance</sl-menu-item>\n                <sl-menu-item value="3d-related">3D related Development assistance</sl-menu-item>                \n                <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new newCollaborationView();

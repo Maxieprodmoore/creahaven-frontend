@@ -1,0 +1,44 @@
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:../../App";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:lit-html";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:../../Router";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:../../Auth";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:../../Utils";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:./../../CollaborationAPI";
+import   "bcb7b4a5f8b062b1288b146c27af7a6b:./../../Toast";
+let _ = (t)=>t
+, t;
+class $bcb7b4a5f8b062b1288b146c27af7a6b$var$newCollaborationView {
+    init() {
+        document.title = 'Post Collaboration request';
+        this.render();
+        $bcb7b4a5f8b062b1288b146c27af7a6b$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+    }
+    async newCollaborationSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        console.log(formData);
+        try {
+            await $bcb7b4a5f8b062b1288b146c27af7a6b$import$404d281c5b3d5b71$9099ad97b570f7c.newCollaboration(formData);
+            $bcb7b4a5f8b062b1288b146c27af7a6b$import$a8b0bc06f88c075b$9099ad97b570f7c.show('Collaboration Request added!');
+            submitBtn.removeAttribute('loading');
+            //reset form
+            //reset text + text area inputs
+            const textInputs = document.querySelectorAll('sl-input, sl-textarea');
+            if (textInputs) textInputs.forEach((textInputs1)=>textInputs1.value = null
+            );
+            //Reset file input
+            const fileInput = document.querySelector('input[type=file]');
+            if (fileInput) fileInput.value = null;
+        } catch (err) {
+            $bcb7b4a5f8b062b1288b146c27af7a6b$import$a8b0bc06f88c075b$9099ad97b570f7c.show(err, 'error');
+            submitBtn.removeAttribute('loading');
+        }
+    }
+    render() {
+        const template = $bcb7b4a5f8b062b1288b146c27af7a6b$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n      <va-app-header title="New Collaboration Invitation Form" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">\n        <h1 class="anim-in">New Collaboration Invitation form</h1>        \n          <sl-form class="page-form" @sl-submit=${0}>\n            <input type="hidden" name="user" value="${0}" />\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-input name="name" type="text" placeholder="Collaboration item Name" required></sl-input>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <sl-textarea name="description" rows="6" placeholder="Collaboration Details"></sl-textarea>\n            </div>\n            <div class="input-group" style="margin-bottom: 2em;">\n              <label>Image</label><br>\n              <input type="file" name="image" />              \n            </div>\n            <div class="input-group">\n              <sl-select name="tag" placeholder="This Collaboration requires..." multiple clearable>\n                <sl-menu-item value="photography">Photographs</sl-menu-item>\n                <sl-menu-item value="illustration">Illustration</sl-menu-item>\n                <sl-menu-item value="writing">Writing assistance</sl-menu-item>\n                <sl-menu-item value="pre-production">Pre-production assistance</sl-menu-item>\n                <sl-menu-item value="production">Production assistance</sl-menu-item>\n                <sl-menu-item value="post-production">Post-production assistance</sl-menu-item>\n                <sl-menu-item value="animation">Animation</sl-menu-item>\n                <sl-menu-item value="audio">Audio specialisation</sl-menu-item>                \n                <sl-menu-item value="game-production">Video Game Development assistance</sl-menu-item>\n                <sl-menu-item value="website-dev">Website Development assistance</sl-menu-item>\n                <sl-menu-item value="2d-related">2D related assistance</sl-menu-item>\n                <sl-menu-item value="3d-related">3D related Development assistance</sl-menu-item>                \n                <sl-menu-item value="others">Others - Please provide details in description</sl-menu-item>\n              </sl-select>\n            </div>\n          \n            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>\n          </sl-form>        \n\n          \n        </div> \n      </div>\n           \n    `), JSON.stringify($bcb7b4a5f8b062b1288b146c27af7a6b$import$d241520aba55052c$9099ad97b570f7c.currentUser), this.newCollaborationSubmitHandler, $bcb7b4a5f8b062b1288b146c27af7a6b$import$d241520aba55052c$9099ad97b570f7c.currentUser._id);
+        $bcb7b4a5f8b062b1288b146c27af7a6b$import$add832cec91f3f79$792a797b69be0d58(template, $bcb7b4a5f8b062b1288b146c27af7a6b$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $bcb7b4a5f8b062b1288b146c27af7a6b$export$9099ad97b570f7c = new $bcb7b4a5f8b062b1288b146c27af7a6b$var$newCollaborationView();

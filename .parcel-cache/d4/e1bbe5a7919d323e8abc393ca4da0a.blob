@@ -1,0 +1,33 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _auth = require("./../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _litHtml = require("lit-html");
+var _router = require("./../../Router");
+var _utils = require("./../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+class SignUpView {
+    init() {
+        console.log('SignUpView.init');
+        document.title = 'Sign In';
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+    }
+    signUpSubmitHandler(e) {
+        e.preventDefault();
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        const formData = e.detail.formData;
+        // sign up using Auth
+        _authDefault.default.signUp(formData, ()=>{
+            submitBtn.removeAttribute('loading');
+        });
+    }
+    render() {
+        const template = _litHtml.html`   \n    <div class="page-body">\n      <div class="page-content page-centered">      \n          <div class="signinup-box">\n            <img class="signinup-logo" src="/images/creahaven-logo.svg">\n              <h1>Sign Up</h1>\n              <sl-form class="form-signup" @sl-submit=${this.signUpSubmitHandler}>\n                <div class="input-group">\n                  <sl-input name="firstName" type="text" placeholder="First Name" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="lastName" type="text" placeholder="Last Name" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="email" type="email" placeholder="Email" required></sl-input>\n                </div>\n                <div class="input-group">\n                  <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>\n                </div> \n                <div class="input-group">\n                  <sl-select name="accessLevel" placeholder="I am a...">\n                    <sl-menu-item value="1">Creative</sl-menu-item>\n                    <sl-menu-item value="2">Client/ Customer</sl-menu-item>\n                  </sl-select>\n                </div>       \n                <sl-button type="primary" class="submit-btn" submit style="width: 100%;">Sign Up</sl-button>\n              </sl-form>\n              <p>Have an account? <a href="/signin" @click=${_router.anchorRoute}>Sign In</a></p>\n          </div>\n        </div>\n    </div>   \n      \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new SignUpView();

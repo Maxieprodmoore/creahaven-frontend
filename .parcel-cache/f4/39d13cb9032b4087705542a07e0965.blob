@@ -1,0 +1,57 @@
+import   "d1bd5793765d38fd60c2dee468df30fb:@polymer/lit-element";
+import   "d1bd5793765d38fd60c2dee468df30fb:../Router";
+import   "d1bd5793765d38fd60c2dee468df30fb:lit-html";
+import   "d1bd5793765d38fd60c2dee468df30fb:../Auth";
+import   "d1bd5793765d38fd60c2dee468df30fb:../App";
+let _ = (t)=>t
+, t, t1, t2, t3, t4, t5, t6, t7;
+customElements.define('va-postings', class creativePostings extends $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$cf8e90db1f38da15 {
+    static get properties() {
+        return {
+            id: {
+                type: String
+            },
+            name: {
+                type: String
+            },
+            description: {
+                type: String
+            },
+            image: {
+                type: String
+            },
+            user: {
+                type: String
+            },
+            tag: {
+                type: String
+            }
+        };
+    }
+    firstUpdated() {
+        super.firstUpdated();
+    }
+    moreInfoHandler() {
+        // create sl-dialog
+        const dialogEl = document.createElement('sl-dialog');
+        //set DialogEl class name
+        dialogEl.className = 'posting-dialog';
+        // sl-dialog content
+        const dialogContent = $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t2 || (t2 = _`\n        <style>\n          .wrap {\n            display: flex;\n          }\n          .image {\n            width: 40%;\n          }\n          .image img {\n            width: 100%;\n          }\n          .content {\n            padding-left: 2em;\n          }\n          .author{\n            font-size: 0.9em;\n            font-style: italic;\n            opacity: 0.8;\n          }         \n        </style>\n        <div class="wrap">\n          <div class="image">\n            ${0}\n          </div>\n          <div class="content">\n            <h2>${0}</h2>\n            <h4>${0}</h4>\n            <p class="author">By ${0}</p>\n            \n            <sl-tag >${0}</sl-tag>\n            \n          </div>\n        </div>\n\n      `), this.image == null ? $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t || (t = _``)) : $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t1 || (t1 = _`\n              <img src="${0}/images/${0}" alt="${0}" />\n            `), $d1bd5793765d38fd60c2dee468df30fb$import$93458e255cc85212$9099ad97b570f7c.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag);
+        $d1bd5793765d38fd60c2dee468df30fb$import$add832cec91f3f79$792a797b69be0d58(dialogContent, dialogEl);
+        // append to document body
+        document.body.append(dialogEl);
+        // show sl-dialog
+        dialogEl.show();
+        // on closing, hide dialogEl
+        dialogEl.addEventListener('sl-after-hide', ()=>{
+            dialogEl.remove();
+        });
+    }
+    render() {
+        return $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t7 || (t7 = _`\n    <style>\n      .wrap {\n        background: #fff;\n        border-radius: 10px;\n        box-shadow: 0px 5px 20px rgba(0,0,0,0.1);\n        margin-bottom: 0.5em;\n        padding: 1em;\n      }\n\n      .author{\n        font-size: 0.9em;\n        font-style: italic;\n        opacity: 0.8;\n      }\n    </style>\n\n    <sl-card>\n      ${0}\n      <h2>${0}</h2>\n      <h4>${0}</h4>\n      <p class="author">By ${0}</p>\n      \n      <div slot="footer">\n        <sl-tag type="info">${0}</sl-tag>\n        <sl-button @click=${0}> More Info</sl-button>\n      </div>\n    </sl-card>\n\n    <sl-dialog>\n      ${0}\n        <h2>${0}</h2>\n        <h3>${0}</h3>\n        <p class="author">By ${0}</p>\n        \n        <sl-tag type="info">${0}</sl-tag>\n    </sl-dialog>\n    `), this.image == null ? $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t3 || (t3 = _``)) : $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t4 || (t4 = _`\n        <img slot="image" src="${0}/images/${0}" alt="${0}" />\n      `), $d1bd5793765d38fd60c2dee468df30fb$import$93458e255cc85212$9099ad97b570f7c.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag, this.moreInfoHandler.bind(this), this.image == null ? $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t5 || (t5 = _``)) : $d1bd5793765d38fd60c2dee468df30fb$import$8b8ea48fdbe14bd6$91100b3ec196ccd(t6 || (t6 = _`\n          <img slot="image" src="${0}/images/${0}" alt="${0}" />\n        `), $d1bd5793765d38fd60c2dee468df30fb$import$93458e255cc85212$9099ad97b570f7c.apiBase, this.image, this.name), this.name, this.description, this.user, this.tag);
+    }
+    constructor(){
+        super();
+    }
+});

@@ -1,0 +1,74 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("../../Router");
+var _auth = require("../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _jobAPI = require("./../../JobAPI");
+var _jobAPIDefault = parcelHelpers.interopDefault(_jobAPI);
+var _toast = require("../../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+class jobVacanciesView {
+    init() {
+        document.title = 'Job Vacancies';
+        this.jobs = null;
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+        this.getJobs();
+    }
+    async filterJobs(field, match) {
+        //validate
+        if (!field || !match) return;
+        //get fresh copy of projects page
+        this.jobs = await _jobAPIDefault.default.getJobs();
+        let filteredJobs;
+        // tag
+        if (field == 'tag') filteredJobs = this.jobs.filter((job)=>job.tag == match
+        );
+        //render
+        this.jobs = filteredJobs;
+        this.render();
+    }
+    clearFilterBtns() {
+        //clear all checked buttons (attribute = 'checked')
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((btn)=>btn.removeAttribute("checked")
+        );
+    }
+    handleFilterBtn(e) {
+        this.clearFilterBtns();
+        //set item = active (item add attribute 'checked')
+        e.target.setAttribute("checked", "");
+        //extract the field and match from buttons
+        const field = e.target.getAttribute("data-field");
+        const match = e.target.getAttribute("data-match");
+        console.log("field = ", field);
+        console.log("match = ", match);
+        //filter job vacncies postings
+        this.filterJobs(field, match);
+    }
+    clearFilters() {
+        this.getJobs();
+        this.clearFilterBtns();
+    }
+    async getJobs() {
+        try {
+            this.jobs = await _jobAPIDefault.default.getJobs();
+            console.log(this.jobs);
+            this.render();
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+        }
+    }
+    render() {
+        const template = _litHtml.html`\n\n      <va-app-header title="Job Vacancies" user="${JSON.stringify(_authDefault.default.currentUser)}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <div class= "postings-grid">\n            <h1 class="anim-in">Job Vacancies</h1>\n            ${_authDefault.default.currentUser.accessLevel == 2 ? _litHtml.html`\n                <sl-button type="primary" @click="${()=>_router.gotoRoute('/newJob')
+        }">Create a New Job Vacancy Posting!</sl-button>\n            ` : _litHtml.html``}\n          </div>\n          <div class="filter-menu">                  \n            <div class="filter-search">\n              <div>Filter by:</div>\n              <strong>Name</strong><sl-textarea placeholder = "Search bar" resize="none" rows="1" id="searchbar"></sl-textarea>\n            </div>\n            <div class="filter-btns">\n              <div class="filter-dropdown"> \n                <sl-dropdown>\n                  <sl-button size="medium" type="info" slot="trigger" caret><strong>Genre</strong></sl-button>\n                  <sl-menu>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="photography" @click=${this.handleFilterBtn.bind(this)}>photography</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="illustration" @click=${this.handleFilterBtn.bind(this)}>illustrations</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="writing" @click=${this.handleFilterBtn.bind(this)}>writing</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="pre-production" @click=${this.handleFilterBtn.bind(this)}>pre-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="production" @click=${this.handleFilterBtn.bind(this)}>production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="post-production" @click=${this.handleFilterBtn.bind(this)}>post-production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="animation" @click=${this.handleFilterBtn.bind(this)}>animation</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="voice-over" @click=${this.handleFilterBtn.bind(this)}>voice-over</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="game-production" @click=${this.handleFilterBtn.bind(this)}>game production</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="website-dev" @click=${this.handleFilterBtn.bind(this)}>website development</sl-menu-item>\n                    <sl-menu-item class="filter-btn"data-field="tag" data-match="2d-art" @click=${this.handleFilterBtn.bind(this)}>2D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="3d-art" @click=${this.handleFilterBtn.bind(this)}>3D art</sl-menu-item>\n                    <sl-menu-item class="filter-btn" data-field="tag" data-match="others" @click=${this.handleFilterBtn.bind(this)}>others</sl-menu-item>\n                  </sl-menu>\n                </sl-dropdown>\n              </div>\n                <div>\n                  <sl-button size="small" @click=${this.clearFilters.bind(this)}>Clear Filters</sl-button>\n                </div>\n            </div> \n          </div>\n          \n          <div class= "postings-grid">\n            \n            ${this.jobs == null ? _litHtml.html`\n              <sl-spinner></sl-spinner>\n            ` : _litHtml.html`\n              ${this.jobs.map((job)=>_litHtml.html`\n                <va-postings class="posting-card"\n                 image = "${job.image}"\n                 name = "${job.name}"\n                 description = "${job.description}"\n                 user = "${job.user.displayName}"\n                 tag = "${job.tag}"\n                > </va-postings>\n              `
+        )}\n            `}\n          </div>\n        </div> \n      </div>\n           \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new jobVacanciesView();

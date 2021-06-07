@@ -1,0 +1,10 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "noChange", ()=>noChange
+);
+parcelHelpers.export(exports, "nothing", ()=>nothing
+);
+const noChange = {
+};
+const nothing = {
+};

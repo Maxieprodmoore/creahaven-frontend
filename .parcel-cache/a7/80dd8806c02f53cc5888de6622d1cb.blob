@@ -1,0 +1,40 @@
+import   "fe907448cc3239da658bbfec6dc7915d:./App";
+import   "fe907448cc3239da658bbfec6dc7915d:lit-html";
+import   "fe907448cc3239da658bbfec6dc7915d:gsap";
+class $fe907448cc3239da658bbfec6dc7915d$export$9099ad97b570f7c {
+    static init() {
+        this.showDuration = 2.5;
+        // create container element
+        this.containerEl = document.createElement('div');
+        this.containerEl.id = 'toasts';
+        // append to <body>
+        document.body.appendChild(this.containerEl);
+    }
+    static show(content, type = '') {
+        if (!content) return;
+        // create element
+        const toastEl = document.createElement('div');
+        toastEl.className = 'toast-entry';
+        if (type != "") toastEl.classList.add('is-error');
+        toastEl.innerText = content;
+        // appened to container
+        this.containerEl.appendChild(toastEl);
+        // animate using gsap
+        const tl = $fe907448cc3239da658bbfec6dc7915d$import$a68c99996323679b$a68c99996323679b.timeline();
+        tl.from(toastEl, {
+            y: 60,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power3.out"
+        });
+        tl.to(toastEl, {
+            marginTop: -50,
+            opacity: 0,
+            delay: this.showDuration,
+            duration: 0.3,
+            onComplete: ()=>{
+                toastEl.remove();
+            }
+        });
+    }
+}

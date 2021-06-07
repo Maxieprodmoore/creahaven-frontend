@@ -1,0 +1,28 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("./../../Router");
+var _auth = require("./../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("./../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _moment = require("moment");
+var _momentDefault = parcelHelpers.interopDefault(_moment);
+var _toast = require("./../../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+class ProfileView {
+    init() {
+        console.log('ProfileView.init');
+        document.title = 'Profile';
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+    }
+    render() {
+        const template = _litHtml.html`\n      <va-app-header title="Profile" user="${JSON.stringify(_authDefault.default.currentUser)}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content calign">\n          <div class="profile-grid">\n            <sl-card class="profile-section">\n              ${_authDefault.default.currentUser && _authDefault.default.currentUser.avatar ? _litHtml.html`\n                <sl-avatar style="--size: 200px; margin-bottom: 1em;" image=${_authDefault.default.currentUser && _authDefault.default.currentUser.avatar ? `${_appDefault.default.apiBase}/images/${_authDefault.default.currentUser.avatar}` : ''}></sl-avatar>\n              ` : _litHtml.html`\n              <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>\n              `}\n              ${_authDefault.default.currentUser.displayName ? _litHtml.html`\n                <h2>${_authDefault.default.currentUser.firstName} ${_authDefault.default.currentUser.lastName}</h2>\n              ` : _litHtml.html`\n                <h2>${_authDefault.default.currentUser.displayName}</h2>\n              `}\n              \n              \n              <p>${_authDefault.default.currentUser.email}</p>\n              \n              <p>Updated: ${_momentDefault.default(_authDefault.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>\n\n              ${_authDefault.default.currentUser.bio ? _litHtml.html`\n                <h3>Bio</h3>\n                <p>${_authDefault.default.currentUser.bio}</p>\n              ` : _litHtml.html``}\n              ${_authDefault.default.currentUser.website ? _litHtml.html`\n                <p><sl-icon name = "link-45deg"></sl-icon> <a href="${_authDefault.default.currentUser.website}" target="_blank">${_authDefault.default.currentUser.website}</a> </p>\n              ` : _litHtml.html``}\n\n              <div id="profileSocialsGrid">\n                ${_authDefault.default.currentUser.facebook ? _litHtml.html`\n                  <sl-button type="default" size="small" circle href="${_authDefault.default.currentUser.facebook}" target="_blank"><sl-icon name="facebook"></sl-icon></sl-button>\n                ` : _litHtml.html``}\n                ${_authDefault.default.currentUser.twitter ? _litHtml.html`\n                  <sl-button type="default" size="small" circle href="${_authDefault.default.currentUser.twitter}" target="_blank"><sl-icon name="twitter"></sl-icon></sl-button>\n                ` : _litHtml.html``}\n                ${_authDefault.default.currentUser.instagram ? _litHtml.html`\n                  <sl-button type="default" size="small" circle href=" ${_authDefault.default.currentUser.instagram}" target="_blank"><sl-icon name="instagram"></sl-icon></sl-button>\n                ` : _litHtml.html``}\n                ${_authDefault.default.currentUser.youtube ? _litHtml.html`\n                  <sl-button type="default" size="small" circle href="${_authDefault.default.currentUser.youtube}" target="_blank"><sl-icon name="youtube"></sl-icon></sl-button>\n                ` : _litHtml.html``}\n              </div>\n              \n              <div slot="footer">\n                <sl-button type="info"  @click=${()=>_router.gotoRoute('/editProfile')
+        }>Edit Profile</sl-button>\n              </div>\n              \n            </sl-card> \n\n            \n            \n          </div>  \n          \n        </div>\n      </div>      \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new ProfileView();

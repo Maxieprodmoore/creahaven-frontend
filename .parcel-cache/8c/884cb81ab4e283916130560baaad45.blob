@@ -1,0 +1,34 @@
+import   "40edc1a7c416f3e06b78acacc7c19044:../../App";
+import   "40edc1a7c416f3e06b78acacc7c19044:lit-html";
+import   "40edc1a7c416f3e06b78acacc7c19044:../../Router";
+import   "40edc1a7c416f3e06b78acacc7c19044:../../Auth";
+import   "40edc1a7c416f3e06b78acacc7c19044:../../Utils";
+import   "40edc1a7c416f3e06b78acacc7c19044:./../../UserAPI";
+import   "40edc1a7c416f3e06b78acacc7c19044:./../../Toast";
+let _ = (t)=>t
+, t, t1, t2, t3;
+class $40edc1a7c416f3e06b78acacc7c19044$var$favouriteCreativesView {
+    init() {
+        document.title = 'Favourite Creatives';
+        this.favouriteCreatives = null;
+        this.render();
+        $40edc1a7c416f3e06b78acacc7c19044$import$9041adadada78ceb$9099ad97b570f7c.pageIntroAnim();
+        this.getFavCreatives();
+    }
+    async getFavCreatives() {
+        try {
+            const currentUser = await $40edc1a7c416f3e06b78acacc7c19044$import$512a7c9be00b8462$9099ad97b570f7c.getUser($40edc1a7c416f3e06b78acacc7c19044$import$d241520aba55052c$9099ad97b570f7c.currentUser._id);
+            this.favCreatives = currentUser.favouriteCreatives;
+            console.log(this.favCreatives);
+            this.render();
+        } catch (err) {
+            $40edc1a7c416f3e06b78acacc7c19044$import$a8b0bc06f88c075b$9099ad97b570f7c.show(err, 'error');
+        }
+    }
+    render() {
+        const template = $40edc1a7c416f3e06b78acacc7c19044$import$add832cec91f3f79$91100b3ec196ccd(t3 || (t3 = _`\n      <va-app-header title="Favourite Creatives" user="${0}"></va-app-header>\n      <div class="page-body">\n        <div class="page-content">        \n          <h1>Favourite Creatives</h1>\n          <div class="haircuts-grid">\n            ${0}\n          </div>\n          \n        </div>\n      </div>\n            \n    `), JSON.stringify($40edc1a7c416f3e06b78acacc7c19044$import$d241520aba55052c$9099ad97b570f7c.currentUser), this.favCreatives == null ? $40edc1a7c416f3e06b78acacc7c19044$import$add832cec91f3f79$91100b3ec196ccd(t || (t = _`\n              <sl-spinner></sl-spinner>\n            `)) : $40edc1a7c416f3e06b78acacc7c19044$import$add832cec91f3f79$91100b3ec196ccd(t2 || (t2 = _`\n              ${0}\n            `), this.favCreatives.map((creative)=>$40edc1a7c416f3e06b78acacc7c19044$import$add832cec91f3f79$91100b3ec196ccd(t1 || (t1 = _`\n                <va-creative class="creative-card"\n                  id="${0}"\n                  name="${0}"\n                  email="${0}"\n                  image="${0}"\n                  bio="${0}"\n                  website="${0}"\n                  facebook="${0}"\n                  instagram="${0}"\n                  twitter="${0}"\n                  youtube="${0}"\n                >\n                </va-creative>\n                  \n              `), creative._id, creative.displayName, creative.email, creative.avatar, creative.bio, creative.website, creative.facebook, creative.instagram, creative.twitter, creative.youtube)
+        )));
+        $40edc1a7c416f3e06b78acacc7c19044$import$add832cec91f3f79$792a797b69be0d58(template, $40edc1a7c416f3e06b78acacc7c19044$import$e4114fce0a97fb80$9099ad97b570f7c.rootEl);
+    }
+}
+var $40edc1a7c416f3e06b78acacc7c19044$export$9099ad97b570f7c = new $40edc1a7c416f3e06b78acacc7c19044$var$favouriteCreativesView();

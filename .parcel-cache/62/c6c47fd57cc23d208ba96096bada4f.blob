@@ -1,0 +1,17 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+class FourOFourView {
+    init() {
+        console.log('FourOFourView.init');
+        document.title = '404 File not found';
+        this.render();
+    }
+    render() {
+        const template = _litHtml.html`    \n      <div class="calign">\n        <h1>Opps!</h1>\n        <p>Sorry, we couldn't find that.</p>\n      </div>\n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new FourOFourView();

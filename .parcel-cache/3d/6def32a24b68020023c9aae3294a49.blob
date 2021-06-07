@@ -1,0 +1,56 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _app = require("./../../App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _litHtml = require("lit-html");
+var _router = require("./../../Router");
+var _auth = require("./../../Auth");
+var _authDefault = parcelHelpers.interopDefault(_auth);
+var _utils = require("./../../Utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _userAPI = require("./../../UserAPI");
+var _userAPIDefault = parcelHelpers.interopDefault(_userAPI);
+var _toast = require("../../Toast");
+var _toastDefault = parcelHelpers.interopDefault(_toast);
+var _moment = require("moment");
+var _momentDefault = parcelHelpers.interopDefault(_moment);
+class EditProfileView {
+    init() {
+        console.log('EditProfileView.init');
+        document.title = 'Edit Profile';
+        this.user = null;
+        this.render();
+        _utilsDefault.default.pageIntroAnim();
+        this.getUser();
+    }
+    async getUser() {
+        try {
+            this.user = await _userAPIDefault.default.getUser(_authDefault.default.currentUser._id);
+            this.render();
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+        }
+    }
+    async updateProfileSubmitHandler(e) {
+        e.preventDefault();
+        const formData = e.detail.formData;
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.setAttribute('loading', '');
+        try {
+            const updatedUser = await _userAPIDefault.default.updateUser(_authDefault.default.currentUser._id, formData);
+            delete updatedUser.password;
+            this.user = updatedUser;
+            _authDefault.default.currentUser = updatedUser;
+            this.render();
+            _toastDefault.default.show('profile updated');
+        } catch (err) {
+            _toastDefault.default.show(err, 'error');
+        }
+        submitBtn.removeAttribute('loading');
+    }
+    render() {
+        const template = _litHtml.html`\n      <va-app-header title="Edit Profile" user=${JSON.stringify(_authDefault.default.currentUser)}></va-app-header>\n      <div class="page-body">\n        <div class="page-content">        \n          ${this.user == null ? _litHtml.html`\n            <sl-spinner></sl-spinner>\n          ` : _litHtml.html`\n            <p>Updated: ${_momentDefault.default(_authDefault.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>\n            <sl-form class="page-form" @sl-submit=${this.updateProfileSubmitHandler.bind(this)}>\n              <div class="input-group">\n                <sl-input type="text" name="firstName" value="${this.user.firstName}" placeholder="First Name"></sl-input>\n              </div>\n              <div class="input-group">\n                <sl-input type="text" name="lastName" value="${this.user.lastName}" placeholder="Last Name"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Display Name/ Nickname</label><br>\n                ${this.user.displayName == null ? _litHtml.html`\n                <sl-input type="text" name="displayName" value="${this.user.firstName} ${this.user.lastName}" placeholder="Display Name"></sl-input>\n                ` : _litHtml.html`\n                <sl-input type="text" name="displayName" value="${this.user.displayName}" placeholder="Display Name"></sl-input>\n                `} \n              </div>\n              <div class="input-group">\n                <sl-input type="text" name="email" value="${this.user.email}" placeholder="Email Address"></sl-input>\n              </div> \n              <div class="input-group">\n                <sl-textarea name="bio" rows="4" value="${this.user.bio}" placeholder="Bio"></sl-textarea>\n              </div>  \n              <div class="input-group">\n                <label>Website URL</label><br>\n                <sl-input type="text" name="website" value="${this.user.website}" placeholder="www.example.com"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Facebook page</label><br>\n                <sl-input type="text" name="facebook" value="${this.user.facebook}" placeholder="www.facebook.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Twitter page</label><br>\n                <sl-input type="text" name="twitter" value="${this.user.twitter}" placeholder="www.twitter.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Instagram page</label><br>\n                <sl-input type="text" name="instagram" value="${this.user.instagram}" placeholder="www.instagram.com/example"></sl-input>\n              </div>\n              <div class="input-group">\n                <label>Youtube channel</label><br>\n                <sl-input type="text" name="youtube" value="${this.user.youtube}" placeholder="www.youtube.com/channel/exampleURLCode"></sl-input>\n              </div>         \n              <div class="input-group">\n                <label>Avatar</label><br>          \n                ${this.user.avatar ? _litHtml.html`\n                  <sl-avatar image="${_appDefault.default.apiBase}/images/${this.user.avatar}"></sl-avatar>\n                  <input type="file" name="avatar" />\n                ` : _litHtml.html`\n                  <input type="file" name="avatar" />\n                `}\n              </div>\n              <sl-button type="primary" class="submit-btn" submit>Update Profile</sl-button>\n            </sl-form>\n          `}\n        </div>\n      </div>\n      \n    `;
+        _litHtml.render(template, _appDefault.default.rootEl);
+    }
+}
+exports.default = new EditProfileView();
