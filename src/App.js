@@ -11,11 +11,12 @@ class App {
     this.apiBase = `blho-creahaven-backend.herokuapp.com`
     this.rootEl = document.getElementById("root")
     this.version = "1.0.0"
+    console.log(this.apiBase)
   }
   
   init() { 
     console.log("App.init")
-    console.log(this.apiBase)
+    
     // Toast init
     Toast.init()   
     
