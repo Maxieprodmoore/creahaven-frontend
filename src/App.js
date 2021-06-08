@@ -15,7 +15,7 @@ class App {
   
   init() { 
     console.log("App.init")
-    
+    console.log(this.apiBase)
     // Toast init
     Toast.init()   
     
