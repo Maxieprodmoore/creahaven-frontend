@@ -117,7 +117,7 @@ customElements.define('va-creative', class Creative extends LitElement {
           <h2>${this.name}</h2>
           <h4 class="email">${this.email}</h4>
           <p>Bio: <span>${this.bio}</span></p>
-          <p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
+          <p></p><sl-icon name = "link-45deg"></sl-icon><a href="${this.website}" target="_blank">${this.website}</a> </p>
           <div class="creative-socials">
             ${this.facebook ? html`
               <sl-button href="${this.facebook}" target="_blank" size="medium" circle> <sl-icon name="facebook"></sl-icon> </sl-button>

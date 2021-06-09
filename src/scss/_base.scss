@@ -189,7 +189,7 @@ a {
   flex-wrap: wrap;
   margin-bottom: 0.8em;
   .posting-card{
-    width: calc(23% - 1em);
+    width: calc(25% - 1em);
     margin: 0.5em;
   }
 
@@ -197,10 +197,10 @@ a {
 
 //creatives page
 .creative-grid{
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
   .creative-card{
-    width: calc(23% - 1.5em);
+    width: calc(25% - 1.5em);
     margin: 0.75em;
   }
 
@@ -227,7 +227,7 @@ a {
 
 //profile page
 .profile-grid{
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
   .profile-section{
@@ -235,7 +235,7 @@ a {
     margin: 0.5em;
   }
   #profileSocialsGrid{
-    display: flexbox;
+    display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
