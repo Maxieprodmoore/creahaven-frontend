@@ -46,10 +46,10 @@ class HomeView {
           <h1 class="anim-in">Hey ${Auth.currentUser.firstName}!</h1>
           <img id="guide-img" src="/images/introScreen-hero-img.png" />
           <div class="home-navBtn">
-            <a href="/creatives" @click="${this.menuClick}"><img class="navBtnImg" src="/images/creatives-button.png"/></a>
-            <a href="/collaborations" @click="${this.menuClick}"><img class="navBtnImg" src="/images/collaboration-button.png"/></a>
-            <a href="/jobs" @click="${this.menuClick}"><img class="navBtnImg" src="/images/jobs-button.png"/></a>
-            <a href="/projects" @click="${this.menuClick}"><img class="navBtnImg" src="/images/projects-button.png"/></a>
+            <a href="/creatives" @click="${anchorRoute}"><img class="navBtnImg" src="/images/creatives-button.png"/></a>
+            <a href="/collaborations" @click="${anchorRoute}"><img class="navBtnImg" src="/images/collaboration-button.png"/></a>
+            <a href="/jobs" @click="${anchorRoute}"><img class="navBtnImg" src="/images/jobs-button.png"/></a>
+            <a href="/projects" @click="${anchorRoute}"><img class="navBtnImg" src="/images/projects-button.png"/></a>
           </div>
 
           

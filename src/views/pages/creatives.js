@@ -87,7 +87,7 @@ class CreativesView {
               </div>
           </div>
 
-          <div id="creative-grid">
+          <div class="creative-grid">
             ${this.creatives == null ? html`
               <sl-spinner></sl-spinner>
             ` : html`

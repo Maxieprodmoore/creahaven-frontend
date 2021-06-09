@@ -4,6 +4,7 @@ import {gotoRoute, anchorRoute} from '../../Router'
 import Auth from '../../Auth'
 import Utils from '../../Utils'
 import PortfolioAPI from './../../PortfolioAPI'
+import { Toast } from 'bootstrap'
 
 class portfolioView {
   init(){
@@ -73,7 +74,7 @@ class portfolioView {
     }
   }
 
-
+  
  
   render(){
     const template = html`
@@ -85,9 +86,9 @@ class portfolioView {
             <h1>Portfolio Pieces</h1>
               
               <sl-card class="profile-section">
-                <div slot="header"><h3>Portfolio</h3>
+                <div slot="header">
                   ${Auth.currentUser.accessLevel == 1 ? html`
-                    <sl-button type="primary" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
+                    <sl-button type="primary" class="addItemBtn" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>
                   `: html``}
                 </div>
                 <div class="filter-menu">                  

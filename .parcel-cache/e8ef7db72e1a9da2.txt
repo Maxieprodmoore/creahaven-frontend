@@ -70,7 +70,7 @@
 146C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\core-js\modules\esnext.map.some.js121436361000000000 0
 142C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\core-js\features\array\virtual132676089718100603 1
 182C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\uncss\node_modules\postcss-selector-parser\dist\__tests__\universal.js121436361000000000 0
-111C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\package.json132676113385476953 0
+111C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\package.json132676118451552267 0
 109C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\.gitignore132652881786179726 0
 127C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\request\LICENSE121436361000000000 0
 138C:\Users\Us\Documents\Education\Acadamic Work\UX Design 3\Assignment 3\Crehaven\Creahaven-frontend\node_modules\uri-js\dist\esnext\util.js121436361000000000 0

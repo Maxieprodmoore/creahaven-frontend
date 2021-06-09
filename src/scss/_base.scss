@@ -101,6 +101,9 @@ a {
   }
 }
 
+.addItemBtn{
+  left: 40%;
+}
 
 .page-content{
   margin: 0 13em;
@@ -127,6 +130,7 @@ a {
   .filter-search{
     display: flex;
     margin-right: 0.25em;
+    align-items: center;
   }
 
   .filter-search > div {
@@ -185,7 +189,7 @@ a {
   flex-wrap: wrap;
   margin-bottom: 0.8em;
   .posting-card{
-    width: calc(33.33% - 1em);
+    width: calc(23% - 1em);
     margin: 0.5em;
   }
 
@@ -196,8 +200,8 @@ a {
   display: flexbox;
   flex-wrap: wrap;
   .creative-card{
-    width: calc(23% - 1em);
-    margin: 0.5em;
+    width: calc(23% - 1.5em);
+    margin: 0.75em;
   }
 
 }
@@ -227,7 +231,7 @@ a {
   flex-wrap: wrap;
   width: 100%;
   .profile-section{
-    width: calc(100% - 1em);
+    width: calc(40% - 1em);
     margin: 0.5em;
   }
   #profileSocialsGrid{
@@ -236,8 +240,8 @@ a {
     width: 100%;
   }
   .portfolio-card{
-    width: calc(23% - 0.25em);
-    margin: 0.125em;
+    width: calc(23% - 1em);
+    margin: 0.5em;
   }
 
 }
@@ -275,6 +279,10 @@ a {
   
   #guide-img {
     width: 90%;
+  }
+
+  .addItemBtn{
+    left: 35%;
   }
 }
 // RESPONSIVE - IPAD -------------------
@@ -314,6 +322,10 @@ a {
   }
   .filter-menu > div {
     margin-right: 1em;
+  }
+
+  .addItemBtn {
+    left: 30%;
   }
   
 }
@@ -377,5 +389,9 @@ a {
 
   #guide-img {
     width: 100%;
+  }
+
+  .addItemBtn {
+    left: 0;
   }
 }

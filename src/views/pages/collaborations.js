@@ -81,7 +81,7 @@ class CollaborationsView {
           <div class= "postings-grid">
               <h1 class="anim-in">Collaboration Invitations</h1>
               ${Auth.currentUser.accessLevel == 1 ? html`
-                  <sl-button type="primary" @click="${() => gotoRoute('/newCollaboration')}">Create a New Collaboration Invitation!</sl-button>
+                  <sl-button type="primary" class="addItemBtn" @click="${() => gotoRoute('/newCollaboration')}">Create a New Collaboration Invitation!</sl-button>
               ` : html``}
           </div>
 

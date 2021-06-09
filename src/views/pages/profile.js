@@ -4,17 +4,28 @@ import {gotoRoute, anchorRoute} from './../../Router'
 import Auth from './../../Auth'
 import Utils from './../../Utils'
 import moment from 'moment'
+import PortfolioAPI from './../../PortfolioAPI'
 import Toast from './../../Toast'
 
 class ProfileView {
   init(){
     console.log('ProfileView.init')
-    document.title = 'Profile'    
+    document.title = 'Profile' 
+    this.userPortfolio = null    
     this.render()    
     Utils.pageIntroAnim()
+    this.getUserPortfolio()
   }
 
-  
+  async getUserPortfolio(){
+    try{
+      this.userPortfolio = await PortfolioAPI.getUserPortfolio(Auth.currentUser._id)
+      console.log(this.userPortfolio)
+      this.render()
+    }catch(err){
+      Toast.show(err, 'error')
+    }
+  }
 
   render(){
     const template = html`

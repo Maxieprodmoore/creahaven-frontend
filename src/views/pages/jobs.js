@@ -82,7 +82,7 @@ class jobVacanciesView {
           <div class= "postings-grid">
             <h1 class="anim-in">Job Vacancies</h1>
             ${Auth.currentUser.accessLevel == 2 ? html`
-                <sl-button type="primary" @click="${() => gotoRoute('/newJob')}">Create a New Job Vacancy Posting!</sl-button>
+                <sl-button type="primary" class="addItemBtn" @click="${() => gotoRoute('/newJob')}">Create a New Job Vacancy Posting!</sl-button>
             ` : html``}
           </div>
           <div class="filter-menu">                  

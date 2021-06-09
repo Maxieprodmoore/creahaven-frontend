@@ -4,6 +4,7 @@ import {anchorRoute, gotoRoute} from '../Router'
 import Auth from '../Auth'
 import App from '../App'
 import UserAPI from './../UserAPI'
+import PortfolioAPI from './../PortfolioAPI'
 import Toast from './../Toast'
 
 customElements.define('va-creative', class Creative extends LitElement {
@@ -57,12 +58,24 @@ customElements.define('va-creative', class Creative extends LitElement {
   firstUpdated(){
     super.firstUpdated()
   }
+
+  async getUserPortfolio(){
+    try{
+      this.userPortfolio = await PortfolioAPI.getUserPortfolio()
+      console.log(this.userPortfolio)
+      this.render()
+    } catch(err){
+      Toast.show(err, 'error')
+    }
+  }
+
   moreInfoHandler(){
     //create sl-dialog
     const dialogEl = document.createElement('sl-dialog')
     //add class name
     dialogEl.className = 'creatives-dialog'
-
+    //Generate User's portfolio 
+      getUserPortfolio()
     // sl-dialog content
     const dialogContent = html`
       <style>
@@ -96,7 +109,6 @@ customElements.define('va-creative', class Creative extends LitElement {
           display: flexbox;
           flex-wrap: wrap;  
           width: 100%;
-          margin-bottom: 0.25em;
         }
       </style>
       <div class="wrap">

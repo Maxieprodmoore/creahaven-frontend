@@ -70,7 +70,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         color: black;
         display: flex;
         z-index: 9;
-        box-shadow: 4px 0px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 0.3em 3px black;
         align-items: center;
       }
       
@@ -80,7 +80,7 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         display: flex;
         align-items: center;
         margin-left: 13em;
-        a {
+        .app-header-main a {
           font-size: 1.4em;
         }
       }
@@ -247,8 +247,8 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
       <img class="app-side-menu-logo" src="/images/creahaven-logo.svg">
       <nav class="app-side-menu-items">
         <a href="/" @click="${this.menuClick}"> <sl-icon name="house-door-fill"></sl-icon>Home</a>
-        <a href="/portfolios" @click="${this.menuClick}">View Portfolio pieces!</a>
         <a href="/creatives" @click="${this.menuClick}">Find a Creative!</a>
+        <a href="/portfolios" @click="${this.menuClick}">View Portfolio pieces!</a>
         <a href="/collaborations" @click="${this.menuClick}">Find a Collaboration!</a>
         <a href="/jobs" @click="${this.menuClick}">Find a Job vacancy!</a>
         <a href="/projects" @click="${this.menuClick}">Find a project for bidding!</a>

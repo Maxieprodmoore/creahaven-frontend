@@ -82,7 +82,7 @@ class ProjectsView {
           <div class= "postings-grid">
             <h1 class="anim-in">Projects for bidding</h1>
             ${Auth.currentUser.accessLevel == 2 ? html`
-                <sl-button type="primary" @click="${() => gotoRoute('/newProject')}">Create a New Project for bidding!</sl-button>
+                <sl-button type="primary" class="addItemBtn" @click="${() => gotoRoute('/newProject')}">Create a New Project for bidding!</sl-button>
             ` : html``}
           </div>       
           <div class="filter-menu">                  
