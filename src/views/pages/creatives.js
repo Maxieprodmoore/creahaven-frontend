@@ -15,22 +15,22 @@ class CreativesView {
     this.getCreatives()
   }
 
-  async filterCollabIs(field, match){
+  async filterCreatives(field, match){
     //validate
     if(!field || !match) return
     //get fresh copy of projects page
-    this.collaborationIs = await CollaborationAPI.getCollaborationIs()
+    this.creatives = await UserAPI.getCreatives()
 
-    let filteredCollaborationIs
+    let filteredCreatives
 
     // tag
     if(field == 'tag'){
-      filteredCollaborationIs = this.collaborationIs.filter(collaboration => collaboration.tag == match)
+      filteredCreatives = this.creatives.filter(creative => creative.tag == match)
       
     } 
 
     //render
-    this.collaborationIs = filteredCollaborationIs
+    this.creatives = filteredCreatives
     this.render()
     
   }

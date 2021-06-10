@@ -85,7 +85,7 @@ class portfolioView {
           <div class="profile-grid">        
             <h1>Portfolio Pieces</h1>
               
-              <sl-card class="profile-section">
+              <sl-card class="portfolio-section">
                 <div slot="header">
                   ${Auth.currentUser.accessLevel == 1 ? html`
                     <sl-button type="primary" class="addItemBtn" size="medium" @click=${()=> gotoRoute('/newPortfolio')}>Add a new portfolio piece!</sl-button>

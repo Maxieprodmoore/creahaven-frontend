@@ -185,16 +185,20 @@ a {
   margin-bottom: 0.8em;
 }
 .postings-grid .posting-card {
-  width: calc(23% - 1em);
+  width: calc(25% - 1em);
   margin: 0.5em;
 }
 .creative-grid {
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
 }
 .creative-grid .creative-card {
-  width: calc(23% - 1.5em);
+  width: calc(25% - 1.5em);
   margin: 0.75em;
+}
+.portfolio-section {
+  width: 100%;
+  margin: 0.5em;
 }
 .creatives-dialog {
   --width: 70%;
@@ -209,7 +213,7 @@ a {
   margin-top: -4em;
 }
 .profile-grid {
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -218,7 +222,7 @@ a {
   margin: 0.5em;
 }
 .profile-grid #profileSocialsGrid {
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
