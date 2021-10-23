@@ -185,7 +185,7 @@ a {
 
 //jobs page
 .postings-grid{
-  display: flexbox;
+  display: flex;
   flex-wrap: wrap;
   margin-bottom: 0.8em;
   .posting-card{
@@ -241,8 +241,6 @@ a {
     margin: 0.5em;
   }
   #profileSocialsGrid{
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
   }
   .portfolio-card{

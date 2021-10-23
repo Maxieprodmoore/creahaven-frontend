@@ -105,9 +105,7 @@ customElements.define('va-creative', class Creative extends LitElement {
           font-style: italic;
         } 
 
-        .creative-socials{
-          display: flexbox;
-          flex-wrap: wrap;  
+        .creative-socials{ 
           width: 100%;
         }
       </style>
@@ -186,9 +184,7 @@ customElements.define('va-creative', class Creative extends LitElement {
           font-style: italic;
         } 
 
-      .creative-socials{
-        display: flexbox;
-        flex-wrap: wrap;  
+      .creative-socials{ 
         width: 100%;
         margin-bottom: 0.25em;
       }
