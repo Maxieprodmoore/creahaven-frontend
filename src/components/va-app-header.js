@@ -156,6 +156,10 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
         font-weight: bold;
       }
 
+      #avatarName, .page-title{
+        color: white
+      }
+
        /* RESPONSIVE - IPAD ------------------- */
        @media all and (max-width: 1024px){
         .app-header-main {
@@ -205,9 +209,8 @@ customElements.define('va-app-header', class AppHeader extends LitElement {
     <header class="app-header">
       <div class="app-header-main">
         <sl-icon-button class="hamburger-btn" name="list" @click="${this.hamburgerClick}" style="font-size: 1.5em;"></sl-icon-button>
-        <img class="app-header-logo" src="/images/creahaven-logo-black.svg">
+        <a href="/" @click="${this.menuClick}"><img class="app-header-logo" src="/images/creahaven-logo-white.svg"></a>
         <slot></slot>
-        <a href="/" id="home" @click="${anchorRoute}">Home</a>  
       </div>
 
 

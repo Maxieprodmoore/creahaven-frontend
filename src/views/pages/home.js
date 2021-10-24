@@ -44,7 +44,7 @@ class HomeView {
       <div class="page-body">
         <div class="page-content calign">
           <h1 class="anim-in">Hey ${Auth.currentUser.firstName}!</h1>
-          <img id="guide-img" src="/images/introScreen-hero-img.png" />
+          <img id="guide-img" src="/images/introScreen-hero-img-v2.png" />
           <div class="home-navBtn">
             <a href="/creatives" @click="${anchorRoute}"><img class="navBtnImg" src="/images/creatives-button.png"/></a>
             <a href="/collaborations" @click="${anchorRoute}"><img class="navBtnImg" src="/images/collaboration-button.png"/></a>
