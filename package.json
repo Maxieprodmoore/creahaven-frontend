@@ -13,6 +13,7 @@
   "dependencies": {
     "@polymer/lit-element": "^0.7.1",
     "@popperjs/core": "^2.9.2",
+    "@shoelace-style/shoelace": "^2.0.0-beta.62",
     "bootstrap": "^5.0.1",
     "caniuse-lite": "^1.0.30001230",
     "gsap": "^3.6.0",
@@ -25,11 +26,8 @@
     "transformer-js": "^0.0.9"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-nightly.713",
-    "parcel": "^2.0.0-beta.3.1",
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1",
     "sass": "^1.30.0"
-  },
-  "browserslist": [
-    "since 2017-06"
-  ]
+  }
 }

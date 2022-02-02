@@ -3,6 +3,7 @@ import {html, render } from 'lit-html'
 import {anchorRoute, gotoRoute} from './../../Router'
 import Auth from './../../Auth'
 import Utils from './../../Utils'
+import '@shoelace-style/shoelace/dist/components/form/form.js';
 
 class SignInView {
   init(){
