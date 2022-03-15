@@ -5,6 +5,7 @@ import Auth from './../../Auth'
 import Utils from './../../Utils'
 import '@shoelace-style/shoelace/dist/components/form/form.js';
 
+
 class SignInView {
   init(){
     console.log('SignInView.init')
@@ -26,7 +27,13 @@ class SignInView {
   }
 
   render(){    
-    const template = html`      
+    const template = html`  
+      <style>
+        .signinup-logo {
+          width: 100%;
+        }
+      </style> 
+
       <div class="page-body">
         <div class="page-content page-centered">
           <div class="signinup-box">
