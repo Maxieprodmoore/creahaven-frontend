@@ -32,7 +32,7 @@ class SignUpView{
           <div class="signinup-box">
             <img class="signinup-logo" src="/images/creahaven-logo.svg">
               <h1>Sign Up</h1>
-              <sl-form class="form-signup" @sl-submit=${this.signUpSubmitHandler}>
+              <form class="form-signup" @sl-submit=${this.signUpSubmitHandler}>
                 <div class="input-group">
                   <sl-input name="firstName" type="text" placeholder="First Name" required></sl-input>
                 </div>
@@ -52,7 +52,7 @@ class SignUpView{
                   </sl-select>
                 </div>       
                 <sl-button type="primary" class="submit-btn" submit style="width: 100%;">Sign Up</sl-button>
-              </sl-form>
+              </form>
               <p>Have an account? <a href="/signin" @click=${anchorRoute}>Sign In</a></p>
           </div>
         </div>

@@ -53,7 +53,7 @@ class EditProfileView {
             <sl-spinner></sl-spinner>
           `:html`
             <p>Updated: ${moment(Auth.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>
-            <sl-form class="page-form" @sl-submit=${this.updateProfileSubmitHandler.bind(this)}>
+            <form class="page-form" @sl-submit=${this.updateProfileSubmitHandler.bind(this)}>
               <div class="input-group">
                 <sl-input type="text" name="firstName" value="${this.user.firstName}" placeholder="First Name"></sl-input>
               </div>
@@ -104,7 +104,7 @@ class EditProfileView {
                 `}
               </div>
               <sl-button type="primary" class="submit-btn" submit>Update Profile</sl-button>
-            </sl-form>
+            </form>
           `}
         </div>
       </div>

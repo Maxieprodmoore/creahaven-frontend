@@ -49,7 +49,7 @@ class newPortfolioView {
       <div class="page-body">
         <div class="page-content">        
           <h1>Submit New Portfolio piece</h1>
-          <sl-form class="page-form" @sl-submit=${this.newPortfolioSubmitHandler}>
+          <form class="page-form" @sl-submit=${this.newPortfolioSubmitHandler}>
             <input type="hidden" name="user" value="${Auth.currentUser._id}" />
             <div class="input-group" style="margin-bottom: 2em;">
               <label>Image (For Preview)</label><br>
@@ -84,7 +84,7 @@ class newPortfolioView {
             </div>
             
             <sl-button type="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>
-          </sl-form> 
+          </form> 
           
         </div>
       </div>      

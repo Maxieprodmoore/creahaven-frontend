@@ -45,7 +45,7 @@ class newJobView {
       <div class="page-body">
         <div class="page-content">
         <h1 class="anim-in">New Job Posting</h1>        
-          <sl-form class="page-form" @sl-submit=${this.newJobSubmitHandler}>
+          <form class="page-form" @sl-submit=${this.newJobSubmitHandler}>
             <input type="hidden" name="user" value="${Auth.currentUser._id}" />
             <div class="input-group" style="margin-bottom: 2em;">
               <sl-input name="name" type="text" placeholder="Job Name" required></sl-input>
@@ -76,7 +76,7 @@ class newJobView {
             </div>
           
             <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Job Posting!</sl-button>
-          </sl-form>        
+          </form>        
 
           
         </div> 

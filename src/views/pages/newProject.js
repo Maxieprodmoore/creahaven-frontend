@@ -45,7 +45,7 @@ class newProjectView {
       <div class="page-body">
         <div class="page-content">
         <h1 class="anim-in">New Project for bidding Posting</h1>        
-          <sl-form class="page-form" @sl-submit=${this.newProjectSubmitHandler}>
+          <form class="page-form" @sl-submit=${this.newProjectSubmitHandler}>
             <input type="hidden" name="user" value="${Auth.currentUser._id}" />
             <div class="input-group" style="margin-bottom: 2em;">
               <sl-input name="name" type="text" placeholder="Project Name" required></sl-input>
@@ -74,7 +74,7 @@ class newProjectView {
             </div>
           
             <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a New Project for Bidding!</sl-button>
-          </sl-form>        
+          </form>        
 
           
         </div> 
