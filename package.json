@@ -25,10 +25,8 @@
     "transformer-js": "^0.0.9"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2",
     "parcel": "^2.3.2",
     "sass": "^1.30.0"
-  },
-  "browserslist": [
-    "since 2017-06"
-  ]
+  }
 }
