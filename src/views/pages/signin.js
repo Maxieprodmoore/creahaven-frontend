@@ -3,7 +3,7 @@ import {html, render } from 'lit-html'
 import {anchorRoute, gotoRoute} from './../../Router'
 import Auth from './../../Auth'
 import Utils from './../../Utils'
-import '@shoelace-style/shoelace/dist/components/form/form.js';
+import '@shoelace-style/shoelace/dist/components/input/input.js';
 
 
 class SignInView {
@@ -38,7 +38,7 @@ class SignInView {
         <div class="page-content page-centered">
           <div class="signinup-box">
             <img class="signinup-logo" src="/images/creahaven-logo.svg">          
-            <sl-form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
+            <form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
               <div class="input-group">
                 <sl-input name="email" type="email" placeholder="Email" required></sl-input>
               </div>
@@ -46,7 +46,7 @@ class SignInView {
                 <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
               </div>
               <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
-            </sl-form>
+            </form>
             <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${()=> gotoRoute('/signup')}>Sign Up</sl-button></p>
           </div>
         </div>
