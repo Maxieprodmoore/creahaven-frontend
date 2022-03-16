@@ -850,7 +850,7 @@ var _templateJs = require("./lib/template.js");
 // IMPORTANT: do not change the property name or the assignment expression.
 // This line will be used in regexes to search for lit-html usage.
 // TODO(justinfagnani): inject version number at build time
-if (typeof window !== 'undefined') (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.3.0');
+if (typeof window !== 'undefined') (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.4.1');
 const html = (strings, ...values)=>new _templateResultJs.TemplateResult(strings, values, 'html', _defaultTemplateProcessorJs.defaultTemplateProcessor)
 ;
 const svg = (strings, ...values)=>new _templateResultJs.SVGTemplateResult(strings, values, 'svg', _defaultTemplateProcessorJs.defaultTemplateProcessor)
