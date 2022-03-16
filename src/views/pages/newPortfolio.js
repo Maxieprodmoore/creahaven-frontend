@@ -80,10 +80,10 @@ class newPortfolioView {
             </div>
             <div class="input-group" style="margin-bottom: 1em;">
               <label>Link to that piece outside the website.</label><br>
-              <sl-textarea name="link" rows="1" placeholder="www.example.com"></sl-textarea>
+              <sl-input name="link"  placeholder="www.example.com"></sl-input>
             </div>
             
-            <sl-button type="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>
+            <sl-button variant="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>
           </form> 
           
         </div>

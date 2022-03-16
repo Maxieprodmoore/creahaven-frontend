@@ -4,7 +4,7 @@ import {anchorRoute, gotoRoute} from './../../Router'
 import Auth from './../../Auth'
 import Utils from './../../Utils'
 import '@shoelace-style/shoelace/dist/components/input/input.js';
-
+import '@shoelace-style/shoelace/dist/components/button/button.js';
 
 class SignInView {
   init(){
@@ -40,14 +40,14 @@ class SignInView {
             <img class="signinup-logo" src="/images/creahaven-logo.svg">          
             <form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
               <div class="input-group">
-                <sl-input name="email" type="email" placeholder="Email" required></sl-input>
+                <sl-input label="E-mail Address" type="email" placeholder="E-mail" required></sl-input>
               </div>
               <div class="input-group">
-                <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
+                <sl-input label="Password" type="password" placeholder="Password" required toggle-password></sl-input>
               </div>
-              <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
+              <sl-button class="submit-btn" variant="primary" submit style="width: 100%;">Sign In</sl-button>
             </form>
-            <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${()=> gotoRoute('/signup')}>Sign Up</sl-button></p>
+            <p>No Account? <sl-button class="submit-btn" variant="default" style="width: 100%;" @click=${()=> gotoRoute('/signup')}>Sign Up</sl-button></p>
           </div>
         </div>
       </div>

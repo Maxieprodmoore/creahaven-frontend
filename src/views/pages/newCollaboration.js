@@ -46,7 +46,7 @@ class newCollaborationView {
         <div class="page-content">
         <h1 class="anim-in">New Collaboration Invitation form</h1>        
           <form class="page-form" @sl-submit=${this.newCollaborationSubmitHandler}>
-            <input type="hidden" name="user" value="${Auth.currentUser._id}" />
+            <sl-input name="user" value="${Auth.currentUser._id}" disabled/>
             <div class="input-group" style="margin-bottom: 2em;">
               <sl-input name="name" type="text" placeholder="Collaboration item Name" required></sl-input>
             </div>
@@ -75,7 +75,7 @@ class newCollaborationView {
               </sl-select>
             </div>
           
-            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>
+            <sl-button variant="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>
           </form>        
 
           

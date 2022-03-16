@@ -542,6 +542,17 @@ var _auth = require("./Auth");
 var _authDefault = parcelHelpers.interopDefault(_auth);
 var _toast = require("./Toast");
 var _toastDefault = parcelHelpers.interopDefault(_toast);
+var _formJs = require("@shoelace-style/shoelace/dist/utilities/form.js");
+var _selectJs = require("@shoelace-style/shoelace/dist/components/select/select.js");
+var _menuJs = require("@shoelace-style/shoelace/dist/components/menu/menu.js");
+var _menuItemJs = require("@shoelace-style/shoelace/dist/components/menu-item/menu-item.js");
+var _textareaJs = require("@shoelace-style/shoelace/dist/components/textarea/textarea.js");
+var _drawerJs = require("@shoelace-style/shoelace/dist/components/drawer/drawer.js");
+var _buttonJs = require("@shoelace-style/shoelace/dist/components/button/button.js");
+var _cardJs = require("@shoelace-style/shoelace/dist/components/card/card.js");
+var _dropdownJs = require("@shoelace-style/shoelace/dist/components/dropdown/dropdown.js");
+var _spinnerJs = require("@shoelace-style/shoelace/dist/components/spinner/spinner.js");
+var _avatarJs = require("@shoelace-style/shoelace/dist/components/avatar/avatar.js");
 class App {
     constructor(){
         this.name = "Creahaven";
@@ -563,7 +574,7 @@ class App {
 }
 exports.default = new App();
 
-},{"./Router":"kOSdl","./Auth":"wuqrX","./Toast":"4N7Ir","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kOSdl":[function(require,module,exports) {
+},{"./Router":"kOSdl","./Auth":"wuqrX","./Toast":"4N7Ir","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@shoelace-style/shoelace/dist/utilities/form.js":"8RZIk","@shoelace-style/shoelace/dist/components/select/select.js":"7vH1Q","@shoelace-style/shoelace/dist/components/menu/menu.js":"4cp3K","@shoelace-style/shoelace/dist/components/menu-item/menu-item.js":"kHGjf","@shoelace-style/shoelace/dist/components/textarea/textarea.js":"fjMKz","@shoelace-style/shoelace/dist/components/drawer/drawer.js":"1eEuu","@shoelace-style/shoelace/dist/components/button/button.js":"9AbKL","@shoelace-style/shoelace/dist/components/card/card.js":"in7RN","@shoelace-style/shoelace/dist/components/dropdown/dropdown.js":"0hIZA","@shoelace-style/shoelace/dist/components/spinner/spinner.js":"ejQam","@shoelace-style/shoelace/dist/components/avatar/avatar.js":"3BlqN"}],"kOSdl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // programmatically load any route
@@ -6030,7 +6041,7 @@ class GuideView {
             </P>
           </div>
 
-          <sl-button type="primary" @click=${()=>_router.gotoRoute('/')
+          <sl-button variant="primary" @click=${()=>_router.gotoRoute('/')
         }>Okay got it!</sl-button>
         </div>
       </div>
@@ -6171,6 +6182,7 @@ var _authDefault = parcelHelpers.interopDefault(_auth);
 var _utils = require("./../../Utils");
 var _utilsDefault = parcelHelpers.interopDefault(_utils);
 var _inputJs = require("@shoelace-style/shoelace/dist/components/input/input.js");
+var _buttonJs = require("@shoelace-style/shoelace/dist/components/button/button.js");
 class SignInView {
     init() {
         console.log('SignInView.init');
@@ -6202,14 +6214,14 @@ class SignInView {
             <img class="signinup-logo" src="/images/creahaven-logo.svg">          
             <form class="form-signup dark-theme" @sl-submit=${this.signInSubmitHandler}>          
               <div class="input-group">
-                <sl-input name="email" type="email" placeholder="Email" required></sl-input>
+                <sl-input label="E-mail Address" type="email" placeholder="E-mail" required></sl-input>
               </div>
               <div class="input-group">
-                <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
+                <sl-input label="Password" type="password" placeholder="Password" required toggle-password></sl-input>
               </div>
-              <sl-button class="submit-btn" type="primary" submit style="width: 100%;">Sign In</sl-button>
+              <sl-button class="submit-btn" variant="primary" submit style="width: 100%;">Sign In</sl-button>
             </form>
-            <p>No Account? <sl-button class="submit-btn" type="info" style="width: 100%;" @click=${()=>_router.gotoRoute('/signup')
+            <p>No Account? <sl-button class="submit-btn" variant="default" style="width: 100%;" @click=${()=>_router.gotoRoute('/signup')
         }>Sign Up</sl-button></p>
           </div>
         </div>
@@ -6220,7 +6232,7 @@ class SignInView {
 }
 exports.default = new SignInView();
 
-},{"./../../App":"2kQhy","lit-html":"1cmQt","./../../Router":"kOSdl","./../../Auth":"wuqrX","./../../Utils":"iRY6S","@shoelace-style/shoelace/dist/components/input/input.js":"jCD2h","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jCD2h":[function(require,module,exports) {
+},{"./../../App":"2kQhy","lit-html":"1cmQt","./../../Router":"kOSdl","./../../Auth":"wuqrX","./../../Utils":"iRY6S","@shoelace-style/shoelace/dist/components/input/input.js":"jCD2h","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@shoelace-style/shoelace/dist/components/button/button.js":"9AbKL"}],"jCD2h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunkIEE4AKXFJs.SlInput
@@ -8699,6 +8711,1060 @@ var icon_styles_default = _chunkPEQICPKOJs.r`
     display: block;
     height: 100%;
     width: 100%;
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9AbKL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkVDRCOTCDJs.SlButton
+);
+var _chunkVDRCOTCDJs = require("../../chunks/chunk.VDRCOTCD.js");
+var _chunkFTWX6OPRJs = require("../../chunks/chunk.FTWX6OPR.js");
+var _chunkAMWHV6KCJs = require("../../chunks/chunk.AMWHV6KC.js");
+var _chunkZHPXFQWEJs = require("../../chunks/chunk.ZHPXFQWE.js");
+var _chunkPHWU4VVXJs = require("../../chunks/chunk.PHWU4VVX.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunkIVOHDN3HJs = require("../../chunks/chunk.IVOHDN3H.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.VDRCOTCD.js":"hVCz2","../../chunks/chunk.FTWX6OPR.js":"eWJBW","../../chunks/chunk.AMWHV6KC.js":"e2mhV","../../chunks/chunk.ZHPXFQWE.js":"gQnXa","../../chunks/chunk.PHWU4VVX.js":"2df6r","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.IVOHDN3H.js":"aZSR4","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hVCz2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlButton", ()=>SlButton
+) /**
+ * @license
+ * Copyright 2020 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */ ;
+var _chunkZHPXFQWEJs = require("./chunk.ZHPXFQWE.js");
+var _chunkPHWU4VVXJs = require("./chunk.PHWU4VVX.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("./chunk.R37SUKY2.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// node_modules/lit-html/static.js
+var r = (t2, ...e2)=>({
+        _$litStatic$: e2.reduce((e3, o2, r2)=>e3 + ((t3)=>{
+                if (t3._$litStatic$ !== void 0) return t3._$litStatic$;
+                throw Error(`Value passed to 'literal' function must be a 'literal' result: ${t3}. Use 'unsafeStatic' to pass non-literal values, but
+            take care to ensure page security.`);
+            })(o2) + t2[r2 + 1]
+        , t2[0])
+    })
+;
+var i2 = /* @__PURE__ */ new Map();
+var a = (t2)=>(e2, ...o2)=>{
+        var r2;
+        const a2 = o2.length;
+        let l3, s3;
+        const n2 = [], u = [];
+        let c, $2 = 0, v = false;
+        for(; $2 < a2;){
+            for(c = e2[$2]; $2 < a2 && (s3 = o2[$2], l3 = (r2 = s3) === null || r2 === void 0 ? void 0 : r2._$litStatic$) !== void 0;)c += l3 + e2[++$2], v = true;
+            u.push(s3), n2.push(c), $2++;
+        }
+        if ($2 === a2 && n2.push(e2[a2]), v) {
+            const t3 = n2.join("$$lit$$");
+            (e2 = i2.get(t3)) === void 0 && (n2.raw = n2, i2.set(t3, e2 = n2)), o2 = u;
+        }
+        return t2(e2, ...o2);
+    }
+;
+var l2 = a(_chunkPEQICPKOJs.$);
+var s2 = a(_chunkPEQICPKOJs.y);
+// src/components/button/button.ts
+var SlButton = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.formSubmitController = new _chunkZHPXFQWEJs.FormSubmitController(this, {
+            form: (input)=>{
+                if (input.hasAttribute("form")) {
+                    const doc = input.getRootNode();
+                    const formId = input.getAttribute("form");
+                    return doc.getElementById(formId);
+                }
+                return input.closest("form");
+            }
+        });
+        this.hasSlotController = new _chunkHQSLB26PJs.HasSlotController(this, "[default]", "prefix", "suffix");
+        this.hasFocus = false;
+        this.variant = "default";
+        this.size = "medium";
+        this.caret = false;
+        this.disabled = false;
+        this.loading = false;
+        this.outline = false;
+        this.pill = false;
+        this.circle = false;
+        this.type = "button";
+    }
+    click() {
+        this.button.click();
+    }
+    focus(options) {
+        this.button.focus(options);
+    }
+    blur() {
+        this.button.blur();
+    }
+    handleBlur() {
+        this.hasFocus = false;
+        _chunkCDTZZV7WJs.emit(this, "sl-blur");
+    }
+    handleFocus() {
+        this.hasFocus = true;
+        _chunkCDTZZV7WJs.emit(this, "sl-focus");
+    }
+    handleClick(event) {
+        if (this.disabled || this.loading) {
+            event.preventDefault();
+            event.stopPropagation();
+            return;
+        }
+        if (this.type === "submit") this.formSubmitController.submit(this);
+    }
+    render() {
+        const isLink = this.href ? true : false;
+        const tag = isLink ? r`a` : r`button`;
+        return l2`
+      <${tag}
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            button: true,
+            "button--default": this.variant === "default",
+            "button--primary": this.variant === "primary",
+            "button--success": this.variant === "success",
+            "button--neutral": this.variant === "neutral",
+            "button--warning": this.variant === "warning",
+            "button--danger": this.variant === "danger",
+            "button--text": this.variant === "text",
+            "button--small": this.size === "small",
+            "button--medium": this.size === "medium",
+            "button--large": this.size === "large",
+            "button--caret": this.caret,
+            "button--circle": this.circle,
+            "button--disabled": this.disabled,
+            "button--focused": this.hasFocus,
+            "button--loading": this.loading,
+            "button--standard": !this.outline,
+            "button--outline": this.outline,
+            "button--pill": this.pill,
+            "button--has-label": this.hasSlotController.test("[default]"),
+            "button--has-prefix": this.hasSlotController.test("prefix"),
+            "button--has-suffix": this.hasSlotController.test("suffix")
+        })}
+        ?disabled=${_chunkR37SUKY2Js.l(isLink ? void 0 : this.disabled)}
+        type=${this.type}
+        name=${_chunkR37SUKY2Js.l(isLink ? void 0 : this.name)}
+        value=${_chunkR37SUKY2Js.l(isLink ? void 0 : this.value)}
+        href=${_chunkR37SUKY2Js.l(this.href)}
+        target=${_chunkR37SUKY2Js.l(this.target)}
+        download=${_chunkR37SUKY2Js.l(this.download)}
+        rel=${_chunkR37SUKY2Js.l(this.target ? "noreferrer noopener" : void 0)}
+        role="button"
+        aria-disabled=${this.disabled ? "true" : "false"}
+        tabindex=${this.disabled ? "-1" : "0"}
+        @blur=${this.handleBlur}
+        @focus=${this.handleFocus}
+        @click=${this.handleClick}
+      >
+        <span part="prefix" class="button__prefix">
+          <slot name="prefix"></slot>
+        </span>
+        <span part="label" class="button__label">
+          <slot></slot>
+        </span>
+        <span part="suffix" class="button__suffix">
+          <slot name="suffix"></slot>
+        </span>
+        ${this.caret ? l2`
+                <span part="caret" class="button__caret">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              ` : ""}
+        ${this.loading ? l2`<sl-spinner></sl-spinner>` : ""}
+      </${tag}>
+    `;
+    }
+};
+SlButton.styles = _chunkPHWU4VVXJs.button_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".button")
+], SlButton.prototype, "button", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlButton.prototype, "hasFocus", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlButton.prototype, "variant", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlButton.prototype, "size", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "caret", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "disabled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "loading", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "outline", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "pill", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlButton.prototype, "circle", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "type", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "name", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "value", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "href", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "target", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "download", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlButton.prototype, "form", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "formaction"
+    })
+], SlButton.prototype, "formAction", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "formmethod"
+    })
+], SlButton.prototype, "formMethod", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "formnovalidate",
+        type: Boolean
+    })
+], SlButton.prototype, "formNoValidate", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "formtarget"
+    })
+], SlButton.prototype, "formTarget", 2);
+SlButton = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-button")
+], SlButton);
+
+},{"./chunk.ZHPXFQWE.js":"gQnXa","./chunk.PHWU4VVX.js":"2df6r","./chunk.HQSLB26P.js":"5g8PC","./chunk.7BXY5XRG.js":"4rmsB","./chunk.CDTZZV7W.js":"1aMHq","./chunk.R37SUKY2.js":"4UQhF","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2df6r":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "button_styles_default", ()=>button_styles_default
+);
+var _chunkIVOHDN3HJs = require("./chunk.IVOHDN3H.js");
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/button/button.styles.ts
+var button_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    cursor: pointer;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    border-style: solid;
+    border-width: var(--sl-input-border-width);
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-font-weight-semibold);
+    text-decoration: none;
+    user-select: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0;
+    transition: var(--sl-transition-fast) background-color, var(--sl-transition-fast) color,
+      var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow;
+    cursor: inherit;
+  }
+
+  .button::-moz-focus-inner {
+    border: 0;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* When disabled, prevent mouse events from bubbling up */
+  .button--disabled * {
+    pointer-events: none;
+  }
+
+  .button__prefix,
+  .button__suffix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .button__label ::slotted(sl-icon) {
+    vertical-align: -2px;
+  }
+
+  /*
+   * Standard buttons
+   */
+
+  /* Default */
+  .button--standard.button--default {
+    background-color: var(--sl-color-neutral-0);
+    border-color: var(--sl-color-neutral-300);
+    color: var(--sl-color-neutral-700);
+  }
+
+  .button--standard.button--default:hover:not(.button--disabled) {
+    background-color: var(--sl-color-primary-50);
+    border-color: var(--sl-color-primary-300);
+    color: var(--sl-color-primary-700);
+  }
+
+  .button--standard.button--default${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-primary-50);
+    border-color: var(--sl-color-primary-400);
+    color: var(--sl-color-primary-700);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--default:active:not(.button--disabled) {
+    background-color: var(--sl-color-primary-100);
+    border-color: var(--sl-color-primary-400);
+    color: var(--sl-color-primary-700);
+  }
+
+  /* Primary */
+  .button--standard.button--primary {
+    background-color: var(--sl-color-primary-600);
+    border-color: var(--sl-color-primary-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--primary:hover:not(.button--disabled) {
+    background-color: var(--sl-color-primary-500);
+    border-color: var(--sl-color-primary-500);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--primary${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-primary-500);
+    border-color: var(--sl-color-primary-500);
+    color: var(--sl-color-neutral-0);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--primary:active:not(.button--disabled) {
+    background-color: var(--sl-color-primary-600);
+    border-color: var(--sl-color-primary-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Success */
+  .button--standard.button--success {
+    background-color: var(--sl-color-success-600);
+    border-color: var(--sl-color-success-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--success:hover:not(.button--disabled) {
+    background-color: var(--sl-color-success-500);
+    border-color: var(--sl-color-success-500);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--success${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-success-600);
+    border-color: var(--sl-color-success-600);
+    color: var(--sl-color-neutral-0);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--success:active:not(.button--disabled) {
+    background-color: var(--sl-color-success-600);
+    border-color: var(--sl-color-success-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Neutral */
+  .button--standard.button--neutral {
+    background-color: var(--sl-color-neutral-600);
+    border-color: var(--sl-color-neutral-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--neutral:hover:not(.button--disabled) {
+    background-color: var(--sl-color-neutral-500);
+    border-color: var(--sl-color-neutral-500);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--neutral${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-neutral-500);
+    border-color: var(--sl-color-neutral-500);
+    color: var(--sl-color-neutral-0);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--neutral:active:not(.button--disabled) {
+    background-color: var(--sl-color-neutral-600);
+    border-color: var(--sl-color-neutral-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Warning */
+  .button--standard.button--warning {
+    background-color: var(--sl-color-warning-600);
+    border-color: var(--sl-color-warning-600);
+    color: var(--sl-color-neutral-0);
+  }
+  .button--standard.button--warning:hover:not(.button--disabled) {
+    background-color: var(--sl-color-warning-500);
+    border-color: var(--sl-color-warning-500);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--warning${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-warning-500);
+    border-color: var(--sl-color-warning-500);
+    color: var(--sl-color-neutral-0);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--warning:active:not(.button--disabled) {
+    background-color: var(--sl-color-warning-600);
+    border-color: var(--sl-color-warning-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Danger */
+  .button--standard.button--danger {
+    background-color: var(--sl-color-danger-600);
+    border-color: var(--sl-color-danger-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--danger:hover:not(.button--disabled) {
+    background-color: var(--sl-color-danger-500);
+    border-color: var(--sl-color-danger-500);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--standard.button--danger${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: var(--sl-color-danger-500);
+    border-color: var(--sl-color-danger-500);
+    color: var(--sl-color-neutral-0);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--standard.button--danger:active:not(.button--disabled) {
+    background-color: var(--sl-color-danger-600);
+    border-color: var(--sl-color-danger-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /*
+   * Outline buttons
+   */
+
+  .button--outline {
+    background: none;
+    border: solid 1px;
+  }
+
+  /* Default */
+  .button--outline.button--default {
+    border-color: var(--sl-color-neutral-300);
+    color: var(--sl-color-neutral-700);
+  }
+
+  .button--outline.button--default:hover:not(.button--disabled) {
+    border-color: var(--sl-color-primary-600);
+    background-color: var(--sl-color-primary-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--default${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-primary-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--default:active:not(.button--disabled) {
+    border-color: var(--sl-color-primary-700);
+    background-color: var(--sl-color-primary-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Primary */
+  .button--outline.button--primary {
+    border-color: var(--sl-color-primary-600);
+    color: var(--sl-color-primary-600);
+  }
+
+  .button--outline.button--primary:hover:not(.button--disabled) {
+    background-color: var(--sl-color-primary-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--primary${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-primary-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--primary:active:not(.button--disabled) {
+    border-color: var(--sl-color-primary-700);
+    background-color: var(--sl-color-primary-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Success */
+  .button--outline.button--success {
+    border-color: var(--sl-color-success-600);
+    color: var(--sl-color-success-600);
+  }
+
+  .button--outline.button--success:hover:not(.button--disabled) {
+    background-color: var(--sl-color-success-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--success${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-success-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--success:active:not(.button--disabled) {
+    border-color: var(--sl-color-success-700);
+    background-color: var(--sl-color-success-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Neutral */
+  .button--outline.button--neutral {
+    border-color: var(--sl-color-neutral-600);
+    color: var(--sl-color-neutral-600);
+  }
+
+  .button--outline.button--neutral:hover:not(.button--disabled) {
+    background-color: var(--sl-color-neutral-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--neutral${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-neutral-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--neutral:active:not(.button--disabled) {
+    border-color: var(--sl-color-neutral-700);
+    background-color: var(--sl-color-neutral-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Warning */
+  .button--outline.button--warning {
+    border-color: var(--sl-color-warning-600);
+    color: var(--sl-color-warning-600);
+  }
+
+  .button--outline.button--warning:hover:not(.button--disabled) {
+    background-color: var(--sl-color-warning-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--warning${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-warning-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--warning:active:not(.button--disabled) {
+    border-color: var(--sl-color-warning-700);
+    background-color: var(--sl-color-warning-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /* Danger */
+  .button--outline.button--danger {
+    border-color: var(--sl-color-danger-600);
+    color: var(--sl-color-danger-600);
+  }
+
+  .button--outline.button--danger:hover:not(.button--disabled) {
+    background-color: var(--sl-color-danger-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .button--outline.button--danger${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    border-color: var(--sl-color-danger-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--outline.button--danger:active:not(.button--disabled) {
+    border-color: var(--sl-color-danger-700);
+    background-color: var(--sl-color-danger-700);
+    color: var(--sl-color-neutral-0);
+  }
+
+  /*
+   * Text buttons
+   */
+
+  .button--text {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--sl-color-primary-600);
+  }
+
+  .button--text:hover:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--sl-color-primary-500);
+  }
+
+  .button--text${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--sl-color-primary-500);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .button--text:active:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--sl-color-primary-700);
+  }
+
+  /*
+   * Size modifiers
+   */
+
+  .button--small {
+    font-size: var(--sl-button-font-size-small);
+    height: var(--sl-input-height-small);
+    line-height: calc(var(--sl-input-height-small) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-small);
+  }
+
+  .button--medium {
+    font-size: var(--sl-button-font-size-medium);
+    height: var(--sl-input-height-medium);
+    line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-medium);
+  }
+
+  .button--large {
+    font-size: var(--sl-button-font-size-large);
+    height: var(--sl-input-height-large);
+    line-height: calc(var(--sl-input-height-large) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-large);
+  }
+
+  /*
+   * Pill modifier
+   */
+
+  .button--pill.button--small {
+    border-radius: var(--sl-input-height-small);
+  }
+
+  .button--pill.button--medium {
+    border-radius: var(--sl-input-height-medium);
+  }
+
+  .button--pill.button--large {
+    border-radius: var(--sl-input-height-large);
+  }
+
+  /*
+   * Circle modifier
+   */
+
+  .button--circle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .button--circle.button--small {
+    width: var(--sl-input-height-small);
+    border-radius: 50%;
+  }
+
+  .button--circle.button--medium {
+    width: var(--sl-input-height-medium);
+    border-radius: 50%;
+  }
+
+  .button--circle.button--large {
+    width: var(--sl-input-height-large);
+    border-radius: 50%;
+  }
+
+  .button--circle .button__prefix,
+  .button--circle .button__suffix,
+  .button--circle .button__caret {
+    display: none;
+  }
+
+  /*
+   * Caret modifier
+   */
+
+  .button--caret .button__suffix {
+    display: none;
+  }
+
+  .button--caret .button__caret {
+    display: flex;
+    align-items: center;
+  }
+
+  .button--caret .button__caret svg {
+    width: 1em;
+    height: 1em;
+  }
+
+  /*
+   * Loading modifier
+   */
+
+  .button--loading {
+    position: relative;
+    cursor: wait;
+  }
+
+  .button--loading .button__prefix,
+  .button--loading .button__label,
+  .button--loading .button__suffix,
+  .button--loading .button__caret {
+    visibility: hidden;
+  }
+
+  .button--loading sl-spinner {
+    --indicator-color: currentColor;
+    position: absolute;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+  }
+
+  /*
+   * Badges
+   */
+
+  .button ::slotted(sl-badge) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%) translateX(50%);
+    pointer-events: none;
+  }
+
+  /*
+   * Button spacing
+   */
+
+  .button--has-label.button--small .button__label {
+    padding: 0 var(--sl-spacing-small);
+  }
+
+  .button--has-label.button--medium .button__label {
+    padding: 0 var(--sl-spacing-medium);
+  }
+
+  .button--has-label.button--large .button__label {
+    padding: 0 var(--sl-spacing-large);
+  }
+
+  .button--has-prefix.button--small {
+    padding-left: var(--sl-spacing-x-small);
+  }
+
+  .button--has-prefix.button--small .button__label {
+    padding-left: var(--sl-spacing-x-small);
+  }
+
+  .button--has-prefix.button--medium {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--medium .button__label {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--large {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--large .button__label {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--small,
+  .button--caret.button--small {
+    padding-right: var(--sl-spacing-x-small);
+  }
+
+  .button--has-suffix.button--small .button__label,
+  .button--caret.button--small .button__label {
+    padding-right: var(--sl-spacing-x-small);
+  }
+
+  .button--has-suffix.button--medium,
+  .button--caret.button--medium {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--medium .button__label,
+  .button--caret.button--medium .button__label {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--large,
+  .button--caret.button--large {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--large .button__label,
+  .button--caret.button--large .button__label {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  /*
+   * Button groups support a variety of button types (e.g. buttons with tooltips, buttons as dropdown triggers, etc.).
+   * This means buttons aren't always direct descendants of the button group, thus we can't target them with the
+   * ::slotted selector. To work around this, the button group component does some magic to add these special classes to
+   * buttons and we style them here instead.
+   */
+
+  :host(.sl-button-group__button--first:not(.sl-button-group__button--last)) .button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  :host(.sl-button-group__button--inner) .button {
+    border-radius: 0;
+  }
+
+  :host(.sl-button-group__button--last:not(.sl-button-group__button--first)) .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* All except the first */
+  :host(.sl-button-group__button:not(.sl-button-group__button--first)) {
+    margin-left: calc(-1 * var(--sl-input-border-width));
+  }
+
+  /* Add a visual separator between solid buttons */
+  :host(.sl-button-group__button:not(.sl-button-group__button--focus, .sl-button-group__button--first, [variant='default']):not(:hover, :active, :focus))
+    .button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-left: solid 1px rgb(128 128 128 / 33%);
+    mix-blend-mode: multiply;
+  }
+
+  /* Bump focused buttons up so their focus ring isn't clipped */
+  :host(.sl-button-group__button--hover) {
+    z-index: 1;
+  }
+
+  :host(.sl-button-group__button--focus) {
+    z-index: 2;
+  }
+`;
+
+},{"./chunk.IVOHDN3H.js":"aZSR4","./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aZSR4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hasFocusVisible", ()=>hasFocusVisible
+);
+parcelHelpers.export(exports, "focusVisibleSelector", ()=>focusVisibleSelector
+);
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/internal/focus-visible.ts
+var hasFocusVisible = (()=>{
+    const style = document.createElement("style");
+    let isSupported;
+    try {
+        document.head.appendChild(style);
+        style.sheet.insertRule(":focus-visible { color: inherit }");
+        isSupported = true;
+    } catch (e) {
+        isSupported = false;
+    } finally{
+        style.remove();
+    }
+    return isSupported;
+})();
+var focusVisibleSelector = _chunkPEQICPKOJs.o(hasFocusVisible ? ":focus-visible" : ":focus");
+
+},{"./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eWJBW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlSpinner", ()=>SlSpinner
+);
+var _chunkAMWHV6KCJs = require("./chunk.AMWHV6KC.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/spinner/spinner.ts
+var SlSpinner = class extends _chunkPEQICPKOJs.s {
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <svg part="base" class="spinner" role="status">
+        <circle class="spinner__track"></circle>
+        <circle class="spinner__indicator"></circle>
+      </svg>
+    `;
+    }
+};
+SlSpinner.styles = _chunkAMWHV6KCJs.spinner_styles_default;
+SlSpinner = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-spinner")
+], SlSpinner);
+
+},{"./chunk.AMWHV6KC.js":"e2mhV","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e2mhV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "spinner_styles_default", ()=>spinner_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/spinner/spinner.styles.ts
+var spinner_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    --track-width: 2px;
+    --track-color: rgb(128 128 128 / 25%);
+    --indicator-color: var(--sl-color-primary-600);
+    --speed: 2s;
+
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+  }
+
+  .spinner {
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  .spinner__track,
+  .spinner__indicator {
+    fill: none;
+    stroke-width: var(--track-width);
+    r: calc(0.5em - var(--track-width) / 2);
+    cx: 0.5em;
+    cy: 0.5em;
+    transform-origin: 50% 50%;
+  }
+
+  .spinner__track {
+    stroke: var(--track-color);
+    transform-origin: 0% 0%;
+    mix-blend-mode: multiply;
+  }
+
+  .spinner__indicator {
+    stroke: var(--indicator-color);
+    stroke-linecap: round;
+    stroke-dasharray: 150% 75%;
+    animation: spin var(--speed) linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      stroke-dasharray: 0.01em, 2.75em;
+    }
+
+    50% {
+      transform: rotate(450deg);
+      stroke-dasharray: 1.375em, 1.375em;
+    }
+
+    100% {
+      transform: rotate(1080deg);
+      stroke-dasharray: 0.01em, 2.75em;
+    }
   }
 `;
 
@@ -12778,7 +13844,7 @@ class EditProfileView {
                   <input type="file" name="avatar" />
                 `}
               </div>
-              <sl-button type="primary" class="submit-btn" submit>Update Profile</sl-button>
+              <sl-button variant="primary" class="submit-btn" type="submit">Update Profile</sl-button>
             </form>
           `}
         </div>
@@ -19654,7 +20720,7 @@ class newCollaborationView {
         <div class="page-content">
         <h1 class="anim-in">New Collaboration Invitation form</h1>        
           <form class="page-form" @sl-submit=${this.newCollaborationSubmitHandler}>
-            <input type="hidden" name="user" value="${_authDefault.default.currentUser._id}" />
+            <sl-input name="user" value="${_authDefault.default.currentUser._id}" disabled/>
             <div class="input-group" style="margin-bottom: 2em;">
               <sl-input name="name" type="text" placeholder="Collaboration item Name" required></sl-input>
             </div>
@@ -19683,7 +20749,7 @@ class newCollaborationView {
               </sl-select>
             </div>
           
-            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>
+            <sl-button variant="primary" size="medium" class="submit-btn" submit>Submit a Collaboration Invite!</sl-button>
           </form>        
 
           
@@ -19774,7 +20840,7 @@ class newProjectView {
               </sl-select>
             </div>
           
-            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a New Project for Bidding!</sl-button>
+            <sl-button variant="primary" size="medium" class="submit-btn" submit>Submit a New Project for Bidding!</sl-button>
           </form>        
 
           
@@ -19870,10 +20936,10 @@ class newPortfolioView {
             </div>
             <div class="input-group" style="margin-bottom: 1em;">
               <label>Link to that piece outside the website.</label><br>
-              <sl-textarea name="link" rows="1" placeholder="www.example.com"></sl-textarea>
+              <sl-input name="link"  placeholder="www.example.com"></sl-input>
             </div>
             
-            <sl-button type="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>
+            <sl-button variant="primary" class="submit-btn" submit size="medium" style="width: 100%;">Add Portfolio piece</sl-button>
           </form> 
           
         </div>
@@ -20016,7 +21082,4891 @@ class CreativesNewView {
 }
 exports.default = new CreativesNewView();
 
-},{"../../App":"2kQhy","lit-html":"1cmQt","../../Router":"kOSdl","../../Auth":"wuqrX","../../Utils":"iRY6S","./../../UserAPI":"e78rv","./../../PortfolioAPI":"6rGyp","./../../Toast":"4N7Ir","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dQpXl":[function(require,module,exports) {
+},{"../../App":"2kQhy","lit-html":"1cmQt","../../Router":"kOSdl","../../Auth":"wuqrX","../../Utils":"iRY6S","./../../UserAPI":"e78rv","./../../PortfolioAPI":"6rGyp","./../../Toast":"4N7Ir","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8RZIk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "serialize", ()=>serialize
+);
+var _chunkICGTMF5ZJs = require("../chunks/chunk.ICGTMF5Z.js");
+// src/utilities/form.ts
+function serialize(form) {
+    const formData = new FormData(form);
+    const object = {
+    };
+    formData.forEach((value, key)=>{
+        if (Reflect.has(object, key)) {
+            const entry = object[key];
+            if (Array.isArray(entry)) entry.push(value);
+            else object[key] = [
+                object[key],
+                value
+            ];
+        } else object[key] = value;
+    });
+    return object;
+}
+
+},{"../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7vH1Q":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkPJFWJ67SJs.SlSelect
+);
+var _chunkPJFWJ67SJs = require("../../chunks/chunk.PJFWJ67S.js");
+var _chunkTYK5CQ2ZJs = require("../../chunks/chunk.TYK5CQ2Z.js");
+var _chunkGX6HO7XHJs = require("../../chunks/chunk.GX6HO7XH.js");
+var _chunk24E5KUVHJs = require("../../chunks/chunk.24E5KUVH.js");
+var _chunkLAAROFAUJs = require("../../chunks/chunk.LAAROFAU.js");
+var _chunkQDIDEMYFJs = require("../../chunks/chunk.QDIDEMYF.js");
+var _chunkDIQYRTQ3Js = require("../../chunks/chunk.DIQYRTQ3.js");
+var _chunk2BK5N6NVJs = require("../../chunks/chunk.2BK5N6NV.js");
+var _chunkSCUNOITNJs = require("../../chunks/chunk.SCUNOITN.js");
+var _chunkH262HIXGJs = require("../../chunks/chunk.H262HIXG.js");
+var _chunkZHPXFQWEJs = require("../../chunks/chunk.ZHPXFQWE.js");
+var _chunkTGQTNU23Js = require("../../chunks/chunk.TGQTNU23.js");
+var _chunkFE67GRYMJs = require("../../chunks/chunk.FE67GRYM.js");
+var _chunkYBI4N56RJs = require("../../chunks/chunk.YBI4N56R.js");
+var _chunk6SAGALY4Js = require("../../chunks/chunk.6SAGALY4.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunkIVOHDN3HJs = require("../../chunks/chunk.IVOHDN3H.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkX2HKYC6RJs = require("../../chunks/chunk.X2HKYC6R.js");
+var _chunkUCCHCS2EJs = require("../../chunks/chunk.UCCHCS2E.js");
+var _chunkC7PPQWMAJs = require("../../chunks/chunk.C7PPQWMA.js");
+var _chunkNFF2HMITJs = require("../../chunks/chunk.NFF2HMIT.js");
+var _chunkIDYSXN6RJs = require("../../chunks/chunk.IDYSXN6R.js");
+var _chunkP52GZVKGJs = require("../../chunks/chunk.P52GZVKG.js");
+var _chunkRPB53XXVJs = require("../../chunks/chunk.RPB53XXV.js");
+var _chunkNPYVPRSAJs = require("../../chunks/chunk.NPYVPRSA.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.PJFWJ67S.js":"9HOrg","../../chunks/chunk.TYK5CQ2Z.js":"6OujN","../../chunks/chunk.GX6HO7XH.js":"dYVfN","../../chunks/chunk.24E5KUVH.js":"eCwS4","../../chunks/chunk.LAAROFAU.js":"ejKRy","../../chunks/chunk.QDIDEMYF.js":"jkiLf","../../chunks/chunk.DIQYRTQ3.js":"63D7n","../../chunks/chunk.2BK5N6NV.js":"c62pF","../../chunks/chunk.SCUNOITN.js":"fcXlT","../../chunks/chunk.H262HIXG.js":"6co8f","../../chunks/chunk.ZHPXFQWE.js":"gQnXa","../../chunks/chunk.TGQTNU23.js":"GIoqC","../../chunks/chunk.FE67GRYM.js":"66NCc","../../chunks/chunk.YBI4N56R.js":"e8cQr","../../chunks/chunk.6SAGALY4.js":"b4z3m","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.IVOHDN3H.js":"aZSR4","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.X2HKYC6R.js":"5aCwX","../../chunks/chunk.UCCHCS2E.js":"95IKC","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.IDYSXN6R.js":"izuBA","../../chunks/chunk.P52GZVKG.js":"4GsHx","../../chunks/chunk.RPB53XXV.js":"enS2T","../../chunks/chunk.NPYVPRSA.js":"4EMah","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9HOrg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlSelect", ()=>SlSelect
+);
+var _chunk24E5KUVHJs = require("./chunk.24E5KUVH.js");
+var _chunkZHPXFQWEJs = require("./chunk.ZHPXFQWE.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("./chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/select/select.ts
+var SlSelect = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.formSubmitController = new _chunkZHPXFQWEJs.FormSubmitController(this);
+        this.hasSlotController = new _chunkHQSLB26PJs.HasSlotController(this, "help-text", "label");
+        this.hasFocus = false;
+        this.isOpen = false;
+        this.displayLabel = "";
+        this.displayTags = [];
+        this.multiple = false;
+        this.maxTagsVisible = 3;
+        this.disabled = false;
+        this.name = "";
+        this.placeholder = "";
+        this.size = "medium";
+        this.hoist = false;
+        this.value = "";
+        this.filled = false;
+        this.pill = false;
+        this.label = "";
+        this.placement = "bottom";
+        this.helpText = "";
+        this.required = false;
+        this.clearable = false;
+        this.invalid = false;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.handleMenuSlotChange = this.handleMenuSlotChange.bind(this);
+        this.resizeObserver = new ResizeObserver(()=>this.resizeMenu()
+        );
+        this.updateComplete.then(()=>{
+            this.resizeObserver.observe(this);
+            this.syncItemsFromValue();
+        });
+    }
+    firstUpdated() {
+        this.invalid = !this.input.checkValidity();
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.resizeObserver.unobserve(this);
+    }
+    reportValidity() {
+        return this.input.reportValidity();
+    }
+    setCustomValidity(message) {
+        this.input.setCustomValidity(message);
+        this.invalid = !this.input.checkValidity();
+    }
+    getItemLabel(item) {
+        const slot = item.shadowRoot.querySelector("slot:not([name])");
+        return _chunkHQSLB26PJs.getTextContent(slot);
+    }
+    getItems() {
+        return [
+            ...this.querySelectorAll("sl-menu-item")
+        ];
+    }
+    getValueAsArray() {
+        if (this.multiple && this.value === "") return [];
+        return Array.isArray(this.value) ? this.value : [
+            this.value
+        ];
+    }
+    focus(options) {
+        this.control.focus(options);
+    }
+    blur() {
+        this.control.blur();
+    }
+    handleBlur() {
+        if (!this.isOpen) {
+            this.hasFocus = false;
+            _chunkCDTZZV7WJs.emit(this, "sl-blur");
+        }
+    }
+    handleClearClick(event) {
+        event.stopPropagation();
+        this.value = this.multiple ? [] : "";
+        _chunkCDTZZV7WJs.emit(this, "sl-clear");
+        this.syncItemsFromValue();
+    }
+    handleDisabledChange() {
+        if (this.disabled && this.isOpen) this.dropdown.hide();
+        this.input.disabled = this.disabled;
+        this.invalid = !this.input.checkValidity();
+    }
+    handleFocus() {
+        if (!this.hasFocus) {
+            this.hasFocus = true;
+            _chunkCDTZZV7WJs.emit(this, "sl-focus");
+        }
+    }
+    handleKeyDown(event) {
+        const target = event.target;
+        const items = this.getItems();
+        const firstItem = items[0];
+        const lastItem = items[items.length - 1];
+        if (target.tagName.toLowerCase() === "sl-tag") return;
+        if (event.key === "Tab") {
+            if (this.isOpen) this.dropdown.hide();
+            return;
+        }
+        if ([
+            "ArrowDown",
+            "ArrowUp"
+        ].includes(event.key)) {
+            event.preventDefault();
+            if (!this.isOpen) this.dropdown.show();
+            if (event.key === "ArrowDown") {
+                this.menu.setCurrentItem(firstItem);
+                firstItem.focus();
+                return;
+            }
+            if (event.key === "ArrowUp") {
+                this.menu.setCurrentItem(lastItem);
+                lastItem.focus();
+                return;
+            }
+        }
+        if (event.ctrlKey || event.metaKey) return;
+        if (!this.isOpen && event.key.length === 1) {
+            event.stopPropagation();
+            event.preventDefault();
+            this.dropdown.show();
+            this.menu.typeToSelect(event);
+        }
+    }
+    handleLabelClick() {
+        this.focus();
+    }
+    handleMenuSelect(event) {
+        const item = event.detail.item;
+        if (this.multiple) this.value = this.value.includes(item.value) ? this.value.filter((v)=>v !== item.value
+        ) : [
+            ...this.value,
+            item.value
+        ];
+        else this.value = item.value;
+        this.syncItemsFromValue();
+    }
+    handleMenuShow() {
+        this.resizeMenu();
+        this.isOpen = true;
+    }
+    handleMenuHide() {
+        this.isOpen = false;
+        this.control.focus();
+    }
+    handleMultipleChange() {
+        var _a;
+        const value = this.getValueAsArray();
+        this.value = this.multiple ? value : (_a = value[0]) != null ? _a : "";
+        this.syncItemsFromValue();
+    }
+    async handleMenuSlotChange() {
+        const items = this.getItems();
+        const values = [];
+        items.forEach((item)=>{
+            if (values.includes(item.value)) console.error(`Duplicate value found in <sl-select> menu item: '${item.value}'`, item);
+            values.push(item.value);
+        });
+        await Promise.all(items.map((item)=>item.render
+        )).then(()=>this.syncItemsFromValue()
+        );
+    }
+    handleTagInteraction(event) {
+        const path = event.composedPath();
+        const clearButton = path.find((el)=>{
+            if (el instanceof HTMLElement) {
+                const element = el;
+                return element.classList.contains("tag__remove");
+            }
+            return false;
+        });
+        if (clearButton) event.stopPropagation();
+    }
+    async handleValueChange() {
+        this.syncItemsFromValue();
+        await this.updateComplete;
+        this.invalid = !this.input.checkValidity();
+        _chunkCDTZZV7WJs.emit(this, "sl-change");
+    }
+    resizeMenu() {
+        this.menu.style.width = `${this.control.clientWidth}px`;
+        this.dropdown.reposition();
+    }
+    syncItemsFromValue() {
+        const items = this.getItems();
+        const value = this.getValueAsArray();
+        items.map((item)=>item.checked = value.includes(item.value)
+        );
+        if (this.multiple) {
+            const checkedItems = items.filter((item)=>value.includes(item.value)
+            );
+            this.displayLabel = checkedItems.length > 0 ? this.getItemLabel(checkedItems[0]) : "";
+            this.displayTags = checkedItems.map((item)=>{
+                return _chunkPEQICPKOJs.$`
+          <sl-tag
+            part="tag"
+            exportparts="
+              base:tag__base,
+              content:tag__content,
+              remove-button:tag__remove-button
+            "
+            variant="neutral"
+            size=${this.size}
+            ?pill=${this.pill}
+            removable
+            @click=${this.handleTagInteraction}
+            @keydown=${this.handleTagInteraction}
+            @sl-remove=${(event)=>{
+                    event.stopPropagation();
+                    if (!this.disabled) {
+                        item.checked = false;
+                        this.syncValueFromItems();
+                    }
+                }}
+          >
+            ${this.getItemLabel(item)}
+          </sl-tag>
+        `;
+            });
+            if (this.maxTagsVisible > 0 && this.displayTags.length > this.maxTagsVisible) {
+                const total = this.displayTags.length;
+                this.displayLabel = "";
+                this.displayTags = this.displayTags.slice(0, this.maxTagsVisible);
+                this.displayTags.push(_chunkPEQICPKOJs.$`
+          <sl-tag
+            part="tag"
+            exportparts="
+              base:tag__base,
+              content:tag__content,
+              remove-button:tag__remove-button
+            "
+            variant="neutral"
+            size=${this.size}
+          >
+            +${total - this.maxTagsVisible}
+          </sl-tag>
+        `);
+            }
+        } else {
+            const checkedItem = items.find((item)=>item.value === value[0]
+            );
+            this.displayLabel = checkedItem ? this.getItemLabel(checkedItem) : "";
+            this.displayTags = [];
+        }
+    }
+    syncValueFromItems() {
+        const items = this.getItems();
+        const checkedItems = items.filter((item)=>item.checked
+        );
+        const checkedValues = checkedItems.map((item)=>item.value
+        );
+        if (this.multiple) this.value = this.value.filter((val)=>checkedValues.includes(val)
+        );
+        else this.value = checkedValues.length > 0 ? checkedValues[0] : "";
+    }
+    render() {
+        const hasLabelSlot = this.hasSlotController.test("label");
+        const hasHelpTextSlot = this.hasSlotController.test("help-text");
+        const hasSelection = this.multiple ? this.value.length > 0 : this.value !== "";
+        const hasLabel = this.label ? true : !!hasLabelSlot;
+        const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="form-control"
+        class=${_chunk7BXY5XRGJs.o({
+            "form-control": true,
+            "form-control--small": this.size === "small",
+            "form-control--medium": this.size === "medium",
+            "form-control--large": this.size === "large",
+            "form-control--has-label": hasLabel,
+            "form-control--has-help-text": hasHelpText
+        })}
+      >
+        <label
+          part="label"
+          class="form-control__label"
+          for="input"
+          aria-hidden=${hasLabel ? "false" : "true"}
+          @click=${this.handleLabelClick}
+        >
+          <slot name="label">${this.label}</slot>
+        </label>
+
+        <div class="form-control__input">
+          <sl-dropdown
+            part="base"
+            .hoist=${this.hoist}
+            .placement=${this.placement}
+            .stayOpenOnSelect=${this.multiple}
+            .containingElement=${this}
+            ?disabled=${this.disabled}
+            class=${_chunk7BXY5XRGJs.o({
+            select: true,
+            "select--open": this.isOpen,
+            "select--empty": this.value.length === 0,
+            "select--focused": this.hasFocus,
+            "select--clearable": this.clearable,
+            "select--disabled": this.disabled,
+            "select--multiple": this.multiple,
+            "select--standard": !this.filled,
+            "select--filled": this.filled,
+            "select--has-tags": this.multiple && this.displayTags.length > 0,
+            "select--placeholder-visible": this.displayLabel === "",
+            "select--small": this.size === "small",
+            "select--medium": this.size === "medium",
+            "select--large": this.size === "large",
+            "select--pill": this.pill,
+            "select--invalid": this.invalid
+        })}
+            @sl-show=${this.handleMenuShow}
+            @sl-hide=${this.handleMenuHide}
+          >
+            <div
+              part="control"
+              slot="trigger"
+              id="input"
+              class="select__control"
+              role="combobox"
+              aria-describedby="help-text"
+              aria-haspopup="true"
+              aria-expanded=${this.isOpen ? "true" : "false"}
+              aria-controls="menu"
+              tabindex=${this.disabled ? "-1" : "0"}
+              @blur=${this.handleBlur}
+              @focus=${this.handleFocus}
+              @keydown=${this.handleKeyDown}
+            >
+              <span part="prefix" class="select__prefix">
+                <slot name="prefix"></slot>
+              </span>
+
+              <div part="display-label" class="select__label">
+                ${this.displayTags.length > 0 ? _chunkPEQICPKOJs.$` <span part="tags" class="select__tags"> ${this.displayTags} </span> ` : this.displayLabel.length > 0 ? this.displayLabel : this.placeholder}
+              </div>
+
+              ${this.clearable && hasSelection ? _chunkPEQICPKOJs.$`
+                    <button part="clear-button" class="select__clear" @click=${this.handleClearClick} tabindex="-1">
+                      <slot name="clear-icon">
+                        <sl-icon name="x-circle-fill" library="system"></sl-icon>
+                      </slot>
+                    </button>
+                  ` : ""}
+
+              <span part="suffix" class="select__suffix">
+                <slot name="suffix"></slot>
+              </span>
+
+              <span part="icon" class="select__icon" aria-hidden="true">
+                <sl-icon name="chevron-down" library="system"></sl-icon>
+              </span>
+
+              <!-- The hidden input tricks the browser's built-in validation so it works as expected. We use an input
+              instead of a select because, otherwise, iOS will show a list of options during validation. The focus
+              handler is used to move focus to the primary control when it's marked invalid.  -->
+              <input
+                class="select__hidden-select"
+                aria-hidden="true"
+                ?required=${this.required}
+                .value=${hasSelection ? "1" : ""}
+                tabindex="-1"
+                @focus=${()=>this.control.focus()
+        }
+              />
+            </div>
+
+            <sl-menu part="menu" id="menu" class="select__menu" @sl-select=${this.handleMenuSelect}>
+              <slot @slotchange=${this.handleMenuSlotChange}></slot>
+            </sl-menu>
+          </sl-dropdown>
+        </div>
+
+        <div
+          part="help-text"
+          id="help-text"
+          class="form-control__help-text"
+          aria-hidden=${hasHelpText ? "false" : "true"}
+        >
+          <slot name="help-text">${this.helpText}</slot>
+        </div>
+      </div>
+    `;
+    }
+};
+SlSelect.styles = _chunk24E5KUVHJs.select_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".select")
+], SlSelect.prototype, "dropdown", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".select__control")
+], SlSelect.prototype, "control", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".select__hidden-select")
+], SlSelect.prototype, "input", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".select__menu")
+], SlSelect.prototype, "menu", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlSelect.prototype, "hasFocus", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlSelect.prototype, "isOpen", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlSelect.prototype, "displayLabel", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlSelect.prototype, "displayTags", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "multiple", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "max-tags-visible",
+        type: Number
+    })
+], SlSelect.prototype, "maxTagsVisible", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "disabled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "name", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "placeholder", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "size", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlSelect.prototype, "hoist", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "value", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "filled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "pill", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "label", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlSelect.prototype, "placement", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "help-text"
+    })
+], SlSelect.prototype, "helpText", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "required", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlSelect.prototype, "clearable", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlSelect.prototype, "invalid", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("disabled", {
+        waitUntilFirstUpdate: true
+    })
+], SlSelect.prototype, "handleDisabledChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("multiple")
+], SlSelect.prototype, "handleMultipleChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("value", {
+        waitUntilFirstUpdate: true
+    })
+], SlSelect.prototype, "handleValueChange", 1);
+SlSelect = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-select")
+], SlSelect);
+
+},{"./chunk.24E5KUVH.js":"eCwS4","./chunk.ZHPXFQWE.js":"gQnXa","./chunk.HQSLB26P.js":"5g8PC","./chunk.7BXY5XRG.js":"4rmsB","./chunk.PQ5VRVXF.js":"b1tC8","./chunk.CDTZZV7W.js":"1aMHq","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eCwS4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "select_styles_default", ()=>select_styles_default
+);
+var _chunkLAAROFAUJs = require("./chunk.LAAROFAU.js");
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/select/select.styles.ts
+var select_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+  ${_chunkLAAROFAUJs.form_control_styles_default}
+
+  :host {
+    display: block;
+  }
+
+  .select {
+    display: block;
+  }
+
+  .select__control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-input-font-weight);
+    letter-spacing: var(--sl-input-letter-spacing);
+    vertical-align: middle;
+    overflow: hidden;
+    transition: var(--sl-transition-fast) color, var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow;
+    cursor: pointer;
+  }
+
+  .select__menu {
+    max-height: 50vh;
+    overflow: auto;
+  }
+
+  /* Standard selects */
+  .select--standard .select__control {
+    background-color: var(--sl-input-background-color);
+    border: solid var(--sl-input-border-width) var(--sl-input-border-color);
+    color: var(--sl-input-color);
+  }
+
+  .select--standard:not(.select--disabled) .select__control:hover {
+    background-color: var(--sl-input-background-color-hover);
+    border-color: var(--sl-input-border-color-hover);
+    color: var(--sl-input-color-hover);
+  }
+
+  .select--standard.select--focused:not(.select--disabled) .select__control {
+    background-color: var(--sl-input-background-color-focus);
+    border-color: var(--sl-input-border-color-focus);
+    box-shadow: var(--sl-focus-ring);
+    outline: none;
+    color: var(--sl-input-color-focus);
+  }
+
+  .select--standard.select--disabled .select__control {
+    background-color: var(--sl-input-background-color-disabled);
+    border-color: var(--sl-input-border-color-disabled);
+    color: var(--sl-input-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+    outline: none;
+  }
+
+  /* Filled selects */
+  .select--filled .select__control {
+    border: none;
+    background-color: var(--sl-input-filled-background-color);
+    color: var(--sl-input-color);
+  }
+
+  .select--filled:hover:not(.select--disabled) .select__control {
+    background-color: var(--sl-input-filled-background-color-hover);
+  }
+
+  .select--filled.select--focused:not(.select--disabled) .select__control {
+    outline: none;
+    background-color: var(--sl-input-filled-background-color-focus);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .select--filled.select--disabled .select__control {
+    background-color: var(--sl-input-filled-background-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .select--disabled .select__tags,
+  .select--disabled .select__clear {
+    pointer-events: none;
+  }
+
+  .select__prefix {
+    display: inline-flex;
+    align-items: center;
+    color: var(--sl-input-placeholder-color);
+  }
+
+  .select__label {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar in Chrome/Safari */
+  .select__label::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .select__clear {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    width: 1.25em;
+    font-size: inherit;
+    color: var(--sl-input-icon-color);
+    border: none;
+    background: none;
+    padding: 0;
+    transition: var(--sl-transition-fast) color;
+    cursor: pointer;
+  }
+
+  .select__clear:hover {
+    color: var(--sl-input-icon-color-hover);
+  }
+
+  .select__suffix {
+    display: inline-flex;
+    align-items: center;
+    color: var(--sl-input-placeholder-color);
+  }
+
+  .select__icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    transition: var(--sl-transition-medium) transform ease;
+  }
+
+  .select--open .select__icon {
+    transform: rotate(-180deg);
+  }
+
+  /* Placeholder */
+  .select--placeholder-visible .select__label {
+    color: var(--sl-input-placeholder-color);
+  }
+
+  .select--disabled.select--placeholder-visible .select__label {
+    color: var(--sl-input-placeholder-color-disabled);
+  }
+
+  /* Tags */
+  .select__tags {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: var(--sl-spacing-2x-small);
+  }
+
+  /* Hidden input (for form control validation to show) */
+  .select__hidden-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /*
+   * Size modifiers
+   */
+
+  /* Small */
+  .select--small .select__control {
+    border-radius: var(--sl-input-border-radius-small);
+    font-size: var(--sl-input-font-size-small);
+    min-height: var(--sl-input-height-small);
+  }
+
+  .select--small .select__prefix ::slotted(*) {
+    margin-left: var(--sl-input-spacing-small);
+  }
+
+  .select--small .select__label {
+    margin: 0 var(--sl-input-spacing-small);
+  }
+
+  .select--small .select__clear {
+    margin-right: var(--sl-input-spacing-small);
+  }
+
+  .select--small .select__suffix ::slotted(*) {
+    margin-right: var(--sl-input-spacing-small);
+  }
+
+  .select--small .select__icon {
+    margin-right: var(--sl-input-spacing-small);
+  }
+
+  .select--small .select__tags {
+    padding-bottom: 2px;
+  }
+
+  .select--small .select__tags sl-tag {
+    padding-top: 2px;
+  }
+
+  .select--small .select__tags sl-tag:not(:last-of-type) {
+    margin-right: var(--sl-spacing-2x-small);
+  }
+
+  .select--small.select--has-tags .select__label {
+    margin-left: 0;
+  }
+
+  /* Medium */
+  .select--medium .select__control {
+    border-radius: var(--sl-input-border-radius-medium);
+    font-size: var(--sl-input-font-size-medium);
+    min-height: var(--sl-input-height-medium);
+  }
+
+  .select--medium .select__prefix ::slotted(*) {
+    margin-left: var(--sl-input-spacing-medium);
+  }
+
+  .select--medium .select__label {
+    margin: 0 var(--sl-input-spacing-medium);
+  }
+
+  .select--medium .select__clear {
+    margin-right: var(--sl-input-spacing-medium);
+  }
+
+  .select--medium .select__suffix ::slotted(*) {
+    margin-right: var(--sl-input-spacing-medium);
+  }
+
+  .select--medium .select__icon {
+    margin-right: var(--sl-input-spacing-medium);
+  }
+
+  .select--medium .select__tags {
+    padding-bottom: 3px;
+  }
+
+  .select--medium .select__tags sl-tag {
+    padding-top: 3px;
+  }
+
+  .select--medium .select__tags sl-tag:not(:last-of-type) {
+    margin-right: var(--sl-spacing-2x-small);
+  }
+
+  .select--medium.select--has-tags .select__label {
+    margin-left: 0;
+  }
+
+  /* Large */
+  .select--large .select__control {
+    border-radius: var(--sl-input-border-radius-large);
+    font-size: var(--sl-input-font-size-large);
+    min-height: var(--sl-input-height-large);
+  }
+
+  .select--large .select__prefix ::slotted(*) {
+    margin-left: var(--sl-input-spacing-large);
+  }
+
+  .select--large .select__label {
+    margin: 0 var(--sl-input-spacing-large);
+  }
+
+  .select--large .select__clear {
+    margin-right: var(--sl-input-spacing-large);
+  }
+
+  .select--large .select__suffix ::slotted(*) {
+    margin-right: var(--sl-input-spacing-large);
+  }
+
+  .select--large .select__icon {
+    margin-right: var(--sl-input-spacing-large);
+  }
+
+  .select--large .select__tags {
+    padding-bottom: 4px;
+  }
+  .select--large .select__tags sl-tag {
+    padding-top: 4px;
+  }
+
+  .select--large .select__tags sl-tag:not(:last-of-type) {
+    margin-right: var(--sl-spacing-2x-small);
+  }
+
+  .select--large.select--has-tags .select__label {
+    margin-left: 0;
+  }
+
+  /*
+   * Pill modifier
+   */
+  .select--pill.select--small .select__control {
+    border-radius: var(--sl-input-height-small);
+  }
+
+  .select--pill.select--medium .select__control {
+    border-radius: var(--sl-input-height-medium);
+  }
+
+  .select--pill.select--large .select__control {
+    border-radius: var(--sl-input-height-large);
+  }
+`;
+
+},{"./chunk.LAAROFAU.js":"ejKRy","./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6OujN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlTag", ()=>SlTag
+);
+var _chunkGX6HO7XHJs = require("./chunk.GX6HO7XH.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/tag/tag.ts
+var SlTag = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.variant = "neutral";
+        this.size = "medium";
+        this.pill = false;
+        this.removable = false;
+    }
+    handleRemoveClick() {
+        _chunkCDTZZV7WJs.emit(this, "sl-remove");
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <span
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            tag: true,
+            "tag--primary": this.variant === "primary",
+            "tag--success": this.variant === "success",
+            "tag--neutral": this.variant === "neutral",
+            "tag--warning": this.variant === "warning",
+            "tag--danger": this.variant === "danger",
+            "tag--text": this.variant === "text",
+            "tag--small": this.size === "small",
+            "tag--medium": this.size === "medium",
+            "tag--large": this.size === "large",
+            "tag--pill": this.pill,
+            "tag--removable": this.removable
+        })}
+      >
+        <span part="content" class="tag__content">
+          <slot></slot>
+        </span>
+
+        ${this.removable ? _chunkPEQICPKOJs.$`
+              <sl-icon-button
+                part="remove-button"
+                exportparts="base:remove-button__base"
+                name="x"
+                library="system"
+                class="tag__remove"
+                @click=${this.handleRemoveClick}
+              ></sl-icon-button>
+            ` : ""}
+      </span>
+    `;
+    }
+};
+SlTag.styles = _chunkGX6HO7XHJs.tag_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlTag.prototype, "variant", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlTag.prototype, "size", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTag.prototype, "pill", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlTag.prototype, "removable", 2);
+SlTag = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-tag")
+], SlTag);
+
+},{"./chunk.GX6HO7XH.js":"dYVfN","./chunk.7BXY5XRG.js":"4rmsB","./chunk.CDTZZV7W.js":"1aMHq","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dYVfN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "tag_styles_default", ()=>tag_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/tag/tag.styles.ts
+var tag_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: inline-block;
+  }
+
+  .tag {
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+    line-height: 1;
+    white-space: nowrap;
+    user-select: none;
+    cursor: default;
+  }
+
+  .tag__remove::part(base) {
+    color: inherit;
+    padding: 0;
+  }
+
+  /*
+   * Variant modifiers
+   */
+
+  .tag--primary {
+    background-color: var(--sl-color-primary-50);
+    border-color: var(--sl-color-primary-200);
+    color: var(--sl-color-primary-800);
+  }
+
+  .tag--success {
+    background-color: var(--sl-color-success-50);
+    border-color: var(--sl-color-success-200);
+    color: var(--sl-color-success-800);
+  }
+
+  .tag--neutral {
+    background-color: var(--sl-color-neutral-50);
+    border-color: var(--sl-color-neutral-200);
+    color: var(--sl-color-neutral-800);
+  }
+
+  .tag--warning {
+    background-color: var(--sl-color-warning-50);
+    border-color: var(--sl-color-warning-200);
+    color: var(--sl-color-warning-800);
+  }
+
+  .tag--danger {
+    background-color: var(--sl-color-danger-50);
+    border-color: var(--sl-color-danger-200);
+    color: var(--sl-color-danger-800);
+  }
+
+  /*
+   * Size modifiers
+   */
+
+  .tag--small {
+    font-size: var(--sl-button-font-size-small);
+    height: calc(var(--sl-input-height-small) * 0.8);
+    line-height: calc(var(--sl-input-height-small) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-small);
+    padding: 0 var(--sl-spacing-x-small);
+  }
+
+  .tag--small .tag__remove {
+    margin-left: var(--sl-spacing-2x-small);
+    margin-right: calc(-1 * var(--sl-spacing-3x-small));
+  }
+
+  .tag--medium {
+    font-size: var(--sl-button-font-size-medium);
+    height: calc(var(--sl-input-height-medium) * 0.8);
+    line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-medium);
+    padding: 0 var(--sl-spacing-small);
+  }
+
+  .tag__remove {
+    margin-left: var(--sl-spacing-2x-small);
+    margin-right: calc(-1 * var(--sl-spacing-2x-small));
+  }
+
+  .tag--large {
+    font-size: var(--sl-button-font-size-large);
+    height: calc(var(--sl-input-height-large) * 0.8);
+    line-height: calc(var(--sl-input-height-large) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-large);
+    padding: 0 var(--sl-spacing-medium);
+  }
+
+  .tag__remove {
+    font-size: 1.4em;
+    margin-left: var(--sl-spacing-2x-small);
+    margin-right: calc(-1 * var(--sl-spacing-x-small));
+  }
+
+  /*
+   * Pill modifier
+   */
+
+  .tag--pill {
+    border-radius: var(--sl-border-radius-pill);
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jkiLf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlDropdown", ()=>SlDropdown
+);
+var _chunkDIQYRTQ3Js = require("./chunk.DIQYRTQ3.js");
+var _chunk2BK5N6NVJs = require("./chunk.2BK5N6NV.js");
+var _chunkSCUNOITNJs = require("./chunk.SCUNOITN.js");
+var _chunkH262HIXGJs = require("./chunk.H262HIXG.js");
+var _chunkYBI4N56RJs = require("./chunk.YBI4N56R.js");
+var _chunk6SAGALY4Js = require("./chunk.6SAGALY4.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("./chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/dropdown/dropdown.ts
+var SlDropdown = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.open = false;
+        this.placement = "bottom-start";
+        this.disabled = false;
+        this.stayOpenOnSelect = false;
+        this.distance = 0;
+        this.skidding = 0;
+        this.hoist = false;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.handleMenuItemActivate = this.handleMenuItemActivate.bind(this);
+        this.handlePanelSelect = this.handlePanelSelect.bind(this);
+        this.handleDocumentKeyDown = this.handleDocumentKeyDown.bind(this);
+        this.handleDocumentMouseDown = this.handleDocumentMouseDown.bind(this);
+        if (!this.containingElement) this.containingElement = this;
+    }
+    async firstUpdated() {
+        this.panel.hidden = !this.open;
+        if (this.open) {
+            await this.updateComplete;
+            this.startPositioner();
+        }
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.hide();
+        this.stopPositioner();
+    }
+    focusOnTrigger() {
+        const slot = this.trigger.querySelector("slot");
+        const trigger = slot.assignedElements({
+            flatten: true
+        })[0];
+        if (typeof (trigger == null ? void 0 : trigger.focus) === "function") trigger.focus();
+    }
+    getMenu() {
+        const slot = this.panel.querySelector("slot");
+        return slot.assignedElements({
+            flatten: true
+        }).find((el)=>el.tagName.toLowerCase() === "sl-menu"
+        );
+    }
+    handleDocumentKeyDown(event) {
+        var _a;
+        if (event.key === "Escape") {
+            this.hide();
+            this.focusOnTrigger();
+            return;
+        }
+        if (event.key === "Tab") {
+            if (this.open && ((_a = document.activeElement) == null ? void 0 : _a.tagName.toLowerCase()) === "sl-menu-item") {
+                event.preventDefault();
+                this.hide();
+                this.focusOnTrigger();
+                return;
+            }
+            setTimeout(()=>{
+                var _a2, _b, _c;
+                const activeElement = ((_a2 = this.containingElement) == null ? void 0 : _a2.getRootNode()) instanceof ShadowRoot ? (_c = (_b = document.activeElement) == null ? void 0 : _b.shadowRoot) == null ? void 0 : _c.activeElement : document.activeElement;
+                if (!this.containingElement || (activeElement == null ? void 0 : activeElement.closest(this.containingElement.tagName.toLowerCase())) !== this.containingElement) this.hide();
+            });
+        }
+    }
+    handleDocumentMouseDown(event) {
+        const path = event.composedPath();
+        if (this.containingElement && !path.includes(this.containingElement)) this.hide();
+    }
+    handleMenuItemActivate(event) {
+        const item = event.target;
+        _chunkH262HIXGJs.scrollIntoView(item, this.panel);
+    }
+    handlePanelSelect(event) {
+        const target = event.target;
+        if (!this.stayOpenOnSelect && target.tagName.toLowerCase() === "sl-menu") {
+            this.hide();
+            this.focusOnTrigger();
+        }
+    }
+    handlePopoverOptionsChange() {
+        this.updatePositioner();
+    }
+    handleTriggerClick() {
+        if (this.open) this.hide();
+        else this.show();
+    }
+    handleTriggerKeyDown(event) {
+        const menu = this.getMenu();
+        const menuItems = menu.defaultSlot.assignedElements({
+            flatten: true
+        });
+        const firstMenuItem = menuItems[0];
+        const lastMenuItem = menuItems[menuItems.length - 1];
+        if (event.key === "Escape") {
+            this.focusOnTrigger();
+            this.hide();
+            return;
+        }
+        if ([
+            " ",
+            "Enter"
+        ].includes(event.key)) {
+            event.preventDefault();
+            this.handleTriggerClick();
+            return;
+        }
+        if ([
+            "ArrowDown",
+            "ArrowUp",
+            "Home",
+            "End"
+        ].includes(event.key)) {
+            event.preventDefault();
+            if (!this.open) this.show();
+            requestAnimationFrame(()=>{
+                if (event.key === "ArrowDown" || event.key === "Home") {
+                    menu.setCurrentItem(firstMenuItem);
+                    firstMenuItem.focus();
+                }
+                if (event.key === "ArrowUp" || event.key === "End") {
+                    menu.setCurrentItem(lastMenuItem);
+                    lastMenuItem.focus();
+                }
+            });
+        }
+        const ignoredKeys = [
+            "Tab",
+            "Shift",
+            "Meta",
+            "Ctrl",
+            "Alt"
+        ];
+        if (this.open && !ignoredKeys.includes(event.key)) menu.typeToSelect(event);
+    }
+    handleTriggerKeyUp(event) {
+        if (event.key === " ") event.preventDefault();
+    }
+    handleTriggerSlotChange() {
+        this.updateAccessibleTrigger();
+    }
+    updateAccessibleTrigger() {
+        const slot = this.trigger.querySelector("slot");
+        const assignedElements = slot.assignedElements({
+            flatten: true
+        });
+        const accessibleTrigger = assignedElements.find((el)=>_chunkSCUNOITNJs.getTabbableBoundary(el).start
+        );
+        if (accessibleTrigger) {
+            accessibleTrigger.setAttribute("aria-haspopup", "true");
+            accessibleTrigger.setAttribute("aria-expanded", this.open ? "true" : "false");
+        }
+    }
+    async show() {
+        if (this.open) return void 0;
+        this.open = true;
+        return _chunkCDTZZV7WJs.waitForEvent(this, "sl-after-show");
+    }
+    async hide() {
+        if (!this.open) return void 0;
+        this.open = false;
+        return _chunkCDTZZV7WJs.waitForEvent(this, "sl-after-hide");
+    }
+    reposition() {
+        this.updatePositioner();
+    }
+    async handleOpenChange() {
+        if (this.disabled) {
+            this.open = false;
+            return;
+        }
+        this.updateAccessibleTrigger();
+        if (this.open) {
+            _chunkCDTZZV7WJs.emit(this, "sl-show");
+            this.panel.addEventListener("sl-activate", this.handleMenuItemActivate);
+            this.panel.addEventListener("sl-select", this.handlePanelSelect);
+            document.addEventListener("keydown", this.handleDocumentKeyDown);
+            document.addEventListener("mousedown", this.handleDocumentMouseDown);
+            await _chunkYBI4N56RJs.stopAnimations(this);
+            this.startPositioner();
+            this.panel.hidden = false;
+            const { keyframes , options  } = _chunk6SAGALY4Js.getAnimation(this, "dropdown.show");
+            await _chunkYBI4N56RJs.animateTo(this.panel, keyframes, options);
+            _chunkCDTZZV7WJs.emit(this, "sl-after-show");
+        } else {
+            _chunkCDTZZV7WJs.emit(this, "sl-hide");
+            this.panel.removeEventListener("sl-activate", this.handleMenuItemActivate);
+            this.panel.removeEventListener("sl-select", this.handlePanelSelect);
+            document.removeEventListener("keydown", this.handleDocumentKeyDown);
+            document.removeEventListener("mousedown", this.handleDocumentMouseDown);
+            await _chunkYBI4N56RJs.stopAnimations(this);
+            const { keyframes , options  } = _chunk6SAGALY4Js.getAnimation(this, "dropdown.hide");
+            await _chunkYBI4N56RJs.animateTo(this.panel, keyframes, options);
+            this.panel.hidden = true;
+            this.stopPositioner();
+            _chunkCDTZZV7WJs.emit(this, "sl-after-hide");
+        }
+    }
+    startPositioner() {
+        this.stopPositioner();
+        this.updatePositioner();
+        this.positionerCleanup = _chunkDIQYRTQ3Js.autoUpdate(this.trigger, this.positioner, this.updatePositioner.bind(this));
+    }
+    updatePositioner() {
+        if (!this.open || !this.trigger || !this.positioner) return;
+        _chunkDIQYRTQ3Js.computePosition(this.trigger, this.positioner, {
+            placement: this.placement,
+            middleware: [
+                _chunkDIQYRTQ3Js.offset({
+                    mainAxis: this.distance,
+                    crossAxis: this.skidding
+                }),
+                _chunkDIQYRTQ3Js.flip(),
+                _chunkDIQYRTQ3Js.shift(),
+                _chunkDIQYRTQ3Js.size({
+                    apply: ({ width , height  })=>{
+                        Object.assign(this.panel.style, {
+                            maxWidth: `${width}px`,
+                            maxHeight: `${height}px`
+                        });
+                    },
+                    padding: 8
+                })
+            ],
+            strategy: this.hoist ? "fixed" : "absolute"
+        }).then(({ x , y , placement  })=>{
+            this.positioner.setAttribute("data-placement", placement);
+            Object.assign(this.positioner.style, {
+                position: this.hoist ? "fixed" : "absolute",
+                left: `${x}px`,
+                top: `${y}px`
+            });
+        });
+    }
+    stopPositioner() {
+        if (this.positionerCleanup) {
+            this.positionerCleanup();
+            this.positionerCleanup = void 0;
+            this.positioner.removeAttribute("data-placement");
+        }
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        id="dropdown"
+        class=${_chunk7BXY5XRGJs.o({
+            dropdown: true,
+            "dropdown--open": this.open
+        })}
+      >
+        <span
+          part="trigger"
+          class="dropdown__trigger"
+          @click=${this.handleTriggerClick}
+          @keydown=${this.handleTriggerKeyDown}
+          @keyup=${this.handleTriggerKeyUp}
+        >
+          <slot name="trigger" @slotchange=${this.handleTriggerSlotChange}></slot>
+        </span>
+
+        <!-- Position the panel with a wrapper since the popover makes use of translate. This let's us add animations
+        on the panel without interfering with the position. -->
+        <div class="dropdown__positioner">
+          <div
+            part="panel"
+            class="dropdown__panel"
+            aria-hidden=${this.open ? "false" : "true"}
+            aria-labelledby="dropdown"
+          >
+            <slot></slot>
+          </div>
+        </div>
+      </div>
+    `;
+    }
+};
+SlDropdown.styles = _chunk2BK5N6NVJs.dropdown_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".dropdown__trigger")
+], SlDropdown.prototype, "trigger", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".dropdown__panel")
+], SlDropdown.prototype, "panel", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".dropdown__positioner")
+], SlDropdown.prototype, "positioner", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlDropdown.prototype, "open", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlDropdown.prototype, "placement", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlDropdown.prototype, "disabled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "stay-open-on-select",
+        type: Boolean,
+        reflect: true
+    })
+], SlDropdown.prototype, "stayOpenOnSelect", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: false
+    })
+], SlDropdown.prototype, "containingElement", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Number
+    })
+], SlDropdown.prototype, "distance", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Number
+    })
+], SlDropdown.prototype, "skidding", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlDropdown.prototype, "hoist", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("distance"),
+    _chunkPQ5VRVXFJs.watch("hoist"),
+    _chunkPQ5VRVXFJs.watch("placement"),
+    _chunkPQ5VRVXFJs.watch("skidding")
+], SlDropdown.prototype, "handlePopoverOptionsChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("open", {
+        waitUntilFirstUpdate: true
+    })
+], SlDropdown.prototype, "handleOpenChange", 1);
+SlDropdown = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-dropdown")
+], SlDropdown);
+_chunk6SAGALY4Js.setDefaultAnimation("dropdown.show", {
+    keyframes: [
+        {
+            opacity: 0,
+            transform: "scale(0.9)"
+        },
+        {
+            opacity: 1,
+            transform: "scale(1)"
+        }
+    ],
+    options: {
+        duration: 100,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("dropdown.hide", {
+    keyframes: [
+        {
+            opacity: 1,
+            transform: "scale(1)"
+        },
+        {
+            opacity: 0,
+            transform: "scale(0.9)"
+        }
+    ],
+    options: {
+        duration: 100,
+        easing: "ease"
+    }
+});
+
+},{"./chunk.DIQYRTQ3.js":"63D7n","./chunk.2BK5N6NV.js":"c62pF","./chunk.SCUNOITN.js":"fcXlT","./chunk.H262HIXG.js":"6co8f","./chunk.YBI4N56R.js":"e8cQr","./chunk.6SAGALY4.js":"b4z3m","./chunk.7BXY5XRG.js":"4rmsB","./chunk.PQ5VRVXF.js":"b1tC8","./chunk.CDTZZV7W.js":"1aMHq","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"63D7n":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "arrow", ()=>arrow
+);
+parcelHelpers.export(exports, "flip", ()=>flip
+);
+parcelHelpers.export(exports, "offset", ()=>offset
+);
+parcelHelpers.export(exports, "shift", ()=>shift
+);
+parcelHelpers.export(exports, "size", ()=>size
+);
+parcelHelpers.export(exports, "autoUpdate", ()=>autoUpdate
+);
+parcelHelpers.export(exports, "computePosition", ()=>computePosition2
+);
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// node_modules/@floating-ui/core/dist/floating-ui.core.esm.js
+function getSide(placement) {
+    return placement.split("-")[0];
+}
+function getAlignment(placement) {
+    return placement.split("-")[1];
+}
+function getMainAxisFromPlacement(placement) {
+    return [
+        "top",
+        "bottom"
+    ].includes(getSide(placement)) ? "x" : "y";
+}
+function getLengthFromAxis(axis) {
+    return axis === "y" ? "height" : "width";
+}
+function computeCoordsFromPlacement(_ref, placement, rtl) {
+    let { reference , floating  } = _ref;
+    const commonX = reference.x + reference.width / 2 - floating.width / 2;
+    const commonY = reference.y + reference.height / 2 - floating.height / 2;
+    const mainAxis = getMainAxisFromPlacement(placement);
+    const length = getLengthFromAxis(mainAxis);
+    const commonAlign = reference[length] / 2 - floating[length] / 2;
+    const side = getSide(placement);
+    const isVertical = mainAxis === "x";
+    let coords;
+    switch(side){
+        case "top":
+            coords = {
+                x: commonX,
+                y: reference.y - floating.height
+            };
+            break;
+        case "bottom":
+            coords = {
+                x: commonX,
+                y: reference.y + reference.height
+            };
+            break;
+        case "right":
+            coords = {
+                x: reference.x + reference.width,
+                y: commonY
+            };
+            break;
+        case "left":
+            coords = {
+                x: reference.x - floating.width,
+                y: commonY
+            };
+            break;
+        default:
+            coords = {
+                x: reference.x,
+                y: reference.y
+            };
+    }
+    switch(getAlignment(placement)){
+        case "start":
+            coords[mainAxis] -= commonAlign * (rtl && isVertical ? -1 : 1);
+            break;
+        case "end":
+            coords[mainAxis] += commonAlign * (rtl && isVertical ? -1 : 1);
+            break;
+    }
+    return coords;
+}
+var computePosition = async (reference, floating, config)=>{
+    const { placement ="bottom" , strategy ="absolute" , middleware =[] , platform: platform2  } = config;
+    const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(floating));
+    var _ref;
+    let rects = await platform2.getElementRects({
+        reference,
+        floating,
+        strategy
+    });
+    let { x , y  } = computeCoordsFromPlacement(rects, placement, rtl);
+    let statefulPlacement = placement;
+    let middlewareData = {
+    };
+    const skippedMiddlewareNames = /* @__PURE__ */ new Set();
+    let _debug_loop_count_ = 0;
+    for(let i = 0; i < middleware.length; i++){
+        const { name , fn  } = middleware[i];
+        if (skippedMiddlewareNames.has(name)) continue;
+        const { x: nextX , y: nextY , data , reset  } = await fn({
+            x,
+            y,
+            initialPlacement: placement,
+            placement: statefulPlacement,
+            strategy,
+            middlewareData,
+            rects,
+            platform: platform2,
+            elements: {
+                reference,
+                floating
+            }
+        });
+        x = nextX != null ? nextX : x;
+        y = nextY != null ? nextY : y;
+        middlewareData = _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+        }, middlewareData), {
+            [name]: _chunkICGTMF5ZJs.__spreadValues(_chunkICGTMF5ZJs.__spreadValues({
+            }, middlewareData[name]), data)
+        });
+        if (reset) {
+            if (typeof reset === "object") {
+                if (reset.placement) statefulPlacement = reset.placement;
+                if (reset.rects) rects = reset.rects === true ? await platform2.getElementRects({
+                    reference,
+                    floating,
+                    strategy
+                }) : reset.rects;
+                ({ x , y  } = computeCoordsFromPlacement(rects, statefulPlacement, rtl));
+                if (reset.skip !== false) skippedMiddlewareNames.add(name);
+            }
+            i = -1;
+            continue;
+        }
+    }
+    return {
+        x,
+        y,
+        placement: statefulPlacement,
+        strategy,
+        middlewareData
+    };
+};
+function expandPaddingObject(padding) {
+    return _chunkICGTMF5ZJs.__spreadValues({
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
+    }, padding);
+}
+function getSideObjectFromPadding(padding) {
+    return typeof padding !== "number" ? expandPaddingObject(padding) : {
+        top: padding,
+        right: padding,
+        bottom: padding,
+        left: padding
+    };
+}
+function rectToClientRect(rect) {
+    return _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+    }, rect), {
+        top: rect.y,
+        left: rect.x,
+        right: rect.x + rect.width,
+        bottom: rect.y + rect.height
+    });
+}
+async function detectOverflow(middlewareArguments, options) {
+    var _await$platform$isEle;
+    if (options === void 0) options = {
+    };
+    const { x , y , platform: platform2 , rects , elements , strategy  } = middlewareArguments;
+    const { boundary ="clippingAncestors" , rootBoundary ="viewport" , elementContext ="floating" , altBoundary =false , padding =0  } = options;
+    const paddingObject = getSideObjectFromPadding(padding);
+    const altContext = elementContext === "floating" ? "reference" : "floating";
+    const element = elements[altBoundary ? altContext : elementContext];
+    const clippingClientRect = rectToClientRect(await platform2.getClippingRect({
+        element: ((_await$platform$isEle = await (platform2.isElement == null ? void 0 : platform2.isElement(element))) != null ? _await$platform$isEle : true) ? element : element.contextElement || await (platform2.getDocumentElement == null ? void 0 : platform2.getDocumentElement(elements.floating)),
+        boundary,
+        rootBoundary
+    }));
+    const elementClientRect = rectToClientRect(platform2.convertOffsetParentRelativeRectToViewportRelativeRect ? await platform2.convertOffsetParentRelativeRectToViewportRelativeRect({
+        rect: elementContext === "floating" ? _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+        }, rects.floating), {
+            x,
+            y
+        }) : rects.reference,
+        offsetParent: await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(elements.floating)),
+        strategy
+    }) : rects[elementContext]);
+    return {
+        top: clippingClientRect.top - elementClientRect.top + paddingObject.top,
+        bottom: elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom,
+        left: clippingClientRect.left - elementClientRect.left + paddingObject.left,
+        right: elementClientRect.right - clippingClientRect.right + paddingObject.right
+    };
+}
+var min = Math.min;
+var max = Math.max;
+function within(min$1, value, max$1) {
+    return max(min$1, min(value, max$1));
+}
+var arrow = (options)=>({
+        name: "arrow",
+        options,
+        async fn (middlewareArguments) {
+            const { element , padding =0  } = options != null ? options : {
+            };
+            const { x , y , placement , rects , platform: platform2  } = middlewareArguments;
+            if (element == null) return {
+            };
+            const paddingObject = getSideObjectFromPadding(padding);
+            const coords = {
+                x,
+                y
+            };
+            const axis = getMainAxisFromPlacement(placement);
+            const length = getLengthFromAxis(axis);
+            const arrowDimensions = await platform2.getDimensions(element);
+            const minProp = axis === "y" ? "top" : "left";
+            const maxProp = axis === "y" ? "bottom" : "right";
+            const endDiff = rects.reference[length] + rects.reference[axis] - coords[axis] - rects.floating[length];
+            const startDiff = coords[axis] - rects.reference[axis];
+            const arrowOffsetParent = await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(element));
+            const clientSize = arrowOffsetParent ? axis === "y" ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
+            const centerToReference = endDiff / 2 - startDiff / 2;
+            const min3 = paddingObject[minProp];
+            const max3 = clientSize - arrowDimensions[length] - paddingObject[maxProp];
+            const center = clientSize / 2 - arrowDimensions[length] / 2 + centerToReference;
+            const offset2 = within(min3, center, max3);
+            return {
+                data: {
+                    [axis]: offset2,
+                    centerOffset: center - offset2
+                }
+            };
+        }
+    })
+;
+var hash$1 = {
+    left: "right",
+    right: "left",
+    bottom: "top",
+    top: "bottom"
+};
+function getOppositePlacement(placement) {
+    return placement.replace(/left|right|bottom|top/g, (matched)=>hash$1[matched]
+    );
+}
+function getAlignmentSides(placement, rects, rtl) {
+    if (rtl === void 0) rtl = false;
+    const alignment = getAlignment(placement);
+    const mainAxis = getMainAxisFromPlacement(placement);
+    const length = getLengthFromAxis(mainAxis);
+    let mainAlignmentSide = mainAxis === "x" ? alignment === (rtl ? "end" : "start") ? "right" : "left" : alignment === "start" ? "bottom" : "top";
+    if (rects.reference[length] > rects.floating[length]) mainAlignmentSide = getOppositePlacement(mainAlignmentSide);
+    return {
+        main: mainAlignmentSide,
+        cross: getOppositePlacement(mainAlignmentSide)
+    };
+}
+var hash = {
+    start: "end",
+    end: "start"
+};
+function getOppositeAlignmentPlacement(placement) {
+    return placement.replace(/start|end/g, (matched)=>hash[matched]
+    );
+}
+function getExpandedPlacements(placement) {
+    const oppositePlacement = getOppositePlacement(placement);
+    return [
+        getOppositeAlignmentPlacement(placement),
+        oppositePlacement,
+        getOppositeAlignmentPlacement(oppositePlacement)
+    ];
+}
+var flip = function(options) {
+    if (options === void 0) options = {
+    };
+    return {
+        name: "flip",
+        options,
+        async fn (middlewareArguments) {
+            var _middlewareData$flip;
+            const { placement , middlewareData , rects , initialPlacement , platform: platform2 , elements  } = middlewareArguments;
+            const _a = options, { mainAxis: checkMainAxis = true , crossAxis: checkCrossAxis = true , fallbackPlacements: specifiedFallbackPlacements , fallbackStrategy ="bestFit" , flipAlignment =true  } = _a, detectOverflowOptions = _chunkICGTMF5ZJs.__objRest(_a, [
+                "mainAxis",
+                "crossAxis",
+                "fallbackPlacements",
+                "fallbackStrategy",
+                "flipAlignment"
+            ]);
+            const side = getSide(placement);
+            const isBasePlacement = side === initialPlacement;
+            const fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipAlignment ? [
+                getOppositePlacement(initialPlacement)
+            ] : getExpandedPlacements(initialPlacement));
+            const placements = [
+                initialPlacement,
+                ...fallbackPlacements
+            ];
+            const overflow = await detectOverflow(middlewareArguments, detectOverflowOptions);
+            const overflows = [];
+            let overflowsData = ((_middlewareData$flip = middlewareData.flip) == null ? void 0 : _middlewareData$flip.overflows) || [];
+            if (checkMainAxis) overflows.push(overflow[side]);
+            if (checkCrossAxis) {
+                const { main , cross  } = getAlignmentSides(placement, rects, await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements.floating)));
+                overflows.push(overflow[main], overflow[cross]);
+            }
+            overflowsData = [
+                ...overflowsData,
+                {
+                    placement,
+                    overflows
+                }
+            ];
+            if (!overflows.every((side2)=>side2 <= 0
+            )) {
+                var _middlewareData$flip$, _middlewareData$flip2;
+                const nextIndex = ((_middlewareData$flip$ = (_middlewareData$flip2 = middlewareData.flip) == null ? void 0 : _middlewareData$flip2.index) != null ? _middlewareData$flip$ : 0) + 1;
+                const nextPlacement = placements[nextIndex];
+                if (nextPlacement) return {
+                    data: {
+                        index: nextIndex,
+                        overflows: overflowsData
+                    },
+                    reset: {
+                        skip: false,
+                        placement: nextPlacement
+                    }
+                };
+                let resetPlacement = "bottom";
+                switch(fallbackStrategy){
+                    case "bestFit":
+                        {
+                            var _overflowsData$slice$;
+                            const placement2 = (_overflowsData$slice$ = overflowsData.slice().sort((a, b)=>a.overflows.filter((overflow2)=>overflow2 > 0
+                                ).reduce((acc, overflow2)=>acc + overflow2
+                                , 0) - b.overflows.filter((overflow2)=>overflow2 > 0
+                                ).reduce((acc, overflow2)=>acc + overflow2
+                                , 0)
+                            )[0]) == null ? void 0 : _overflowsData$slice$.placement;
+                            if (placement2) resetPlacement = placement2;
+                            break;
+                        }
+                    case "initialPlacement":
+                        resetPlacement = initialPlacement;
+                        break;
+                }
+                return {
+                    reset: {
+                        placement: resetPlacement
+                    }
+                };
+            }
+            return {
+            };
+        }
+    };
+};
+function convertValueToCoords(placement, rects, value, rtl) {
+    if (rtl === void 0) rtl = false;
+    const side = getSide(placement);
+    const alignment = getAlignment(placement);
+    const isVertical = getMainAxisFromPlacement(placement) === "x";
+    const mainAxisMulti = [
+        "left",
+        "top"
+    ].includes(side) ? -1 : 1;
+    let crossAxisMulti = 1;
+    if (alignment === "end") crossAxisMulti = -1;
+    if (rtl && isVertical) crossAxisMulti *= -1;
+    const rawValue = typeof value === "function" ? value(_chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+    }, rects), {
+        placement
+    })) : value;
+    const { mainAxis , crossAxis  } = typeof rawValue === "number" ? {
+        mainAxis: rawValue,
+        crossAxis: 0
+    } : _chunkICGTMF5ZJs.__spreadValues({
+        mainAxis: 0,
+        crossAxis: 0
+    }, rawValue);
+    return isVertical ? {
+        x: crossAxis * crossAxisMulti,
+        y: mainAxis * mainAxisMulti
+    } : {
+        x: mainAxis * mainAxisMulti,
+        y: crossAxis * crossAxisMulti
+    };
+}
+var offset = function(value) {
+    if (value === void 0) value = 0;
+    return {
+        name: "offset",
+        options: value,
+        async fn (middlewareArguments) {
+            const { x , y , placement , rects , platform: platform2 , elements  } = middlewareArguments;
+            const diffCoords = convertValueToCoords(placement, rects, value, await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements.floating)));
+            return {
+                x: x + diffCoords.x,
+                y: y + diffCoords.y,
+                data: diffCoords
+            };
+        }
+    };
+};
+function getCrossAxis(axis) {
+    return axis === "x" ? "y" : "x";
+}
+var shift = function(options) {
+    if (options === void 0) options = {
+    };
+    return {
+        name: "shift",
+        options,
+        async fn (middlewareArguments) {
+            const { x , y , placement  } = middlewareArguments;
+            const _a = options, { mainAxis: checkMainAxis = true , crossAxis: checkCrossAxis = false , limiter ={
+                fn: (_ref)=>{
+                    let { x: x2 , y: y2  } = _ref;
+                    return {
+                        x: x2,
+                        y: y2
+                    };
+                }
+            }  } = _a, detectOverflowOptions = _chunkICGTMF5ZJs.__objRest(_a, [
+                "mainAxis",
+                "crossAxis",
+                "limiter"
+            ]);
+            const coords = {
+                x,
+                y
+            };
+            const overflow = await detectOverflow(middlewareArguments, detectOverflowOptions);
+            const mainAxis = getMainAxisFromPlacement(getSide(placement));
+            const crossAxis = getCrossAxis(mainAxis);
+            let mainAxisCoord = coords[mainAxis];
+            let crossAxisCoord = coords[crossAxis];
+            if (checkMainAxis) {
+                const minSide = mainAxis === "y" ? "top" : "left";
+                const maxSide = mainAxis === "y" ? "bottom" : "right";
+                const min3 = mainAxisCoord + overflow[minSide];
+                const max3 = mainAxisCoord - overflow[maxSide];
+                mainAxisCoord = within(min3, mainAxisCoord, max3);
+            }
+            if (checkCrossAxis) {
+                const minSide = crossAxis === "y" ? "top" : "left";
+                const maxSide = crossAxis === "y" ? "bottom" : "right";
+                const min3 = crossAxisCoord + overflow[minSide];
+                const max3 = crossAxisCoord - overflow[maxSide];
+                crossAxisCoord = within(min3, crossAxisCoord, max3);
+            }
+            const limitedCoords = limiter.fn(_chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+            }, middlewareArguments), {
+                [mainAxis]: mainAxisCoord,
+                [crossAxis]: crossAxisCoord
+            }));
+            return _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+            }, limitedCoords), {
+                data: {
+                    x: limitedCoords.x - x,
+                    y: limitedCoords.y - y
+                }
+            });
+        }
+    };
+};
+var size = function(options) {
+    if (options === void 0) options = {
+    };
+    return {
+        name: "size",
+        options,
+        async fn (middlewareArguments) {
+            const { placement , rects , platform: platform2 , elements  } = middlewareArguments;
+            const _a = options, { apply  } = _a, detectOverflowOptions = _chunkICGTMF5ZJs.__objRest(_a, [
+                "apply"
+            ]);
+            const overflow = await detectOverflow(middlewareArguments, detectOverflowOptions);
+            const side = getSide(placement);
+            const alignment = getAlignment(placement);
+            let heightSide;
+            let widthSide;
+            if (side === "top" || side === "bottom") {
+                heightSide = side;
+                widthSide = alignment === (await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements.floating)) ? "start" : "end") ? "left" : "right";
+            } else {
+                widthSide = side;
+                heightSide = alignment === "end" ? "top" : "bottom";
+            }
+            const xMin = max(overflow.left, 0);
+            const xMax = max(overflow.right, 0);
+            const yMin = max(overflow.top, 0);
+            const yMax = max(overflow.bottom, 0);
+            const dimensions = {
+                height: rects.floating.height - ([
+                    "left",
+                    "right"
+                ].includes(placement) ? 2 * (yMin !== 0 || yMax !== 0 ? yMin + yMax : max(overflow.top, overflow.bottom)) : overflow[heightSide]),
+                width: rects.floating.width - ([
+                    "top",
+                    "bottom"
+                ].includes(placement) ? 2 * (xMin !== 0 || xMax !== 0 ? xMin + xMax : max(overflow.left, overflow.right)) : overflow[widthSide])
+            };
+            apply == null || apply(_chunkICGTMF5ZJs.__spreadValues(_chunkICGTMF5ZJs.__spreadValues({
+            }, dimensions), rects));
+            return {
+                reset: {
+                    rects: true
+                }
+            };
+        }
+    };
+};
+// node_modules/@floating-ui/dom/dist/floating-ui.dom.esm.js
+function isWindow(value) {
+    return (value == null ? void 0 : value.toString()) === "[object Window]";
+}
+function getWindow(node) {
+    if (node == null) return window;
+    if (!isWindow(node)) {
+        const ownerDocument = node.ownerDocument;
+        return ownerDocument ? ownerDocument.defaultView || window : window;
+    }
+    return node;
+}
+function getComputedStyle$1(element) {
+    return getWindow(element).getComputedStyle(element);
+}
+function getNodeName(node) {
+    return isWindow(node) ? "" : node ? (node.nodeName || "").toLowerCase() : "";
+}
+function isHTMLElement(value) {
+    return value instanceof getWindow(value).HTMLElement;
+}
+function isElement(value) {
+    return value instanceof getWindow(value).Element;
+}
+function isNode(value) {
+    return value instanceof getWindow(value).Node;
+}
+function isShadowRoot(node) {
+    const OwnElement = getWindow(node).ShadowRoot;
+    return node instanceof OwnElement || node instanceof ShadowRoot;
+}
+function isOverflowElement(element) {
+    const { overflow , overflowX , overflowY  } = getComputedStyle$1(element);
+    return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
+}
+function isTableElement(element) {
+    return [
+        "table",
+        "td",
+        "th"
+    ].includes(getNodeName(element));
+}
+function isContainingBlock(element) {
+    const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
+    const css = getComputedStyle$1(element);
+    return css.transform !== "none" || css.perspective !== "none" || css.contain === "paint" || [
+        "transform",
+        "perspective"
+    ].includes(css.willChange) || isFirefox && css.willChange === "filter" || isFirefox && (css.filter ? css.filter !== "none" : false);
+}
+var min2 = Math.min;
+var max2 = Math.max;
+var round = Math.round;
+function getBoundingClientRect(element, includeScale) {
+    if (includeScale === void 0) includeScale = false;
+    const clientRect = element.getBoundingClientRect();
+    let scaleX = 1;
+    let scaleY = 1;
+    if (includeScale && isHTMLElement(element)) {
+        scaleX = element.offsetWidth > 0 ? round(clientRect.width) / element.offsetWidth || 1 : 1;
+        scaleY = element.offsetHeight > 0 ? round(clientRect.height) / element.offsetHeight || 1 : 1;
+    }
+    return {
+        width: clientRect.width / scaleX,
+        height: clientRect.height / scaleY,
+        top: clientRect.top / scaleY,
+        right: clientRect.right / scaleX,
+        bottom: clientRect.bottom / scaleY,
+        left: clientRect.left / scaleX,
+        x: clientRect.left / scaleX,
+        y: clientRect.top / scaleY
+    };
+}
+function getDocumentElement(node) {
+    return ((isNode(node) ? node.ownerDocument : node.document) || window.document).documentElement;
+}
+function getNodeScroll(element) {
+    if (isWindow(element)) return {
+        scrollLeft: element.pageXOffset,
+        scrollTop: element.pageYOffset
+    };
+    return {
+        scrollLeft: element.scrollLeft,
+        scrollTop: element.scrollTop
+    };
+}
+function getWindowScrollBarX(element) {
+    return getBoundingClientRect(getDocumentElement(element)).left + getNodeScroll(element).scrollLeft;
+}
+function isScaled(element) {
+    const rect = getBoundingClientRect(element);
+    return round(rect.width) !== element.offsetWidth || round(rect.height) !== element.offsetHeight;
+}
+function getRectRelativeToOffsetParent(element, offsetParent, strategy) {
+    const isOffsetParentAnElement = isHTMLElement(offsetParent);
+    const documentElement = getDocumentElement(offsetParent);
+    const rect = getBoundingClientRect(element, isOffsetParentAnElement && isScaled(offsetParent));
+    let scroll = {
+        scrollLeft: 0,
+        scrollTop: 0
+    };
+    const offsets = {
+        x: 0,
+        y: 0
+    };
+    if (isOffsetParentAnElement || !isOffsetParentAnElement && strategy !== "fixed") {
+        if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) scroll = getNodeScroll(offsetParent);
+        if (isHTMLElement(offsetParent)) {
+            const offsetRect = getBoundingClientRect(offsetParent, true);
+            offsets.x = offsetRect.x + offsetParent.clientLeft;
+            offsets.y = offsetRect.y + offsetParent.clientTop;
+        } else if (documentElement) offsets.x = getWindowScrollBarX(documentElement);
+    }
+    return {
+        x: rect.left + scroll.scrollLeft - offsets.x,
+        y: rect.top + scroll.scrollTop - offsets.y,
+        width: rect.width,
+        height: rect.height
+    };
+}
+function getParentNode(node) {
+    if (getNodeName(node) === "html") return node;
+    return node.assignedSlot || node.parentNode || (isShadowRoot(node) ? node.host : null) || getDocumentElement(node);
+}
+function getTrueOffsetParent(element) {
+    if (!isHTMLElement(element) || getComputedStyle(element).position === "fixed") return null;
+    return element.offsetParent;
+}
+function getContainingBlock(element) {
+    let currentNode = getParentNode(element);
+    if (isShadowRoot(currentNode)) currentNode = currentNode.host;
+    while(isHTMLElement(currentNode) && ![
+        "html",
+        "body"
+    ].includes(getNodeName(currentNode))){
+        if (isContainingBlock(currentNode)) return currentNode;
+        else currentNode = currentNode.parentNode;
+    }
+    return null;
+}
+function getOffsetParent(element) {
+    const window2 = getWindow(element);
+    let offsetParent = getTrueOffsetParent(element);
+    while(offsetParent && isTableElement(offsetParent) && getComputedStyle(offsetParent).position === "static")offsetParent = getTrueOffsetParent(offsetParent);
+    if (offsetParent && (getNodeName(offsetParent) === "html" || getNodeName(offsetParent) === "body" && getComputedStyle(offsetParent).position === "static" && !isContainingBlock(offsetParent))) return window2;
+    return offsetParent || getContainingBlock(element) || window2;
+}
+function getDimensions(element) {
+    if (isHTMLElement(element)) return {
+        width: element.offsetWidth,
+        height: element.offsetHeight
+    };
+    const rect = getBoundingClientRect(element);
+    return {
+        width: rect.width,
+        height: rect.height
+    };
+}
+function convertOffsetParentRelativeRectToViewportRelativeRect(_ref) {
+    let { rect , offsetParent , strategy  } = _ref;
+    const isOffsetParentAnElement = isHTMLElement(offsetParent);
+    const documentElement = getDocumentElement(offsetParent);
+    if (offsetParent === documentElement) return rect;
+    let scroll = {
+        scrollLeft: 0,
+        scrollTop: 0
+    };
+    const offsets = {
+        x: 0,
+        y: 0
+    };
+    if (isOffsetParentAnElement || !isOffsetParentAnElement && strategy !== "fixed") {
+        if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) scroll = getNodeScroll(offsetParent);
+        if (isHTMLElement(offsetParent)) {
+            const offsetRect = getBoundingClientRect(offsetParent, true);
+            offsets.x = offsetRect.x + offsetParent.clientLeft;
+            offsets.y = offsetRect.y + offsetParent.clientTop;
+        }
+    }
+    return _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+    }, rect), {
+        x: rect.x - scroll.scrollLeft + offsets.x,
+        y: rect.y - scroll.scrollTop + offsets.y
+    });
+}
+function getViewportRect(element) {
+    const win = getWindow(element);
+    const html = getDocumentElement(element);
+    const visualViewport = win.visualViewport;
+    let width = html.clientWidth;
+    let height = html.clientHeight;
+    let x = 0;
+    let y = 0;
+    if (visualViewport) {
+        width = visualViewport.width;
+        height = visualViewport.height;
+        if (Math.abs(win.innerWidth / visualViewport.scale - visualViewport.width) < 0.01) {
+            x = visualViewport.offsetLeft;
+            y = visualViewport.offsetTop;
+        }
+    }
+    return {
+        width,
+        height,
+        x,
+        y
+    };
+}
+function getDocumentRect(element) {
+    var _element$ownerDocumen;
+    const html = getDocumentElement(element);
+    const scroll = getNodeScroll(element);
+    const body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
+    const width = max2(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
+    const height = max2(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+    let x = -scroll.scrollLeft + getWindowScrollBarX(element);
+    const y = -scroll.scrollTop;
+    if (getComputedStyle$1(body || html).direction === "rtl") x += max2(html.clientWidth, body ? body.clientWidth : 0) - width;
+    return {
+        width,
+        height,
+        x,
+        y
+    };
+}
+function getNearestOverflowAncestor(node) {
+    if ([
+        "html",
+        "body",
+        "#document"
+    ].includes(getNodeName(node))) return node.ownerDocument.body;
+    if (isHTMLElement(node) && isOverflowElement(node)) return node;
+    return getNearestOverflowAncestor(getParentNode(node));
+}
+function getOverflowAncestors(node, list) {
+    var _node$ownerDocument;
+    if (list === void 0) list = [];
+    const scrollableAncestor = getNearestOverflowAncestor(node);
+    const isBody = scrollableAncestor === ((_node$ownerDocument = node.ownerDocument) == null ? void 0 : _node$ownerDocument.body);
+    const win = getWindow(scrollableAncestor);
+    const target = isBody ? [
+        win
+    ].concat(win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : []) : scrollableAncestor;
+    const updatedList = list.concat(target);
+    return isBody ? updatedList : updatedList.concat(getOverflowAncestors(getParentNode(target)));
+}
+function contains(parent, child) {
+    const rootNode = child.getRootNode == null ? void 0 : child.getRootNode();
+    if (parent.contains(child)) return true;
+    else if (rootNode && isShadowRoot(rootNode)) {
+        let next = child;
+        do {
+            if (next && parent === next) return true;
+            next = next.parentNode || next.host;
+        }while (next)
+    }
+    return false;
+}
+function getInnerBoundingClientRect(element) {
+    const clientRect = getBoundingClientRect(element);
+    const top = clientRect.top + element.clientTop;
+    const left = clientRect.left + element.clientLeft;
+    return {
+        top,
+        left,
+        x: left,
+        y: top,
+        right: left + element.clientWidth,
+        bottom: top + element.clientHeight,
+        width: element.clientWidth,
+        height: element.clientHeight
+    };
+}
+function getClientRectFromClippingAncestor(element, clippingParent) {
+    if (clippingParent === "viewport") return rectToClientRect(getViewportRect(element));
+    if (isElement(clippingParent)) return getInnerBoundingClientRect(clippingParent);
+    return rectToClientRect(getDocumentRect(getDocumentElement(element)));
+}
+function getClippingAncestors(element) {
+    const clippingAncestors = getOverflowAncestors(getParentNode(element));
+    const canEscapeClipping = [
+        "absolute",
+        "fixed"
+    ].includes(getComputedStyle$1(element).position);
+    const clipperElement = canEscapeClipping && isHTMLElement(element) ? getOffsetParent(element) : element;
+    if (!isElement(clipperElement)) return [];
+    return clippingAncestors.filter((clippingAncestors2)=>isElement(clippingAncestors2) && contains(clippingAncestors2, clipperElement) && getNodeName(clippingAncestors2) !== "body"
+    );
+}
+function getClippingRect(_ref) {
+    let { element , boundary , rootBoundary  } = _ref;
+    const mainClippingAncestors = boundary === "clippingAncestors" ? getClippingAncestors(element) : [].concat(boundary);
+    const clippingAncestors = [
+        ...mainClippingAncestors,
+        rootBoundary
+    ];
+    const firstClippingAncestor = clippingAncestors[0];
+    const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor)=>{
+        const rect = getClientRectFromClippingAncestor(element, clippingAncestor);
+        accRect.top = max2(rect.top, accRect.top);
+        accRect.right = min2(rect.right, accRect.right);
+        accRect.bottom = min2(rect.bottom, accRect.bottom);
+        accRect.left = max2(rect.left, accRect.left);
+        return accRect;
+    }, getClientRectFromClippingAncestor(element, firstClippingAncestor));
+    return {
+        width: clippingRect.right - clippingRect.left,
+        height: clippingRect.bottom - clippingRect.top,
+        x: clippingRect.left,
+        y: clippingRect.top
+    };
+}
+var platform = {
+    getClippingRect,
+    convertOffsetParentRelativeRectToViewportRelativeRect,
+    isElement,
+    getDimensions,
+    getOffsetParent,
+    getDocumentElement,
+    getElementRects: (_ref)=>{
+        let { reference , floating , strategy  } = _ref;
+        return {
+            reference: getRectRelativeToOffsetParent(reference, getOffsetParent(floating), strategy),
+            floating: _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+            }, getDimensions(floating)), {
+                x: 0,
+                y: 0
+            })
+        };
+    },
+    getClientRects: (element)=>Array.from(element.getClientRects())
+    ,
+    isRTL: (element)=>getComputedStyle$1(element).direction === "rtl"
+};
+function autoUpdate(reference, floating, update, options) {
+    if (options === void 0) options = {
+    };
+    const { ancestorScroll: _ancestorScroll = true , ancestorResize: _ancestorResize = true , elementResize: _elementResize = true , animationFrame =false  } = options;
+    let cleanedUp = false;
+    const ancestorScroll = _ancestorScroll && !animationFrame;
+    const ancestorResize = _ancestorResize && !animationFrame;
+    const elementResize = _elementResize && !animationFrame;
+    const ancestors = ancestorScroll || ancestorResize ? [
+        ...isElement(reference) ? getOverflowAncestors(reference) : [],
+        ...getOverflowAncestors(floating)
+    ] : [];
+    ancestors.forEach((ancestor)=>{
+        ancestorScroll && ancestor.addEventListener("scroll", update, {
+            passive: true
+        });
+        ancestorResize && ancestor.addEventListener("resize", update);
+    });
+    let observer = null;
+    if (elementResize) {
+        observer = new ResizeObserver(update);
+        isElement(reference) && observer.observe(reference);
+        observer.observe(floating);
+    }
+    let frameId;
+    let prevRefRect = animationFrame ? getBoundingClientRect(reference) : null;
+    if (animationFrame) frameLoop();
+    function frameLoop() {
+        if (cleanedUp) return;
+        const nextRefRect = getBoundingClientRect(reference);
+        if (prevRefRect && (nextRefRect.x !== prevRefRect.x || nextRefRect.y !== prevRefRect.y || nextRefRect.width !== prevRefRect.width || nextRefRect.height !== prevRefRect.height)) update();
+        prevRefRect = nextRefRect;
+        frameId = requestAnimationFrame(frameLoop);
+    }
+    return ()=>{
+        var _observer;
+        cleanedUp = true;
+        ancestors.forEach((ancestor)=>{
+            ancestorScroll && ancestor.removeEventListener("scroll", update);
+            ancestorResize && ancestor.removeEventListener("resize", update);
+        });
+        (_observer = observer) == null || _observer.disconnect();
+        observer = null;
+        if (animationFrame) cancelAnimationFrame(frameId);
+    };
+}
+var computePosition2 = (reference, floating, options)=>computePosition(reference, floating, _chunkICGTMF5ZJs.__spreadValues({
+        platform
+    }, options))
+;
+
+},{"./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c62pF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "dropdown_styles_default", ()=>dropdown_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/dropdown/dropdown.styles.ts
+var dropdown_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: inline-block;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown__trigger {
+    display: block;
+  }
+
+  .dropdown__positioner {
+    position: absolute;
+    z-index: var(--sl-z-index-dropdown);
+  }
+
+  .dropdown__panel {
+    font-family: var(--sl-font-sans);
+    font-size: var(--sl-font-size-medium);
+    font-weight: var(--sl-font-weight-normal);
+    color: var(--color);
+    box-shadow: var(--sl-shadow-large);
+    overflow: auto;
+    overscroll-behavior: none;
+    pointer-events: none;
+  }
+
+  .dropdown--open .dropdown__panel {
+    pointer-events: all;
+  }
+
+  .dropdown__positioner[data-placement^='top'] .dropdown__panel {
+    transform-origin: bottom;
+  }
+
+  .dropdown__positioner[data-placement^='bottom'] .dropdown__panel {
+    transform-origin: top;
+  }
+
+  .dropdown__positioner[data-placement^='left'] .dropdown__panel {
+    transform-origin: right;
+  }
+
+  .dropdown__positioner[data-placement^='right'] .dropdown__panel {
+    transform-origin: left;
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fcXlT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getTabbableBoundary", ()=>getTabbableBoundary
+);
+// src/internal/tabbable.ts
+function isTabbable(el) {
+    const tag = el.tagName.toLowerCase();
+    if (el.getAttribute("tabindex") === "-1") return false;
+    if (el.hasAttribute("disabled")) return false;
+    if (el.hasAttribute("aria-disabled") && el.getAttribute("aria-disabled") !== "false") return false;
+    if (tag === "input" && el.getAttribute("type") === "radio" && !el.hasAttribute("checked")) return false;
+    if (el.offsetParent === null) return false;
+    if (window.getComputedStyle(el).visibility === "hidden") return false;
+    if ((tag === "audio" || tag === "video") && el.hasAttribute("controls")) return true;
+    if (el.hasAttribute("tabindex")) return true;
+    if (el.hasAttribute("contenteditable") && el.getAttribute("contenteditable") !== "false") return true;
+    return [
+        "button",
+        "input",
+        "select",
+        "textarea",
+        "a",
+        "audio",
+        "video",
+        "summary"
+    ].includes(tag);
+}
+function getTabbableBoundary(root) {
+    var _a, _b;
+    const allElements = [];
+    function walk(el) {
+        if (el instanceof HTMLElement) {
+            allElements.push(el);
+            if (el.shadowRoot !== null && el.shadowRoot.mode === "open") walk(el.shadowRoot);
+        }
+        [
+            ...el.querySelectorAll("*")
+        ].forEach((e)=>walk(e)
+        );
+    }
+    walk(root);
+    const start = (_a = allElements.find((el)=>isTabbable(el)
+    )) != null ? _a : null;
+    const end = (_b = allElements.reverse().find((el)=>isTabbable(el)
+    )) != null ? _b : null;
+    return {
+        start,
+        end
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6co8f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "lockBodyScrolling", ()=>lockBodyScrolling
+);
+parcelHelpers.export(exports, "unlockBodyScrolling", ()=>unlockBodyScrolling
+);
+parcelHelpers.export(exports, "scrollIntoView", ()=>scrollIntoView
+);
+// src/internal/offset.ts
+function getOffset(element, parent) {
+    return {
+        top: Math.round(element.getBoundingClientRect().top - parent.getBoundingClientRect().top),
+        left: Math.round(element.getBoundingClientRect().left - parent.getBoundingClientRect().left)
+    };
+}
+// src/internal/scroll.ts
+var locks = /* @__PURE__ */ new Set();
+function lockBodyScrolling(lockingEl) {
+    locks.add(lockingEl);
+    document.body.classList.add("sl-scroll-lock");
+}
+function unlockBodyScrolling(lockingEl) {
+    locks.delete(lockingEl);
+    if (locks.size === 0) document.body.classList.remove("sl-scroll-lock");
+}
+function scrollIntoView(element, container, direction = "vertical", behavior = "smooth") {
+    const offset = getOffset(element, container);
+    const offsetTop = offset.top + container.scrollTop;
+    const offsetLeft = offset.left + container.scrollLeft;
+    const minX = container.scrollLeft;
+    const maxX = container.scrollLeft + container.offsetWidth;
+    const minY = container.scrollTop;
+    const maxY = container.scrollTop + container.offsetHeight;
+    if (direction === "horizontal" || direction === "both") {
+        if (offsetLeft < minX) container.scrollTo({
+            left: offsetLeft,
+            behavior
+        });
+        else if (offsetLeft + element.clientWidth > maxX) container.scrollTo({
+            left: offsetLeft - container.offsetWidth + element.clientWidth,
+            behavior
+        });
+    }
+    if (direction === "vertical" || direction === "both") {
+        if (offsetTop < minY) container.scrollTo({
+            top: offsetTop,
+            behavior
+        });
+        else if (offsetTop + element.clientHeight > maxY) container.scrollTo({
+            top: offsetTop - container.offsetHeight + element.clientHeight,
+            behavior
+        });
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e8cQr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animateTo", ()=>animateTo
+);
+parcelHelpers.export(exports, "parseDuration", ()=>parseDuration
+);
+parcelHelpers.export(exports, "stopAnimations", ()=>stopAnimations
+);
+parcelHelpers.export(exports, "shimKeyframesHeightAuto", ()=>shimKeyframesHeightAuto
+);
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/internal/animate.ts
+function animateTo(el, keyframes, options) {
+    return new Promise((resolve)=>{
+        if ((options == null ? void 0 : options.duration) === Infinity) throw new Error("Promise-based animations must be finite.");
+        const animation = el.animate(keyframes, _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+        }, options), {
+            duration: prefersReducedMotion() ? 0 : options.duration
+        }));
+        animation.addEventListener("cancel", resolve, {
+            once: true
+        });
+        animation.addEventListener("finish", resolve, {
+            once: true
+        });
+    });
+}
+function parseDuration(delay) {
+    delay = delay.toString().toLowerCase();
+    if (delay.indexOf("ms") > -1) return parseFloat(delay);
+    if (delay.indexOf("s") > -1) return parseFloat(delay) * 1000;
+    return parseFloat(delay);
+}
+function prefersReducedMotion() {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    return query.matches;
+}
+function stopAnimations(el) {
+    return Promise.all(el.getAnimations().map((animation)=>{
+        return new Promise((resolve)=>{
+            const handleAnimationEvent = requestAnimationFrame(resolve);
+            animation.addEventListener("cancel", ()=>handleAnimationEvent
+            , {
+                once: true
+            });
+            animation.addEventListener("finish", ()=>handleAnimationEvent
+            , {
+                once: true
+            });
+            animation.cancel();
+        });
+    }));
+}
+function shimKeyframesHeightAuto(keyframes, calculatedHeight) {
+    return keyframes.map((keyframe)=>_chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+        }, keyframe), {
+            height: keyframe.height === "auto" ? `${calculatedHeight}px` : keyframe.height
+        })
+    );
+}
+
+},{"./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b4z3m":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "setDefaultAnimation", ()=>setDefaultAnimation
+);
+parcelHelpers.export(exports, "setAnimation", ()=>setAnimation
+);
+parcelHelpers.export(exports, "getAnimation", ()=>getAnimation
+);
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/utilities/animation-registry.ts
+var defaultAnimationRegistry = /* @__PURE__ */ new Map();
+var customAnimationRegistry = /* @__PURE__ */ new WeakMap();
+function ensureAnimation(animation) {
+    return animation != null ? animation : {
+        keyframes: [],
+        options: {
+            duration: 0
+        }
+    };
+}
+function setDefaultAnimation(animationName, animation) {
+    defaultAnimationRegistry.set(animationName, ensureAnimation(animation));
+}
+function setAnimation(el, animationName, animation) {
+    customAnimationRegistry.set(el, _chunkICGTMF5ZJs.__spreadProps(_chunkICGTMF5ZJs.__spreadValues({
+    }, customAnimationRegistry.get(el)), {
+        [animationName]: ensureAnimation(animation)
+    }));
+}
+function getAnimation(el, animationName) {
+    const customAnimation = customAnimationRegistry.get(el);
+    if (customAnimation == null ? void 0 : customAnimation[animationName]) return customAnimation[animationName];
+    const defaultAnimation = defaultAnimationRegistry.get(animationName);
+    if (defaultAnimation) return defaultAnimation;
+    return {
+        keyframes: [],
+        options: {
+            duration: 0
+        }
+    };
+}
+
+},{"./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"GIoqC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlIconButton", ()=>SlIconButton
+);
+var _chunkFE67GRYMJs = require("./chunk.FE67GRYM.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkR37SUKY2Js = require("./chunk.R37SUKY2.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/icon-button/icon-button.ts
+var SlIconButton = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.label = "";
+        this.disabled = false;
+    }
+    render() {
+        const isLink = this.href ? true : false;
+        const interior = _chunkPEQICPKOJs.$`
+      <sl-icon
+        name=${_chunkR37SUKY2Js.l(this.name)}
+        library=${_chunkR37SUKY2Js.l(this.library)}
+        src=${_chunkR37SUKY2Js.l(this.src)}
+        aria-hidden="true"
+      ></sl-icon>
+    `;
+        return isLink ? _chunkPEQICPKOJs.$`
+          <a
+            part="base"
+            class="icon-button"
+            href=${_chunkR37SUKY2Js.l(this.href)}
+            target=${_chunkR37SUKY2Js.l(this.target)}
+            download=${_chunkR37SUKY2Js.l(this.download)}
+            rel=${_chunkR37SUKY2Js.l(this.target ? "noreferrer noopener" : void 0)}
+            role="button"
+            aria-disabled=${this.disabled ? "true" : "false"}
+            aria-label="${this.label}"
+            tabindex=${this.disabled ? "-1" : "0"}
+          >
+            ${interior}
+          </a>
+        ` : _chunkPEQICPKOJs.$`
+          <button
+            part="base"
+            class=${_chunk7BXY5XRGJs.o({
+            "icon-button": true,
+            "icon-button--disabled": this.disabled
+        })}
+            ?disabled=${this.disabled}
+            type="button"
+            aria-label=${this.label}
+          >
+            ${interior}
+          </button>
+        `;
+    }
+};
+SlIconButton.styles = _chunkFE67GRYMJs.icon_button_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i("button")
+], SlIconButton.prototype, "button", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "name", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "library", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "src", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "href", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "target", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "download", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlIconButton.prototype, "label", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlIconButton.prototype, "disabled", 2);
+SlIconButton = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-icon-button")
+], SlIconButton);
+
+},{"./chunk.FE67GRYM.js":"66NCc","./chunk.7BXY5XRG.js":"4rmsB","./chunk.R37SUKY2.js":"4UQhF","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"66NCc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "icon_button_styles_default", ()=>icon_button_styles_default
+);
+var _chunkIVOHDN3HJs = require("./chunk.IVOHDN3H.js");
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/icon-button/icon-button.styles.ts
+var icon_button_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: inline-block;
+  }
+
+  .icon-button {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--sl-border-radius-medium);
+    font-size: inherit;
+    color: var(--sl-color-neutral-600);
+    padding: var(--sl-spacing-x-small);
+    cursor: pointer;
+    transition: var(--sl-transition-medium) color;
+    -webkit-appearance: none;
+  }
+
+  .icon-button:hover:not(.icon-button--disabled),
+  .icon-button:focus:not(.icon-button--disabled) {
+    color: var(--sl-color-primary-600);
+  }
+
+  .icon-button:active:not(.icon-button--disabled) {
+    color: var(--sl-color-primary-700);
+  }
+
+  .icon-button:focus {
+    outline: none;
+  }
+
+  .icon-button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .icon-button${_chunkIVOHDN3HJs.focusVisibleSelector} {
+    box-shadow: var(--sl-focus-ring);
+  }
+`;
+
+},{"./chunk.IVOHDN3H.js":"aZSR4","./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4cp3K":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunk2ZCLEOHEJs.SlMenu
+);
+var _chunk2ZCLEOHEJs = require("../../chunks/chunk.2ZCLEOHE.js");
+var _chunkR2YZVUVKJs = require("../../chunks/chunk.R2YZVUVK.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunkIVOHDN3HJs = require("../../chunks/chunk.IVOHDN3H.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.2ZCLEOHE.js":"PBaD3","../../chunks/chunk.R2YZVUVK.js":"7BsxM","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.IVOHDN3H.js":"aZSR4","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"PBaD3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlMenu", ()=>SlMenu
+);
+var _chunkR2YZVUVKJs = require("./chunk.R2YZVUVK.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunkIVOHDN3HJs = require("./chunk.IVOHDN3H.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/menu/menu.ts
+var SlMenu = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.typeToSelectString = "";
+    }
+    firstUpdated() {
+        this.setAttribute("role", "menu");
+    }
+    getAllItems(options = {
+        includeDisabled: true
+    }) {
+        return [
+            ...this.defaultSlot.assignedElements({
+                flatten: true
+            })
+        ].filter((el)=>{
+            if (el.getAttribute("role") !== "menuitem") return false;
+            if (!options.includeDisabled && el.disabled) return false;
+            return true;
+        });
+    }
+    getCurrentItem() {
+        return this.getAllItems({
+            includeDisabled: false
+        }).find((i2)=>i2.getAttribute("tabindex") === "0"
+        );
+    }
+    setCurrentItem(item) {
+        const items = this.getAllItems({
+            includeDisabled: false
+        });
+        const activeItem = item.disabled ? items[0] : item;
+        items.forEach((i2)=>{
+            i2.setAttribute("tabindex", i2 === activeItem ? "0" : "-1");
+        });
+    }
+    typeToSelect(event) {
+        var _a;
+        const items = this.getAllItems({
+            includeDisabled: false
+        });
+        clearTimeout(this.typeToSelectTimeout);
+        this.typeToSelectTimeout = window.setTimeout(()=>this.typeToSelectString = ""
+        , 1000);
+        if (event.key === "Backspace") {
+            if (event.metaKey || event.ctrlKey) this.typeToSelectString = "";
+            else this.typeToSelectString = this.typeToSelectString.slice(0, -1);
+        } else this.typeToSelectString += event.key.toLowerCase();
+        if (!_chunkIVOHDN3HJs.hasFocusVisible) items.forEach((item)=>item.classList.remove("sl-focus-invisible")
+        );
+        for (const item1 of items){
+            const slot = (_a = item1.shadowRoot) == null ? void 0 : _a.querySelector("slot:not([name])");
+            const label = _chunkHQSLB26PJs.getTextContent(slot).toLowerCase().trim();
+            if (label.startsWith(this.typeToSelectString)) {
+                this.setCurrentItem(item1);
+                item1.focus();
+                break;
+            }
+        }
+    }
+    handleClick(event) {
+        const target = event.target;
+        const item = target.closest("sl-menu-item");
+        if ((item == null ? void 0 : item.disabled) === false) _chunkCDTZZV7WJs.emit(this, "sl-select", {
+            detail: {
+                item
+            }
+        });
+    }
+    handleKeyUp() {
+        if (!_chunkIVOHDN3HJs.hasFocusVisible) {
+            const items = this.getAllItems();
+            items.forEach((item)=>{
+                item.classList.remove("sl-focus-invisible");
+            });
+        }
+    }
+    handleKeyDown(event) {
+        if (event.key === "Enter") {
+            const item = this.getCurrentItem();
+            event.preventDefault();
+            item == null || item.click();
+        }
+        if (event.key === " ") event.preventDefault();
+        if ([
+            "ArrowDown",
+            "ArrowUp",
+            "Home",
+            "End"
+        ].includes(event.key)) {
+            const items = this.getAllItems({
+                includeDisabled: false
+            });
+            const activeItem = this.getCurrentItem();
+            let index = activeItem ? items.indexOf(activeItem) : 0;
+            if (items.length > 0) {
+                event.preventDefault();
+                if (event.key === "ArrowDown") index++;
+                else if (event.key === "ArrowUp") index--;
+                else if (event.key === "Home") index = 0;
+                else if (event.key === "End") index = items.length - 1;
+                if (index < 0) index = 0;
+                if (index > items.length - 1) index = items.length - 1;
+                this.setCurrentItem(items[index]);
+                items[index].focus();
+                return;
+            }
+        }
+        this.typeToSelect(event);
+    }
+    handleMouseDown(event) {
+        const target = event.target;
+        if (target.getAttribute("role") === "menuitem") {
+            this.setCurrentItem(target);
+            if (!_chunkIVOHDN3HJs.hasFocusVisible) target.classList.add("sl-focus-invisible");
+        }
+    }
+    handleSlotChange() {
+        const items = this.getAllItems({
+            includeDisabled: false
+        });
+        if (items.length > 0) this.setCurrentItem(items[0]);
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        class="menu"
+        @click=${this.handleClick}
+        @keydown=${this.handleKeyDown}
+        @keyup=${this.handleKeyUp}
+        @mousedown=${this.handleMouseDown}
+      >
+        <slot @slotchange=${this.handleSlotChange}></slot>
+      </div>
+    `;
+    }
+};
+SlMenu.styles = _chunkR2YZVUVKJs.menu_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".menu")
+], SlMenu.prototype, "menu", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i("slot")
+], SlMenu.prototype, "defaultSlot", 2);
+SlMenu = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-menu")
+], SlMenu);
+
+},{"./chunk.R2YZVUVK.js":"7BsxM","./chunk.HQSLB26P.js":"5g8PC","./chunk.IVOHDN3H.js":"aZSR4","./chunk.CDTZZV7W.js":"1aMHq","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7BsxM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "menu_styles_default", ()=>menu_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/menu/menu.styles.ts
+var menu_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: block;
+  }
+
+  .menu {
+    background: var(--sl-panel-background-color);
+    border: solid var(--sl-panel-border-width) var(--sl-panel-border-color);
+    border-radius: var(--sl-border-radius-medium);
+    background: var(--sl-panel-background-color);
+    padding: var(--sl-spacing-x-small) 0;
+  }
+
+  ::slotted(sl-divider) {
+    --spacing: var(--sl-spacing-x-small);
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kHGjf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkXTJ7LSDZJs.SlMenuItem
+);
+var _chunkXTJ7LSDZJs = require("../../chunks/chunk.XTJ7LSDZ.js");
+var _chunkPWMZHGCPJs = require("../../chunks/chunk.PWMZHGCP.js");
+var _chunkIVOHDN3HJs = require("../../chunks/chunk.IVOHDN3H.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkX2HKYC6RJs = require("../../chunks/chunk.X2HKYC6R.js");
+var _chunkUCCHCS2EJs = require("../../chunks/chunk.UCCHCS2E.js");
+var _chunkC7PPQWMAJs = require("../../chunks/chunk.C7PPQWMA.js");
+var _chunkNFF2HMITJs = require("../../chunks/chunk.NFF2HMIT.js");
+var _chunkIDYSXN6RJs = require("../../chunks/chunk.IDYSXN6R.js");
+var _chunkP52GZVKGJs = require("../../chunks/chunk.P52GZVKG.js");
+var _chunkRPB53XXVJs = require("../../chunks/chunk.RPB53XXV.js");
+var _chunkNPYVPRSAJs = require("../../chunks/chunk.NPYVPRSA.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.XTJ7LSDZ.js":"5NyWr","../../chunks/chunk.PWMZHGCP.js":"bbT43","../../chunks/chunk.IVOHDN3H.js":"aZSR4","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.X2HKYC6R.js":"5aCwX","../../chunks/chunk.UCCHCS2E.js":"95IKC","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.IDYSXN6R.js":"izuBA","../../chunks/chunk.P52GZVKG.js":"4GsHx","../../chunks/chunk.RPB53XXV.js":"enS2T","../../chunks/chunk.NPYVPRSA.js":"4EMah","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5NyWr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlMenuItem", ()=>SlMenuItem
+);
+var _chunkPWMZHGCPJs = require("./chunk.PWMZHGCP.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("./chunk.PQ5VRVXF.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/menu-item/menu-item.ts
+var SlMenuItem = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.checked = false;
+        this.value = "";
+        this.disabled = false;
+    }
+    firstUpdated() {
+        this.setAttribute("role", "menuitem");
+    }
+    handleCheckedChange() {
+        this.setAttribute("aria-checked", this.checked ? "true" : "false");
+    }
+    handleDisabledChange() {
+        this.setAttribute("aria-disabled", this.disabled ? "true" : "false");
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            "menu-item": true,
+            "menu-item--checked": this.checked,
+            "menu-item--disabled": this.disabled,
+            "menu-item--has-submenu": false
+        })}
+      >
+        <span class="menu-item__check">
+          <sl-icon name="check-lg" library="default" aria-hidden="true"></sl-icon>
+        </span>
+
+        <span part="prefix" class="menu-item__prefix">
+          <slot name="prefix"></slot>
+        </span>
+
+        <span part="label" class="menu-item__label">
+          <slot></slot>
+        </span>
+
+        <span part="suffix" class="menu-item__suffix">
+          <slot name="suffix"></slot>
+        </span>
+
+        <span class="menu-item__chevron">
+          <sl-icon name="chevron-right" library="default" aria-hidden="true"></sl-icon>
+        </span>
+      </div>
+    `;
+    }
+};
+SlMenuItem.styles = _chunkPWMZHGCPJs.menu_item_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".menu-item")
+], SlMenuItem.prototype, "menuItem", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlMenuItem.prototype, "checked", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlMenuItem.prototype, "value", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlMenuItem.prototype, "disabled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("checked")
+], SlMenuItem.prototype, "handleCheckedChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("disabled")
+], SlMenuItem.prototype, "handleDisabledChange", 1);
+SlMenuItem = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-menu-item")
+], SlMenuItem);
+
+},{"./chunk.PWMZHGCP.js":"bbT43","./chunk.7BXY5XRG.js":"4rmsB","./chunk.PQ5VRVXF.js":"b1tC8","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bbT43":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "menu_item_styles_default", ()=>menu_item_styles_default
+);
+var _chunkIVOHDN3HJs = require("./chunk.IVOHDN3H.js");
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/menu-item/menu-item.styles.ts
+var menu_item_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: block;
+  }
+
+  .menu-item {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    font-family: var(--sl-font-sans);
+    font-size: var(--sl-font-size-medium);
+    font-weight: var(--sl-font-weight-normal);
+    line-height: var(--sl-line-height-normal);
+    letter-spacing: var(--sl-letter-spacing-normal);
+    text-align: left;
+    color: var(--sl-color-neutral-700);
+    padding: var(--sl-spacing-2x-small) var(--sl-spacing-2x-small);
+    transition: var(--sl-transition-fast) fill;
+    user-select: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .menu-item.menu-item--disabled {
+    outline: none;
+    color: var(--sl-color-neutral-400);
+    cursor: not-allowed;
+  }
+
+  .menu-item .menu-item__label {
+    flex: 1 1 auto;
+  }
+
+  .menu-item .menu-item__prefix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item .menu-item__prefix ::slotted(*) {
+    margin-right: var(--sl-spacing-x-small);
+  }
+
+  .menu-item .menu-item__suffix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item .menu-item__suffix ::slotted(*) {
+    margin-left: var(--sl-spacing-x-small);
+  }
+
+  :host(:focus) {
+    outline: none;
+  }
+
+  :host(:hover:not([aria-disabled='true'])) .menu-item,
+  :host(${_chunkIVOHDN3HJs.focusVisibleSelector}:not(.sl-focus-invisible):not([aria-disabled='true'])) .menu-item {
+    outline: none;
+    background-color: var(--sl-color-primary-600);
+    color: var(--sl-color-neutral-0);
+  }
+
+  .menu-item .menu-item__check,
+  .menu-item .menu-item__chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    visibility: hidden;
+  }
+
+  .menu-item--checked .menu-item__check,
+  .menu-item--has-submenu .menu-item__chevron {
+    visibility: visible;
+  }
+`;
+
+},{"./chunk.IVOHDN3H.js":"aZSR4","./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fjMKz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunk5D7IFRWWJs.SlTextarea
+);
+var _chunk5D7IFRWWJs = require("../../chunks/chunk.5D7IFRWW.js");
+var _chunkN2MV4HXOJs = require("../../chunks/chunk.N2MV4HXO.js");
+var _chunkLAAROFAUJs = require("../../chunks/chunk.LAAROFAU.js");
+var _chunkO2TDYW3AJs = require("../../chunks/chunk.O2TDYW3A.js");
+var _chunkZHPXFQWEJs = require("../../chunks/chunk.ZHPXFQWE.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.5D7IFRWW.js":"h4Pny","../../chunks/chunk.N2MV4HXO.js":"et5fZ","../../chunks/chunk.LAAROFAU.js":"ejKRy","../../chunks/chunk.O2TDYW3A.js":"bzEzY","../../chunks/chunk.ZHPXFQWE.js":"gQnXa","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h4Pny":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlTextarea", ()=>SlTextarea
+);
+var _chunkN2MV4HXOJs = require("./chunk.N2MV4HXO.js");
+var _chunkO2TDYW3AJs = require("./chunk.O2TDYW3A.js");
+var _chunkZHPXFQWEJs = require("./chunk.ZHPXFQWE.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("./chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("./chunk.R37SUKY2.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/textarea/textarea.ts
+var SlTextarea = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.formSubmitController = new _chunkZHPXFQWEJs.FormSubmitController(this);
+        this.hasSlotController = new _chunkHQSLB26PJs.HasSlotController(this, "help-text", "label");
+        this.hasFocus = false;
+        this.size = "medium";
+        this.value = "";
+        this.filled = false;
+        this.label = "";
+        this.helpText = "";
+        this.rows = 4;
+        this.resize = "vertical";
+        this.disabled = false;
+        this.readonly = false;
+        this.required = false;
+        this.invalid = false;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.resizeObserver = new ResizeObserver(()=>this.setTextareaHeight()
+        );
+        this.updateComplete.then(()=>{
+            this.setTextareaHeight();
+            this.resizeObserver.observe(this.input);
+        });
+    }
+    firstUpdated() {
+        this.invalid = !this.input.checkValidity();
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.resizeObserver.unobserve(this.input);
+    }
+    focus(options) {
+        this.input.focus(options);
+    }
+    blur() {
+        this.input.blur();
+    }
+    select() {
+        this.input.select();
+    }
+    scrollPosition(position) {
+        if (position) {
+            if (typeof position.top === "number") this.input.scrollTop = position.top;
+            if (typeof position.left === "number") this.input.scrollLeft = position.left;
+            return;
+        }
+        return {
+            top: this.input.scrollTop,
+            left: this.input.scrollTop
+        };
+    }
+    setSelectionRange(selectionStart, selectionEnd, selectionDirection = "none") {
+        this.input.setSelectionRange(selectionStart, selectionEnd, selectionDirection);
+    }
+    setRangeText(replacement, start, end, selectMode = "preserve") {
+        this.input.setRangeText(replacement, start, end, selectMode);
+        if (this.value !== this.input.value) {
+            this.value = this.input.value;
+            _chunkCDTZZV7WJs.emit(this, "sl-input");
+        }
+        if (this.value !== this.input.value) {
+            this.value = this.input.value;
+            this.setTextareaHeight();
+            _chunkCDTZZV7WJs.emit(this, "sl-input");
+            _chunkCDTZZV7WJs.emit(this, "sl-change");
+        }
+    }
+    reportValidity() {
+        return this.input.reportValidity();
+    }
+    setCustomValidity(message) {
+        this.input.setCustomValidity(message);
+        this.invalid = !this.input.checkValidity();
+    }
+    handleBlur() {
+        this.hasFocus = false;
+        _chunkCDTZZV7WJs.emit(this, "sl-blur");
+    }
+    handleChange() {
+        this.value = this.input.value;
+        this.setTextareaHeight();
+        _chunkCDTZZV7WJs.emit(this, "sl-change");
+    }
+    handleDisabledChange() {
+        this.input.disabled = this.disabled;
+        this.invalid = !this.input.checkValidity();
+    }
+    handleFocus() {
+        this.hasFocus = true;
+        _chunkCDTZZV7WJs.emit(this, "sl-focus");
+    }
+    handleInput() {
+        this.value = this.input.value;
+        this.setTextareaHeight();
+        _chunkCDTZZV7WJs.emit(this, "sl-input");
+    }
+    handleRowsChange() {
+        this.setTextareaHeight();
+    }
+    handleValueChange() {
+        this.invalid = !this.input.checkValidity();
+    }
+    setTextareaHeight() {
+        if (this.resize === "auto") {
+            this.input.style.height = "auto";
+            this.input.style.height = `${this.input.scrollHeight}px`;
+        } else this.input.style.height = void 0;
+    }
+    render() {
+        const hasLabelSlot = this.hasSlotController.test("label");
+        const hasHelpTextSlot = this.hasSlotController.test("help-text");
+        const hasLabel = this.label ? true : !!hasLabelSlot;
+        const hasHelpText = this.helpText ? true : !!hasHelpTextSlot;
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="form-control"
+        class=${_chunk7BXY5XRGJs.o({
+            "form-control": true,
+            "form-control--small": this.size === "small",
+            "form-control--medium": this.size === "medium",
+            "form-control--large": this.size === "large",
+            "form-control--has-label": hasLabel,
+            "form-control--has-help-text": hasHelpText
+        })}
+      >
+        <label part="label" class="form-control__label" for="input" aria-hidden=${hasLabel ? "false" : "true"}>
+          <slot name="label">${this.label}</slot>
+        </label>
+
+        <div class="form-control__input">
+          <div
+            part="base"
+            class=${_chunk7BXY5XRGJs.o({
+            textarea: true,
+            "textarea--small": this.size === "small",
+            "textarea--medium": this.size === "medium",
+            "textarea--large": this.size === "large",
+            "textarea--standard": !this.filled,
+            "textarea--filled": this.filled,
+            "textarea--disabled": this.disabled,
+            "textarea--focused": this.hasFocus,
+            "textarea--empty": this.value.length === 0,
+            "textarea--invalid": this.invalid,
+            "textarea--resize-none": this.resize === "none",
+            "textarea--resize-vertical": this.resize === "vertical",
+            "textarea--resize-auto": this.resize === "auto"
+        })}
+          >
+            <textarea
+              part="textarea"
+              id="input"
+              class="textarea__control"
+              name=${_chunkR37SUKY2Js.l(this.name)}
+              .value=${_chunkO2TDYW3AJs.l(this.value)}
+              ?disabled=${this.disabled}
+              ?readonly=${this.readonly}
+              ?required=${this.required}
+              placeholder=${_chunkR37SUKY2Js.l(this.placeholder)}
+              rows=${_chunkR37SUKY2Js.l(this.rows)}
+              minlength=${_chunkR37SUKY2Js.l(this.minlength)}
+              maxlength=${_chunkR37SUKY2Js.l(this.maxlength)}
+              autocapitalize=${_chunkR37SUKY2Js.l(this.autocapitalize)}
+              autocorrect=${_chunkR37SUKY2Js.l(this.autocorrect)}
+              ?autofocus=${this.autofocus}
+              spellcheck=${_chunkR37SUKY2Js.l(this.spellcheck)}
+              inputmode=${_chunkR37SUKY2Js.l(this.inputmode)}
+              aria-describedby="help-text"
+              @change=${this.handleChange}
+              @input=${this.handleInput}
+              @focus=${this.handleFocus}
+              @blur=${this.handleBlur}
+            ></textarea>
+          </div>
+        </div>
+
+        <div
+          part="help-text"
+          id="help-text"
+          class="form-control__help-text"
+          aria-hidden=${hasHelpText ? "false" : "true"}
+        >
+          <slot name="help-text">${this.helpText}</slot>
+        </div>
+      </div>
+    `;
+    }
+};
+SlTextarea.styles = _chunkN2MV4HXOJs.textarea_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".textarea__control")
+], SlTextarea.prototype, "input", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlTextarea.prototype, "hasFocus", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlTextarea.prototype, "size", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "name", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "value", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTextarea.prototype, "filled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "label", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "help-text"
+    })
+], SlTextarea.prototype, "helpText", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "placeholder", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Number
+    })
+], SlTextarea.prototype, "rows", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "resize", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTextarea.prototype, "disabled", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTextarea.prototype, "readonly", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Number
+    })
+], SlTextarea.prototype, "minlength", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Number
+    })
+], SlTextarea.prototype, "maxlength", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTextarea.prototype, "required", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlTextarea.prototype, "invalid", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "autocapitalize", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "autocorrect", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "autocomplete", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlTextarea.prototype, "autofocus", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean
+    })
+], SlTextarea.prototype, "spellcheck", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlTextarea.prototype, "inputmode", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("disabled", {
+        waitUntilFirstUpdate: true
+    })
+], SlTextarea.prototype, "handleDisabledChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("rows", {
+        waitUntilFirstUpdate: true
+    })
+], SlTextarea.prototype, "handleRowsChange", 1);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("value", {
+        waitUntilFirstUpdate: true
+    })
+], SlTextarea.prototype, "handleValueChange", 1);
+SlTextarea = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-textarea")
+], SlTextarea);
+
+},{"./chunk.N2MV4HXO.js":"et5fZ","./chunk.O2TDYW3A.js":"bzEzY","./chunk.ZHPXFQWE.js":"gQnXa","./chunk.HQSLB26P.js":"5g8PC","./chunk.7BXY5XRG.js":"4rmsB","./chunk.PQ5VRVXF.js":"b1tC8","./chunk.CDTZZV7W.js":"1aMHq","./chunk.R37SUKY2.js":"4UQhF","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"et5fZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "textarea_styles_default", ()=>textarea_styles_default
+);
+var _chunkLAAROFAUJs = require("./chunk.LAAROFAU.js");
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/textarea/textarea.styles.ts
+var textarea_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+  ${_chunkLAAROFAUJs.form_control_styles_default}
+
+  :host {
+    display: block;
+  }
+
+  .textarea {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-input-font-weight);
+    line-height: var(--sl-line-height-normal);
+    letter-spacing: var(--sl-input-letter-spacing);
+    vertical-align: middle;
+    transition: var(--sl-transition-fast) color, var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow,
+      var(--sl-transition-fast) background-color;
+    cursor: text;
+  }
+
+  /* Standard textareas */
+  .textarea--standard {
+    background-color: var(--sl-input-background-color);
+    border: solid var(--sl-input-border-width) var(--sl-input-border-color);
+  }
+
+  .textarea--standard:hover:not(.textarea--disabled) {
+    background-color: var(--sl-input-background-color-hover);
+    border-color: var(--sl-input-border-color-hover);
+  }
+  .textarea--standard:hover:not(.textarea--disabled) .textarea__control {
+    color: var(--sl-input-color-hover);
+  }
+
+  .textarea--standard.textarea--focused:not(.textarea--disabled) {
+    background-color: var(--sl-input-background-color-focus);
+    border-color: var(--sl-input-border-color-focus);
+    box-shadow: var(--sl-focus-ring);
+    color: var(--sl-input-color-focus);
+  }
+
+  .textarea--standard.textarea--focused:not(.textarea--disabled) .textarea__control {
+    color: var(--sl-input-color-focus);
+  }
+
+  .textarea--standard.textarea--disabled {
+    background-color: var(--sl-input-background-color-disabled);
+    border-color: var(--sl-input-border-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .textarea--standard.textarea--disabled .textarea__control {
+    color: var(--sl-input-color-disabled);
+  }
+
+  .textarea--standard.textarea--disabled .textarea__control::placeholder {
+    color: var(--sl-input-placeholder-color-disabled);
+  }
+
+  /* Filled textareas */
+  .textarea--filled {
+    border: none;
+    background-color: var(--sl-input-filled-background-color);
+    color: var(--sl-input-color);
+  }
+
+  .textarea--filled:hover:not(.textarea--disabled) {
+    background-color: var(--sl-input-filled-background-color-hover);
+  }
+
+  .textarea--filled.textarea--focused:not(.textarea--disabled) {
+    background-color: var(--sl-input-filled-background-color-focus);
+    box-shadow: var(--sl-focus-ring);
+  }
+
+  .textarea--filled.textarea--disabled {
+    background-color: var(--sl-input-filled-background-color-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .textarea__control {
+    flex: 1 1 auto;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.4;
+    color: var(--sl-input-color);
+    border: none;
+    background: none;
+    box-shadow: none;
+    cursor: inherit;
+    -webkit-appearance: none;
+  }
+
+  .textarea__control::-webkit-search-decoration,
+  .textarea__control::-webkit-search-cancel-button,
+  .textarea__control::-webkit-search-results-button,
+  .textarea__control::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  .textarea__control::placeholder {
+    color: var(--sl-input-placeholder-color);
+    user-select: none;
+  }
+
+  .textarea__control:focus {
+    outline: none;
+  }
+
+  /*
+   * Size modifiers
+   */
+
+  .textarea--small {
+    border-radius: var(--sl-input-border-radius-small);
+    font-size: var(--sl-input-font-size-small);
+  }
+
+  .textarea--small .textarea__control {
+    padding: 0.5em var(--sl-input-spacing-small);
+  }
+
+  .textarea--medium {
+    border-radius: var(--sl-input-border-radius-medium);
+    font-size: var(--sl-input-font-size-medium);
+  }
+
+  .textarea--medium .textarea__control {
+    padding: 0.5em var(--sl-input-spacing-medium);
+  }
+
+  .textarea--large {
+    border-radius: var(--sl-input-border-radius-large);
+    font-size: var(--sl-input-font-size-large);
+  }
+
+  .textarea--large .textarea__control {
+    padding: 0.5em var(--sl-input-spacing-large);
+  }
+
+  /*
+   * Resize types
+   */
+
+  .textarea--resize-none .textarea__control {
+    resize: none;
+  }
+
+  .textarea--resize-vertical .textarea__control {
+    resize: vertical;
+  }
+
+  .textarea--resize-auto .textarea__control {
+    height: auto;
+    resize: none;
+  }
+`;
+
+},{"./chunk.LAAROFAU.js":"ejKRy","./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1eEuu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunk7QUXULHAJs.SlDrawer
+);
+var _chunk7QUXULHAJs = require("../../chunks/chunk.7QUXULHA.js");
+var _chunk5RWXA544Js = require("../../chunks/chunk.5RWXA544.js");
+var _chunkVMANUTOMJs = require("../../chunks/chunk.VMANUTOM.js");
+var _chunkSCUNOITNJs = require("../../chunks/chunk.SCUNOITN.js");
+var _chunkH262HIXGJs = require("../../chunks/chunk.H262HIXG.js");
+var _chunkEBGTCCKYJs = require("../../chunks/chunk.EBGTCCKY.js");
+var _chunkTGQTNU23Js = require("../../chunks/chunk.TGQTNU23.js");
+var _chunkFE67GRYMJs = require("../../chunks/chunk.FE67GRYM.js");
+var _chunkYBI4N56RJs = require("../../chunks/chunk.YBI4N56R.js");
+var _chunk6SAGALY4Js = require("../../chunks/chunk.6SAGALY4.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunkIVOHDN3HJs = require("../../chunks/chunk.IVOHDN3H.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkX2HKYC6RJs = require("../../chunks/chunk.X2HKYC6R.js");
+var _chunkUCCHCS2EJs = require("../../chunks/chunk.UCCHCS2E.js");
+var _chunkC7PPQWMAJs = require("../../chunks/chunk.C7PPQWMA.js");
+var _chunkNFF2HMITJs = require("../../chunks/chunk.NFF2HMIT.js");
+var _chunkIDYSXN6RJs = require("../../chunks/chunk.IDYSXN6R.js");
+var _chunkP52GZVKGJs = require("../../chunks/chunk.P52GZVKG.js");
+var _chunkRPB53XXVJs = require("../../chunks/chunk.RPB53XXV.js");
+var _chunkNPYVPRSAJs = require("../../chunks/chunk.NPYVPRSA.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.7QUXULHA.js":"kc9aA","../../chunks/chunk.5RWXA544.js":"9lT9T","../../chunks/chunk.VMANUTOM.js":"3eNCn","../../chunks/chunk.SCUNOITN.js":"fcXlT","../../chunks/chunk.H262HIXG.js":"6co8f","../../chunks/chunk.EBGTCCKY.js":"2lYis","../../chunks/chunk.TGQTNU23.js":"GIoqC","../../chunks/chunk.FE67GRYM.js":"66NCc","../../chunks/chunk.YBI4N56R.js":"e8cQr","../../chunks/chunk.6SAGALY4.js":"b4z3m","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.IVOHDN3H.js":"aZSR4","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.X2HKYC6R.js":"5aCwX","../../chunks/chunk.UCCHCS2E.js":"95IKC","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.IDYSXN6R.js":"izuBA","../../chunks/chunk.P52GZVKG.js":"4GsHx","../../chunks/chunk.RPB53XXV.js":"enS2T","../../chunks/chunk.NPYVPRSA.js":"4EMah","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kc9aA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlDrawer", ()=>SlDrawer
+);
+var _chunk5RWXA544Js = require("./chunk.5RWXA544.js");
+var _chunkVMANUTOMJs = require("./chunk.VMANUTOM.js");
+var _chunkH262HIXGJs = require("./chunk.H262HIXG.js");
+var _chunkEBGTCCKYJs = require("./chunk.EBGTCCKY.js");
+var _chunkYBI4N56RJs = require("./chunk.YBI4N56R.js");
+var _chunk6SAGALY4Js = require("./chunk.6SAGALY4.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("./chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("./chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("./chunk.R37SUKY2.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/internal/string.ts
+function uppercaseFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+// src/components/drawer/drawer.ts
+var SlDrawer = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.hasSlotController = new _chunkHQSLB26PJs.HasSlotController(this, "footer");
+        this.localize = new _chunkEBGTCCKYJs.LocalizeController(this);
+        this.open = false;
+        this.label = "";
+        this.placement = "end";
+        this.contained = false;
+        this.noHeader = false;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        this.modal = new _chunkVMANUTOMJs.Modal(this);
+    }
+    firstUpdated() {
+        this.drawer.hidden = !this.open;
+        if (this.open && !this.contained) {
+            this.modal.activate();
+            _chunkH262HIXGJs.lockBodyScrolling(this);
+        }
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        _chunkH262HIXGJs.unlockBodyScrolling(this);
+    }
+    async show() {
+        if (this.open) return void 0;
+        this.open = true;
+        return _chunkCDTZZV7WJs.waitForEvent(this, "sl-after-show");
+    }
+    async hide() {
+        if (!this.open) return void 0;
+        this.open = false;
+        return _chunkCDTZZV7WJs.waitForEvent(this, "sl-after-hide");
+    }
+    requestClose(source) {
+        const slRequestClose = _chunkCDTZZV7WJs.emit(this, "sl-request-close", {
+            cancelable: true,
+            detail: {
+                source
+            }
+        });
+        if (slRequestClose.defaultPrevented) {
+            const animation = _chunk6SAGALY4Js.getAnimation(this, "drawer.denyClose");
+            _chunkYBI4N56RJs.animateTo(this.panel, animation.keyframes, animation.options);
+            return;
+        }
+        this.hide();
+    }
+    handleKeyDown(event) {
+        if (event.key === "Escape") {
+            event.stopPropagation();
+            this.requestClose("keyboard");
+        }
+    }
+    async handleOpenChange() {
+        if (this.open) {
+            _chunkCDTZZV7WJs.emit(this, "sl-show");
+            this.originalTrigger = document.activeElement;
+            if (!this.contained) {
+                this.modal.activate();
+                _chunkH262HIXGJs.lockBodyScrolling(this);
+            }
+            const autoFocusTarget = this.querySelector("[autofocus]");
+            if (autoFocusTarget) autoFocusTarget.removeAttribute("autofocus");
+            await Promise.all([
+                _chunkYBI4N56RJs.stopAnimations(this.drawer),
+                _chunkYBI4N56RJs.stopAnimations(this.overlay)
+            ]);
+            this.drawer.hidden = false;
+            requestAnimationFrame(()=>{
+                const slInitialFocus = _chunkCDTZZV7WJs.emit(this, "sl-initial-focus", {
+                    cancelable: true
+                });
+                if (!slInitialFocus.defaultPrevented) {
+                    if (autoFocusTarget) autoFocusTarget.focus({
+                        preventScroll: true
+                    });
+                    else this.panel.focus({
+                        preventScroll: true
+                    });
+                }
+                if (autoFocusTarget) autoFocusTarget.setAttribute("autofocus", "");
+            });
+            const panelAnimation = _chunk6SAGALY4Js.getAnimation(this, `drawer.show${uppercaseFirstLetter(this.placement)}`);
+            const overlayAnimation = _chunk6SAGALY4Js.getAnimation(this, "drawer.overlay.show");
+            await Promise.all([
+                _chunkYBI4N56RJs.animateTo(this.panel, panelAnimation.keyframes, panelAnimation.options),
+                _chunkYBI4N56RJs.animateTo(this.overlay, overlayAnimation.keyframes, overlayAnimation.options)
+            ]);
+            _chunkCDTZZV7WJs.emit(this, "sl-after-show");
+        } else {
+            _chunkCDTZZV7WJs.emit(this, "sl-hide");
+            this.modal.deactivate();
+            _chunkH262HIXGJs.unlockBodyScrolling(this);
+            await Promise.all([
+                _chunkYBI4N56RJs.stopAnimations(this.drawer),
+                _chunkYBI4N56RJs.stopAnimations(this.overlay)
+            ]);
+            const panelAnimation = _chunk6SAGALY4Js.getAnimation(this, `drawer.hide${uppercaseFirstLetter(this.placement)}`);
+            const overlayAnimation = _chunk6SAGALY4Js.getAnimation(this, "drawer.overlay.hide");
+            await Promise.all([
+                _chunkYBI4N56RJs.animateTo(this.panel, panelAnimation.keyframes, panelAnimation.options),
+                _chunkYBI4N56RJs.animateTo(this.overlay, overlayAnimation.keyframes, overlayAnimation.options)
+            ]);
+            this.drawer.hidden = true;
+            const trigger = this.originalTrigger;
+            if (typeof (trigger == null ? void 0 : trigger.focus) === "function") setTimeout(()=>trigger.focus()
+            );
+            _chunkCDTZZV7WJs.emit(this, "sl-after-hide");
+        }
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            drawer: true,
+            "drawer--open": this.open,
+            "drawer--top": this.placement === "top",
+            "drawer--end": this.placement === "end",
+            "drawer--bottom": this.placement === "bottom",
+            "drawer--start": this.placement === "start",
+            "drawer--contained": this.contained,
+            "drawer--fixed": !this.contained,
+            "drawer--has-footer": this.hasSlotController.test("footer")
+        })}
+        @keydown=${this.handleKeyDown}
+      >
+        <div part="overlay" class="drawer__overlay" @click=${()=>this.requestClose("overlay")
+        } tabindex="-1"></div>
+
+        <div
+          part="panel"
+          class="drawer__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-hidden=${this.open ? "false" : "true"}
+          aria-label=${_chunkR37SUKY2Js.l(this.noHeader ? this.label : void 0)}
+          aria-labelledby=${_chunkR37SUKY2Js.l(!this.noHeader ? "title" : void 0)}
+          tabindex="0"
+        >
+          ${!this.noHeader ? _chunkPEQICPKOJs.$`
+                <header part="header" class="drawer__header">
+                  <h2 part="title" class="drawer__title" id="title">
+                    <!-- If there's no label, use an invisible character to prevent the header from collapsing -->
+                    <slot name="label"> ${this.label.length > 0 ? this.label : String.fromCharCode(65279)} </slot>
+                  </h2>
+                  <sl-icon-button
+                    part="close-button"
+                    exportparts="base:close-button__base"
+                    class="drawer__close"
+                    name="x"
+                    label=${this.localize.term("close")}
+                    library="system"
+                    @click=${()=>this.requestClose("close-button")
+        }
+                  ></sl-icon-button>
+                </header>
+              ` : ""}
+
+          <div part="body" class="drawer__body">
+            <slot></slot>
+          </div>
+
+          <footer part="footer" class="drawer__footer">
+            <slot name="footer"></slot>
+          </footer>
+        </div>
+      </div>
+    `;
+    }
+};
+SlDrawer.styles = _chunk5RWXA544Js.drawer_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".drawer")
+], SlDrawer.prototype, "drawer", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".drawer__panel")
+], SlDrawer.prototype, "panel", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.i(".drawer__overlay")
+], SlDrawer.prototype, "overlay", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlDrawer.prototype, "open", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlDrawer.prototype, "label", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlDrawer.prototype, "placement", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        type: Boolean,
+        reflect: true
+    })
+], SlDrawer.prototype, "contained", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        attribute: "no-header",
+        type: Boolean,
+        reflect: true
+    })
+], SlDrawer.prototype, "noHeader", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunkPQ5VRVXFJs.watch("open", {
+        waitUntilFirstUpdate: true
+    })
+], SlDrawer.prototype, "handleOpenChange", 1);
+SlDrawer = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-drawer")
+], SlDrawer);
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.showTop", {
+    keyframes: [
+        {
+            opacity: 0,
+            transform: "translateY(-100%)"
+        },
+        {
+            opacity: 1,
+            transform: "translateY(0)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.hideTop", {
+    keyframes: [
+        {
+            opacity: 1,
+            transform: "translateY(0)"
+        },
+        {
+            opacity: 0,
+            transform: "translateY(-100%)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.showEnd", {
+    keyframes: [
+        {
+            opacity: 0,
+            transform: "translateX(100%)"
+        },
+        {
+            opacity: 1,
+            transform: "translateX(0)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.hideEnd", {
+    keyframes: [
+        {
+            opacity: 1,
+            transform: "translateX(0)"
+        },
+        {
+            opacity: 0,
+            transform: "translateX(100%)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.showBottom", {
+    keyframes: [
+        {
+            opacity: 0,
+            transform: "translateY(100%)"
+        },
+        {
+            opacity: 1,
+            transform: "translateY(0)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.hideBottom", {
+    keyframes: [
+        {
+            opacity: 1,
+            transform: "translateY(0)"
+        },
+        {
+            opacity: 0,
+            transform: "translateY(100%)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.showStart", {
+    keyframes: [
+        {
+            opacity: 0,
+            transform: "translateX(-100%)"
+        },
+        {
+            opacity: 1,
+            transform: "translateX(0)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.hideStart", {
+    keyframes: [
+        {
+            opacity: 1,
+            transform: "translateX(0)"
+        },
+        {
+            opacity: 0,
+            transform: "translateX(-100%)"
+        }
+    ],
+    options: {
+        duration: 250,
+        easing: "ease"
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.denyClose", {
+    keyframes: [
+        {
+            transform: "scale(1)"
+        },
+        {
+            transform: "scale(1.01)"
+        },
+        {
+            transform: "scale(1)"
+        }
+    ],
+    options: {
+        duration: 250
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.overlay.show", {
+    keyframes: [
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1
+        }
+    ],
+    options: {
+        duration: 250
+    }
+});
+_chunk6SAGALY4Js.setDefaultAnimation("drawer.overlay.hide", {
+    keyframes: [
+        {
+            opacity: 1
+        },
+        {
+            opacity: 0
+        }
+    ],
+    options: {
+        duration: 250
+    }
+});
+
+},{"./chunk.5RWXA544.js":"9lT9T","./chunk.VMANUTOM.js":"3eNCn","./chunk.H262HIXG.js":"6co8f","./chunk.EBGTCCKY.js":"2lYis","./chunk.YBI4N56R.js":"e8cQr","./chunk.6SAGALY4.js":"b4z3m","./chunk.HQSLB26P.js":"5g8PC","./chunk.7BXY5XRG.js":"4rmsB","./chunk.PQ5VRVXF.js":"b1tC8","./chunk.CDTZZV7W.js":"1aMHq","./chunk.R37SUKY2.js":"4UQhF","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9lT9T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "drawer_styles_default", ()=>drawer_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/drawer/drawer.styles.ts
+var drawer_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    --size: 25rem;
+    --header-spacing: var(--sl-spacing-large);
+    --body-spacing: var(--sl-spacing-large);
+    --footer-spacing: var(--sl-spacing-large);
+
+    display: contents;
+  }
+
+  .drawer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .drawer--contained {
+    position: absolute;
+    z-index: initial;
+  }
+
+  .drawer--fixed {
+    position: fixed;
+    z-index: var(--sl-z-index-drawer);
+  }
+
+  .drawer__panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--sl-panel-background-color);
+    box-shadow: var(--sl-shadow-x-large);
+    transition: var(--sl-transition-medium) transform;
+    overflow: auto;
+    pointer-events: all;
+  }
+
+  .drawer__panel:focus {
+    outline: none;
+  }
+
+  .drawer--top .drawer__panel {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: var(--size);
+  }
+
+  .drawer--end .drawer__panel {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: var(--size);
+    height: 100%;
+  }
+
+  .drawer--bottom .drawer__panel {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--size);
+  }
+
+  .drawer--start .drawer__panel {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: var(--size);
+    height: 100%;
+  }
+
+  .drawer__header {
+    display: flex;
+  }
+
+  .drawer__title {
+    flex: 1 1 auto;
+    font: inherit;
+    font-size: var(--sl-font-size-large);
+    line-height: var(--sl-line-height-dense);
+    padding: var(--header-spacing);
+    margin: 0;
+  }
+
+  .drawer__close {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: var(--sl-font-size-x-large);
+    padding: 0 var(--header-spacing);
+  }
+
+  .drawer__body {
+    flex: 1 1 auto;
+    padding: var(--body-spacing);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drawer__footer {
+    text-align: right;
+    padding: var(--footer-spacing);
+  }
+
+  .drawer__footer ::slotted(sl-button:not(:last-of-type)) {
+    margin-right: var(--sl-spacing-x-small);
+  }
+
+  .drawer:not(.drawer--has-footer) .drawer__footer {
+    display: none;
+  }
+
+  .drawer__overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--sl-overlay-background-color);
+    pointer-events: all;
+  }
+
+  .drawer--contained .drawer__overlay {
+    position: absolute;
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3eNCn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Modal", ()=>Modal
+);
+var _chunkSCUNOITNJs = require("./chunk.SCUNOITN.js");
+// src/internal/modal.ts
+var activeModals = [];
+var Modal = class {
+    constructor(element){
+        this.tabDirection = "forward";
+        this.element = element;
+        this.handleFocusIn = this.handleFocusIn.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+    }
+    activate() {
+        activeModals.push(this.element);
+        document.addEventListener("focusin", this.handleFocusIn);
+        document.addEventListener("keydown", this.handleKeyDown);
+    }
+    deactivate() {
+        activeModals = activeModals.filter((modal)=>modal !== this.element
+        );
+        document.removeEventListener("focusin", this.handleFocusIn);
+        document.removeEventListener("keydown", this.handleKeyDown);
+    }
+    isActive() {
+        return activeModals[activeModals.length - 1] === this.element;
+    }
+    handleFocusIn(event) {
+        const path = event.composedPath();
+        if (this.isActive() && !path.includes(this.element)) {
+            const { start , end  } = _chunkSCUNOITNJs.getTabbableBoundary(this.element);
+            const target = this.tabDirection === "forward" ? start : end;
+            if (typeof (target == null ? void 0 : target.focus) === "function") target.focus({
+                preventScroll: true
+            });
+        }
+    }
+    handleKeyDown(event) {
+        if (event.key === "Tab" && event.shiftKey) {
+            this.tabDirection = "backward";
+            setTimeout(()=>this.tabDirection = "forward"
+            );
+        }
+    }
+};
+
+},{"./chunk.SCUNOITN.js":"fcXlT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2lYis":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "en_default", ()=>en_default
+);
+parcelHelpers.export(exports, "registerTranslation", ()=>registerTranslation
+);
+parcelHelpers.export(exports, "term", ()=>term
+);
+parcelHelpers.export(exports, "date", ()=>date
+);
+parcelHelpers.export(exports, "number", ()=>number
+);
+parcelHelpers.export(exports, "relativeTime", ()=>relativeTime
+);
+parcelHelpers.export(exports, "update", ()=>update
+);
+parcelHelpers.export(exports, "LocalizeController", ()=>LocalizeController
+);
+// node_modules/@shoelace-style/localize/dist/index.js
+var connectedElements = /* @__PURE__ */ new Set();
+var documentElementObserver = new MutationObserver(update);
+var translations = /* @__PURE__ */ new Map();
+var documentLanguage = document.documentElement.lang || navigator.language;
+var fallback;
+documentElementObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: [
+        "lang"
+    ]
+});
+function registerTranslation(...translation2) {
+    translation2.map((t)=>{
+        const code = t.$code.toLowerCase();
+        translations.set(code, t);
+        if (!fallback) fallback = t;
+    });
+    update();
+}
+function term(lang, key, ...args) {
+    const code = lang.toLowerCase().slice(0, 2);
+    const subcode = lang.length > 2 ? lang.toLowerCase() : "";
+    const primary = translations.get(subcode);
+    const secondary = translations.get(code);
+    let term2;
+    if (primary && primary[key]) term2 = primary[key];
+    else if (secondary && secondary[key]) term2 = secondary[key];
+    else if (fallback && fallback[key]) term2 = fallback[key];
+    else {
+        console.error(`No translation found for: ${key}`);
+        return key;
+    }
+    if (typeof term2 === "function") return term2(...args);
+    return term2;
+}
+function date(lang, dateToFormat, options) {
+    dateToFormat = new Date(dateToFormat);
+    return new Intl.DateTimeFormat(lang, options).format(dateToFormat);
+}
+function number(lang, numberToFormat, options) {
+    numberToFormat = Number(numberToFormat);
+    return isNaN(numberToFormat) ? "" : new Intl.NumberFormat(lang, options).format(numberToFormat);
+}
+function relativeTime(lang, value, unit, options) {
+    return new Intl.RelativeTimeFormat(lang, options).format(value, unit);
+}
+function update() {
+    documentLanguage = document.documentElement.lang || navigator.language;
+    [
+        ...connectedElements.keys()
+    ].map((el)=>{
+        if (typeof el.requestUpdate === "function") el.requestUpdate();
+    });
+}
+var LocalizeController = class {
+    constructor(host){
+        this.host = host;
+        this.host.addController(this);
+    }
+    hostConnected() {
+        connectedElements.add(this.host);
+    }
+    hostDisconnected() {
+        connectedElements.delete(this.host);
+    }
+    term(key, ...args) {
+        return term(this.host.lang || documentLanguage, key, ...args);
+    }
+    date(dateToFormat, options) {
+        return date(this.host.lang || documentLanguage, dateToFormat, options);
+    }
+    number(numberToFormat, options) {
+        return number(this.host.lang || documentLanguage, numberToFormat, options);
+    }
+    relativeTime(value, unit, options) {
+        return relativeTime(this.host.lang || documentLanguage, value, unit, options);
+    }
+};
+// src/translations/en.ts
+var translation = {
+    $code: "en",
+    $name: "English",
+    $dir: "ltr",
+    close: "Close",
+    copy: "Copy",
+    progress: "Progress",
+    resize: "Resize",
+    scrollToEnd: "Scroll to end",
+    scrollToStart: "Scroll to start",
+    selectAColorFromTheScreen: "Select a color from the screen",
+    toggleColorFormat: "Toggle color format"
+};
+registerTranslation(translation);
+var en_default = translation;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"in7RN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkA7IMLV5OJs.SlCard
+);
+var _chunkA7IMLV5OJs = require("../../chunks/chunk.A7IMLV5O.js");
+var _chunkUZCU23EPJs = require("../../chunks/chunk.UZCU23EP.js");
+var _chunkHQSLB26PJs = require("../../chunks/chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.A7IMLV5O.js":"4oKKi","../../chunks/chunk.UZCU23EP.js":"jgvL2","../../chunks/chunk.HQSLB26P.js":"5g8PC","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4oKKi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlCard", ()=>SlCard
+);
+var _chunkUZCU23EPJs = require("./chunk.UZCU23EP.js");
+var _chunkHQSLB26PJs = require("./chunk.HQSLB26P.js");
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/card/card.ts
+var SlCard = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.hasSlotController = new _chunkHQSLB26PJs.HasSlotController(this, "footer", "header", "image");
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            card: true,
+            "card--has-footer": this.hasSlotController.test("footer"),
+            "card--has-image": this.hasSlotController.test("image"),
+            "card--has-header": this.hasSlotController.test("header")
+        })}
+      >
+        <div part="image" class="card__image">
+          <slot name="image"></slot>
+        </div>
+
+        <div part="header" class="card__header">
+          <slot name="header"></slot>
+        </div>
+
+        <div part="body" class="card__body">
+          <slot></slot>
+        </div>
+
+        <div part="footer" class="card__footer">
+          <slot name="footer"></slot>
+        </div>
+      </div>
+    `;
+    }
+};
+SlCard.styles = _chunkUZCU23EPJs.card_styles_default;
+SlCard = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-card")
+], SlCard);
+
+},{"./chunk.UZCU23EP.js":"jgvL2","./chunk.HQSLB26P.js":"5g8PC","./chunk.7BXY5XRG.js":"4rmsB","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jgvL2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "card_styles_default", ()=>card_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/card/card.styles.ts
+var card_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    --border-color: var(--sl-color-neutral-200);
+    --border-radius: var(--sl-border-radius-medium);
+    --border-width: 1px;
+    --padding: var(--sl-spacing-large);
+
+    display: inline-block;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sl-panel-background-color);
+    box-shadow: var(--sl-shadow-x-small);
+    border: solid var(--border-width) var(--border-color);
+    border-radius: var(--border-radius);
+  }
+
+  .card__image {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin: calc(-1 * var(--border-width));
+    overflow: hidden;
+  }
+
+  .card__image ::slotted(img) {
+    display: block;
+    width: 100%;
+  }
+
+  .card:not(.card--has-image) .card__image {
+    display: none;
+  }
+
+  .card__header {
+    border-bottom: solid var(--border-width) var(--border-color);
+    padding: calc(var(--padding) / 2) var(--padding);
+  }
+
+  .card:not(.card--has-header) .card__header {
+    display: none;
+  }
+
+  .card__body {
+    padding: var(--padding);
+  }
+
+  .card--has-footer .card__footer {
+    border-top: solid var(--border-width) var(--border-color);
+    padding: var(--padding);
+  }
+
+  .card:not(.card--has-footer) .card__footer {
+    display: none;
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0hIZA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkQDIDEMYFJs.SlDropdown
+);
+var _chunkQDIDEMYFJs = require("../../chunks/chunk.QDIDEMYF.js");
+var _chunkDIQYRTQ3Js = require("../../chunks/chunk.DIQYRTQ3.js");
+var _chunk2BK5N6NVJs = require("../../chunks/chunk.2BK5N6NV.js");
+var _chunkSCUNOITNJs = require("../../chunks/chunk.SCUNOITN.js");
+var _chunkH262HIXGJs = require("../../chunks/chunk.H262HIXG.js");
+var _chunkYBI4N56RJs = require("../../chunks/chunk.YBI4N56R.js");
+var _chunk6SAGALY4Js = require("../../chunks/chunk.6SAGALY4.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.QDIDEMYF.js":"jkiLf","../../chunks/chunk.DIQYRTQ3.js":"63D7n","../../chunks/chunk.2BK5N6NV.js":"c62pF","../../chunks/chunk.SCUNOITN.js":"fcXlT","../../chunks/chunk.H262HIXG.js":"6co8f","../../chunks/chunk.YBI4N56R.js":"e8cQr","../../chunks/chunk.6SAGALY4.js":"b4z3m","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ejQam":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkFTWX6OPRJs.SlSpinner
+);
+var _chunkFTWX6OPRJs = require("../../chunks/chunk.FTWX6OPR.js");
+var _chunkAMWHV6KCJs = require("../../chunks/chunk.AMWHV6KC.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.FTWX6OPR.js":"eWJBW","../../chunks/chunk.AMWHV6KC.js":"e2mhV","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3BlqN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>_chunkDLXZY3B4Js.SlAvatar
+);
+var _chunkDLXZY3B4Js = require("../../chunks/chunk.DLXZY3B4.js");
+var _chunk7BXY5XRGJs = require("../../chunks/chunk.7BXY5XRG.js");
+var _chunkVCKTJB2LJs = require("../../chunks/chunk.VCKTJB2L.js");
+var _chunkX2HKYC6RJs = require("../../chunks/chunk.X2HKYC6R.js");
+var _chunkUCCHCS2EJs = require("../../chunks/chunk.UCCHCS2E.js");
+var _chunkC7PPQWMAJs = require("../../chunks/chunk.C7PPQWMA.js");
+var _chunkNFF2HMITJs = require("../../chunks/chunk.NFF2HMIT.js");
+var _chunkIDYSXN6RJs = require("../../chunks/chunk.IDYSXN6R.js");
+var _chunkP52GZVKGJs = require("../../chunks/chunk.P52GZVKG.js");
+var _chunkRPB53XXVJs = require("../../chunks/chunk.RPB53XXV.js");
+var _chunkNPYVPRSAJs = require("../../chunks/chunk.NPYVPRSA.js");
+var _chunkPQ5VRVXFJs = require("../../chunks/chunk.PQ5VRVXF.js");
+var _chunkCDTZZV7WJs = require("../../chunks/chunk.CDTZZV7W.js");
+var _chunkR37SUKY2Js = require("../../chunks/chunk.R37SUKY2.js");
+var _chunk2JQPDYNAJs = require("../../chunks/chunk.2JQPDYNA.js");
+var _chunk72DLNKYZJs = require("../../chunks/chunk.72DLNKYZ.js");
+var _chunkKNVYX3FQJs = require("../../chunks/chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("../../chunks/chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("../../chunks/chunk.ICGTMF5Z.js");
+
+},{"../../chunks/chunk.DLXZY3B4.js":"2qTGV","../../chunks/chunk.7BXY5XRG.js":"4rmsB","../../chunks/chunk.VCKTJB2L.js":"lpVV3","../../chunks/chunk.X2HKYC6R.js":"5aCwX","../../chunks/chunk.UCCHCS2E.js":"95IKC","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.IDYSXN6R.js":"izuBA","../../chunks/chunk.P52GZVKG.js":"4GsHx","../../chunks/chunk.RPB53XXV.js":"enS2T","../../chunks/chunk.NPYVPRSA.js":"4EMah","../../chunks/chunk.PQ5VRVXF.js":"b1tC8","../../chunks/chunk.CDTZZV7W.js":"1aMHq","../../chunks/chunk.R37SUKY2.js":"4UQhF","../../chunks/chunk.2JQPDYNA.js":"4Ri6Y","../../chunks/chunk.72DLNKYZ.js":"fnTUK","../../chunks/chunk.KNVYX3FQ.js":"fvxTu","../../chunks/chunk.PEQICPKO.js":"bqmmT","../../chunks/chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2qTGV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SlAvatar", ()=>SlAvatar
+);
+var _chunk7BXY5XRGJs = require("./chunk.7BXY5XRG.js");
+var _chunkVCKTJB2LJs = require("./chunk.VCKTJB2L.js");
+var _chunk72DLNKYZJs = require("./chunk.72DLNKYZ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+var _chunkICGTMF5ZJs = require("./chunk.ICGTMF5Z.js");
+// src/components/avatar/avatar.ts
+var SlAvatar = class extends _chunkPEQICPKOJs.s {
+    constructor(){
+        super(...arguments);
+        this.hasError = false;
+        this.label = "";
+        this.shape = "circle";
+    }
+    render() {
+        return _chunkPEQICPKOJs.$`
+      <div
+        part="base"
+        class=${_chunk7BXY5XRGJs.o({
+            avatar: true,
+            "avatar--circle": this.shape === "circle",
+            "avatar--rounded": this.shape === "rounded",
+            "avatar--square": this.shape === "square"
+        })}
+        role="img"
+        aria-label=${this.label}
+      >
+        ${this.initials ? _chunkPEQICPKOJs.$` <div part="initials" class="avatar__initials">${this.initials}</div> ` : _chunkPEQICPKOJs.$`
+              <div part="icon" class="avatar__icon" aria-hidden="true">
+                <slot name="icon">
+                  <sl-icon name="person-fill" library="system"></sl-icon>
+                </slot>
+              </div>
+            `}
+        ${typeof this.image === "string" && !this.hasError ? _chunkPEQICPKOJs.$`
+              <img
+                part="image"
+                class="avatar__image"
+                src="${this.image}"
+                alt=""
+                @error="${()=>this.hasError = true
+        }"
+              />
+            ` : ""}
+      </div>
+    `;
+    }
+};
+SlAvatar.styles = _chunkVCKTJB2LJs.avatar_styles_default;
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.t()
+], SlAvatar.prototype, "hasError", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlAvatar.prototype, "image", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlAvatar.prototype, "label", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e()
+], SlAvatar.prototype, "initials", 2);
+_chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.e({
+        reflect: true
+    })
+], SlAvatar.prototype, "shape", 2);
+SlAvatar = _chunkICGTMF5ZJs.__decorateClass([
+    _chunk72DLNKYZJs.n("sl-avatar")
+], SlAvatar);
+
+},{"./chunk.7BXY5XRG.js":"4rmsB","./chunk.VCKTJB2L.js":"lpVV3","./chunk.72DLNKYZ.js":"fnTUK","./chunk.PEQICPKO.js":"bqmmT","./chunk.ICGTMF5Z.js":"1ljq5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lpVV3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "avatar_styles_default", ()=>avatar_styles_default
+);
+var _chunkKNVYX3FQJs = require("./chunk.KNVYX3FQ.js");
+var _chunkPEQICPKOJs = require("./chunk.PEQICPKO.js");
+// src/components/avatar/avatar.styles.ts
+var avatar_styles_default = _chunkPEQICPKOJs.r`
+  ${_chunkKNVYX3FQJs.component_styles_default}
+
+  :host {
+    display: inline-block;
+
+    --size: 3rem;
+  }
+
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--sl-color-neutral-400);
+    font-family: var(--sl-font-sans);
+    font-size: calc(var(--size) * 0.5);
+    font-weight: var(--sl-font-weight-normal);
+    color: var(--sl-color-neutral-0);
+    user-select: none;
+    vertical-align: middle;
+  }
+
+  .avatar--circle,
+  .avatar--circle .avatar__image {
+    border-radius: var(--sl-border-radius-circle);
+  }
+
+  .avatar--rounded,
+  .avatar--rounded .avatar__image {
+    border-radius: var(--sl-border-radius-medium);
+  }
+
+  .avatar--square {
+    border-radius: 0;
+  }
+
+  .avatar__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .avatar__initials {
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .avatar__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+`;
+
+},{"./chunk.KNVYX3FQ.js":"fvxTu","./chunk.PEQICPKO.js":"bqmmT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dQpXl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _litElement = require("@polymer/lit-element");
 var _router = require("./../Router");

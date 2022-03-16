@@ -73,7 +73,7 @@ class newProjectView {
               </sl-select>
             </div>
           
-            <sl-button type="primary" size="medium" class="submit-btn" submit>Submit a New Project for Bidding!</sl-button>
+            <sl-button variant="primary" size="medium" class="submit-btn" submit>Submit a New Project for Bidding!</sl-button>
           </form>        
 
           

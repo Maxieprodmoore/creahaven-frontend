@@ -149,7 +149,7 @@ class GuideView {
             </P>
           </div>
 
-          <sl-button type="primary" @click=${() => gotoRoute('/')}>Okay got it!</sl-button>
+          <sl-button variant="primary" @click=${() => gotoRoute('/')}>Okay got it!</sl-button>
         </div>
       </div>
             
